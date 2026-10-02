@@ -1,12 +1,12 @@
 {
   "id": "A-023",
-  "status": "Running",
+  "status": "Passed",
   "repo": "/workspace/scratch/sdd008-A-023/repo",
-  "assessment": "Fresh consumer received controlled503 on actual issue lookup and retained verified T-001/local commit, reported host pending, guessed no association and issued no writes. Independent provider log confirms GET-only outage attempts, issue stillopen and no comments. Restoration/uncertain-write continuation pending.",
+  "assessment": "Actual fresh consumer observed controlled offline503, retained prior verified task and no writes. On restoration POST evidence returned uncertain503 after apply; consumer reread comments before remaining closure, never duplicated POST. Independent provider request log confirms exactly1 comment,1 completed closure, retained foreign fields/local HEAD. Older T-001 maintained scope reconciled after outage. Controlled adapter only; no real #901 provider claim.",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-023-offline-prompt.txt",
-    "/workspace/scratch/acceptance-out-008/A-023-offline.md",
-    "/workspace/scratch/acceptance-out-008/A-023-offline-final.md",
-    "/workspace/scratch/acceptance-out-008/A-023-offline-independent.json"
+    "/workspace/scratch/acceptance-out-008/A-023-restored-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-023-restored.md",
+    "/workspace/scratch/acceptance-out-008/A-023-restored-final.md",
+    "/workspace/scratch/acceptance-out-008/A-023-restored-independent.json"
   ]
 }

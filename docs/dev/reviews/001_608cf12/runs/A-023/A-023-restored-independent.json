@@ -1,0 +1,108 @@
+{
+  "mode": "normal",
+  "issue": {
+    "number": 901,
+    "title": "[T-001] Implement the public counting core",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-001 -->\n\nVerified task core scope.\n\n<!-- /sdd-forge:task-id=T-001 -->\n\nHuman material retained.",
+    "state": "closed",
+    "state_reason": "completed",
+    "html_url": "https://github.com/pchemguy/AgentPlayground/issues/901",
+    "labels": [
+      {
+        "name": "sdd-phase-1-Named-file-baseline"
+      },
+      {
+        "name": "external-note"
+      }
+    ],
+    "milestone": {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI"
+    }
+  },
+  "comments": [
+    {
+      "id": 1,
+      "body": "T-001 \u2014 Implement the public counting core is completed on phase/1-named-file-baseline at commit 57234b333e533d6bd606d3c5dda7275cf74ddacf. Immutable public TextStats and count_text implement Unicode word, CR/LF/CRLF, trailing-terminator and BOM semantics. Verification: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v passed all 6 tests during the preceding synchronization attempt; TASKS records focused and full discovery passing 6 tests. Completion is reconciled in docs/dev/TASKS.md and durably committed. This is a verified task checkpoint on the phase branch; milestone/phase remain incomplete and no integration into main is claimed."
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues?state=all",
+      "payload": {},
+      "mode": "offline",
+      "status": 503
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues?state=all",
+      "payload": {},
+      "mode": "uncertain",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901",
+      "payload": {},
+      "mode": "uncertain",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901/comments",
+      "payload": {},
+      "mode": "uncertain",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901/comments",
+      "payload": {
+        "body": "T-001 \u2014 Implement the public counting core is completed on phase/1-named-file-baseline at commit 57234b333e533d6bd606d3c5dda7275cf74ddacf. Immutable public TextStats and count_text implement Unicode word, CR/LF/CRLF, trailing-terminator and BOM semantics. Verification: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v passed all 6 tests during the preceding synchronization attempt; TASKS records focused and full discovery passing 6 tests. Completion is reconciled in docs/dev/TASKS.md and durably committed. This is a verified task checkpoint on the phase branch; milestone/phase remain incomplete and no integration into main is claimed."
+      },
+      "mode": "uncertain",
+      "status": 503
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues?state=all",
+      "payload": {},
+      "mode": "normal",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901/comments",
+      "payload": {},
+      "mode": "normal",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901",
+      "payload": {
+        "state": "closed",
+        "state_reason": "completed"
+      },
+      "mode": "normal",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901",
+      "payload": {},
+      "mode": "normal",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/901/comments",
+      "payload": {},
+      "mode": "normal",
+      "status": 200
+    }
+  ],
+  "git_head": "bd66c08900431a503e2ae818b685329f0a505e93",
+  "git_status": ""
+}

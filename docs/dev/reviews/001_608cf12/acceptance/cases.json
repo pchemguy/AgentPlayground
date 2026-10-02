@@ -323,23 +323,28 @@
   },
   {
     "id": "A-023",
-    "status": "Running",
+    "status": "Passed",
     "prompt_path": "runs/A-023/A-023-offline-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-023",
     "evidence": [
+      "runs/A-023/A-023-restored-final.md",
       "runs/A-023/git-snapshot.json",
       "runs/A-023/A-023-offline-prompt.txt",
+      "runs/A-023/A-023-restoration-setup.json",
+      "runs/A-023/A-023-restored.md",
       "runs/A-023/A-023-offline-independent.json",
+      "runs/A-023/A-023-restored-prompt.txt",
       "runs/A-023/A-023-offline.md",
       "runs/A-023/A-023-adapter-selfcheck.log",
       "runs/A-023/A-023-offline-final.md",
+      "runs/A-023/A-023-restored-independent.json",
       "runs/A-023/assessment.json",
       "runs/A-023/A-023-initial-state.json"
     ],
     "native_transcript": null,
-    "assessment": "Fresh consumer received controlled503 on actual issue lookup and retained verified T-001/local commit, reported host pending, guessed no association and issued no writes. Independent provider log confirms GET-only outage attempts, issue stillopen and no comments. Restoration/uncertain-write continuation pending.",
-    "assessed_at": "2026-10-02T16:08:46.809820+00:00"
+    "assessment": "Actual fresh consumer observed controlled offline503, retained prior verified task and no writes. On restoration POST evidence returned uncertain503 after apply; consumer reread comments before remaining closure, never duplicated POST. Independent provider request log confirms exactly1 comment,1 completed closure, retained foreign fields/local HEAD. Older T-001 maintained scope reconciled after outage. Controlled adapter only; no real #901 provider claim.",
+    "assessed_at": "2026-10-02T16:17:33.132760+00:00"
   },
   {
     "id": "A-024",
