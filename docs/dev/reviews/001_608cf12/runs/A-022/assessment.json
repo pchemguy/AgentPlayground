@@ -1,10 +1,12 @@
 {
   "id": "A-022",
   "status": "Running",
-  "assessment": "Accepted retained-result verification delta supplied on isolated feature branch; actual document incorporation consumer pending. Fork setup is fixture-only, not a pass.",
+  "assessment": "Actual selected incorporation verified: T-001 historical evidence/checked box preserved with durable pending reassessment, source retained, no product edits, explicit feature-to-phase merge and publication. Selection and execution reassessment remain pending.",
   "repo": "/workspace/scratch/sdd008-A-022/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-022-prompt.txt",
-    "/workspace/scratch/acceptance-out-008/A-022-setup.json"
+    "/workspace/scratch/acceptance-out-008/A-022-incorporate.md",
+    "/workspace/scratch/acceptance-out-008/A-022-incorporate-final.md",
+    "/workspace/scratch/acceptance-out-008/A-022-incorporate-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-022-selection-prompt.txt"
   ]
 }

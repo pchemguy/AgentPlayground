@@ -1,19 +1,22 @@
 {
   "schema_version": 1,
-  "branch": "feature/001_57234b3-call-independence",
-  "head": "9c033dd11e79ed21e0bc2e3dcd1ce7463b5927c6",
+  "branch": "phase/1-named-file-baseline",
+  "head": "88dd40678e31c2b4fbce5ed7ca84519940ce9b9d",
   "parents": [
-    "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+    "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+    "9416a16fe5b2f0325e7c63d47647786577a3fe7b"
   ],
   "status": [],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/feature/001_57234b3-call-independence": "9c033dd11e79ed21e0bc2e3dcd1ce7463b5927c6",
+    "refs/heads/feature/001_57234b3-call-independence": "9416a16fe5b2f0325e7c63d47647786577a3fe7b",
     "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
-    "refs/heads/phase/1-named-file-baseline": "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+    "refs/heads/phase/1-named-file-baseline": "88dd40678e31c2b4fbce5ed7ca84519940ce9b9d"
   },
   "changed_paths": [
     "docs/dev/FEATURE-SPEC.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
     "docs/dev/features/001_57234b3/README.md"
   ]
 }

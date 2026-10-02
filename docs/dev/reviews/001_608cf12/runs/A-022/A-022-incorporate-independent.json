@@ -1,0 +1,17 @@
+{
+  "historical_task_evidence_exact": true,
+  "checked_task_disputed_by_durable_note": true,
+  "actual_changed_paths": [
+    "docs/dev/FEATURE-SPEC.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/features/001_57234b3/README.md"
+  ],
+  "two_merge_parents": [
+    "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+    "9416a16fe5b2f0325e7c63d47647786577a3fe7b"
+  ],
+  "retained_sources": true,
+  "main_unchanged": true,
+  "product_edits": false
+}
