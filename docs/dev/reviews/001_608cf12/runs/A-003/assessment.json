@@ -1,0 +1,20 @@
+{
+  "id": "A-003",
+  "status": "Suspended",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "User-requested suspension after published tracking statement d769b55, 2 phase labels and 4 native milestones. T-001 connector create returned403 Resource not accessible by integration; no task issues confirmed. No helper issue retry or second reconciliation. Resume by all-state reread and parent reuse; no uncertain/in-flight writes.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-003.md",
+    "/workspace/scratch/acceptance-out-008/A-003-labels-2.json",
+    "/workspace/scratch/acceptance-out-008/A-003-projection.json",
+    "/workspace/scratch/acceptance-out-008/A-003-milestones-1.1.json",
+    "/workspace/scratch/acceptance-out-008/A-003-labels-1.json",
+    "/workspace/scratch/acceptance-out-008/A-003-connector-issue-attempt.json",
+    "/workspace/scratch/acceptance-out-008/A-003-milestones-1.2.json",
+    "/workspace/scratch/acceptance-out-008/A-003-final.md",
+    "/workspace/scratch/acceptance-out-008/A-003-parent-api.py",
+    "/workspace/scratch/acceptance-out-008/A-003-milestones-2.1.json",
+    "/workspace/scratch/acceptance-out-008/A-003-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-003-milestones-2.2.json"
+  ]
+}

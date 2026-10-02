@@ -8,7 +8,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | --- | --- | --- | --- |
 | A-001 | Passed | Independent inspection: 7 governing documents, SPEC exact contracts, early end-to-end PLAN with phase exits, 8 uniquely owned unchecked tasks. No product source/tests. Preparation e750d1c pushed, main remote equality observed; explicit-source mode only. | [Run](runs/A-001/assessment.json) |
 | A-002 | Passed | Selection output correctly resolves T-001 and T-001..T-003 milestone1.1, same phase owner, no external prerequisite; partial phase pause. Independent state remains clean main e750d1c; consumer journal records no tests/push/branch/mutation. | [Run](runs/A-002/assessment.json) |
-| A-003 | Pending | Not executed | None |
+| A-003 | Suspended | User-requested suspension after published tracking statement d769b55, 2 phase labels and 4 native milestones. T-001 connector create returned403 Resource not accessible by integration; no task issues confirmed. No helper issue retry or second reconciliation. Resume by all-state reread and parent reuse; no uncertain/in-flight writes. | [Run](runs/A-003/assessment.json) |
 | A-004 | Pending | Not executed | None |
 | A-005 | Pending | Not executed | None |
 | A-006 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 5, Failed: 0, Blocked: 0, Running: 0, Pending: 22.
+Passed: 5, Failed: 0, Blocked: 0, Suspended: 1, Running: 0, Pending: 21.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

@@ -38,14 +38,29 @@
   },
   {
     "id": "A-003",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Suspended",
+    "prompt_path": "runs/A-003/A-003-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-003",
+    "evidence": [
+      "runs/A-003/A-003.md",
+      "runs/A-003/A-003-labels-2.json",
+      "runs/A-003/A-003-projection.json",
+      "runs/A-003/A-003-milestones-1.1.json",
+      "runs/A-003/A-003-labels-1.json",
+      "runs/A-003/A-003-connector-issue-attempt.json",
+      "runs/A-003/A-003-milestones-1.2.json",
+      "runs/A-003/git-snapshot.json",
+      "runs/A-003/A-003-final.md",
+      "runs/A-003/assessment.json",
+      "runs/A-003/A-003-parent-api.py",
+      "runs/A-003/A-003-milestones-2.1.json",
+      "runs/A-003/A-003-prompt.txt",
+      "runs/A-003/A-003-milestones-2.2.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "User-requested suspension after published tracking statement d769b55, 2 phase labels and 4 native milestones. T-001 connector create returned403 Resource not accessible by integration; no task issues confirmed. No helper issue retry or second reconciliation. Resume by all-state reread and parent reuse; no uncertain/in-flight writes.",
+    "assessed_at": "2026-10-02T13:33:08.967465+00:00"
   },
   {
     "id": "A-004",
