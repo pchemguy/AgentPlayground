@@ -25,14 +25,16 @@
     "oracle_path": null,
     "run_path": "runs/A-002",
     "evidence": [
+      "runs/A-002/A-002.md",
       "runs/A-002/A-002-prompt.txt",
       "runs/A-002/git-snapshot.json",
+      "runs/A-002/A-002-final.md",
       "runs/A-002/assessment.json",
       "runs/A-002/A-002-independent.json"
     ],
     "native_transcript": null,
     "assessment": "Selection output correctly resolves T-001 and T-001..T-003 milestone1.1, same phase owner, no external prerequisite; partial phase pause. Independent state remains clean main e750d1c; consumer journal records no tests/push/branch/mutation.",
-    "assessed_at": "2026-10-02T13:24:09.158606+00:00"
+    "assessed_at": "2026-10-02T13:25:15.007584+00:00"
   },
   {
     "id": "A-003",
