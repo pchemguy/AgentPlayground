@@ -1,11 +1,10 @@
 {
   "id": "A-018",
-  "status": "Suspended",
-  "assessment": "Suspended with task rejection/recovery subcase complete: original7c29721 published after controlled hook release, ten tests, no replacement commit/force/advancement. Merge-publication rejection/recovery subcase not started; await actual complete-phase checkpoint.",
+  "status": "Blocked",
+  "assessment": "Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed. Task-rejection/recovery remains evidenced; complete-phase merge-publication subcase remains unstarted.",
   "repo": "/workspace/scratch/sdd008-A-018-task/repo",
-  "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-018-retry.md",
-    "/workspace/scratch/acceptance-out-008/A-018-retry-final.md",
-    "/workspace/scratch/acceptance-out-008/A-018-retry-independent.json"
-  ]
+  "artifacts": [],
+  "runtime_blocker": true,
+  "new_consumer_work": false,
+  "previous_status": "Suspended"
 }

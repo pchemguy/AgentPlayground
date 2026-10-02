@@ -316,27 +316,28 @@
   },
   {
     "id": "A-018",
-    "status": "Suspended",
-    "prompt_path": "runs/A-018/A-018-retry-prompt.txt",
+    "status": "Blocked",
+    "prompt_path": "runs/A-018/A-018-task-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-018",
     "evidence": [
-      "runs/A-018/A-018-task-final.md",
-      "runs/A-018/A-018-restoration.json",
-      "runs/A-018/A-018-retry-prompt.txt",
-      "runs/A-018/git-snapshot.json",
-      "runs/A-018/A-018-retry.md",
       "runs/A-018/A-018-task-prompt.txt",
-      "runs/A-018/A-018-retry-independent.json",
-      "runs/A-018/A-018-retry-final.md",
+      "runs/A-018/A-018-retry.md",
+      "runs/A-018/A-018-retry-prompt.txt",
       "runs/A-018/A-018-task-rejection-independent.json",
-      "runs/A-018/A-018-task-setup.json",
+      "runs/A-018/A-018-retry-final.md",
       "runs/A-018/A-018-task.md",
-      "runs/A-018/assessment.json"
+      "runs/A-018/A-018-task-final.md",
+      "runs/A-018/assessment.json",
+      "runs/A-018/A-018-restoration.json",
+      "runs/A-018/A-018-retry-independent.json",
+      "runs/A-018/resumption-blocker-20261002.json",
+      "runs/A-018/git-snapshot.json",
+      "runs/A-018/A-018-task-setup.json"
     ],
     "native_transcript": null,
-    "assessment": "Suspended with task rejection/recovery subcase complete: original7c29721 published after controlled hook release, ten tests, no replacement commit/force/advancement. Merge-publication rejection/recovery subcase not started; await actual complete-phase checkpoint.",
-    "assessed_at": "2026-10-02T17:09:01.277985+00:00"
+    "assessment": "Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed. Task-rejection/recovery remains evidenced; complete-phase merge-publication subcase remains unstarted.",
+    "assessed_at": "2026-10-02T21:37:30.647442+00:00"
   },
   {
     "id": "A-019",
