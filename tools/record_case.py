@@ -18,7 +18,7 @@ for c in cases:
 registry.write_text(json.dumps(cases,indent=2)+'\n')
 report='# TextStats runtime acceptance report\n\n## State and evidence\n\nPinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.\n\n| Case | Status | Assessment | Records |\n| --- | --- | --- | --- |\n'
 for c in cases:report+=f"| {c['id']} | {c['status']} | {(c['assessment'] or 'Not executed').replace('|','/').replace(chr(10),' ')} | "+(f"[Run]({c['run_path']}/assessment.json)" if c['run_path'] else 'None')+' |\n'
-report+='\n## Counts and limits\n\n'+', '.join(f'{status}: {sum(c["status"]==status for c in cases)}' for status in ['Passed','Failed','Blocked','Running','Pending'])+'.\n\nFixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.\n'
+report+='\n## Counts and limits\n\n'+', '.join(f'{status}: {sum(c["status"]==status for c in cases)}' for status in ['Passed','Failed','Blocked','Suspended','Running','Pending'])+'.\n\nFixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.\n'
 (CAM/'ACCEPTANCE-REPORT.md').write_text(report)
 for p in run.rglob('*'):
  if p.is_file():assert not re.search(rb'(?:github_pat_[A-Za-z0-9_]{30,}|ghp_[A-Za-z0-9]{30,})',p.read_bytes()),p

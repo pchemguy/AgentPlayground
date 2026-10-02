@@ -25,7 +25,8 @@
         "Running",
         "Passed",
         "Failed",
-        "Blocked"
+        "Blocked",
+        "Suspended"
       ]
     },
     "prompt_path": {
