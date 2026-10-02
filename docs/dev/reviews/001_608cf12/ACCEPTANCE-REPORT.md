@@ -25,7 +25,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-017 | Pending | Not executed | None |
 | A-018 | Pending | Not executed | None |
 | A-019 | Pending | Not executed | None |
-| A-020 | Pending | Not executed | None |
+| A-020 | Passed | Owned T-001 commit57234b3 pushed to isolated bare phase branch;6 tests observed in consumer journal. Independent commit-path inspection excludes unrelated files/README, staged unrelated blob matches original; untracked contents and tracked unstaged README intent remain. Main not merged; no T-002. Bundle/snapshot retain actual state. | [Run](runs/A-020/assessment.json) |
 | A-021 | Pending | Not executed | None |
 | A-022 | Pending | Not executed | None |
 | A-023 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 5, Failed: 0, Blocked: 0, Suspended: 2, Running: 0, Pending: 20.
+Passed: 6, Failed: 0, Blocked: 0, Suspended: 2, Running: 0, Pending: 19.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

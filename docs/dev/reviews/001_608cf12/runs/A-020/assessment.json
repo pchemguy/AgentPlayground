@@ -1,0 +1,13 @@
+{
+  "id": "A-020",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-020/repo",
+  "assessment": "Owned T-001 commit57234b3 pushed to isolated bare phase branch;6 tests observed in consumer journal. Independent commit-path inspection excludes unrelated files/README, staged unrelated blob matches original; untracked contents and tracked unstaged README intent remain. Main not merged; no T-002. Bundle/snapshot retain actual state.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-020-checkpoint.bundle",
+    "/workspace/scratch/acceptance-out-008/A-020-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-020.md",
+    "/workspace/scratch/acceptance-out-008/A-020-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-020-final.md"
+  ]
+}

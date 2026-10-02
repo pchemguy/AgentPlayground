@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+  "parents": [
+    "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
+  ],
+  "status": [
+    "M README.md",
+    "A  unrelated-staged.txt",
+    "?? unrelated-unstaged.txt"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "0a730704bd48ec9324fda7d178f60b6cd557a42a",
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+    "refs/heads/phase/1-named-file-baseline": "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+  },
+  "changed_paths": [
+    "docs/dev/TASKS.md",
+    "tests/__init__.py",
+    "tests/test_api.py",
+    "tests/test_counting.py",
+    "textstats/__init__.py",
+    "textstats/counting.py"
+  ]
+}

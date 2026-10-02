@@ -1,0 +1,46 @@
+{
+  "git --no-optional-locks status --porcelain=v1": {
+    "exit": 0,
+    "stdout": " M README.md\nA  unrelated-staged.txt\n?? unrelated-unstaged.txt\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks rev-parse HEAD": {
+    "exit": 0,
+    "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks diff --cached --name-only": {
+    "exit": 0,
+    "stdout": "unrelated-staged.txt\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks show --format=fuller --stat HEAD": {
+    "exit": 0,
+    "stdout": "commit 57234b333e533d6bd606d3c5dda7275cf74ddacf\nAuthor:     Fixture <fixture@example.invalid>\nAuthorDate: Fri Oct 2 15:30:23 2026 +0200\nCommit:     Fixture <fixture@example.invalid>\nCommitDate: Fri Oct 2 15:30:23 2026 +0200\n\n    Implement public counting core (T-001)\n    \n    Provide immutable counts and pure Unicode/BOM/newline semantics. Focused unittest and full discovery both pass all 6 tests. Pause on the phase branch after T-001; no phase integration.\n\n docs/dev/TASKS.md      |  3 ++-\n tests/__init__.py      |  1 +\n tests/test_api.py      | 20 ++++++++++++++++++\n tests/test_counting.py | 56 ++++++++++++++++++++++++++++++++++++++++++++++++++\n textstats/__init__.py  |  9 ++++++++\n textstats/counting.py  | 42 +++++++++++++++++++++++++++++++++++++\n 6 files changed, 130 insertions(+), 1 deletion(-)\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks ls-remote origin refs/heads/phase/1-named-file-baseline": {
+    "exit": 0,
+    "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf\trefs/heads/phase/1-named-file-baseline\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks diff -- README.md": {
+    "exit": 0,
+    "stdout": "diff --git a/README.md b/README.md\nindex 0beed03..72fb41d 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,5 @@\n # AgentPlayground\n \n Playground for agents\n+\n+Unrelated scenario note; preserve as unstaged work.\n",
+    "stderr": ""
+  },
+  "unrelated_contents": {
+    "unrelated-staged.txt": "unrelated staged intent\n",
+    "unrelated-unstaged.txt": "unrelated untracked content\n",
+    "README.md": "# AgentPlayground\n\nPlayground for agents\n\nUnrelated scenario note; preserve as unstaged work.\n"
+  },
+  "unrelated_staged_blob": "unrelated staged intent\n",
+  "owned_commit_paths": [
+    "docs/dev/TASKS.md",
+    "tests/__init__.py",
+    "tests/test_api.py",
+    "tests/test_counting.py",
+    "textstats/__init__.py",
+    "textstats/counting.py"
+  ]
+}

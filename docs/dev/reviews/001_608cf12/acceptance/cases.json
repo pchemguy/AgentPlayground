@@ -251,14 +251,22 @@
   },
   {
     "id": "A-020",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-020/A-020-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-020",
+    "evidence": [
+      "runs/A-020/A-020-checkpoint.bundle",
+      "runs/A-020/A-020-independent.json",
+      "runs/A-020/A-020.md",
+      "runs/A-020/git-snapshot.json",
+      "runs/A-020/A-020-prompt.txt",
+      "runs/A-020/A-020-final.md",
+      "runs/A-020/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Owned T-001 commit57234b3 pushed to isolated bare phase branch;6 tests observed in consumer journal. Independent commit-path inspection excludes unrelated files/README, staged unrelated blob matches original; untracked contents and tracked unstaged README intent remain. Main not merged; no T-002. Bundle/snapshot retain actual state.",
+    "assessed_at": "2026-10-02T13:35:51.199350+00:00"
   },
   {
     "id": "A-021",
