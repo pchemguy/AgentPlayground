@@ -1,6 +1,6 @@
 # TextStats executable tasks
 
-Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). These are planned tasks; none has been implemented or verified. IDs are project-wide and stable.
+Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). Completion below records verified task work; unchecked tasks remain planned. IDs are project-wide and stable.
 
 Maintained hosted tracking is active for all tasks in this list at `pchemguy/AgentPlayground` on GitHub. Use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
 
@@ -10,9 +10,11 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
 
 - [ ] Phase 1 — Named-file baseline
     - [ ] Milestone 1.1 — Usable named-file API and CLI
-        - [ ] T-001 — Implement the public counting core
+        - [x] T-001 — Implement the public counting core
             Scope: `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.
             Outcome: immutable public result and `count_text` with SPEC counting/BOM semantics; independent expected values cover empty, whitespace, Unicode, CR/LF/CRLF and trailing terminators. Evidence: focused unittest checks and package-level import, including BOM-only/preserved interior BOM cases. No IO or CLI behavior belongs here.
+            Checkpoint: T-001 only on `phase/1-named-file-baseline`, from `d769b55aa63f92d5ccbd8022cb9e87f07e541fae`; target `main`, remote `origin`. No milestone/phase exit or integration is claimed.
+            Observed evidence (Python 3.12.14): `python -m unittest tests.test_counting tests.test_api -v` first collected 9 tests and failed with 24 scenario errors at intentional `NotImplementedError` API declarations (not import/setup errors). After implementation the same focused command passed all 9 tests. `python -m unittest discover -s tests -v` passed 9 tests, with no skips or warnings. Fixed expected values cover SPEC table, mixed/trailing terminators, Unicode whitespace/separators, exactly one leading BOM, retained/interior BOM, integer counts, immutable public results and silent independent calls. Package-level API examples passed; all five new module docstrings were reviewed against their responsibilities using Google-style public API documentation. T-002 and later tasks remain unstarted; named-file/CLI/distribution and parent exits are not checked.
         - [ ] T-002 — Expose UTF-8 named-file counting
             Scope: file adapter, public exports and file/API tests with relevant docstrings. Depends on: T-001.
             Outcome: `count_file` reads real UTF-8 files and delegates BOM policy while owning/closing its handle. Evidence: temporary-file public API calls with fixed expected counts and success-path handle lifecycle; keep pure counting tests independent. Failure completion belongs to T-004.
