@@ -1,9 +1,9 @@
 {
   "id": "A-005",
   "status": "Running",
+  "assessment": "User interruption diagnosed: T-002/layout checkpoints published; T-003 owned pending code/tests/README retained and same worker resumed. No merge pending or reset/setup replay. Milestone acceptance and publication remain in progress.",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
-  "assessment": "Milestone1.1 continuation request published after passed A-004. Includes bounded test-layout alignment for original accepted requirement omitted from preparation prompt (TST-001); no behavior/source-plugin change. Independent literal named-file success oracle published before assessment.",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-005-prompt.txt"
+    "/workspace/scratch/acceptance-out-008/A-005-interruption-diagnosis.json"
   ]
 }

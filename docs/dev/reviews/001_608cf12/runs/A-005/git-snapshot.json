@@ -1,26 +1,28 @@
 {
   "schema_version": 1,
   "branch": "phase/1-named-file-baseline",
-  "head": "3b201a3d5101556a60b9dbef658335f69f3775d0",
+  "head": "9042c2013e5b5e5be97a214f5057092475ca98cb",
   "parents": [
-    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae"
+    "0b97f4bb8011a2c5e205b7c414025f6a2327734e"
   ],
   "status": [
+    "M README.md",
+    "?? tests/integration/test_cli.py",
+    "?? textstats/__main__.py",
     "?? textstats/__pycache__/__init__.cpython-312.pyc",
-    "?? textstats/__pycache__/counting.cpython-312.pyc"
+    "?? textstats/__pycache__/counting.cpython-312.pyc",
+    "?? textstats/cli.py"
   ],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/evaluation/008-runtime-acceptance": "8aa3b3bf008f301a7f25cc6b35acde526210ab6a",
+    "refs/heads/evaluation/008-runtime-acceptance": "f73273a89cdc9654561d51beafe4b72fde1e8a69",
     "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
-    "refs/heads/phase/1-named-file-baseline": "3b201a3d5101556a60b9dbef658335f69f3775d0"
+    "refs/heads/phase/1-named-file-baseline": "9042c2013e5b5e5be97a214f5057092475ca98cb"
   },
   "changed_paths": [
     "docs/dev/TASKS.md",
-    "tests/__init__.py",
-    "tests/test_api.py",
-    "tests/test_counting.py",
+    "tests/unit/test_files.py",
     "textstats/__init__.py",
-    "textstats/counting.py"
+    "textstats/files.py"
   ]
 }
