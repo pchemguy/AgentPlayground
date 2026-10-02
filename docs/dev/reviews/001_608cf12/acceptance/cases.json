@@ -309,15 +309,18 @@
       "runs/A-018/A-018-restoration.json",
       "runs/A-018/A-018-retry-prompt.txt",
       "runs/A-018/git-snapshot.json",
+      "runs/A-018/A-018-retry.md",
       "runs/A-018/A-018-task-prompt.txt",
+      "runs/A-018/A-018-retry-independent.json",
+      "runs/A-018/A-018-retry-final.md",
       "runs/A-018/A-018-task-rejection-independent.json",
       "runs/A-018/A-018-task-setup.json",
       "runs/A-018/A-018-task.md",
       "runs/A-018/assessment.json"
     ],
     "native_transcript": null,
-    "assessment": "Original rejected attempt published; root released controlled server hook without changing commit/remote refs. Independent continuation request pending; boundary-merge rejection remains separate.",
-    "assessed_at": "2026-10-02T16:52:16.099019+00:00"
+    "assessment": "Actual rejected task publication recovery verified: same retained7c29721 pushed before later checks, no new commit/force/next task/merge. Server-release intervention retained. Boundary-merge rejection still pending.",
+    "assessed_at": "2026-10-02T16:57:52.106273+00:00"
   },
   {
     "id": "A-019",

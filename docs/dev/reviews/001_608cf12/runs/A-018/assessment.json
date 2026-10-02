@@ -1,10 +1,11 @@
 {
   "id": "A-018",
   "status": "Running",
-  "assessment": "Original rejected attempt published; root released controlled server hook without changing commit/remote refs. Independent continuation request pending; boundary-merge rejection remains separate.",
+  "assessment": "Actual rejected task publication recovery verified: same retained7c29721 pushed before later checks, no new commit/force/next task/merge. Server-release intervention retained. Boundary-merge rejection still pending.",
   "repo": "/workspace/scratch/sdd008-A-018-task/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-018-retry-prompt.txt",
-    "/workspace/scratch/acceptance-out-008/A-018-restoration.json"
+    "/workspace/scratch/acceptance-out-008/A-018-retry.md",
+    "/workspace/scratch/acceptance-out-008/A-018-retry-final.md",
+    "/workspace/scratch/acceptance-out-008/A-018-retry-independent.json"
   ]
 }
