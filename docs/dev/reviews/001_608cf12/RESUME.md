@@ -2,7 +2,7 @@
 
 ## Stop boundary
 
-Suspended by the user on 2026-10-02. All consumer agents stopped; no hosted writes are in flight or uncertain. Do not start further work until a resume instruction. State:6 Passed,2 Suspended,19 Pending,0 Running/Failed/Blocked. See [ACCEPTANCE-REPORT.md](ACCEPTANCE-REPORT.md) and [case registry](acceptance/cases.json).
+Historical suspension checkpoint on 2026-10-02: all agents stopped with no uncertain writes;6 Passed,2 Suspended,19 Pending. The user subsequently requested Resume. Campaign execution is active again; A-003 and A-015 resume inputs are published before fresh consumer dispatch. See [ACCEPTANCE-REPORT.md](ACCEPTANCE-REPORT.md) and [case registry](acceptance/cases.json).
 
 The source revision is campaign008_98a5562 in pchemguy/Skill-SDD-Manager, branch `revision/008_98a5562-runtime-acceptance`, target `feature/architecture-revision`. Its REVISION-REPORT.md is the authoritative revision checkpoint. Source boundary integration has not occurred.
 
