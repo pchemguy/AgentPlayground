@@ -21,7 +21,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-013 | Pending | Not executed | None |
 | A-014 | Pending | Not executed | None |
 | A-015 | Passed | Original actual pre-commit rejection preserved. Fresh consumer resumed checked/verified T-001, rechecked7 tests, committed35df4a0 and pushed isolated phase origin; stopped without T-002/merge. Independent hashes of all5 code/test files exactly match pre-resume, proving no reimplementation; main e750d1c unchanged, remote phase equals commit. Controlled hook release explicitly recorded. | [Run](runs/A-015/assessment.json) |
-| A-016 | Pending | Not executed | None |
+| A-016 | Passed | Actual clean unpublished consumer task commit57234b3 was pushed by fresh consumer before task selection/tests/edits; then both observed suites6 tests passed. Independent refs/status confirm exact retained commit now published, main e750d1c unchanged and no new commit. No credential discovery, next task or merge. | [Run](runs/A-016/assessment.json) |
 | A-017 | Pending | Not executed | None |
 | A-018 | Pending | Not executed | None |
 | A-019 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 8, Failed: 0, Blocked: 0, Suspended: 0, Running: 0, Pending: 19.
+Passed: 9, Failed: 0, Blocked: 0, Suspended: 0, Running: 0, Pending: 18.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

@@ -226,14 +226,22 @@
   },
   {
     "id": "A-016",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-016/A-016-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-016",
+    "evidence": [
+      "runs/A-016/A-016-setup.json",
+      "runs/A-016/A-016-independent.json",
+      "runs/A-016/git-snapshot.json",
+      "runs/A-016/A-016.md",
+      "runs/A-016/A-016-final.md",
+      "runs/A-016/assessment.json",
+      "runs/A-016/A-016-prompt.txt"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Actual clean unpublished consumer task commit57234b3 was pushed by fresh consumer before task selection/tests/edits; then both observed suites6 tests passed. Independent refs/status confirm exact retained commit now published, main e750d1c unchanged and no new commit. No credential discovery, next task or merge.",
+    "assessed_at": "2026-10-02T16:05:15.645708+00:00"
   },
   {
     "id": "A-017",
