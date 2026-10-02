@@ -2,6 +2,8 @@
 
 ## State and evidence
 
+User-requested suspension on 2026-10-02; all agents stopped. See [resume checkpoint](RESUME.md).
+
 Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.
 
 | Case | Status | Assessment | Records |
