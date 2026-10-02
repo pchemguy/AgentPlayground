@@ -1,11 +1,10 @@
 {
   "id": "A-018",
   "status": "Running",
-  "assessment": "Actual owned T-002 commit retained after server hook rejected push; ten tests pass, remote unchanged, policy intact, no force/next task/merge. Recovery and boundary-merge rejection pending.",
+  "assessment": "Original rejected attempt published; root released controlled server hook without changing commit/remote refs. Independent continuation request pending; boundary-merge rejection remains separate.",
   "repo": "/workspace/scratch/sdd008-A-018-task/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-018-task.md",
-    "/workspace/scratch/acceptance-out-008/A-018-task-final.md",
-    "/workspace/scratch/acceptance-out-008/A-018-task-rejection-independent.json"
+    "/workspace/scratch/acceptance-out-008/A-018-retry-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-018-restoration.json"
   ]
 }
