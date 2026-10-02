@@ -1,6 +1,8 @@
 # TextStats executable tasks
 
-Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). These are planned tasks; none has been implemented or verified. IDs are project-wide and stable. No hosted projection is active.
+Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). These are planned tasks; none has been implemented or verified. IDs are project-wide and stable.
+
+Maintained hosted tracking is active for all tasks in this list at `pchemguy/AgentPlayground` on GitHub. Use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
 
 Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integration branch `main`, remote `origin`. Preparation stops here. Future bounded implementation selects from this list through sdd-implement; the first selectable task is T-001. Phase branch names and full-phase integration gates are in PLAN. Never infer completion from this list alone.
 
