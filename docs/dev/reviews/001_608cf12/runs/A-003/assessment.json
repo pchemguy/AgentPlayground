@@ -1,20 +1,15 @@
 {
   "id": "A-003",
-  "status": "Suspended",
+  "status": "Running",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
-  "assessment": "User-requested suspension after published tracking statement d769b55, 2 phase labels and 4 native milestones. T-001 connector create returned403 Resource not accessible by integration; no task issues confirmed. No helper issue retry or second reconciliation. Resume by all-state reread and parent reuse; no uncertain/in-flight writes.",
+  "assessment": "Resumed first projection independently verified: issues1..8 match T-001..T-008 exact owning titles/markers, phase/native milestones1,1,1,2,2,3,4,4. Existing parents reused. Supplied PAT Issues write demonstrated by actual creations. Second reconciliation/foreign-field trial still pending; original connector403 retained.",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-003.md",
-    "/workspace/scratch/acceptance-out-008/A-003-labels-2.json",
-    "/workspace/scratch/acceptance-out-008/A-003-projection.json",
-    "/workspace/scratch/acceptance-out-008/A-003-milestones-1.1.json",
-    "/workspace/scratch/acceptance-out-008/A-003-labels-1.json",
-    "/workspace/scratch/acceptance-out-008/A-003-connector-issue-attempt.json",
-    "/workspace/scratch/acceptance-out-008/A-003-milestones-1.2.json",
-    "/workspace/scratch/acceptance-out-008/A-003-final.md",
-    "/workspace/scratch/acceptance-out-008/A-003-parent-api.py",
-    "/workspace/scratch/acceptance-out-008/A-003-milestones-2.1.json",
-    "/workspace/scratch/acceptance-out-008/A-003-prompt.txt",
-    "/workspace/scratch/acceptance-out-008/A-003-milestones-2.2.json"
+    "/workspace/scratch/acceptance-out-008/A-003-resume1-created.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume1.md",
+    "/workspace/scratch/acceptance-out-008/A-003-resume1-issue-drafts.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume1-after.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume1-before.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume1-final.md",
+    "/workspace/scratch/acceptance-out-008/A-003-first-independent.json"
   ]
 }

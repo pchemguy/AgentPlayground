@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "T-001",
+    "title": "[T-001] Implement the public counting core",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-001 -->\n\n**Outcome:** immutable public result and `count_text` with SPEC counting/BOM semantics; independent expected values cover empty, whitespace, Unicode, CR/LF/CRLF and trailing terminators.\n\n**Context:** Deliver the planned TextStats capability in Phase 1, Milestone 1.1. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.\n\n**Acceptance and verification:** focused unittest checks and package-level import, including BOM-only/preserved interior BOM cases. No IO or CLI behavior belongs here.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-001 -->\n",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 1
+  },
+  {
+    "task_id": "T-002",
+    "title": "[T-002] Expose UTF-8 named-file counting",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-002 -->\n\n**Outcome:** `count_file` reads real UTF-8 files and delegates BOM policy while owning/closing its handle.\n\n**Context:** Deliver the planned TextStats capability in Phase 1, Milestone 1.1. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** file adapter, public exports and file/API tests with relevant docstrings. Depends on: T-001.\n\n**Acceptance and verification:** temporary-file public API calls with fixed expected counts and success-path handle lifecycle; keep pure counting tests independent. Failure completion belongs to T-004.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-002 -->\n",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 1
+  },
+  {
+    "task_id": "T-003",
+    "title": "[T-003] Deliver the usable named-file module CLI",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-003 -->\n\n**Outcome:** one named input, default output, `--keep-bom`, exit 0 and silent stderr.\n\n**Context:** Deliver the planned TextStats capability in Phase 1, Milestone 1.1. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** CLI adapter, module entry point, CLI subprocess tests and a concise README example. Depends on: T-002.\n\n**Acceptance and verification:** actual `python -m textstats` subprocesses, exact stdout/status assertions and milestone 1.1 API/CLI demonstration with empty/BOM/mixed-newline fixtures. Record the bounded milestone exit and any human feedback; do not claim phase completion.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-003 -->\n",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 1
+  },
+  {
+    "task_id": "T-004",
+    "title": "[T-004] Complete baseline failure and usage handling",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-004 -->\n\n**Outcome:** preserve API OSError/UnicodeDecodeError, close owned handles on failure, useful CLI diagnostics/status 1 with no success output; usage status 2, help status 0, dash-prefixed filenames through `--`.\n\n**Context:** Deliver the planned TextStats capability in Phase 1, Milestone 1.2. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** file/CLI adapters, focused file and CLI tests and error docstrings. Depends on: T-003.\n\n**Acceptance and verification:** missing/unreadable/malformed UTF-8 files, invalid invocations and channel checks. Use meaningful permission-denial evidence under privileged runners and document its limits.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-004 -->\n",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 2
+  },
+  {
+    "task_id": "T-005",
+    "title": "[T-005] Verify baseline documentation and source distribution",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-005 -->\n\n**Outcome:** documented API, BOM, input/output/statuses and source usage; stdlib archive/extraction checks establish imports and module execution outside the checkout.\n\n**Context:** Deliver the planned TextStats capability in Phase 1, Milestone 1.2. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** README, all public/module docstrings, distribution tests and baseline exit evidence attached to this task. Depends on: T-004.\n\n**Acceptance and verification:** meaningful extracted-package tests, documented example checks, `python -m unittest discover -s tests -v` with nonzero tests, and all PLAN 1.2/phase 1 exits. Exclude infrastructure and secrets from distribution. Phase integration occurs only after all phase exits pass, with explicit merge and merged-state verification/push per policy.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-005 -->\n",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 2
+  },
+  {
+    "task_id": "T-006",
+    "title": "[T-006] Add and verify JSON output",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-006 -->\n\n**Outcome:** `--json` emits the SPEC object/newline and composes with BOM policy, retaining default text and failure behavior.\n\n**Context:** Deliver the planned TextStats capability in Phase 2, Milestone 2.1. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** CLI formatter/parser, CLI tests, README/docstrings and milestone 2.1 evidence. Depends on: T-005 and verified/published phase 1 integration.\n\n**Acceptance and verification:** stdlib parsed JSON keys/value types and fixed counts, default-output/channel regressions, documented demonstration and full discovery. Record the milestone decision evidence; pause on the phase branch if only 2.1 is requested.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-006 -->\n",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": 3
+  },
+  {
+    "task_id": "T-007",
+    "title": "[T-007] Support stdin through the dash input",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-007 -->\n\n**Outcome:** `-` reads strict UTF-8 stdin until EOF without closing it; both output formats/BOM modes work and read/decode failures identify stdin.\n\n**Context:** Deliver the planned TextStats capability in Phase 2, Milestone 2.2. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006.\n\n**Acceptance and verification:** binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, appropriate stream-lifetime/read-failure checks and named-file regressions. Counting remains owned by the core.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-007 -->\n",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": 4
+  },
+  {
+    "task_id": "T-008",
+    "title": "[T-008] Verify complete stdin delivery and phase exits",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-008 -->\n\n**Outcome:** accurate pipe/API/JSON examples and complete intended acceptance with packaged module invocation.\n\n**Context:** Deliver the planned TextStats capability in Phase 2, Milestone 2.2. TASKS remains authoritative for scope and evidence-backed completion.\n\n**Scope and dependencies:** README, distribution/CLI integration checks and phase 2 exit evidence attached to this task. Depends on: T-007.\n\n**Acceptance and verification:** both formats and sources compose; named-file errors/defaults remain correct; extracted-source stdin smoke, documentation checks and full nonempty unittest discovery meet PLAN 2.2/phase 2 exits. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n**Intended result:** The stated task outcome is delivered after its prescribed acceptance and verification; this issue is planned work.\n\n<!-- /sdd-forge:task-id=T-008 -->\n",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": 4
+  }
+]
