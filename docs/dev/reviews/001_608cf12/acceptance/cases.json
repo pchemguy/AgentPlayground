@@ -78,18 +78,21 @@
   },
   {
     "id": "A-004",
-    "status": "Running",
+    "status": "Passed",
     "prompt_path": "runs/A-004/A-004-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-004",
     "evidence": [
+      "runs/A-004/A-004-final.md",
       "runs/A-004/git-snapshot.json",
+      "runs/A-004/A-004-independent.json",
       "runs/A-004/A-004-prompt.txt",
+      "runs/A-004/A-004.md",
       "runs/A-004/assessment.json"
     ],
     "native_transcript": null,
-    "assessment": "Next-task-only live implementation request published after independently passed A-003 and remote containment. Baseline live main d769b55; no task work yet claimed.",
-    "assessed_at": "2026-10-02T16:10:51.638295+00:00"
+    "assessment": "Actual first task T-001 on phase1: observed behavioral RED and9-test GREEN/full verification, professional docs, task commit3b201a3 pushed and issue1 completed with evidence. Independent literal API/BOM/newline/immutability checks passed; main d769b55 unchanged, no CLI/next task/partial merge. Foreign issue body/label retained.",
+    "assessed_at": "2026-10-02T16:24:26.173092+00:00"
   },
   {
     "id": "A-005",
