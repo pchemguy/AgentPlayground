@@ -78,14 +78,18 @@
   },
   {
     "id": "A-004",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Running",
+    "prompt_path": "runs/A-004/A-004-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-004",
+    "evidence": [
+      "runs/A-004/git-snapshot.json",
+      "runs/A-004/A-004-prompt.txt",
+      "runs/A-004/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Next-task-only live implementation request published after independently passed A-003 and remote containment. Baseline live main d769b55; no task work yet claimed.",
+    "assessed_at": "2026-10-02T16:10:51.638295+00:00"
   },
   {
     "id": "A-005",

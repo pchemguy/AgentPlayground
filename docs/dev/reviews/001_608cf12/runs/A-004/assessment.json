@@ -1,0 +1,9 @@
+{
+  "id": "A-004",
+  "status": "Running",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Next-task-only live implementation request published after independently passed A-003 and remote containment. Baseline live main d769b55; no task work yet claimed.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-004-prompt.txt"
+  ]
+}
