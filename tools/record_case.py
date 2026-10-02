@@ -5,6 +5,7 @@ EVAL=Path('/workspace/scratch/AgentPlayground-evidence-008'); CAM=EVAL/'docs/dev
 data=json.loads(Path(sys.argv[1]).read_text());id=data['id'];run=CAM/'runs'/id;run.mkdir(parents=True,exist_ok=True)
 for source in data.get('artifacts',[]):
  p=Path(source)
+ assert p.exists(), f'Required artifact missing: {p}'
  if p.exists():
   if p.is_dir():shutil.copytree(p,run/p.name,dirs_exist_ok=True)
   else:shutil.copy2(p,run/p.name)
