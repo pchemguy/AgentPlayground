@@ -1,0 +1,12 @@
+test_public_counting_call (test_api.PublicApiTests.test_public_counting_call) ... ok
+test_result_is_immutable (test_api.PublicApiTests.test_result_is_immutable) ... ok
+test_bom_only_and_retention (test_counting.CountingTests.test_bom_only_and_retention) ... ok
+test_contract_examples (test_counting.CountingTests.test_contract_examples) ... ok
+test_each_terminator_and_final_segment (test_counting.CountingTests.test_each_terminator_and_final_segment) ... ok
+test_strip_exactly_one_leading_bom_and_preserve_interior (test_counting.CountingTests.test_strip_exactly_one_leading_bom_and_preserve_interior) ... ok
+test_unicode_whitespace_does_not_add_lines (test_counting.CountingTests.test_unicode_whitespace_does_not_add_lines) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

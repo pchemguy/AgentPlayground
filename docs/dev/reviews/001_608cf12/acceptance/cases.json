@@ -185,14 +185,25 @@
   },
   {
     "id": "A-015",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Suspended",
+    "prompt_path": "runs/A-015/A-015-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-015",
+    "evidence": [
+      "runs/A-015/A-015.md",
+      "runs/A-015/A-015-independent.json",
+      "runs/A-015/A-015-prompt.txt",
+      "runs/A-015/A-015-final.md",
+      "runs/A-015/A-015-red.log",
+      "runs/A-015/git-snapshot.json",
+      "runs/A-015/A-015-verify.log",
+      "runs/A-015/assessment.json",
+      "runs/A-015/A-015-checkpoint.bundle",
+      "runs/A-015/A-015-green.log"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Actual consumer verified T-001 (7 tests) and checked it; controlled pre-commit hook rejected commit. Six owned staged paths retained on phase1 at e750d1c. No retry/commit/push. User suspended before fresh continuation; case not passed. Independent snapshot and Git bundle retain pending contents/HEAD/hook and RED/GREEN logs.",
+    "assessed_at": "2026-10-02T13:35:20.198320+00:00"
   },
   {
     "id": "A-016",

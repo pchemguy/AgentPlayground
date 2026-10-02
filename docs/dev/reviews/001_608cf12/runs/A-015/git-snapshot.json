@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+  "parents": [
+    "61f9670736c58b841519f9484239ee05eff58e63"
+  ],
+  "status": [
+    "M  docs/dev/TASKS.md",
+    "A  tests/__init__.py",
+    "A  tests/test_api.py",
+    "A  tests/test_counting.py",
+    "A  textstats/__init__.py",
+    "A  textstats/counting.py",
+    "?? tests/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/__pycache__/test_counting.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "0a730704bd48ec9324fda7d178f60b6cd557a42a",
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
+  },
+  "changed_paths": [
+    "docs/dev/ARCHITECTURE.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md"
+  ]
+}
