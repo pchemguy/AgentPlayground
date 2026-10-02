@@ -1,7 +1,7 @@
 {
   "id": "A-018",
-  "status": "Running",
-  "assessment": "Actual rejected task publication recovery verified: same retained7c29721 pushed before later checks, no new commit/force/next task/merge. Server-release intervention retained. Boundary-merge rejection still pending.",
+  "status": "Suspended",
+  "assessment": "Suspended with task rejection/recovery subcase complete: original7c29721 published after controlled hook release, ten tests, no replacement commit/force/advancement. Merge-publication rejection/recovery subcase not started; await actual complete-phase checkpoint.",
   "repo": "/workspace/scratch/sdd008-A-018-task/repo",
   "artifacts": [
     "/workspace/scratch/acceptance-out-008/A-018-retry.md",
