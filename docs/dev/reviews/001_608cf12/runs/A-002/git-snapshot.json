@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "branch": "main",
+  "head": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+  "parents": [
+    "61f9670736c58b841519f9484239ee05eff58e63"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "b228674368b3ace7864eb009b3b39d4cbc9c070c",
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
+  },
+  "changed_paths": [
+    "docs/dev/ARCHITECTURE.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md"
+  ]
+}
