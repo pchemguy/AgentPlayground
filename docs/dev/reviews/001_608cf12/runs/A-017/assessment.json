@@ -1,0 +1,11 @@
+{
+  "id": "A-017",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-017/repo",
+  "assessment": "Actual consumer reproduced accepted lone-CR regression (7 tests/3 failures), repaired task-owned pending code, rechecked7 tests and pushed8a204f9. Independent literal2lines/2words and refs/checklist confirm T001-only completion; origin/main unchanged, no dependent task/partial merge. Initial failing attempt retained. Assessor local-main assumption corrected to actual origin/main without changing oracle.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-017.md",
+    "/workspace/scratch/acceptance-out-008/A-017-final.md",
+    "/workspace/scratch/acceptance-out-008/A-017-independent.json"
+  ]
+}

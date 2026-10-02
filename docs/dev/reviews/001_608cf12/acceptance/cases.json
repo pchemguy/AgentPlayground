@@ -252,14 +252,23 @@
   },
   {
     "id": "A-017",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-017/A-017-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-017",
+    "evidence": [
+      "runs/A-017/A-017-final.md",
+      "runs/A-017/git-snapshot.json",
+      "runs/A-017/A-017.md",
+      "runs/A-017/A-017-prompt.txt",
+      "runs/A-017/A-017-before-failure.log",
+      "runs/A-017/A-017-independent.json",
+      "runs/A-017/A-017-setup.json",
+      "runs/A-017/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Actual consumer reproduced accepted lone-CR regression (7 tests/3 failures), repaired task-owned pending code, rechecked7 tests and pushed8a204f9. Independent literal2lines/2words and refs/checklist confirm T001-only completion; origin/main unchanged, no dependent task/partial merge. Initial failing attempt retained. Assessor local-main assumption corrected to actual origin/main without changing oracle.",
+    "assessed_at": "2026-10-02T16:26:34.774577+00:00"
   },
   {
     "id": "A-018",

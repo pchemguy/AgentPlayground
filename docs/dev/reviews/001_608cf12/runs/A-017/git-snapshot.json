@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "8a204f97e930b61c95c646f5e897cf1fed742dd9",
+  "parents": [
+    "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+  ],
+  "status": [
+    "?? tests/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/__pycache__/test_counting.cpython-312.pyc",
+    "?? tests/__pycache__/test_regression.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+    "refs/heads/phase/1-named-file-baseline": "8a204f97e930b61c95c646f5e897cf1fed742dd9"
+  },
+  "changed_paths": [
+    "docs/dev/TASKS.md",
+    "tests/test_regression.py"
+  ]
+}
