@@ -349,16 +349,20 @@
     "evidence": [
       "runs/A-022/A-022-incorporate-final.md",
       "runs/A-022/git-snapshot.json",
+      "runs/A-022/A-022-selection.md",
       "runs/A-022/A-022-setup.json",
+      "runs/A-022/A-022-selection-independent.json",
       "runs/A-022/A-022-prompt.txt",
       "runs/A-022/A-022-incorporate.md",
+      "runs/A-022/A-022-selection-final.md",
       "runs/A-022/A-022-incorporate-independent.json",
       "runs/A-022/assessment.json",
+      "runs/A-022/A-022-reassess-prompt.txt",
       "runs/A-022/A-022-selection-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Actual selected incorporation verified: T-001 historical evidence/checked box preserved with durable pending reassessment, source retained, no product edits, explicit feature-to-phase merge and publication. Selection and execution reassessment remain pending.",
-    "assessed_at": "2026-10-02T16:44:12.406783+00:00"
+    "assessment": "Independent unchanged-state check confirms selection/orientation included checked T-001 pending reassessment and identified missing opposite-BOM retained-result test; no runtime/mutation. Actual in-scope reassessment now requested.",
+    "assessed_at": "2026-10-02T16:49:25.072626+00:00"
   },
   {
     "id": "A-023",

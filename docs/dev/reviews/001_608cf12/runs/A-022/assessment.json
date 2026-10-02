@@ -1,12 +1,12 @@
 {
   "id": "A-022",
   "status": "Running",
-  "assessment": "Actual selected incorporation verified: T-001 historical evidence/checked box preserved with durable pending reassessment, source retained, no product edits, explicit feature-to-phase merge and publication. Selection and execution reassessment remain pending.",
+  "assessment": "Independent unchanged-state check confirms selection/orientation included checked T-001 pending reassessment and identified missing opposite-BOM retained-result test; no runtime/mutation. Actual in-scope reassessment now requested.",
   "repo": "/workspace/scratch/sdd008-A-022/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-022-incorporate.md",
-    "/workspace/scratch/acceptance-out-008/A-022-incorporate-final.md",
-    "/workspace/scratch/acceptance-out-008/A-022-incorporate-independent.json",
-    "/workspace/scratch/acceptance-out-008/A-022-selection-prompt.txt"
+    "/workspace/scratch/acceptance-out-008/A-022-selection.md",
+    "/workspace/scratch/acceptance-out-008/A-022-selection-final.md",
+    "/workspace/scratch/acceptance-out-008/A-022-selection-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-022-reassess-prompt.txt"
   ]
 }
