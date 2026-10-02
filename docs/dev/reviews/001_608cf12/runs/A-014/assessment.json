@@ -1,11 +1,10 @@
 {
   "id": "A-014",
   "status": "Running",
-  "assessment": "Out-of-range prerequisite subcase independently verified: T-003..T-006 request blocked by unchecked/unimplemented T-002; no edits/tests/publication/branch transition. Sequential cross-phase subcase remains pending.",
-  "repo": "/workspace/scratch/sdd008-A-014-prerequisite/repo",
+  "assessment": "Prerequisite-block subcase passed; actual cross-phase T-004..T-006 execution input now supplied in isolated live-milestone fork with hosting disabled. Sequential phase exits/publication pending.",
+  "repo": "/workspace/scratch/sdd008-A-014-cross/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-014-prerequisite.md",
-    "/workspace/scratch/acceptance-out-008/A-014-prerequisite-final.md",
-    "/workspace/scratch/acceptance-out-008/A-014-prerequisite-independent.json"
+    "/workspace/scratch/acceptance-out-008/A-014-cross-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-setup.json"
   ]
 }

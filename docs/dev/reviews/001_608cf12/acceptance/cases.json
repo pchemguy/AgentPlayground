@@ -216,7 +216,7 @@
   {
     "id": "A-014",
     "status": "Running",
-    "prompt_path": "runs/A-014/A-014-prerequisite-prompt.txt",
+    "prompt_path": "runs/A-014/A-014-cross-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-014",
     "evidence": [
@@ -224,13 +224,15 @@
       "runs/A-014/A-014-prerequisite.md",
       "runs/A-014/A-014-prerequisite-independent.json",
       "runs/A-014/A-014-prerequisite-setup.json",
+      "runs/A-014/A-014-cross-prompt.txt",
+      "runs/A-014/A-014-cross-setup.json",
       "runs/A-014/A-014-prerequisite-final.md",
       "runs/A-014/assessment.json",
       "runs/A-014/A-014-prerequisite-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Out-of-range prerequisite subcase independently verified: T-003..T-006 request blocked by unchecked/unimplemented T-002; no edits/tests/publication/branch transition. Sequential cross-phase subcase remains pending.",
-    "assessed_at": "2026-10-02T16:42:06.764739+00:00"
+    "assessment": "Prerequisite-block subcase passed; actual cross-phase T-004..T-006 execution input now supplied in isolated live-milestone fork with hosting disabled. Sequential phase exits/publication pending.",
+    "assessed_at": "2026-10-02T16:58:58.326502+00:00"
   },
   {
     "id": "A-015",

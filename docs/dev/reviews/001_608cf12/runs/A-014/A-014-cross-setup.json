@@ -1,0 +1,7 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-014-cross/repo",
+  "setup_commit": "83eab02a70e7757e11f04f46a64849f69ba64df0",
+  "initial_main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+  "task_checkpoint": "8836c497ec94946580948f68c4ffe79713936a8a",
+  "scope": "Root fixture-only hosting isolation, no task work/branch boundary performed."
+}

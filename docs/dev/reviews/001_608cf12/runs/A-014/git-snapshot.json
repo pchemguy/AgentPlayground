@@ -1,22 +1,18 @@
 {
   "schema_version": 1,
   "branch": "phase/1-named-file-baseline",
-  "head": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+  "head": "83eab02a70e7757e11f04f46a64849f69ba64df0",
   "parents": [
-    "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
+    "8836c497ec94946580948f68c4ffe79713936a8a"
   ],
   "status": [],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
-    "refs/heads/phase/1-named-file-baseline": "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+    "refs/heads/evaluation/008-runtime-acceptance": "4a37e440599e2d699acfb6810b30daafd15cbbad",
+    "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "refs/heads/phase/1-named-file-baseline": "83eab02a70e7757e11f04f46a64849f69ba64df0"
   },
   "changed_paths": [
-    "docs/dev/TASKS.md",
-    "tests/__init__.py",
-    "tests/test_api.py",
-    "tests/test_counting.py",
-    "textstats/__init__.py",
-    "textstats/counting.py"
+    "AGENTS.md"
   ]
 }
