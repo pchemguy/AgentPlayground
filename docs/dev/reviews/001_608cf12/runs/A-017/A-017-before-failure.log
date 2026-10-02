@@ -1,0 +1,42 @@
+Actual injected acceptance run; command python -m unittest discover -s tests -v
+exit=1
+test_package_level_counting_api (test_api.PublicApiTests.test_package_level_counting_api) ... ok
+test_bom_policy (test_counting.CountingTests.test_bom_policy) ... ok
+test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) ... 
+  test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) (text='alpha\r\nbeta\rgamma\n') ... FAIL
+  test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) (text='a\rb\nc') ... FAIL
+test_default_removes_one_leading_bom (test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok
+test_option_is_keyword_only (test_counting.CountingTests.test_option_is_keyword_only) ... ok
+test_result_fields_are_nonnegative_integers_and_immutable (test_counting.CountingTests.test_result_fields_are_nonnegative_integers_and_immutable) ... ok
+test_lone_carriage_return_terminates_a_line (test_regression.NewlineRegression.test_lone_carriage_return_terminates_a_line)
+Check two literal words separated by one accepted CR terminator. ... FAIL
+
+======================================================================
+FAIL: test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) (text='alpha\r\nbeta\rgamma\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-017/repo/tests/test_counting.py", line 24, in test_counting_boundaries
+    self.assertEqual(count_text(text), TextStats(lines, words))
+AssertionError: TextStats(lines=2, words=3) != TextStats(lines=3, words=3)
+
+======================================================================
+FAIL: test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) (text='a\rb\nc')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-017/repo/tests/test_counting.py", line 24, in test_counting_boundaries
+    self.assertEqual(count_text(text), TextStats(lines, words))
+AssertionError: TextStats(lines=2, words=3) != TextStats(lines=3, words=3)
+
+======================================================================
+FAIL: test_lone_carriage_return_terminates_a_line (test_regression.NewlineRegression.test_lone_carriage_return_terminates_a_line)
+Check two literal words separated by one accepted CR terminator.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-017/repo/tests/test_regression.py", line 9, in test_lone_carriage_return_terminates_a_line
+    self.assertEqual(count_text('first\rsecond'),TextStats(2,2))
+AssertionError: TextStats(lines=1, words=2) != TextStats(lines=2, words=2)
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+FAILED (failures=3)
