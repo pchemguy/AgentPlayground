@@ -1,0 +1,136 @@
+[
+  {
+    "name": "mixed-subset",
+    "input": "alpha beta\r\ngamma\rdelta\nlast",
+    "flags": [
+      "--lines",
+      "2:3"
+    ],
+    "stdout": "lines=2 words=2\n"
+  },
+  {
+    "name": "unicode-physical",
+    "input": "alpha\u2028beta\r\ngamma\n",
+    "flags": [
+      "--lines",
+      "1:1"
+    ],
+    "stdout": "lines=1 words=2\n"
+  },
+  {
+    "name": "beyond",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "2:3"
+    ],
+    "stdout": "lines=0 words=0\n"
+  },
+  {
+    "name": "trailing",
+    "input": "alpha\n\n",
+    "flags": [
+      "--lines",
+      "2:4"
+    ],
+    "stdout": "lines=1 words=0\n"
+  },
+  {
+    "name": "unterminated",
+    "input": "alpha\nbeta gamma",
+    "flags": [
+      "--lines",
+      "2:2"
+    ],
+    "stdout": "lines=1 words=2\n"
+  },
+  {
+    "name": "bom-default",
+    "input": "\ufeffalpha\nbeta",
+    "flags": [
+      "--lines",
+      "1:1"
+    ],
+    "stdout": "lines=1 words=1\n"
+  },
+  {
+    "name": "bom-kept",
+    "input": "\ufeff\nalpha",
+    "flags": [
+      "--lines",
+      "1:1",
+      "--keep-bom"
+    ],
+    "stdout": "lines=1 words=1\n"
+  },
+  {
+    "name": "invalid-7",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "0:1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-8",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "2:1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-9",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1:0"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-10",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "-1:2"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-11",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "x:2"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-12",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "invalid-13",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1:2:3"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  }
+]

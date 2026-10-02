@@ -1,0 +1,32 @@
+[
+  {
+    "name": "missing",
+    "source": "missing",
+    "returncode": 1,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "bad-utf8",
+    "input_hex": "ff",
+    "returncode": 1,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "no-input",
+    "source": "argv",
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "unknown-option",
+    "source": "argv",
+    "flags": [
+      "--nonexistent"
+    ],
+    "args": [
+      "x"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  }
+]

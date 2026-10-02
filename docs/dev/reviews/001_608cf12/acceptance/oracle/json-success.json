@@ -1,0 +1,91 @@
+[
+  {
+    "name": "empty",
+    "input": "",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 0,
+      "words": 0
+    }
+  },
+  {
+    "name": "mixed",
+    "input": "alpha beta\r\ngamma\rdelta\n",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 3,
+      "words": 4
+    }
+  },
+  {
+    "name": "unicode-separator",
+    "input": "alpha\u2028beta\n",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 1,
+      "words": 2
+    }
+  },
+  {
+    "name": "trailing",
+    "input": "alpha\n\n",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 2,
+      "words": 1
+    }
+  },
+  {
+    "name": "unterminated",
+    "input": "alpha beta",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 1,
+      "words": 2
+    }
+  },
+  {
+    "name": "bom-empty",
+    "input": "\ufeff",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 0,
+      "words": 0
+    }
+  },
+  {
+    "name": "bom-retained",
+    "input": "\ufeff",
+    "flags": [
+      "--keep-bom",
+      "--json"
+    ],
+    "json": {
+      "lines": 1,
+      "words": 1
+    }
+  },
+  {
+    "name": "double-bom",
+    "input": "\ufeff\ufeff",
+    "flags": [
+      "--json"
+    ],
+    "json": {
+      "lines": 1,
+      "words": 1
+    }
+  }
+]
