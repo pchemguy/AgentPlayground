@@ -1,0 +1,33 @@
+{
+  "mode": "offline",
+  "issue": {
+    "number": 901,
+    "title": "[T-001] Implement the public counting core",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-001 -->\n\nVerified task core scope.\n\n<!-- /sdd-forge:task-id=T-001 -->\n\nHuman material retained.",
+    "state": "open",
+    "state_reason": null,
+    "html_url": "https://github.com/pchemguy/AgentPlayground/issues/901",
+    "labels": [
+      {
+        "name": "sdd-phase-1-Named-file-baseline"
+      },
+      {
+        "name": "external-note"
+      }
+    ],
+    "milestone": {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI"
+    }
+  },
+  "comments": [],
+  "requests": [
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues?state=all",
+      "payload": {},
+      "mode": "offline",
+      "status": 503
+    }
+  ]
+}

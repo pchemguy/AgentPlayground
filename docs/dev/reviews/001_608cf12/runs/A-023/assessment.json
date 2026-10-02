@@ -1,0 +1,12 @@
+{
+  "id": "A-023",
+  "status": "Running",
+  "repo": "/workspace/scratch/sdd008-A-023/repo",
+  "assessment": "Fresh consumer received controlled503 on actual issue lookup and retained verified T-001/local commit, reported host pending, guessed no association and issued no writes. Independent provider log confirms GET-only outage attempts, issue stillopen and no comments. Restoration/uncertain-write continuation pending.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-023-offline-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-023-offline.md",
+    "/workspace/scratch/acceptance-out-008/A-023-offline-final.md",
+    "/workspace/scratch/acceptance-out-008/A-023-offline-independent.json"
+  ]
+}

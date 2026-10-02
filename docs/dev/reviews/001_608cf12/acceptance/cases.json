@@ -319,14 +319,23 @@
   },
   {
     "id": "A-023",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Running",
+    "prompt_path": "runs/A-023/A-023-offline-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-023",
+    "evidence": [
+      "runs/A-023/git-snapshot.json",
+      "runs/A-023/A-023-offline-prompt.txt",
+      "runs/A-023/A-023-offline-independent.json",
+      "runs/A-023/A-023-offline.md",
+      "runs/A-023/A-023-adapter-selfcheck.log",
+      "runs/A-023/A-023-offline-final.md",
+      "runs/A-023/assessment.json",
+      "runs/A-023/A-023-initial-state.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Fresh consumer received controlled503 on actual issue lookup and retained verified T-001/local commit, reported host pending, guessed no association and issued no writes. Independent provider log confirms GET-only outage attempts, issue stillopen and no comments. Restoration/uncertain-write continuation pending.",
+    "assessed_at": "2026-10-02T16:08:46.809820+00:00"
   },
   {
     "id": "A-024",
