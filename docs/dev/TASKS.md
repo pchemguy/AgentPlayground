@@ -9,7 +9,7 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
 ## Phase 1 — Named-file baseline
 
 - [ ] Phase 1 — Named-file baseline
-    - [ ] Milestone 1.1 — Usable named-file API and CLI
+    - [x] Milestone 1.1 — Usable named-file API and CLI
         - [x] T-001 — Implement the public counting core
             Scope: `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.
             Outcome: immutable public result and `count_text` with SPEC counting/BOM semantics; independent expected values cover empty, whitespace, Unicode, CR/LF/CRLF and trailing terminators. Evidence: focused unittest checks and package-level import, including BOM-only/preserved interior BOM cases. No IO or CLI behavior belongs here.
@@ -20,9 +20,11 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
             Scope: file adapter, public exports and file/API tests with relevant docstrings. Depends on: T-001.
             Outcome: `count_file` reads real UTF-8 files and delegates BOM policy while owning/closing its handle. Evidence: temporary-file public API calls with fixed expected counts and success-path handle lifecycle; keep pure counting tests independent. Failure completion belongs to T-004.
             Verified checkpoint (Python 3.12.14): `python -m unittest tests.unit.test_files -v` observed RED with 3 tests/15 scenario errors from the intentionally unimplemented API, then GREEN with 3 passing tests. `python -m unittest discover -s tests -v` passed 12 tests. Real temporary files exercised public imports, string/Path paths, strict UTF-8 success, BOM modes, Unicode whitespace, mixed/trailing terminators, unchanged bytes and silent calls; instrumented real handles were closed on success. Module/facade/public API docstrings reviewed. Failure-path acceptance remains T-004. Working branch `phase/1-named-file-baseline`, target `main`, remote `origin`; no parent exit claimed at this task checkpoint.
-        - [ ] T-003 — Deliver the usable named-file module CLI
+        - [x] T-003 — Deliver the usable named-file module CLI
             Scope: CLI adapter, module entry point, CLI subprocess tests and a concise README example. Depends on: T-002.
             Outcome: one named input, default output, `--keep-bom`, exit 0 and silent stderr. Evidence: actual `python -m textstats` subprocesses, exact stdout/status assertions and milestone 1.1 API/CLI demonstration with empty/BOM/mixed-newline fixtures. Record the bounded milestone exit and any human feedback; do not claim phase completion.
+            Verified checkpoint (Python 3.12.14): `python -m unittest tests.integration.test_cli -v` observed RED with 5 tests/12 scenario failures at the explicitly unimplemented CLI, then GREEN with 5 passing tests. `python -m unittest discover -s tests -v` passed all 17 tests, without skips/warnings. Real module subprocesses verify exact stdout/status 0/silent stderr for named inputs, empty/whitespace, Unicode, BOM modes/interior BOM, mixed/trailing terminators, spaces in paths, unchanged input, and literal dash-as-filename before stdin delivery. README shell/API examples executed verbatim against the source package; module/API docstrings and local links reviewed. CLI read/decode failure translation remains T-004; JSON/stdin remain phase 2.
+            Milestone 1.1 exit verified: real named-file public API and module CLI demonstration yielded empty (0,0), BOM removed (2,2), BOM retained (2,3), and Unicode/mixed/trailing terminators (3,4), with exact default output and success channels. All T-001–T-003 task conditions and the PLAN 1.1 usable-success slice are met. No human usability feedback or continuation decision is inferred. Pause on published `phase/1-named-file-baseline` with target `main` unchanged; phase 1 remains incomplete, T-004/T-005 unstarted, no merge authorized at this checkpoint.
     - [ ] Milestone 1.2 — Reliable baseline and distribution
         - [ ] T-004 — Complete baseline failure and usage handling
             Scope: file/CLI adapters, focused file and CLI tests and error docstrings. Depends on: T-003.
