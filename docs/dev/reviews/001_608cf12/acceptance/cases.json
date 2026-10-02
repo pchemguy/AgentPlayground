@@ -223,24 +223,28 @@
   },
   {
     "id": "A-014",
-    "status": "Running",
+    "status": "Suspended",
     "prompt_path": "runs/A-014/A-014-cross-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-014",
     "evidence": [
+      "runs/A-014/A-014-cross.md",
       "runs/A-014/git-snapshot.json",
       "runs/A-014/A-014-prerequisite.md",
+      "runs/A-014/A-014-cross-T004-red-repaired-fixture.log",
       "runs/A-014/A-014-prerequisite-independent.json",
       "runs/A-014/A-014-prerequisite-setup.json",
       "runs/A-014/A-014-cross-prompt.txt",
       "runs/A-014/A-014-cross-setup.json",
       "runs/A-014/A-014-prerequisite-final.md",
       "runs/A-014/assessment.json",
+      "runs/A-014/A-014-cross-final.md",
+      "runs/A-014/A-014-cross-T004-red.log",
       "runs/A-014/A-014-prerequisite-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Prerequisite-block subcase passed; actual cross-phase T-004..T-006 execution input now supplied in isolated live-milestone fork with hosting disabled. Sequential phase exits/publication pending.",
-    "assessed_at": "2026-10-02T16:58:58.326502+00:00"
+    "assessment": "Suspended by user during cross-phase T-004 RED at83eab02; two unstaged tests retained, no production fix/commit/merge/transition. Prior out-of-range prerequisite subcase verified; sequential phase case unfinished. Exact pending patch/archive/bundle and genuine failed logs retained.",
+    "assessed_at": "2026-10-02T17:08:41.527995+00:00"
   },
   {
     "id": "A-015",

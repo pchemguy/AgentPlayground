@@ -19,7 +19,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-011 | Pending | Not executed | None |
 | A-012 | Pending | Not executed | None |
 | A-013 | Pending | Not executed | None |
-| A-014 | Running | Prerequisite-block subcase passed; actual cross-phase T-004..T-006 execution input now supplied in isolated live-milestone fork with hosting disabled. Sequential phase exits/publication pending. | [Run](runs/A-014/assessment.json) |
+| A-014 | Suspended | Suspended by user during cross-phase T-004 RED at83eab02; two unstaged tests retained, no production fix/commit/merge/transition. Prior out-of-range prerequisite subcase verified; sequential phase case unfinished. Exact pending patch/archive/bundle and genuine failed logs retained. | [Run](runs/A-014/assessment.json) |
 | A-015 | Passed | Original actual pre-commit rejection preserved. Fresh consumer resumed checked/verified T-001, rechecked7 tests, committed35df4a0 and pushed isolated phase origin; stopped without T-002/merge. Independent hashes of all5 code/test files exactly match pre-resume, proving no reimplementation; main e750d1c unchanged, remote phase equals commit. Controlled hook release explicitly recorded. | [Run](runs/A-015/assessment.json) |
 | A-016 | Passed | Actual clean unpublished consumer task commit57234b3 was pushed by fresh consumer before task selection/tests/edits; then both observed suites6 tests passed. Independent refs/status confirm exact retained commit now published, main e750d1c unchanged and no new commit. No credential discovery, next task or merge. | [Run](runs/A-016/assessment.json) |
 | A-017 | Passed | Actual consumer reproduced accepted lone-CR regression (7 tests/3 failures), repaired task-owned pending code, rechecked7 tests and pushed8a204f9. Independent literal2lines/2words and refs/checklist confirm T001-only completion; origin/main unchanged, no dependent task/partial merge. Initial failing attempt retained. Assessor local-main assumption corrected to actual origin/main without changing oracle. | [Run](runs/A-017/assessment.json) |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 14, Failed: 0, Blocked: 0, Suspended: 1, Running: 2, Pending: 10.
+Passed: 14, Failed: 0, Blocked: 0, Suspended: 2, Running: 1, Pending: 10.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.
