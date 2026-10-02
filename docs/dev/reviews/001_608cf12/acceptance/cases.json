@@ -328,14 +328,19 @@
   },
   {
     "id": "A-022",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Running",
+    "prompt_path": "runs/A-022/A-022-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-022",
+    "evidence": [
+      "runs/A-022/git-snapshot.json",
+      "runs/A-022/A-022-setup.json",
+      "runs/A-022/A-022-prompt.txt",
+      "runs/A-022/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Accepted retained-result verification delta supplied on isolated feature branch; actual document incorporation consumer pending. Fork setup is fixture-only, not a pass.",
+    "assessed_at": "2026-10-02T16:38:57.084851+00:00"
   },
   {
     "id": "A-023",

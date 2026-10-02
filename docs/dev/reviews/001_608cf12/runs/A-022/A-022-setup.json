@@ -1,0 +1,8 @@
+{
+  "base": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+  "branch": "feature/001_57234b3-call-independence",
+  "input_commit": "9c033dd11e79ed21e0bc2e3dcd1ce7463b5927c6",
+  "origin": "/workspace/scratch/sdd008-A-022/remote.git",
+  "main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+  "fixture_role": "Provides accepted source only, does not perform incorporation or consumer decisions."
+}

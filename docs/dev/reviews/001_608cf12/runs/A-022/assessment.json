@@ -1,0 +1,10 @@
+{
+  "id": "A-022",
+  "status": "Running",
+  "assessment": "Accepted retained-result verification delta supplied on isolated feature branch; actual document incorporation consumer pending. Fork setup is fixture-only, not a pass.",
+  "repo": "/workspace/scratch/sdd008-A-022/repo",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-022-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-022-setup.json"
+  ]
+}
