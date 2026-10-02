@@ -1,0 +1,66 @@
+{
+  "consumer_workers_available": false,
+  "new_agents_started": 0,
+  "reason": "Runtime agent inventory contained only /root; prior consumer workers are unavailable. User prohibits additional agents and requires oracle isolation.",
+  "product_tests_run": false,
+  "hosted_reads_or_writes": false,
+  "repositories": {
+    "A-006": {
+      "head": "b9fabb0aab69bf891386f9bf47c503b78be6cf15",
+      "branch": "phase/1-named-file-baseline",
+      "owned_file_and_index_hashes_match": true,
+      "both_binary_patches_match": true,
+      "saved_bundle_verified": true,
+      "remote_heads": [
+        "876c488c95587794ea5f6a6e4a5f944b753eac76\trefs/heads/evaluation/008-runtime-acceptance",
+        "d769b55aa63f92d5ccbd8022cb9e87f07e541fae\trefs/heads/main",
+        "b9fabb0aab69bf891386f9bf47c503b78be6cf15\trefs/heads/phase/1-named-file-baseline"
+      ],
+      "index_sha256": "f1fb62ffa1827fe172885cca0ae3f2f2d98aea6d01cf58a775d68a8ed9508a7a"
+    },
+    "A-014": {
+      "head": "83eab02a70e7757e11f04f46a64849f69ba64df0",
+      "branch": "phase/1-named-file-baseline",
+      "owned_file_and_index_hashes_match": true,
+      "both_binary_patches_match": true,
+      "saved_bundle_verified": true,
+      "remote_heads": [
+        "4a37e440599e2d699acfb6810b30daafd15cbbad\trefs/heads/evaluation/008-runtime-acceptance",
+        "d769b55aa63f92d5ccbd8022cb9e87f07e541fae\trefs/heads/main",
+        "83eab02a70e7757e11f04f46a64849f69ba64df0\trefs/heads/phase/1-named-file-baseline"
+      ],
+      "index_sha256": "57455ee15df6ac35f902356be09d9090db065888455d5835ccac83c6604d6d35"
+    },
+    "A-018": {
+      "head": "7c29721c438ca31d681d26178f38dc471f822df4",
+      "status": [],
+      "remote_heads": [
+        "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main",
+        "7c29721c438ca31d681d26178f38dc471f822df4\trefs/heads/phase/1-named-file-baseline"
+      ]
+    },
+    "source": {
+      "head": "4d5851eb3500717ded281f02263a78d4b8ad6180",
+      "branch": "revision/008_98a5562-runtime-acceptance",
+      "status": [
+        "?? .codex/"
+      ]
+    },
+    "live": {
+      "head": "b9fabb0aab69bf891386f9bf47c503b78be6cf15",
+      "branch": "phase/1-named-file-baseline",
+      "status": [
+        "M  README.md",
+        "M  docs/dev/TASKS.md",
+        "A  tests/integration/test_distribution.py",
+        "?? tests/integration/__pycache__/",
+        "?? tests/unit/__pycache__/",
+        "?? textstats/__pycache__/"
+      ]
+    }
+  },
+  "pinned_package": {
+    "source_commit": "529e98d4d3cd7002e3a49e34394552a44bf0a8d0",
+    "files_verified": 97
+  }
+}

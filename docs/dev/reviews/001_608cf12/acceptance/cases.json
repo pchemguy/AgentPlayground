@@ -127,22 +127,23 @@
   },
   {
     "id": "A-006",
-    "status": "Suspended",
+    "status": "Blocked",
     "prompt_path": "runs/A-006/A-006-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-006",
     "evidence": [
-      "runs/A-006/A-006-prompt.txt",
-      "runs/A-006/A-006-host-events-summary.json",
-      "runs/A-006/git-snapshot.json",
       "runs/A-006/save_pending.py",
-      "runs/A-006/A-006.md",
       "runs/A-006/A-006-final.md",
-      "runs/A-006/assessment.json"
+      "runs/A-006/A-006-host-events-summary.json",
+      "runs/A-006/assessment.json",
+      "runs/A-006/resumption-blocker-20261002.json",
+      "runs/A-006/git-snapshot.json",
+      "runs/A-006/A-006.md",
+      "runs/A-006/A-006-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Suspended by user: T-004b9fabb0 published/25 tests, issue4 evidence exists but closure not attempted; T-00526-test verified work retained staged/uncommitted. No merge/Phase2. Exact owned file/index export and bundle retained; provider bodies excluded.",
-    "assessed_at": "2026-10-02T17:08:26.394120+00:00"
+    "assessment": "Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed.",
+    "assessed_at": "2026-10-02T21:36:50.782069+00:00"
   },
   {
     "id": "A-007",

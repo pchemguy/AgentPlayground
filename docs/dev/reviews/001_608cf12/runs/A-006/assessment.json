@@ -1,13 +1,10 @@
 {
   "id": "A-006",
-  "status": "Suspended",
-  "assessment": "Suspended by user: T-004b9fabb0 published/25 tests, issue4 evidence exists but closure not attempted; T-00526-test verified work retained staged/uncommitted. No merge/Phase2. Exact owned file/index export and bundle retained; provider bodies excluded.",
+  "status": "Blocked",
+  "assessment": "Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed.",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
-  "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-006.md",
-    "/workspace/scratch/acceptance-out-008/A-006-final.md",
-    "/workspace/scratch/acceptance-out-008/A-006-host-events-summary.json",
-    "/workspace/scratch/acceptance-out-008/A-006-pending",
-    "/workspace/scratch/acceptance-out-008/save_pending.py"
-  ]
+  "artifacts": [],
+  "runtime_blocker": true,
+  "new_consumer_work": false,
+  "previous_status": "Suspended"
 }

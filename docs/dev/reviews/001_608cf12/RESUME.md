@@ -1,6 +1,16 @@
 # Controlled suspension and exact continuation
 
-## State at the user-requested stop
+## Current stop: unavailable consumer workers
+
+On 2026-10-02 UTC (2026-10-03 in UTC+3), the resumption inspection found only the root evaluator in the agent inventory. The stopped consumer workers are not available to reuse. Additional agents remain prohibited by the user, and consumer contexts must not receive evaluator records/oracles. Consequently A-006, A-014 and A-018 are **Blocked** by the runtime arrangement, not failed plugin acceptance. A-007, A-008 and A-009 remain Pending and unstarted because their prerequisites have not passed. No other pending case began. Current counts: **14 Passed, 3 Blocked, 10 Pending; 0 Running, Suspended or Failed.**
+
+The smallest prerequisite for continuation is either access to the original stopped consumer workers or explicit authorization for replacement isolated consumer workers. Give consumers only their retained prompts, project instructions, pin, owned state and stopping boundaries; keep this evaluator document, case registry and oracles out of their contexts. Then follow the unchanged case-specific instructions below. Do not reinterpret this runtime blocker as a pinned-plugin defect.
+
+Read-only verification confirmed all 97 pinned-package hashes, both saved owned-file/index hash sets, both staged and unstaged binary patches, and the recovery bundles. Live and isolated product tips and remote refs match the saved checkpoints. No product verification, implementation, hosted operation, reset, staging, phase merge or new worker occurred. Existing export bundles/patches/archives remain the exact recovery sources. See each blocked case’s resumption-blocker-20261002.json for observed identities and preservation results. Source/evidence report publication is the only repository mutation.
+
+The final suspension leaves no consumer workers running. Resume A-006 and A-014 at their existing pending work, complete the remaining A-018 merge-publication subcase only after an actual complete-phase checkpoint exists, then A-007–A-009 in order with independent published assessments between cases. Stop after A-009; do not begin A-010 or any other pending case.
+
+## Historical state at the user-requested stop
 
 Campaign source `008_98a5562`; acceptance campaign `001_608cf12`. User requested controlled suspension after interruption diagnosis/resumption. All consumer workers have stopped. Final case disposition: 14 Passed, 3 Suspended (A-006, A-014, A-018), 10 Pending; no Failed, Blocked or Running. Source final assessment/integration remain pending. This is incomplete execution, not campaign certification.
 
