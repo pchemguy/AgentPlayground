@@ -6,7 +6,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 | Case | Status | Assessment | Records |
 | --- | --- | --- | --- |
-| A-001 | Running | Consumer request prepared; no result claimed. | [Run](runs/A-001/assessment.json) |
+| A-001 | Passed | Independent inspection: 7 governing documents, SPEC exact contracts, early end-to-end PLAN with phase exits, 8 uniquely owned unchecked tasks. No product source/tests. Preparation e750d1c pushed, main remote equality observed; explicit-source mode only. | [Run](runs/A-001/assessment.json) |
 | A-002 | Pending | Not executed | None |
 | A-003 | Pending | Not executed | None |
 | A-004 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 0, Failed: 0, Blocked: 0, Running: 1, Pending: 26.
+Passed: 1, Failed: 0, Blocked: 0, Running: 0, Pending: 26.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

@@ -1,19 +1,22 @@
 [
   {
     "id": "A-001",
-    "status": "Running",
+    "status": "Passed",
     "prompt_path": "runs/A-001/A-001-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-001",
     "evidence": [
+      "runs/A-001/A-001.md",
       "runs/A-001/A-001-prompt.txt",
       "runs/A-001/setup-api.json",
+      "runs/A-001/A-001-final.md",
+      "runs/A-001/A-001-independent.json",
       "runs/A-001/git-snapshot.json",
       "runs/A-001/assessment.json"
     ],
     "native_transcript": null,
-    "assessment": "Consumer request prepared; no result claimed.",
-    "assessed_at": "2026-10-02T13:13:35.367375+00:00"
+    "assessment": "Independent inspection: 7 governing documents, SPEC exact contracts, early end-to-end PLAN with phase exits, 8 uniquely owned unchecked tasks. No product source/tests. Preparation e750d1c pushed, main remote equality observed; explicit-source mode only.",
+    "assessed_at": "2026-10-02T13:21:09.803237+00:00"
   },
   {
     "id": "A-002",

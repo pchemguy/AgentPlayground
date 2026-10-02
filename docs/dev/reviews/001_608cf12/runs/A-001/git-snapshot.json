@@ -1,17 +1,23 @@
 {
   "schema_version": 1,
   "branch": "main",
-  "head": "61f9670736c58b841519f9484239ee05eff58e63",
+  "head": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
   "parents": [
-    "b9a4549d8db2194917b5985d55d99a9a3ce16923"
+    "61f9670736c58b841519f9484239ee05eff58e63"
   ],
   "status": [],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/evaluation/008-runtime-acceptance": "6904cb0c95ded68c5e34b5f63a2eb5734f82a496",
-    "refs/heads/main": "61f9670736c58b841519f9484239ee05eff58e63"
+    "refs/heads/evaluation/008-runtime-acceptance": "43cee38fa10ee0cb5bebe2e50c90ddc0631ab5a4",
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
   },
   "changed_paths": [
-    "tools/github_api.py"
+    "docs/dev/ARCHITECTURE.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md"
   ]
 }
