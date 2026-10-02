@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "8836c497ec94946580948f68c4ffe79713936a8a",
+  "parents": [
+    "9042c2013e5b5e5be97a214f5057092475ca98cb"
+  ],
+  "status": [
+    "M  README.md",
+    "M  docs/dev/TASKS.md",
+    "M  tests/integration/test_cli.py",
+    "M  tests/unit/test_files.py",
+    "M  textstats/cli.py",
+    "?? tests/integration/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_cli.cpython-312.pyc",
+    "?? tests/unit/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_counting.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_files.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/__main__.cpython-312.pyc",
+    "?? textstats/__pycache__/cli.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc",
+    "?? textstats/__pycache__/files.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "b84b4ca2acb38dfbc5d0ea3ed8af3e6ff1d0b2b6",
+    "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "refs/heads/phase/1-named-file-baseline": "8836c497ec94946580948f68c4ffe79713936a8a"
+  },
+  "changed_paths": [
+    "README.md",
+    "docs/dev/TASKS.md",
+    "tests/integration/test_cli.py",
+    "textstats/__main__.py",
+    "textstats/cli.py"
+  ]
+}

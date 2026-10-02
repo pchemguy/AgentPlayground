@@ -127,14 +127,18 @@
   },
   {
     "id": "A-006",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Running",
+    "prompt_path": "runs/A-006/A-006-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-006",
+    "evidence": [
+      "runs/A-006/A-006-prompt.txt",
+      "runs/A-006/git-snapshot.json",
+      "runs/A-006/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Live Phase1 completion consumer active after independent milestone1.1 checkpointc41165a. Actual remaining task and full phase exits/integration/publication pending; no Phase2 authorized.",
+    "assessed_at": "2026-10-02T17:00:18.473270+00:00"
   },
   {
     "id": "A-007",

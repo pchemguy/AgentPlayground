@@ -1,0 +1,9 @@
+{
+  "id": "A-006",
+  "status": "Running",
+  "assessment": "Live Phase1 completion consumer active after independent milestone1.1 checkpointc41165a. Actual remaining task and full phase exits/integration/publication pending; no Phase2 authorized.",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-006-prompt.txt"
+  ]
+}
