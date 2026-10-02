@@ -1,10 +1,11 @@
 {
   "id": "A-018",
   "status": "Running",
-  "assessment": "Isolated server pre-receive rejection installed; actual task commit/publication failure and recovery pending. Merge-boundary rejection to be assessed separately.",
+  "assessment": "Actual owned T-002 commit retained after server hook rejected push; ten tests pass, remote unchanged, policy intact, no force/next task/merge. Recovery and boundary-merge rejection pending.",
   "repo": "/workspace/scratch/sdd008-A-018-task/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-018-task-prompt.txt",
-    "/workspace/scratch/acceptance-out-008/A-018-task-setup.json"
+    "/workspace/scratch/acceptance-out-008/A-018-task.md",
+    "/workspace/scratch/acceptance-out-008/A-018-task-final.md",
+    "/workspace/scratch/acceptance-out-008/A-018-task-rejection-independent.json"
   ]
 }
