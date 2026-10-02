@@ -1,7 +1,41 @@
-# Runtime acceptance report
+# TextStats runtime acceptance report
 
-State: Pending. All 27 cases A-001 through A-027 remain Pending; no consumer execution or native transcript is claimed.
+## State and evidence
 
-The machine-readable registry is [cases.json](acceptance/cases.json), governed by [case-record.schema.json](acceptance/case-record.schema.json). Assessor expectations belong in [acceptance/oracle](acceptance/oracle/README.md); actual execution records belong in [runs](runs/README.md). Support-tool verification is recorded separately in [SETUP-SUPPORT](acceptance/SETUP-SUPPORT.md).
+Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.
 
-Evidence stays on `evaluation/008-runtime-acceptance`. Never merge this branch into product main or expose its oracle/evidence to consumer agents. The protected API utility may be copied independently as explicitly authorized setup tooling; that does not authorize copying oracle or case evidence.
+| Case | Status | Assessment | Records |
+| --- | --- | --- | --- |
+| A-001 | Running | Consumer request prepared; no result claimed. | [Run](runs/A-001/assessment.json) |
+| A-002 | Pending | Not executed | None |
+| A-003 | Pending | Not executed | None |
+| A-004 | Pending | Not executed | None |
+| A-005 | Pending | Not executed | None |
+| A-006 | Pending | Not executed | None |
+| A-007 | Pending | Not executed | None |
+| A-008 | Pending | Not executed | None |
+| A-009 | Pending | Not executed | None |
+| A-010 | Pending | Not executed | None |
+| A-011 | Pending | Not executed | None |
+| A-012 | Pending | Not executed | None |
+| A-013 | Pending | Not executed | None |
+| A-014 | Pending | Not executed | None |
+| A-015 | Pending | Not executed | None |
+| A-016 | Pending | Not executed | None |
+| A-017 | Pending | Not executed | None |
+| A-018 | Pending | Not executed | None |
+| A-019 | Pending | Not executed | None |
+| A-020 | Pending | Not executed | None |
+| A-021 | Pending | Not executed | None |
+| A-022 | Pending | Not executed | None |
+| A-023 | Pending | Not executed | None |
+| A-024 | Pending | Not executed | None |
+| A-025 | Pending | Not executed | None |
+| A-026 | Pending | Not executed | None |
+| A-027 | Pending | Not executed | None |
+
+## Counts and limits
+
+Passed: 0, Failed: 0, Blocked: 0, Running: 1, Pending: 26.
+
+Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

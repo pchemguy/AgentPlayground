@@ -1,0 +1,10 @@
+{
+  "id": "A-001",
+  "status": "Running",
+  "assessment": "Consumer request prepared; no result claimed.",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-001-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/setup-api.json"
+  ]
+}

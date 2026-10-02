@@ -1,14 +1,19 @@
 [
   {
     "id": "A-001",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Running",
+    "prompt_path": "runs/A-001/A-001-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-001",
+    "evidence": [
+      "runs/A-001/A-001-prompt.txt",
+      "runs/A-001/setup-api.json",
+      "runs/A-001/git-snapshot.json",
+      "runs/A-001/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Consumer request prepared; no result claimed.",
+    "assessed_at": "2026-10-02T13:13:35.367375+00:00"
   },
   {
     "id": "A-002",
