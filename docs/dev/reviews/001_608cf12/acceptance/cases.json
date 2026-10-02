@@ -96,19 +96,34 @@
   },
   {
     "id": "A-005",
-    "status": "Running",
-    "prompt_path": "runs/A-005/A-005-prompt.txt",
+    "status": "Passed",
+    "prompt_path": "runs/A-005/A-006-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-005",
     "evidence": [
+      "runs/A-005/A-005-T002-full.log",
+      "runs/A-005/A-006-prompt.txt",
+      "runs/A-005/A-005.md",
+      "runs/A-005/A-005-T002-green.log",
+      "runs/A-005/A-005-layout-full.log",
       "runs/A-005/A-005-interruption-diagnosis.json",
+      "runs/A-005/A-005-T002-red.log",
       "runs/A-005/git-snapshot.json",
+      "runs/A-005/A-005-cli-independent.json",
+      "runs/A-005/A-005-T003-green.log",
+      "runs/A-005/A-005-layout-focused.log",
+      "runs/A-005/A-005-state-independent.json",
+      "runs/A-005/A-005-T003-full.log",
+      "runs/A-005/A-005-suite-independent.json",
+      "runs/A-005/A-005-milestone-demo.log",
       "runs/A-005/A-005-prompt.txt",
-      "runs/A-005/assessment.json"
+      "runs/A-005/A-005-T003-red.log",
+      "runs/A-005/assessment.json",
+      "runs/A-005/A-005-final.md"
     ],
     "native_transcript": null,
-    "assessment": "User interruption diagnosed: T-002/layout checkpoints published; T-003 owned pending code/tests/README retained and same worker resumed. No merge pending or reset/setup replay. Milestone acceptance and publication remain in progress.",
-    "assessed_at": "2026-10-02T16:47:39.787875+00:00"
+    "assessment": "Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained.",
+    "assessed_at": "2026-10-02T16:56:28.585147+00:00"
   },
   {
     "id": "A-006",

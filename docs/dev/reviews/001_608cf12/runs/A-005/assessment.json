@@ -1,9 +1,23 @@
 {
   "id": "A-005",
-  "status": "Running",
-  "assessment": "User interruption diagnosed: T-002/layout checkpoints published; T-003 owned pending code/tests/README retained and same worker resumed. No merge pending or reset/setup replay. Milestone acceptance and publication remain in progress.",
+  "status": "Passed",
+  "assessment": "Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained.",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-005-interruption-diagnosis.json"
+    "/workspace/scratch/acceptance-out-008/A-005.md",
+    "/workspace/scratch/acceptance-out-008/A-005-final.md",
+    "/workspace/scratch/acceptance-out-008/A-005-cli-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-005-suite-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-005-state-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-005-layout-focused.log",
+    "/workspace/scratch/acceptance-out-008/A-005-layout-full.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T002-red.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T002-green.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T002-full.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T003-red.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T003-green.log",
+    "/workspace/scratch/acceptance-out-008/A-005-T003-full.log",
+    "/workspace/scratch/acceptance-out-008/A-005-milestone-demo.log",
+    "/workspace/scratch/acceptance-out-008/A-006-prompt.txt"
   ]
 }

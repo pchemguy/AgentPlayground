@@ -10,7 +10,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-002 | Passed | Selection output correctly resolves T-001 and T-001..T-003 milestone1.1, same phase owner, no external prerequisite; partial phase pause. Independent state remains clean main e750d1c; consumer journal records no tests/push/branch/mutation. | [Run](runs/A-002/assessment.json) |
 | A-003 | Passed | Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation. | [Run](runs/A-003/assessment.json) |
 | A-004 | Passed | Actual first task T-001 on phase1: observed behavioral RED and9-test GREEN/full verification, professional docs, task commit3b201a3 pushed and issue1 completed with evidence. Independent literal API/BOM/newline/immutability checks passed; main d769b55 unchanged, no CLI/next task/partial merge. Foreign issue body/label retained. | [Run](runs/A-004/assessment.json) |
-| A-005 | Running | User interruption diagnosed: T-002/layout checkpoints published; T-003 owned pending code/tests/README retained and same worker resumed. No merge pending or reset/setup replay. Milestone acceptance and publication remain in progress. | [Run](runs/A-005/assessment.json) |
+| A-005 | Passed | Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained. | [Run](runs/A-005/assessment.json) |
 | A-006 | Pending | Not executed | None |
 | A-007 | Pending | Not executed | None |
 | A-008 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 12, Failed: 0, Blocked: 0, Suspended: 0, Running: 4, Pending: 11.
+Passed: 13, Failed: 0, Blocked: 0, Suspended: 0, Running: 3, Pending: 11.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

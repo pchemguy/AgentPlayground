@@ -1,0 +1,11 @@
+empty: API=TextStats(lines=0, words=0); CLI stdout='lines=0 words=0\n'; stderr=''; status=0
+BOM removed: API=TextStats(lines=2, words=2); CLI stdout='lines=2 words=2\n'; stderr=''; status=0
+BOM retained: API=TextStats(lines=2, words=3); CLI stdout='lines=2 words=3\n'; stderr=''; status=0
+Unicode mixed trailing: API=TextStats(lines=3, words=4); CLI stdout='lines=3 words=4\n'; stderr=''; status=0
+README quick start executed verbatim against the source package: stdout=lines=1 words=2, status=0, stderr empty.
+README public API example executed verbatim: status=0, both channels empty.
+Module docstring reviewed: textstats/cli.py
+Module docstring reviewed: textstats/__main__.py
+Module docstring reviewed: tests/integration/test_cli.py
+README local links and heading spacing reviewed; current capabilities match milestone1.1.
+Milestone1.1 usable API/CLI success slice verified. No human usability decision or feedback is invented; handoff invites a separate continue/amend/simplify/stop instruction.

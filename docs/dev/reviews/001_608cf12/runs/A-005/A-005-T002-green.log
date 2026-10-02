@@ -1,0 +1,8 @@
+test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok
+test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok
+test_success_closes_real_owned_handle_without_output (tests.unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK

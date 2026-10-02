@@ -1,0 +1,187 @@
+test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... 
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff', strip_bom=True) ... ERROR
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff', strip_bom=False) ... ERROR
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff alpha\r\nbeta\n', strip_bom=True) ... ERROR
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff alpha\r\nbeta\n', strip_bom=False) ... ERROR
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff\ufeff', strip_bom=True) ... ERROR
+  test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='alpha \ufeff beta', strip_bom=True) ... ERROR
+test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... 
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'', path_type=<class 'pathlib.PosixPath'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'', path_type=<class 'str'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'alpha\r\nbeta\rgamma\n', path_type=<class 'pathlib.PosixPath'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'alpha\r\nbeta\rgamma\n', path_type=<class 'str'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'caf\xc3\xa9\xc2\xa0\xe7\x8c\xab\xe2\x80\xa8dog\n', path_type=<class 'pathlib.PosixPath'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'caf\xc3\xa9\xc2\xa0\xe7\x8c\xab\xe2\x80\xa8dog\n', path_type=<class 'str'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b' \t\n\n', path_type=<class 'pathlib.PosixPath'>) ... ERROR
+  test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b' \t\n\n', path_type=<class 'str'>) ... ERROR
+test_success_closes_real_owned_handle_without_output (tests.unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ERROR
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff', strip_bom=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff', strip_bom=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff alpha\r\nbeta\n', strip_bom=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff alpha\r\nbeta\n', strip_bom=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='\ufeff\ufeff', strip_bom=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) (text='alpha \ufeff beta', strip_bom=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 48, in test_bom_modes_are_applied_to_decoded_file
+    result = count_file(path, strip_bom=strip_bom)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'', path_type=<class 'pathlib.PosixPath'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'', path_type=<class 'str'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'alpha\r\nbeta\rgamma\n', path_type=<class 'pathlib.PosixPath'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'alpha\r\nbeta\rgamma\n', path_type=<class 'str'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'caf\xc3\xa9\xc2\xa0\xe7\x8c\xab\xe2\x80\xa8dog\n', path_type=<class 'pathlib.PosixPath'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b'caf\xc3\xa9\xc2\xa0\xe7\x8c\xab\xe2\x80\xa8dog\n', path_type=<class 'str'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b' \t\n\n', path_type=<class 'pathlib.PosixPath'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) (data=b' \t\n\n', path_type=<class 'str'>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 30, in test_real_files_match_fixed_expected_counts
+    result = count_file(public_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+======================================================================
+ERROR: test_success_closes_real_owned_handle_without_output (tests.unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/unit/test_files.py", line 65, in test_success_closes_real_owned_handle_without_output
+    result = count_file(path)
+             ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/files.py", line 10, in count_file
+    raise NotImplementedError("count_file is not implemented")
+NotImplementedError: count_file is not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+FAILED (errors=15)

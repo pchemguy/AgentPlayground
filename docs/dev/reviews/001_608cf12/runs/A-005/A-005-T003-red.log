@@ -1,0 +1,247 @@
+test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... 
+  test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='\ufeff', options=()) ... FAIL
+  test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='\ufeff', options=('--keep-bom',)) ... FAIL
+  test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='alpha \ufeff beta', options=()) ... FAIL
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... FAIL
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... FAIL
+test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... 
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='') ... FAIL
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha beta') ... FAIL
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha\r\nbeta\rgamma\n') ... FAIL
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='café\xa0猫\u2028dog\n') ... FAIL
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha\n\n') ... FAIL
+  test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text=' \t') ... FAIL
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... FAIL
+
+======================================================================
+FAIL: test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='\ufeff', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 67, in test_bom_only_and_interior_bom
+    self.assert_success(self.run_cli(path, *options), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='\ufeff', options=('--keep-bom',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 67, in test_bom_only_and_interior_bom
+    self.assert_success(self.run_cli(path, *options), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) (text='alpha \ufeff beta', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 67, in test_bom_only_and_interior_bom
+    self.assert_success(self.run_cli(path, *options), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 80, in test_dash_is_a_named_file_before_stdin_delivery
+    self.assert_success(self.run_cli("-", cwd=directory), "lines=1 words=2\n")
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 53, in test_keep_bom_composes_with_named_input
+    self.assert_success(self.run_cli(path), "lines=2 words=2\n")
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha beta')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha\r\nbeta\rgamma\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='café\xa0猫\u2028dog\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text='alpha\n\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) (text=' \t')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 47, in test_named_file_success_boundaries
+    self.assert_success(self.run_cli(path), output)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+======================================================================
+FAIL: test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 74, in test_named_input_with_spaces_is_not_modified
+    self.assert_success(self.run_cli(path), "lines=1 words=2\n")
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 29, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 8, in main
+    raise NotImplementedError("CLI success path is not implemented")
+NotImplementedError: CLI success path is not implemented
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.340s
+
+FAILED (failures=12)
