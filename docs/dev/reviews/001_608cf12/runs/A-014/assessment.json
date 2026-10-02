@@ -1,13 +1,10 @@
 {
   "id": "A-014",
-  "status": "Suspended",
-  "assessment": "Suspended by user during cross-phase T-004 RED at83eab02; two unstaged tests retained, no production fix/commit/merge/transition. Prior out-of-range prerequisite subcase verified; sequential phase case unfinished. Exact pending patch/archive/bundle and genuine failed logs retained.",
+  "status": "Blocked",
+  "assessment": "Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed.",
   "repo": "/workspace/scratch/sdd008-A-014-cross/repo",
-  "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-014-cross.md",
-    "/workspace/scratch/acceptance-out-008/A-014-cross-final.md",
-    "/workspace/scratch/acceptance-out-008/A-014-cross-T004-red.log",
-    "/workspace/scratch/acceptance-out-008/A-014-cross-T004-red-repaired-fixture.log",
-    "/workspace/scratch/acceptance-out-008/A-014-pending"
-  ]
+  "artifacts": [],
+  "runtime_blocker": true,
+  "new_consumer_work": false,
+  "previous_status": "Suspended"
 }
