@@ -1,0 +1,12 @@
+{
+  "head": "332f2a49822cd82ae17b4a16b7a00bc4c86d14a7",
+  "status": "clean",
+  "suite_returncode": 0,
+  "suite_stdout": "",
+  "suite_stderr": "test_package_level_counting_api (test_api.PublicApiTests.test_package_level_counting_api) ... ok\ntest_retained_results_are_independent_across_bom_policies (test_api.PublicApiTests.test_retained_results_are_independent_across_bom_policies)\nLater calls cannot alter prior counts or inherit their BOM policy. ... ok\ntest_bom_policy (test_counting.CountingTests.test_bom_policy) ... ok\ntest_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) ... ok\ntest_default_removes_one_leading_bom (test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok\ntest_option_is_keyword_only (test_counting.CountingTests.test_option_is_keyword_only) ... ok\ntest_result_fields_are_nonnegative_integers_and_immutable (test_counting.CountingTests.test_result_fields_are_nonnegative_integers_and_immutable) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nOK\n",
+  "historical_evidence_preserved": true,
+  "pending_note_resolved": true,
+  "behavior_AST_unchanged": true,
+  "parents_and_later_tasks_unchecked": true,
+  "main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d"
+}

@@ -1,12 +1,11 @@
 {
   "id": "A-022",
-  "status": "Running",
-  "assessment": "Independent unchanged-state check confirms selection/orientation included checked T-001 pending reassessment and identified missing opposite-BOM retained-result test; no runtime/mutation. Actual in-scope reassessment now requested.",
+  "status": "Passed",
+  "assessment": "Actual SPEC/TASKS incorporation retained checked historical T-001 plus durable pending reassessment; separate orientation/selection included disputed task without mutation. In-scope execution added opposite-BOM retained-result regression, seven tests passed, task332f2a4 published and note resolved. Counting behavior AST unchanged; historical evidence/unchecked parents/main preserved. No subset phase completion.",
   "repo": "/workspace/scratch/sdd008-A-022/repo",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-022-selection.md",
-    "/workspace/scratch/acceptance-out-008/A-022-selection-final.md",
-    "/workspace/scratch/acceptance-out-008/A-022-selection-independent.json",
-    "/workspace/scratch/acceptance-out-008/A-022-reassess-prompt.txt"
+    "/workspace/scratch/acceptance-out-008/A-022-reassess.md",
+    "/workspace/scratch/acceptance-out-008/A-022-reassess-final.md",
+    "/workspace/scratch/acceptance-out-008/A-022-reassess-independent.json"
   ]
 }

@@ -362,18 +362,21 @@
   },
   {
     "id": "A-022",
-    "status": "Running",
+    "status": "Passed",
     "prompt_path": "runs/A-022/A-022-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-022",
     "evidence": [
       "runs/A-022/A-022-incorporate-final.md",
+      "runs/A-022/A-022-reassess-independent.json",
       "runs/A-022/git-snapshot.json",
       "runs/A-022/A-022-selection.md",
       "runs/A-022/A-022-setup.json",
       "runs/A-022/A-022-selection-independent.json",
+      "runs/A-022/A-022-reassess.md",
       "runs/A-022/A-022-prompt.txt",
       "runs/A-022/A-022-incorporate.md",
+      "runs/A-022/A-022-reassess-final.md",
       "runs/A-022/A-022-selection-final.md",
       "runs/A-022/A-022-incorporate-independent.json",
       "runs/A-022/assessment.json",
@@ -381,8 +384,8 @@
       "runs/A-022/A-022-selection-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Independent unchanged-state check confirms selection/orientation included checked T-001 pending reassessment and identified missing opposite-BOM retained-result test; no runtime/mutation. Actual in-scope reassessment now requested.",
-    "assessed_at": "2026-10-02T16:49:25.072626+00:00"
+    "assessment": "Actual SPEC/TASKS incorporation retained checked historical T-001 plus durable pending reassessment; separate orientation/selection included disputed task without mutation. In-scope execution added opposite-BOM retained-result regression, seven tests passed, task332f2a4 published and note resolved. Counting behavior AST unchanged; historical evidence/unchecked parents/main preserved. No subset phase completion.",
+    "assessed_at": "2026-10-02T16:57:30.544828+00:00"
   },
   {
     "id": "A-023",
