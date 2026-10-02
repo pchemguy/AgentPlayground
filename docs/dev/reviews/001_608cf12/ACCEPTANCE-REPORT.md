@@ -30,12 +30,12 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-022 | Pending | Not executed | None |
 | A-023 | Pending | Not executed | None |
 | A-024 | Pending | Not executed | None |
-| A-025 | Pending | Not executed | None |
+| A-025 | Passed | Controlled denial received by fresh consumer. Independently confirmed tracked synthetic credential plus !gh.tkn defeats exclusion. Consumer blocked reuse/remediation, did not inspect values/retry/mutate. Root independent commands agree; no real GitHub denial or recovery claimed. | [Run](runs/A-025/assessment.json) |
 | A-026 | Pending | Not executed | None |
 | A-027 | Pending | Not executed | None |
 
 ## Counts and limits
 
-Passed: 1, Failed: 0, Blocked: 0, Running: 0, Pending: 26.
+Passed: 2, Failed: 0, Blocked: 0, Running: 0, Pending: 25.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

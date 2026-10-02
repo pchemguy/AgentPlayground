@@ -273,14 +273,21 @@
   },
   {
     "id": "A-025",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-025/A-025-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-025",
+    "evidence": [
+      "runs/A-025/A-025-prompt.txt",
+      "runs/A-025/A-025-independent.json",
+      "runs/A-025/git-snapshot.json",
+      "runs/A-025/A-025.md",
+      "runs/A-025/assessment.json",
+      "runs/A-025/A-025-final.md"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Controlled denial received by fresh consumer. Independently confirmed tracked synthetic credential plus !gh.tkn defeats exclusion. Consumer blocked reuse/remediation, did not inspect values/retry/mutate. Root independent commands agree; no real GitHub denial or recovery claimed.",
+    "assessed_at": "2026-10-02T13:21:54.451136+00:00"
   },
   {
     "id": "A-026",
