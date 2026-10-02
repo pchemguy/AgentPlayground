@@ -29,13 +29,13 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-021 | Pending | Not executed | None |
 | A-022 | Pending | Not executed | None |
 | A-023 | Pending | Not executed | None |
-| A-024 | Pending | Not executed | None |
+| A-024 | Passed | Fresh consumer received injected access403, quota403 and missing API-session401. Reused ignored untracked synthetic token through stdin for access/session; one retry each returned200. Rate paused without auth/substitution/retry. Independent markers/readbacks and clean Git agree. Controlled API evidence, no live provider or lost Git-shell-session claim. | [Run](runs/A-024/assessment.json) |
 | A-025 | Passed | Controlled denial received by fresh consumer. Independently confirmed tracked synthetic credential plus !gh.tkn defeats exclusion. Consumer blocked reuse/remediation, did not inspect values/retry/mutate. Root independent commands agree; no real GitHub denial or recovery claimed. | [Run](runs/A-025/assessment.json) |
 | A-026 | Passed | Fresh verify consumer observed 1 test/1 pre-existing baseline failure exit1 and zero selected tests exit5. Independent evaluator reran both and checked unchanged fixture/status. Empty suite did not establish acceptance; verify made no source/test/task repair. Actual Python3.12.14 recorded. | [Run](runs/A-026/assessment.json) |
 | A-027 | Pending | Not executed | None |
 
 ## Counts and limits
 
-Passed: 4, Failed: 0, Blocked: 0, Running: 0, Pending: 23.
+Passed: 5, Failed: 0, Blocked: 0, Running: 0, Pending: 22.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

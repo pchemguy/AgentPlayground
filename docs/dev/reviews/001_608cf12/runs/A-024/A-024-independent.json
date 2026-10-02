@@ -1,0 +1,21 @@
+{
+  "access": {
+    "exit": 0,
+    "stdout": "{\"status\": 200, \"mode\": \"access\", \"body\": [], \"endpoint\": \"/repos/pchemguy/AgentPlayground/issues\"}\n",
+    "stderr": "",
+    "auth_marker": true
+  },
+  "rate": {
+    "exit": 1,
+    "stdout": "{\"status\": 403, \"cause\": \"API rate limit exceeded\", \"headers\": {\"Retry-After\": \"60\", \"X-RateLimit-Remaining\": \"0\"}, \"endpoint\": \"/repos/pchemguy/AgentPlayground/issues\"}\n",
+    "stderr": "",
+    "auth_marker": false
+  },
+  "session": {
+    "exit": 0,
+    "stdout": "{\"status\": 200, \"mode\": \"session\", \"body\": [], \"endpoint\": \"/repos/pchemguy/AgentPlayground/issues\"}\n",
+    "stderr": "",
+    "auth_marker": true
+  },
+  "status": ""
+}

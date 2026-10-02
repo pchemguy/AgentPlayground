@@ -1,0 +1,13 @@
+{
+  "id": "A-024",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-024/repo",
+  "assessment": "Fresh consumer received injected access403, quota403 and missing API-session401. Reused ignored untracked synthetic token through stdin for access/session; one retry each returned200. Rate paused without auth/substitution/retry. Independent markers/readbacks and clean Git agree. Controlled API evidence, no live provider or lost Git-shell-session claim.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-024-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-024.md",
+    "/workspace/scratch/acceptance-out-008/A-024-final.md",
+    "/workspace/scratch/acceptance-out-008/A-024-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-024-fixture.py"
+  ]
+}

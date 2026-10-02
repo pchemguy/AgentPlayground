@@ -269,14 +269,22 @@
   },
   {
     "id": "A-024",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-024/A-024-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-024",
+    "evidence": [
+      "runs/A-024/A-024-final.md",
+      "runs/A-024/A-024-fixture.py",
+      "runs/A-024/git-snapshot.json",
+      "runs/A-024/A-024.md",
+      "runs/A-024/A-024-prompt.txt",
+      "runs/A-024/assessment.json",
+      "runs/A-024/A-024-independent.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Fresh consumer received injected access403, quota403 and missing API-session401. Reused ignored untracked synthetic token through stdin for access/session; one retry each returned200. Rate paused without auth/substitution/retry. Independent markers/readbacks and clean Git agree. Controlled API evidence, no live provider or lost Git-shell-session claim.",
+    "assessed_at": "2026-10-02T13:27:17.815266+00:00"
   },
   {
     "id": "A-025",
