@@ -1,0 +1,7 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-018-task/repo",
+  "baseline": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+  "main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+  "hook": "#!/usr/bin/env python3\nimport sys\nfrom pathlib import Path\ndata=sys.stdin.read()\nwith Path(\"controlled-rejections.log\").open(\"a\") as stream: stream.write(data)\nprint(\"controlled publication rejection; retain local commit and stop\", file=sys.stderr)\nsys.exit(1)\n",
+  "scope": "Fixture injects server publication rejection; consumer must perform own actual task work."
+}
