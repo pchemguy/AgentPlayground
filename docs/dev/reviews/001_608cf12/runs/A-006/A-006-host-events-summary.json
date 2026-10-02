@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues?state=all&per_page=100",
+      "status": 200,
+      "exit": 0,
+      "object_states": [
+        {
+          "number": 8,
+          "id": 5679904867,
+          "state": "open",
+          "state_reason": null
+        },
+        {
+          "number": 7,
+          "id": 5679903158,
+          "state": "open",
+          "state_reason": null
+        },
+        {
+          "number": 6,
+          "id": 5679902085,
+          "state": "open",
+          "state_reason": null
+        },
+        {
+          "number": 5,
+          "id": 5679900855,
+          "state": "open",
+          "state_reason": null
+        },
+        {
+          "number": 4,
+          "id": 5679899530,
+          "state": "open",
+          "state_reason": null
+        },
+        {
+          "number": 3,
+          "id": 5679898120,
+          "state": "closed",
+          "state_reason": "completed"
+        },
+        {
+          "number": 2,
+          "id": 5679896726,
+          "state": "closed",
+          "state_reason": "completed"
+        },
+        {
+          "number": 1,
+          "id": 5679895203,
+          "state": "closed",
+          "state_reason": "completed"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/4/comments",
+      "status": 200,
+      "exit": 0,
+      "object_states": []
+    },
+    {
+      "method": "GET",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/4",
+      "status": 200,
+      "exit": 0,
+      "object_state": {
+        "number": 4,
+        "id": 5679899530,
+        "state": "open",
+        "state_reason": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/repos/pchemguy/AgentPlayground/issues/4/comments",
+      "status": 201,
+      "exit": 0,
+      "object_state": {
+        "id": 5957328975
+      }
+    }
+  ],
+  "export": "Raw provider bodies/comments omitted. Only scoped method/endpoint/status and object identity/state retained."
+}

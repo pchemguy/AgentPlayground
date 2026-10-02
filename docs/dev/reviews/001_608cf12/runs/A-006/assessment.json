@@ -1,9 +1,13 @@
 {
   "id": "A-006",
-  "status": "Running",
-  "assessment": "Live Phase1 completion consumer active after independent milestone1.1 checkpointc41165a. Actual remaining task and full phase exits/integration/publication pending; no Phase2 authorized.",
+  "status": "Suspended",
+  "assessment": "Suspended by user: T-004b9fabb0 published/25 tests, issue4 evidence exists but closure not attempted; T-00526-test verified work retained staged/uncommitted. No merge/Phase2. Exact owned file/index export and bundle retained; provider bodies excluded.",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-006-prompt.txt"
+    "/workspace/scratch/acceptance-out-008/A-006.md",
+    "/workspace/scratch/acceptance-out-008/A-006-final.md",
+    "/workspace/scratch/acceptance-out-008/A-006-host-events-summary.json",
+    "/workspace/scratch/acceptance-out-008/A-006-pending",
+    "/workspace/scratch/acceptance-out-008/save_pending.py"
   ]
 }

@@ -127,18 +127,22 @@
   },
   {
     "id": "A-006",
-    "status": "Running",
+    "status": "Suspended",
     "prompt_path": "runs/A-006/A-006-prompt.txt",
     "oracle_path": null,
     "run_path": "runs/A-006",
     "evidence": [
       "runs/A-006/A-006-prompt.txt",
+      "runs/A-006/A-006-host-events-summary.json",
       "runs/A-006/git-snapshot.json",
+      "runs/A-006/save_pending.py",
+      "runs/A-006/A-006.md",
+      "runs/A-006/A-006-final.md",
       "runs/A-006/assessment.json"
     ],
     "native_transcript": null,
-    "assessment": "Live Phase1 completion consumer active after independent milestone1.1 checkpointc41165a. Actual remaining task and full phase exits/integration/publication pending; no Phase2 authorized.",
-    "assessed_at": "2026-10-02T17:00:18.473270+00:00"
+    "assessment": "Suspended by user: T-004b9fabb0 published/25 tests, issue4 evidence exists but closure not attempted; T-00526-test verified work retained staged/uncommitted. No merge/Phase2. Exact owned file/index export and bundle retained; provider bodies excluded.",
+    "assessed_at": "2026-10-02T17:08:26.394120+00:00"
   },
   {
     "id": "A-007",

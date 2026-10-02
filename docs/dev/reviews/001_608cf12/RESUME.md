@@ -1,39 +1,41 @@
-# Resume checkpoint for campaign 001_608cf12
+# Controlled suspension and exact continuation
 
-## Stop boundary
+## State at the user-requested stop
 
-Historical suspension checkpoint on 2026-10-02: all agents stopped with no uncertain writes;6 Passed,2 Suspended,19 Pending. The user subsequently requested Resume. Campaign execution is active again; A-003 and A-015 resume inputs are published before fresh consumer dispatch. See [ACCEPTANCE-REPORT.md](ACCEPTANCE-REPORT.md) and [case registry](acceptance/cases.json).
+Campaign source `008_98a5562`; acceptance campaign `001_608cf12`. User requested controlled suspension after interruption diagnosis/resumption. All consumer workers have stopped. Final case disposition: 14 Passed, 3 Suspended (A-006, A-014, A-018), 10 Pending; no Failed, Blocked or Running. Source final assessment/integration remain pending. This is incomplete execution, not campaign certification.
 
-The source revision is campaign008_98a5562 in pchemguy/Skill-SDD-Manager, branch `revision/008_98a5562-runtime-acceptance`, target `feature/architecture-revision`. Its REVISION-REPORT.md is the authoritative revision checkpoint. Source boundary integration has not occurred.
+Pinned portable source remains `529e98d4d3cd7002e3a49e34394552a44bf0a8d0`; explicit source loading, Python3.12.14. Automatic installed-client discovery and complete native transcript export remain unavailable. TST-001 campaign-input omission resolved in A-005; no pinned-plugin repair was made.
 
-## Live positive workflow
+## Live positive continuation: A-006
 
-- Consumer path: `/workspace/scratch/AgentPlayground-sdd-008`; repository pchemguy/AgentPlayground, main at published `d769b55aa63f92d5ccbd8022cb9e87f07e541fae`; clean.
-- Pinned portable package: `vendor/sdd-manager`, source `529e98d4d3cd7002e3a49e34394552a44bf0a8d0`; provenance/hashes in `vendor/PROVENANCE.json`. Explicit source loading; no installed-client discovery claim.
-- Governing documents prepared; T-001–T-008 all unchecked. No product implementation on main. A-001/A-002 independently passed.
-- A-003 first projection incomplete: phase1/2 labels exist; milestone1.1/1.2/2.1/2.2 map to native milestone1/2/3/4. T-001 connector create failed403, Resource not accessible by integration; no task issues confirmed, no uncertain effects. Drafts and exact parent IDs in [projection](runs/A-003/A-003-projection.json); [consumer handoff](runs/A-003/A-003-final.md).
-- Resume A-003 with all-state reread, existing parent reuse and appropriate protected-client issue-access handling. Do not replay `A-003-parent-api.py`, a first-creation driver. Complete first projection/readback, then second idempotence/foreign-field preservation trial and assessment/publication before A-004.
-- Main Git credential helper and ignored/untracked mode0600 `gh.tkn` existed locally at suspension. Tokens intentionally absent from tracked evidence. Recover credentials through manager if unavailable. Connector authentication and supplied PAT permissions are distinct; PAT Contents and metadata writes succeeded, PAT Issues write is untested.
+Checkout `/workspace/scratch/AgentPlayground-sdd-008`, branch `phase/1-named-file-baseline`, published HEAD `b9fabb0aab69bf891386f9bf47c503b78be6cf15`. Main remains `d769b55aa63f92d5ccbd8022cb9e87f07e541fae`. No merge or Phase2 began.
 
-## Isolated pending and completed task scenarios
+T-004 verified and published; issue4 evidence comment `5957328975` exists, closure not attempted. Read issue/comments before closing on resume; never duplicate the saved comment. T-005 is verified (26 full-suite tests), with README, TASKS and tests/integration/test_distribution.py staged, uncommitted. Preserve the exact staged content/index intent; current checked boxes do not prove durable task or integrated phase completion. Do not reimplement valid pending work.
 
-| Case | Exact state | Continuation |
-| --- | --- | --- |
-| A-015 | `/workspace/scratch/sdd008-A-015/repo`, phase1 branch HEAD e750d1c; six owned files staged, T-001 checked,7 tests observed, controlled pre-commit rejection; hook intact; no commit/push | Fresh consumer resumes existing checked/verified task after deliberate controlled-hook release. Preserve files/evidence and identity; commit/push before any next work. Case stays Suspended until recovery independently assessed. |
-| A-020 | `/workspace/scratch/sdd008-A-020/repo`, phase1 branch57234b3; owned T-001 commit published to isolated bare origin. Unrelated staged blob, untracked content and tracked unstaged README preserved | Case Passed; no T-002 or phase merge. Do not promote this scenario's code into live main. |
+Re-orient and perform startup publication checks, reconcile issue4, review/commit/push pending T-005, verify remote containment and reconcile issue5. Then establish full phase exits and explicit two-parent prospective main merge, verify/commit/push target; stop before Phase2. Only after independent A-006 assessment is committed/pushed/remote-verified may A-007–A-013 proceed in order.
 
-Both checkpoint bundles are self-contained and verified. [A-015 snapshot](runs/A-015/A-015-independent.json) retains six exact pending file contents, staged binary patch and commit hook. [A-020 snapshot](runs/A-020/A-020-independent.json) retains unrelated content/index intent and owned commit paths. Bytecode artifacts were transient and left in A-015's worktree; exclude from owned commit without deleting unrelated work.
+Recovery exports: `runs/A-006/A-006-pending/` contains committed HEAD bundle, staged/unstaged binary patches, owned-file archive and exact file/index hashes. Unrelated bytecode contents are deliberately omitted and local files preserved. Full handoff/journal and provider metadata summary are alongside it; raw provider bodies are not published.
 
-## Restoration if local paths disappear
+## Isolated cross-phase continuation: A-014
 
-1. Clone published source revision, live consumer main and this evaluation branch separately. Recheck instructions/refs and keep oracle/evaluation contents out of fresh consumer contexts.
-2. Verify `runs/A-015/A-015-checkpoint.bundle` and `runs/A-020/A-020-checkpoint.bundle` using `git bundle verify`. Each contains complete phase-branch history; clone each into a new isolated directory and create a separate local bare origin. Never redirect an isolated failure case to live GitHub.
-3. A-015: restore each `owned_pending_files` entry from its independent JSON, stage exactly those six paths, restore the recorded pre-commit hook with executable permissions. Reproduce baseline e750d1c and verify task/index state; retain rejection evidence. Release only the deliberately controlled hook as part of the resumed recovery test.
-4. A-020: restore the published owned commit from its bundle; restore `unrelated-staged.txt` content and stage it, leave `unrelated-unstaged.txt` untracked, restore README working content without staging. Compare with recorded state before relying on reconstruction. Record restoration as an intervention, not original execution.
-5. Synthetic credential/verification fixtures can be recreated with `python -m tests.workflows.scenario_setup SOURCE BASELINE NEW_DEST --case A-025` or A-026 (original baseline61f9670), A-015/A-020 (original baselinee750d1c). NEW_DEST must not exist. A-024 controlled adapter is retained in its run; use a new ignored synthetic token and documented no-network session mechanism. Never reconstruct live credentials from records.
+Checkout `/workspace/scratch/sdd008-A-014-cross/repo`, phase1 HEAD/remote `83eab02a70e7757e11f04f46a64849f69ba64df0`, bare origin `/workspace/scratch/sdd008-A-014-cross/remote.git`; origin/main remains `d769b55`. No local main ref is assumed. Hosting disabled; historical real issue links are provenance, never use live credentials/API in this fixture.
 
-## Remaining sequence and evidence rules
+Suspended during genuine T-004 RED. Two unstaged owned test files preserved: tests/unit/test_files.py and tests/integration/test_cli.py. Focused17 tests produced three expected CLI failures and one expected unhandled permission error. No production fix/task status/commit/merge/phase transition. Root privilege-drop facility was unavailable; deterministic denied-open fixture correction and both attempted logs are retained distinctly.
 
-Execute A-004–A-013 only after completed A-003. Remaining isolated cases A-014, A-016–A-019, A-021–A-023 and A-015 continuation still need actual consumer execution. A-027 final assessment is Pending. Resume follows the accepted source plan; do not fabricate unsupported client/injection passes or repair newly discovered plugin defects without accepted scope.
+Resume T-004 from existing tests, implement scoped diagnostic translation, verify/commit/push, then T-005. Only after full phase1 exits and explicit merge/main verification/publication start phase2 and execute T-006; stop before T-007. Preserve the previously Passed prerequisite-block subcase: exact T-003..T-006 range stopped because T-002 was outside scope.
 
-Commit/push each case assessment before dependent work. `tools/record_case.py` now requires all declared artifacts to exist and supports Suspended separately from Running. Case records retain action journals/full final handoffs and available tool results; no complete native transcript export is claimed. Fixture recreation script was consolidated after initial runs; maintain that provenance. Python3.12.14 was actually used;3.11 was not run. Final source integration remains explicit two-parent merge at completed authorized revision boundary.
+Recovery: `runs/A-014/A-014-pending/` holds HEAD bundle, patches/file archive and index/content hashes. Journals and actual RED logs are alongside it. No reset or setup replay.
+
+## Publication failure continuation: A-018
+
+Task-publication rejection and recovery are evidenced: isolated `/workspace/scratch/sdd008-A-018-task/repo` retains and has published the same `7c29721` T-002 commit; ten tests pass, no replacement task commit/next task/merge. Controlled rejection hook is disabled after recorded owner intervention. Main remains `e750d1c`. No worker active.
+
+Still required: a separate complete-phase fork from an actually verified Phase1 task tip, server rejection of target-merge publication, retention of the real merge, then restoration/fresh continuation publishing that same boundary without force or a duplicate merge. No merge-rejection setup/consumer has run yet. Do not replay completed task-rejection setup against its existing repository.
+
+## Remaining sequence and preservation
+
+A-019 prospective merge conflict/check failure and A-021 interrupted feature transfer/archive remain Pending; committed boundary-readiness adapter is only a harness self-check, not a consumer pass. A-027 final coverage assessment remains Pending. Retain all successful/failed attempts, real-versus-injected distinctions and remote/object identities. Newly observed source defects receive stable findings, no silent pinned-package repair.
+
+Source `/workspace/scratch/6420baa7afea` remains on revision/008_98a5562-runtime-acceptance, targeting feature/architecture-revision; preserve unrelated source work. Complete source report and explicit verified boundary only after the accepted campaign execution is assessed. Keep evaluation/008-runtime-acceptance separate from consumer product branches; never expose its oracles/reports to consumers.
+
+If scratch is lost, clone the published source/evaluation branches, verify bundles, restore each named branch from its recorded HEAD, apply staged patch to the index before unstaged patch, and verify saved hashes. Restore only the selected owned files/index intent, never reset an existing worktree. Credentials are deliberately excluded and must be recovered through the manager protocol for the correct repository; never copy a source token into AgentPlayground. Pause for any ambiguous conflict or missing required facility.
