@@ -1,0 +1,10 @@
+{
+  "id": "A-014",
+  "status": "Running",
+  "assessment": "Isolated exact-range request supplied; out-of-range prerequisite and sequential cross-phase subcases require separate observed consumer decisions.",
+  "repo": "/workspace/scratch/sdd008-A-014-prerequisite/repo",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-014-prerequisite-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-014-prerequisite-setup.json"
+  ]
+}
