@@ -1,29 +1,43 @@
-"""Check unique executable task IDs from explicit Markdown task tables."""
+"""Check globally unique current task IDs in checkbox lists and task tables."""
 
 import argparse
 import json
 import re
 from pathlib import Path
 
-TERMINAL = {"done", "complete", "completed", "cancelled", "canceled", "superseded", "archived"}
-
-
 def task_files(root):
-    """Find governing task documents while excluding archive directory components."""
-    for path in sorted(root.rglob("*.md")):
-        if path.name not in {"TASKS.md", "FEATURE-TASKS.md"}:
+    """Find current lists and linked children, excluding historical feature files."""
+    root = root.resolve()
+    pending = sorted(path for path in root.rglob("*.md")
+                     if path.name in {"TASKS.md", "FEATURE-TASKS.md"})
+    seen = set()
+    while pending:
+        path = pending.pop(0).resolve()
+        if path in seen or not path.is_relative_to(root):
             continue
-        if any("archive" in part.lower() for part in path.relative_to(root).parts[:-1]):
+        if any("archive" in part.lower() or part.lower() == "features"
+               for part in path.relative_to(root).parts[:-1]):
             continue
+        seen.add(path)
         yield path
+        for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", path.read_text()):
+            target = target.split("#", 1)[0]
+            if ":" not in target and target.endswith(".md"):
+                child = (path.parent / target).resolve()
+                if child.is_file():
+                    pending.append(child)
 
 
 def read_tasks(path):
-    """Extract ID/status table rows; reject ambiguous executable table schemas."""
+    """Extract owning checkbox IDs or ID/status rows, including completed tasks."""
     headers = None
     rows = []
-    saw_table = False
     for number, line in enumerate(path.read_text().splitlines(), 1):
+        checkbox = re.match(r"^\s*[-*+]\s+\[([ xX])\]\s+[`*]*(T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\b", line)
+        if checkbox:
+            rows.append({"id": checkbox[2], "document": str(path), "line": number,
+                         "status": "Checked" if checkbox[1].lower() == "x" else "Unchecked"})
+            continue
         if not line.strip().startswith("|"):
             headers = None
             continue
@@ -31,7 +45,6 @@ def read_tasks(path):
         normalized = [cell.lower().replace(" ", "_") for cell in cells]
         if "id" in normalized or "task_id" in normalized:
             headers = normalized
-            saw_table = True
             if "status" not in headers:
                 raise ValueError(f"{path}:{number}: task table requires a Status column")
             continue
@@ -43,11 +56,8 @@ def read_tasks(path):
         identifier = row.get("id", row.get("task_id", ""))
         if not identifier:
             raise ValueError(f"{path}:{number}: empty task ID")
-        if row["status"].lower() not in TERMINAL:
-            rows.append({"id": identifier, "document": str(path), "line": number,
-                         "status": row["status"]})
-    if not saw_table:
-        raise ValueError(f"{path}: no supported ID/Status task table found")
+        rows.append({"id": identifier, "document": str(path), "line": number,
+                     "status": row["status"]})
     return rows
 
 
@@ -64,6 +74,8 @@ def check_ownership(root):
                 raise AssertionError(f"duplicate executable ID {row['id']}: "
                                      f"{prior['document']}:{prior['line']} and {path}:{row['line']}")
             owners[row["id"]] = row
+    if not owners:
+        raise AssertionError("no supported owning task IDs found; empty extraction is not acceptance")
     return {"documents": [str(path) for path in documents], "owners": owners}
 
 

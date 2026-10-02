@@ -45,7 +45,7 @@ class BoundaryTests(unittest.TestCase):
 
 
 class OwnershipTests(unittest.TestCase):
-    """Verify active owner uniqueness and archive/terminal-row exclusion."""
+    """Verify current owner uniqueness including completed task entries."""
 
     def test_duplicate_and_archive(self):
         """Reject duplicate IDs in active feature work but ignore archived rows."""
@@ -63,7 +63,22 @@ class OwnershipTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, "duplicate executable ID"):
                 check_ownership(root)
             (active / "FEATURE-TASKS.md").write_text(table.replace("Pending", "Done"))
-            self.assertEqual(set(check_ownership(root)["owners"]), {"T-001"})
+            with self.assertRaises(AssertionError):
+                check_ownership(root)
+
+    def test_checkbox_hierarchy_and_linked_children(self):
+        """Accept nested hierarchy and reject duplicate checked current IDs."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "TASKS.md").write_text("- [ ] Phase 1\n    - [x] T-001 — Completed work\n"
+                                           "    - [ ] T-002 — Pending work\n[Children](child.md)\n")
+            (root / "child.md").write_text("- [ ] T-003 — Linked work\n")
+            (root / "features").mkdir()
+            (root / "features/FEATURE-TASKS.md").write_text("- [x] T-001 — History\n")
+            self.assertEqual(set(check_ownership(root)["owners"]), {"T-001", "T-002", "T-003"})
+            (root / "FEATURE-TASKS.md").write_text("- [x] T-001 — Duplicate completed work\n")
+            with self.assertRaisesRegex(AssertionError, "duplicate executable ID"):
+                check_ownership(root)
 
     def test_duplicate_in_same_document(self):
         """Reject duplicate executable rows even in one document."""

@@ -1,1 +1,5 @@
 *.tkn
+
+# Python support checker caches
+__pycache__/
+*.py[cod]
