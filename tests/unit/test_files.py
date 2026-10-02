@@ -68,3 +68,41 @@ class FileCountingTests(unittest.TestCase):
             self.assertTrue(all(handle.closed for handle in handles))
             self.assertEqual(stdout.getvalue(), "")
             self.assertEqual(stderr.getvalue(), "")
+
+
+class FileFailureTests(unittest.TestCase):
+    """Protect original exceptions and owned-handle cleanup on read failure."""
+
+    def test_missing_file_preserves_oserror_without_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                with self.assertRaises(FileNotFoundError):
+                    count_file(Path(directory) / "missing.txt")
+            self.assertEqual((stdout.getvalue(), stderr.getvalue()), ("", ""))
+
+    def test_decode_failure_closes_real_handle_and_preserves_bytes(self):
+        handles = []
+        def observe_open(*args, **kwargs):
+            handle = builtins.open(*args, **kwargs)
+            handles.append(handle)
+            return handle
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "invalid.txt"
+            path.write_bytes(b"valid prefix\n\xff")
+            with patch("textstats.files.open", side_effect=observe_open, create=True):
+                with self.assertRaises(UnicodeDecodeError):
+                    count_file(path)
+            self.assertTrue(handles)
+            self.assertTrue(all(handle.closed for handle in handles))
+            self.assertEqual(path.read_bytes(), b"valid prefix\n\xff")
+
+    def test_read_denial_closes_acquired_handle_and_preserves_exception(self):
+        class DeniedReader(io.StringIO):
+            def read(self, *args, **kwargs):
+                raise PermissionError("controlled read denial")
+        handle = DeniedReader("partial data")
+        with patch("textstats.files.open", return_value=handle, create=True):
+            with self.assertRaises(PermissionError):
+                count_file("denied.txt")
+        self.assertTrue(handle.closed)

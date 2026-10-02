@@ -78,3 +78,65 @@ class NamedFileCliTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             (Path(directory) / "-").write_bytes(b"named input\n")
             self.assert_success(self.run_cli("-", cwd=directory), "lines=1 words=2\n")
+
+
+class CliFailureTests(unittest.TestCase):
+    """Protect process failure/usage channels and useful diagnostics."""
+
+    run_cli = NamedFileCliTests.run_cli
+    assert_success = NamedFileCliTests.assert_success
+
+    def assert_failure(self, result, status, name=None):
+        self.assertEqual(result.returncode, status, result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertTrue(result.stderr.strip())
+        self.assertNotIn("Traceback", result.stderr)
+        if name is not None:
+            self.assertIn(name, result.stderr)
+
+    def test_missing_and_invalid_utf8_inputs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            bad = Path(directory) / "invalid.txt"
+            bad.write_bytes(b"valid\n\xff")
+            for path in (missing, bad):
+                with self.subTest(path=path.name):
+                    self.assert_failure(self.run_cli(path), 1, path.name)
+            self.assertEqual(bad.read_bytes(), b"valid\n\xff")
+
+    def test_directory_cannot_be_read_as_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.assert_failure(self.run_cli(directory), 1, directory)
+
+    def test_usage_and_help(self):
+        environment = os.environ.copy()
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        for arguments in ([], ["a", "b"], ["--unknown"], ["--json", "a"]):
+            with self.subTest(arguments=arguments):
+                result = subprocess.run([sys.executable, "-m", "textstats", *arguments],
+                    cwd=PROJECT_ROOT, env=environment, capture_output=True, text=True, timeout=10)
+                self.assert_failure(result, 2)
+        result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
+            cwd=PROJECT_ROOT, env=environment, capture_output=True, text=True, timeout=10)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("INPUT", result.stdout)
+        self.assertEqual(result.stderr, "")
+
+    def test_dash_prefixed_file_via_separator(self):
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
+            self.assert_success(self.run_cli("-sample.txt", "--", cwd=directory), "lines=1 words=2\n")
+
+    def test_permission_denial_translation_in_process(self):
+        from unittest.mock import patch
+        import contextlib
+        import io
+        from textstats.cli import main
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                status = main(["denied.txt"])
+        self.assertEqual(status, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("denied.txt", stderr.getvalue())
+        self.assertIn("Permission denied", stderr.getvalue())

@@ -30,7 +30,9 @@ assert count_file("sample.txt") == TextStats(lines=1, words=2)
 
 Results are immutable. The file API reads strict UTF-8, leaves files unchanged and closes its own handle.
 
-This milestone delivers named-file success paths. CLI failure polish and source-distribution verification remain in milestone 1.2; JSON and stdin are planned for phase 2. Input `-` currently names a file.
+The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
+
+Source-distribution verification remains in milestone 1.2; JSON and stdin are planned for phase 2. Input `-` currently names a file.
 
 ## Development
 
