@@ -2,8 +2,6 @@
 
 ## State and evidence
 
-User-requested suspension on 2026-10-02; all agents stopped. See [resume checkpoint](RESUME.md).
-
 Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.
 
 | Case | Status | Assessment | Records |
@@ -22,7 +20,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-012 | Pending | Not executed | None |
 | A-013 | Pending | Not executed | None |
 | A-014 | Pending | Not executed | None |
-| A-015 | Suspended | Actual consumer verified T-001 (7 tests) and checked it; controlled pre-commit hook rejected commit. Six owned staged paths retained on phase1 at e750d1c. No retry/commit/push. User suspended before fresh continuation; case not passed. Independent snapshot and Git bundle retain pending contents/HEAD/hook and RED/GREEN logs. | [Run](runs/A-015/assessment.json) |
+| A-015 | Passed | Original actual pre-commit rejection preserved. Fresh consumer resumed checked/verified T-001, rechecked7 tests, committed35df4a0 and pushed isolated phase origin; stopped without T-002/merge. Independent hashes of all5 code/test files exactly match pre-resume, proving no reimplementation; main e750d1c unchanged, remote phase equals commit. Controlled hook release explicitly recorded. | [Run](runs/A-015/assessment.json) |
 | A-016 | Pending | Not executed | None |
 | A-017 | Pending | Not executed | None |
 | A-018 | Pending | Not executed | None |
@@ -38,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 6, Failed: 0, Blocked: 0, Suspended: 2, Running: 0, Pending: 19.
+Passed: 7, Failed: 0, Blocked: 0, Suspended: 1, Running: 0, Pending: 19.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.
