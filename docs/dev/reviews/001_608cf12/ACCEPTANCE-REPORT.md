@@ -8,7 +8,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | --- | --- | --- | --- |
 | A-001 | Passed | Independent inspection: 7 governing documents, SPEC exact contracts, early end-to-end PLAN with phase exits, 8 uniquely owned unchecked tasks. No product source/tests. Preparation e750d1c pushed, main remote equality observed; explicit-source mode only. | [Run](runs/A-001/assessment.json) |
 | A-002 | Passed | Selection output correctly resolves T-001 and T-001..T-003 milestone1.1, same phase owner, no external prerequisite; partial phase pause. Independent state remains clean main e750d1c; consumer journal records no tests/push/branch/mutation. | [Run](runs/A-002/assessment.json) |
-| A-003 | Running | Resumed first projection independently verified: issues1..8 match T-001..T-008 exact owning titles/markers, phase/native milestones1,1,1,2,2,3,4,4. Existing parents reused. Supplied PAT Issues write demonstrated by actual creations. Second reconciliation/foreign-field trial still pending; original connector403 retained. | [Run](runs/A-003/assessment.json) |
+| A-003 | Passed | Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation. | [Run](runs/A-003/assessment.json) |
 | A-004 | Pending | Not executed | None |
 | A-005 | Pending | Not executed | None |
 | A-006 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 7, Failed: 0, Blocked: 0, Suspended: 0, Running: 1, Pending: 19.
+Passed: 8, Failed: 0, Blocked: 0, Suspended: 0, Running: 0, Pending: 19.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

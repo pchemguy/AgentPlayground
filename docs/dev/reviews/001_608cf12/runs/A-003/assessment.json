@@ -1,15 +1,13 @@
 {
   "id": "A-003",
-  "status": "Running",
+  "status": "Passed",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
-  "assessment": "Resumed first projection independently verified: issues1..8 match T-001..T-008 exact owning titles/markers, phase/native milestones1,1,1,2,2,3,4,4. Existing parents reused. Supplied PAT Issues write demonstrated by actual creations. Second reconciliation/foreign-field trial still pending; original connector403 retained.",
+  "assessment": "Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation.",
   "artifacts": [
-    "/workspace/scratch/acceptance-out-008/A-003-resume1-created.json",
-    "/workspace/scratch/acceptance-out-008/A-003-resume1.md",
-    "/workspace/scratch/acceptance-out-008/A-003-resume1-issue-drafts.json",
-    "/workspace/scratch/acceptance-out-008/A-003-resume1-after.json",
-    "/workspace/scratch/acceptance-out-008/A-003-resume1-before.json",
-    "/workspace/scratch/acceptance-out-008/A-003-resume1-final.md",
-    "/workspace/scratch/acceptance-out-008/A-003-first-independent.json"
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-final.md",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-before.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2.md",
+    "/workspace/scratch/acceptance-out-008/A-003-second-independent.json"
   ]
 }
