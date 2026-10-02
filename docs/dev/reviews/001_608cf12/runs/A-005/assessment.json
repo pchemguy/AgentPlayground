@@ -1,0 +1,9 @@
+{
+  "id": "A-005",
+  "status": "Running",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Milestone1.1 continuation request published after passed A-004. Includes bounded test-layout alignment for original accepted requirement omitted from preparation prompt (TST-001); no behavior/source-plugin change. Independent literal named-file success oracle published before assessment.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-005-prompt.txt"
+  ]
+}
