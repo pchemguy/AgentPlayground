@@ -205,13 +205,16 @@
     "run_path": "runs/A-014",
     "evidence": [
       "runs/A-014/git-snapshot.json",
+      "runs/A-014/A-014-prerequisite.md",
+      "runs/A-014/A-014-prerequisite-independent.json",
       "runs/A-014/A-014-prerequisite-setup.json",
+      "runs/A-014/A-014-prerequisite-final.md",
       "runs/A-014/assessment.json",
       "runs/A-014/A-014-prerequisite-prompt.txt"
     ],
     "native_transcript": null,
-    "assessment": "Isolated exact-range request supplied; out-of-range prerequisite and sequential cross-phase subcases require separate observed consumer decisions.",
-    "assessed_at": "2026-10-02T16:39:49.642901+00:00"
+    "assessment": "Out-of-range prerequisite subcase independently verified: T-003..T-006 request blocked by unchecked/unimplemented T-002; no edits/tests/publication/branch transition. Sequential cross-phase subcase remains pending.",
+    "assessed_at": "2026-10-02T16:42:06.764739+00:00"
   },
   {
     "id": "A-015",
