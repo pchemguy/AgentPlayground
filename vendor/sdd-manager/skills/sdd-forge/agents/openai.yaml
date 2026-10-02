@@ -1,0 +1,9 @@
+interface:
+  display_name: "SDD Forge"
+  short_description: "Coordinate SDD tasks with GitHub issues and milestones"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#176C68"
+  default_prompt: "Use $sdd-forge to reconcile these SDD tasks with GitHub issues and milestones."
+policy:
+  allow_implicit_invocation: true
