@@ -291,14 +291,22 @@
   },
   {
     "id": "A-026",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-026/A-026-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-026",
+    "evidence": [
+      "runs/A-026/baseline-results.txt",
+      "runs/A-026/A-026.md",
+      "runs/A-026/A-026-final.md",
+      "runs/A-026/git-snapshot.json",
+      "runs/A-026/A-026-independent.json",
+      "runs/A-026/A-026-prompt.txt",
+      "runs/A-026/assessment.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Fresh verify consumer observed 1 test/1 pre-existing baseline failure exit1 and zero selected tests exit5. Independent evaluator reran both and checked unchanged fixture/status. Empty suite did not establish acceptance; verify made no source/test/task repair. Actual Python3.12.14 recorded.",
+    "assessed_at": "2026-10-02T13:22:32.584220+00:00"
   },
   {
     "id": "A-027",

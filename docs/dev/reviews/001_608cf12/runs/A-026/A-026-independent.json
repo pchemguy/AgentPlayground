@@ -1,0 +1,28 @@
+{
+  "git --no-optional-locks status --porcelain=v1": {
+    "exit": 0,
+    "stdout": "?? change.md\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks rev-parse HEAD": {
+    "exit": 0,
+    "stdout": "ad7d3bce1a615e93262ab99f6501a26819895c57\n",
+    "stderr": ""
+  },
+  "python -m unittest discover -s tests -v": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "test_established_failure (test_existing.ExistingFailure.test_established_failure) ... FAIL\n\n======================================================================\nFAIL: test_established_failure (test_existing.ExistingFailure.test_established_failure)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/sdd008-A-026/repo/tests/test_existing.py\", line 5, in test_established_failure\n    self.assertEqual(2,3,\"controlled pre-existing failure\")\nAssertionError: 2 != 3 : controlled pre-existing failure\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+  },
+  "python -m unittest discover -s empty -v": {
+    "exit": 5,
+    "stdout": "",
+    "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n"
+  },
+  "fixture_files": {
+    ".gitignore": "*.tkn\n__pycache__/\n*.py[cod]\n",
+    "tests/test_existing.py": "\"\"\"Demonstrate a known pre-existing failure.\"\"\"\nimport unittest\nclass ExistingFailure(unittest.TestCase):\n def test_established_failure(self):\n  self.assertEqual(2,3,\"controlled pre-existing failure\")\n",
+    "change.md": "# Selected document change\n\nThis selected change does not edit the failing baseline test.\n"
+  },
+  "setup": "Isolated bare-origin clone of consumer setup 61f9670; fixture baseline committed/pushed. A-025 synthetic tracked credential and ignored-negation intentionally installed without live secrets. A-026 known failing baseline and uncommitted selected document."
+}
