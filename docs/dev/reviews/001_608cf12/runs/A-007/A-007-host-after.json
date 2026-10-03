@@ -1,0 +1,58 @@
+[
+  {
+    "task": "T-008",
+    "issue": 8,
+    "state": "open",
+    "reason": null,
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/8"
+  },
+  {
+    "task": "T-007",
+    "issue": 7,
+    "state": "open",
+    "reason": null,
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/7"
+  },
+  {
+    "task": "T-006",
+    "issue": 6,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/6"
+  },
+  {
+    "task": "T-005",
+    "issue": 5,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/5"
+  },
+  {
+    "task": "T-004",
+    "issue": 4,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/4"
+  },
+  {
+    "task": "T-003",
+    "issue": 3,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/3"
+  },
+  {
+    "task": "T-002",
+    "issue": 2,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/2"
+  },
+  {
+    "task": "T-001",
+    "issue": 1,
+    "state": "closed",
+    "reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/1"
+  }
+]

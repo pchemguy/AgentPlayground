@@ -1,0 +1,20 @@
+test_dash_prefixed_file_via_separator (tests.integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok
+test_directory_cannot_be_read_as_file (tests.integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok
+test_missing_and_invalid_utf8_inputs (tests.integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok
+test_permission_denial_translation_in_process (tests.integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok
+test_usage_and_help (tests.integration.test_cli.CliFailureTests.test_usage_and_help) ... ok
+test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) ... ok
+test_json_dash_prefixed_named_file (tests.integration.test_cli.JsonCliTests.test_json_dash_prefixed_named_file) ... ok
+test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) ... ok
+test_json_permission_denial_translation (tests.integration.test_cli.JsonCliTests.test_json_permission_denial_translation) ... ok
+test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.789s
+
+OK

@@ -1,0 +1,94 @@
+{
+  "status": 200,
+  "associations": [
+    {
+      "task": "T-008",
+      "number": 8,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+      "state": "open",
+      "state_reason": null,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.2-UTF-8-stdin"
+    },
+    {
+      "task": "T-007",
+      "number": 7,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+      "state": "open",
+      "state_reason": null,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.2-UTF-8-stdin"
+    },
+    {
+      "task": "T-006",
+      "number": 6,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+      "state": "open",
+      "state_reason": null,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.1-JSON-output"
+    },
+    {
+      "task": "T-005",
+      "number": 5,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+      "state": "closed",
+      "state_reason": "completed",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.2-Reliable-baseline-and-distribution"
+    },
+    {
+      "task": "T-004",
+      "number": 4,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+      "state": "closed",
+      "state_reason": "completed",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.2-Reliable-baseline-and-distribution"
+    },
+    {
+      "task": "T-003",
+      "number": 3,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+      "state": "closed",
+      "state_reason": "completed",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    },
+    {
+      "task": "T-002",
+      "number": 2,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+      "state": "closed",
+      "state_reason": "completed",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    },
+    {
+      "task": "T-001",
+      "number": 1,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+      "state": "closed",
+      "state_reason": "completed",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline",
+        "acceptance-note"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    }
+  ]
+}

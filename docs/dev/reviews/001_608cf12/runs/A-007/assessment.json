@@ -1,0 +1,27 @@
+{
+  "id": "A-007",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Fresh isolated consumer started phase2 from published Phase1 main29c2758; actual JSON RED then GREEN15 focused/31 full tests, scoped commit8a53078 published. T006/milestone2.1 checked, T007/T008 and phase2 incomplete/unmerged; main unchanged. Unique issue6 closed/completed with comment5965363214 and matching commit evidence. Independent31 tests/20 literal CLI cases, ordered ancestry/task ownership/unchanged core+file modules/pin/remote checks passed. Existing12 bytecode files preserved. Earlier isolated JSON trial not read/copied. Explicit-source/runtime/client-export limits retained.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-007-T006-GREEN.log",
+    "/workspace/scratch/acceptance-out-008/A-007-T006-RED.log",
+    "/workspace/scratch/acceptance-out-008/A-007-T006-full-tests.log",
+    "/workspace/scratch/acceptance-out-008/A-007-T006-push.log",
+    "/workspace/scratch/acceptance-out-008/A-007-boundaries.json",
+    "/workspace/scratch/acceptance-out-008/A-007-bytecode-before.json",
+    "/workspace/scratch/acceptance-out-008/A-007-final-check.log",
+    "/workspace/scratch/acceptance-out-008/A-007-final.md",
+    "/workspace/scratch/acceptance-out-008/A-007-host-after.json",
+    "/workspace/scratch/acceptance-out-008/A-007-host-before.json",
+    "/workspace/scratch/acceptance-out-008/A-007-host-closure.json",
+    "/workspace/scratch/acceptance-out-008/A-007-host-evidence-before.json",
+    "/workspace/scratch/acceptance-out-008/A-007-host-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-007-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-007-milestone-demo.log",
+    "/workspace/scratch/acceptance-out-008/A-007-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-007-remote-tips.log",
+    "/workspace/scratch/acceptance-out-008/A-007.md"
+  ],
+  "excluded_raw_provider_artifacts": []
+}

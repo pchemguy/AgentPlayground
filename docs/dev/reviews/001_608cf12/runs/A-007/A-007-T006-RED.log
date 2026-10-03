@@ -1,0 +1,222 @@
+test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) ... 
+  test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff alpha\r\nbeta\n', options=()) ... FAIL
+  test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff alpha\r\nbeta\n', options=('--keep-bom',)) ... FAIL
+  test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff', options=()) ... FAIL
+  test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff', options=('--keep-bom',)) ... FAIL
+  test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='alpha \ufeff beta', options=()) ... FAIL
+test_json_dash_prefixed_named_file (tests.integration.test_cli.JsonCliTests.test_json_dash_prefixed_named_file) ... FAIL
+test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) ... 
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='') ... FAIL
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text=' \t') ... FAIL
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha beta') ... FAIL
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha\r\nbeta\rgamma\n') ... FAIL
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='café\xa0猫\u2028dog\n') ... FAIL
+  test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha\n\n') ... FAIL
+test_json_permission_denial_translation (tests.integration.test_cli.JsonCliTests.test_json_permission_denial_translation) ... ERROR
+test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) ... 
+  test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw/missing.txt')) ... FAIL
+  test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw/bad.txt')) ... FAIL
+  test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw')) ... FAIL
+
+======================================================================
+ERROR: test_json_permission_denial_translation (tests.integration.test_cli.JsonCliTests.test_json_permission_denial_translation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 222, in test_json_permission_denial_translation
+    status = main(["--json", "denied.txt"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/AgentPlayground-sdd-008/textstats/cli.py", line 38, in main
+    arguments = parser.parse_args(argv)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py", line 1908, in parse_args
+    self.error(msg)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py", line 2650, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py", line 2637, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+======================================================================
+FAIL: test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff alpha\r\nbeta\n', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 195, in test_json_bom_policy_and_option_order
+    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff alpha\r\nbeta\n', options=('--keep-bom',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 195, in test_json_bom_policy_and_option_order
+    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 195, in test_json_bom_policy_and_option_order
+    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='\ufeff', options=('--keep-bom',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 195, in test_json_bom_policy_and_option_order
+    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) (text='alpha \ufeff beta', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 195, in test_json_bom_policy_and_option_order
+    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_dash_prefixed_named_file (tests.integration.test_cli.JsonCliTests.test_json_dash_prefixed_named_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 212, in test_json_dash_prefixed_named_file
+    self.assert_json_success(self.run_cli("-sample.txt", "--json", "--", cwd=directory), 1, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text=' \t')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha beta')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha\r\nbeta\rgamma\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='café\xa0猫\u2028dog\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) (text='alpha\n\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries
+    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 154, in assert_json_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw/missing.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 206, in test_json_read_and_decode_failure_channels
+    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 91, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 1 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw/bad.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 206, in test_json_read_and_decode_failure_channels
+    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 91, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 1 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) (path=PosixPath('/tmp/tmpc0tw48uw'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 206, in test_json_read_and_decode_failure_channels
+    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 91, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 1 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.688s
+
+FAILED (failures=15, errors=1)

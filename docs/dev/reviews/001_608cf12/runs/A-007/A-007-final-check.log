@@ -1,0 +1,22 @@
+Bytecode preservation: PASS; unchanged files: 12
+Command: ('git', '--no-optional-locks', 'status', '--short') exit: 0
+?? tests/integration/__pycache__/
+?? tests/unit/__pycache__/
+?? textstats/__pycache__/
+Command: ('git', '--no-optional-locks', 'rev-parse', 'HEAD') exit: 0
+8a53078d0f734165075691dae0dbfa224a63446f
+Command: ('git', '--no-optional-locks', 'rev-parse', 'main') exit: 0
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+Command: ('git', '--no-optional-locks', 'diff', 'main...HEAD', '--stat') exit: 0
+ README.md                     | 18 ++++++++-
+ docs/dev/TASKS.md             |  6 ++-
+ tests/integration/test_cli.py | 86 ++++++++++++++++++++++++++++++++++++++++++-
+ textstats/cli.py              | 14 +++++--
+ 4 files changed, 116 insertions(+), 8 deletions(-)
+Command: ('git', '--no-optional-locks', 'diff', '--name-only', 'main', '--', 'vendor/sdd-manager') exit: 0
+Command: ('git', '--no-optional-locks', 'log', '-1', '--format=%H%n%P%n%s') exit: 0
+8a53078d0f734165075691dae0dbfa224a63446f
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+Add and verify named-file JSON output (T-006)
+Command: ('git', '--no-optional-locks', 'diff', '--check') exit: 0
+Boundary checks: PASS; vendor unchanged, main unchanged, only T-006/milestone2.1 complete; no merge or stdin work.

@@ -1,0 +1,11 @@
+Command: ['python', '-c', "from pathlib import Path; Path('sample.txt').write_text('alpha beta\\n', encoding='utf-8')"]
+Status: 0 stdout: '' stderr: ''
+Command: ['python', '-m', 'textstats', 'sample.txt']
+Status: 0 stdout: 'lines=1 words=2\n' stderr: ''
+Command: ['python', '-m', 'textstats', '--json', 'sample.txt']
+Status: 0 stdout: '{"lines": 1, "words": 2}\n' stderr: ''
+Command: ['python', '-m', 'textstats', '--json', 'bom.txt']
+Status: 0 stdout: '{"lines": 2, "words": 2}\n' stderr: ''
+Command: ['python', '-m', 'textstats', '--json', '--keep-bom', 'bom.txt']
+Status: 0 stdout: '{"lines": 2, "words": 3}\n' stderr: ''
+README examples, BOM composition, affected module docstrings, local links and heading spacing: PASS
