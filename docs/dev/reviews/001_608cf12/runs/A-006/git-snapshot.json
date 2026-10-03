@@ -1,16 +1,15 @@
 {
   "schema_version": 1,
-  "branch": "phase/1-named-file-baseline",
-  "head": "b9fabb0aab69bf891386f9bf47c503b78be6cf15",
+  "branch": "main",
+  "head": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
   "parents": [
-    "8836c497ec94946580948f68c4ffe79713936a8a"
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "964e72bd5b7cab1393def96cb7a192938ca586ab"
   ],
   "status": [
-    "M  README.md",
-    "M  docs/dev/TASKS.md",
-    "A  tests/integration/test_distribution.py",
     "?? tests/integration/__pycache__/__init__.cpython-312.pyc",
     "?? tests/integration/__pycache__/test_cli.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_distribution.cpython-312.pyc",
     "?? tests/unit/__pycache__/__init__.cpython-312.pyc",
     "?? tests/unit/__pycache__/test_api.cpython-312.pyc",
     "?? tests/unit/__pycache__/test_counting.cpython-312.pyc",
@@ -23,15 +22,26 @@
   ],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/evaluation/008-runtime-acceptance": "876c488c95587794ea5f6a6e4a5f944b753eac76",
-    "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
-    "refs/heads/phase/1-named-file-baseline": "b9fabb0aab69bf891386f9bf47c503b78be6cf15"
+    "refs/heads/evaluation/008-runtime-acceptance": "37eb5ba236ff323db59cbda8803c69a7626040e6",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab"
   },
   "changed_paths": [
     "README.md",
     "docs/dev/TASKS.md",
+    "docs/dev/layout.md",
+    "tests/__init__.py",
+    "tests/integration/__init__.py",
     "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "tests/unit/__init__.py",
+    "tests/unit/test_api.py",
+    "tests/unit/test_counting.py",
     "tests/unit/test_files.py",
-    "textstats/cli.py"
+    "textstats/__init__.py",
+    "textstats/__main__.py",
+    "textstats/cli.py",
+    "textstats/counting.py",
+    "textstats/files.py"
   ]
 }

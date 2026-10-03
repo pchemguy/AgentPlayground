@@ -2,7 +2,7 @@
 
 ## State and evidence
 
-Pinned source: 529e98d; explicit skill-source loading. User authorized replacement isolated consumers. Latest A-006 task verification is preserved locally; Git publication needs explicit named-destination approval after automatic review rejected it. No completed phase/campaign is claimed.
+Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.
 
 | Case | Status | Assessment | Records |
 | --- | --- | --- | --- |
@@ -11,7 +11,7 @@ Pinned source: 529e98d; explicit skill-source loading. User authorized replaceme
 | A-003 | Passed | Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation. | [Run](runs/A-003/assessment.json) |
 | A-004 | Passed | Actual first task T-001 on phase1: observed behavioral RED and9-test GREEN/full verification, professional docs, task commit3b201a3 pushed and issue1 completed with evidence. Independent literal API/BOM/newline/immutability checks passed; main d769b55 unchanged, no CLI/next task/partial merge. Foreign issue body/label retained. | [Run](runs/A-004/assessment.json) |
 | A-005 | Passed | Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained. | [Run](runs/A-005/assessment.json) |
-| A-006 | Blocked | Authorized replacement consumer preserved and committed T-005 as 964e72b. Independent 26-test suite and 12 literal CLI cases passed, all 97 pinned files and existing task bytes unchanged. GitHub issue4 closed/completed using existing evidence; issue5 remains open because T005 publication is blocked. Automatic approval review rejected Git push to AgentPlayground as insufficiently explicit destination/payload authorization. No phase merge, Phase2, or dependent case; task commit retained. This is an approval-runtime blocker, not a pinned-plugin defect. | [Run](runs/A-006/assessment.json) |
+| A-006 | Passed | Replacement isolated consumer pushed retained964e72b before checks, closed issue5 with unique evidence, verified all Phase1 exits and explicit main merge29c2758 with ordered parents d769b55/964e72b, then published. Independent merged-state26 tests and12 literal CLI cases passed; tracked clean, phase/main trees agree, remote equality and Phase2 absence checked. Pin/source-loading limits unchanged; prior approval failures and unchanged task content retained. | [Run](runs/A-006/assessment.json) |
 | A-007 | Pending | Not executed | None |
 | A-008 | Pending | Not executed | None |
 | A-009 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d; explicit skill-source loading. User authorized replaceme
 
 ## Counts and limits
 
-Passed: 14, Failed: 0, Blocked: 3, Suspended: 0, Running: 0, Pending: 10.
+Passed: 15, Failed: 0, Blocked: 2, Suspended: 0, Running: 0, Pending: 10.
 
-Only 26 product tests and 12 independent CLI cases for the latest task were rechecked. Green task checks do not complete A-006, which still requires published phase integration. New observer/setup scripts are assessor tools; prepared fixture setup was not run. Native discovery and full native tool-message export remain unavailable.
+Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.

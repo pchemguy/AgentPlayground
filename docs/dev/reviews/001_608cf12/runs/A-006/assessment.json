@@ -1,11 +1,18 @@
 {
   "id": "A-006",
-  "status": "Blocked",
+  "status": "Passed",
   "repo": "/workspace/scratch/AgentPlayground-sdd-008",
-  "assessment": "Authorized replacement consumer preserved and committed T-005 as 964e72b. Independent 26-test suite and 12 literal CLI cases passed, all 97 pinned files and existing task bytes unchanged. GitHub issue4 closed/completed using existing evidence; issue5 remains open because T005 publication is blocked. Automatic approval review rejected Git push to AgentPlayground as insufficiently explicit destination/payload authorization. No phase merge, Phase2, or dependent case; task commit retained. This is an approval-runtime blocker, not a pinned-plugin defect.",
-  "runtime_blocker": true,
-  "new_consumer_work": true,
-  "previous_status": "Blocked",
-  "pending_publication": "964e72bd5b7cab1393def96cb7a192938ca586ab",
-  "at": "2026-10-03T03:17:07.314068+00:00"
+  "assessment": "Replacement isolated consumer pushed retained964e72b before checks, closed issue5 with unique evidence, verified all Phase1 exits and explicit main merge29c2758 with ordered parents d769b55/964e72b, then published. Independent merged-state26 tests and12 literal CLI cases passed; tracked clean, phase/main trees agree, remote equality and Phase2 absence checked. Pin/source-loading limits unchanged; prior approval failures and unchanged task content retained.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4.md",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-final.md",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-boundaries.json",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-host-status.json",
+    "/workspace/scratch/acceptance-out-008/continuation-20261003-authorization.json",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-prospective-check.txt",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-phase-check.txt",
+    "/workspace/scratch/acceptance-out-008/A-006-resume4-final-check.txt"
+  ]
 }
