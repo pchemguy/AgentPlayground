@@ -224,3 +224,91 @@ class JsonCliTests(unittest.TestCase):
         self.assertEqual(stdout.getvalue(), "")
         self.assertIn("denied.txt", stderr.getvalue())
         self.assertIn("Permission denied", stderr.getvalue())
+
+
+class LineRangeCliTests(NamedFileCliTests):
+    """Verify inclusive selected counting, parser failures and complete decoding."""
+
+    def test_literal_selected_cases_in_both_formats_and_bom_modes(self):
+        cases = [
+            ("alpha beta\nbeta\nlast two", "2:3", False, (2, 3)),
+            ("alpha beta\nbeta\nlast two", "1:1", False, (1, 2)),
+            ("alpha beta\nbeta\nlast two", "2:99", False, (2, 3)),
+            ("alpha beta\nbeta\nlast two", "4:99", False, (0, 0)),
+            ("", "1:3", False, (0, 0)),
+            ("a\n\n", "2:9", False, (1, 0)),
+            ("a\r\nb c\rd\n", "2:3", False, (2, 3)),
+            ("a\u2028b\nc", "1:1", False, (1, 2)),
+            ("\ufeff", "1:1", False, (0, 0)),
+            ("\ufeff", "1:1", True, (1, 1)),
+            ("\ufeff a\nb", "2:2", False, (1, 1)),
+            ("\ufeff a\nb", "2:2", True, (1, 1)),
+            ("a\n\ufeff b", "2:2", False, (1, 2)),
+            ("\ufeff\ufeff", "1:1", False, (1, 1)),
+            ("a\nb", "01:02", False, (2, 2)),
+            ("a\nb", "2:2", False, (1, 1)),
+            ("a\r\r", "2:9", False, (1, 0)),
+            ("a\r\n\r\n", "2:9", False, (1, 0)),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "selected.txt"
+            for text, span, keep, expected in cases:
+                data = text.encode("utf-8")
+                path.write_bytes(data)
+                for use_json in [False, True]:
+                    options = ["--lines=" + span]
+                    if keep: options += ["--keep-bom"]
+                    if use_json: options.insert(0, "--json")
+                    with self.subTest(text=text, span=span, keep=keep, json=use_json):
+                        result = self.run_cli(path, *options)
+                        self.assertEqual((result.returncode, result.stderr), (0, ""))
+                        if use_json:
+                            parsed = json.loads(result.stdout)
+                            self.assertEqual(parsed, dict(zip(["lines", "words"], expected)))
+                            self.assertEqual({type(v) for v in parsed.values()}, {int})
+                            self.assertTrue(result.stdout.endswith("\n"))
+                        else:
+                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+                        self.assertEqual(path.read_bytes(), data)
+            path.write_bytes(b"a\nb")
+            self.assert_success(self.run_cli(path, "--lines", "1:"+"9"*5000), "lines=2 words=2\n")
+            result = self.run_cli(path, "--keep-bom", "--lines", "2:2", "--json")
+            self.assertEqual(json.loads(result.stdout), {"lines": 1, "words": 1})
+            self.assertEqual((result.returncode, result.stderr), (0, ""))
+
+    def test_invalid_ranges_precede_missing_input(self):
+        ranges = ["0:1", "2:1", "-1:2", "1:", ":2", "1:2:3", "1.0:2",
+                  "+1:2", " 1:2", "1:2 ", "١:٢", "１:２"]
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            for span in ranges:
+                with self.subTest(span=span):
+                    result = self.run_cli(missing, "--lines="+span)
+                    self.assertEqual((result.returncode, result.stdout), (2, ""))
+                    self.assertTrue(result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
+            for options in [("--lines",), ("--lines", "1:2", "--lines=1:1")]:
+                result = self.run_cli(missing, *options)
+                self.assertEqual((result.returncode, result.stdout), (2, ""))
+                self.assertTrue(result.stderr)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_decode_failure_outside_selection_and_named_dash_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "invalid.txt"
+            for data in [b"valid\n\xff", b"\xff\nvalid"]:
+                path.write_bytes(data)
+                for options in [("--lines=1:1",), ("--json", "--lines=2:2")]:
+                    result = self.run_cli(path, *options)
+                    self.assertEqual((result.returncode, result.stdout), (1, ""))
+                    self.assertIn(str(path), result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
+                    self.assertEqual(path.read_bytes(), data)
+            for name in ["-", "-range.txt"]:
+                (Path(directory) / name).write_bytes(b"a\nb c")
+                self.assert_success(self.run_cli(name, "--lines=2:2", "--", cwd=directory),
+                                    "lines=1 words=2\n")
+            help_result = self.run_cli(path, "--help")
+            self.assertEqual((help_result.returncode, help_result.stderr), (0, ""))
+            self.assertIn("inclusive", help_result.stdout)
+            self.assertIn("one-based", help_result.stdout)

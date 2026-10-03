@@ -50,6 +50,32 @@ The output is one object with exactly `lines` and `words` integer fields, follow
 
 Stdin is planned for milestone 2.2. Input `-` currently names a file.
 
+## Selected named-file lines
+
+Use `--lines START:END` to count existing one-based inclusive logical lines.
+Endpoints are positive ASCII decimal integers; leading zeros are accepted.
+Requests extending beyond EOF count only available lines; selection beyond
+EOF returns zero counts. Blank lines count as lines, and only CR, LF and CRLF
+terminate logical lines. Unicode separators may divide words without creating
+line positions. Repeated, reversed, zero, signed or open ranges are usage errors.
+
+```sh
+python -c "from pathlib import Path; Path('ranges.txt').write_text('alpha beta\nbeta\nlast two', encoding='utf-8')"
+python -m textstats --lines 1:1 ranges.txt
+python -m textstats --json --lines 2:3 ranges.txt
+python -m textstats --lines 2:99 ranges.txt
+python -m textstats --lines 4:99 ranges.txt
+```
+
+Outputs respectively: `lines=1 words=2`, `{"lines": 2, "words": 3}`,
+`lines=2 words=3`, and `lines=0 words=0`, each followed by a newline.
+`--lines=START:END` also works and composes with `--keep-bom` and `--json`.
+The complete file is strictly decoded even when invalid bytes lie outside the
+selection. The original input BOM policy runs once before numbering lines;
+a BOM originally on a later line remains ordinary content when selected.
+Public Python calls continue to count the whole input with unchanged signatures.
+Stdin selection is planned with milestone 2.2; this feature counts named files.
+
 ## Source distribution
 
 Create a self-contained source archive from the checkout root with the standard library:
