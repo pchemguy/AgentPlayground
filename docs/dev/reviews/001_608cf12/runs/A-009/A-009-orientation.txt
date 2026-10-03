@@ -1,0 +1,31 @@
+$ git --no-optional-locks rev-parse --show-toplevel
+/workspace/scratch/AgentPlayground-sdd-008
+
+exit_code=0
+$ git --no-optional-locks branch --show-current
+feature/002_8a53078-line-ranges
+
+exit_code=0
+$ git --no-optional-locks rev-parse HEAD refs/heads/phase/2-output-and-input-extensions refs/heads/main refs/remotes/origin/feature/002_8a53078-line-ranges
+62b5408e80adc2ac12464e5f9163b3afd47a58ba
+8a53078d0f734165075691dae0dbfa224a63446f
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+62b5408e80adc2ac12464e5f9163b3afd47a58ba
+
+exit_code=0
+$ git --no-optional-locks status --porcelain=v1 --untracked-files=all
+ M docs/dev/SPEC.md
+?? tests/integration/__pycache__/__init__.cpython-312.pyc
+?? tests/integration/__pycache__/test_cli.cpython-312.pyc
+?? tests/integration/__pycache__/test_distribution.cpython-312.pyc
+?? tests/unit/__pycache__/__init__.cpython-312.pyc
+?? tests/unit/__pycache__/test_api.cpython-312.pyc
+?? tests/unit/__pycache__/test_counting.cpython-312.pyc
+?? tests/unit/__pycache__/test_files.cpython-312.pyc
+?? textstats/__pycache__/__init__.cpython-312.pyc
+?? textstats/__pycache__/__main__.cpython-312.pyc
+?? textstats/__pycache__/cli.cpython-312.pyc
+?? textstats/__pycache__/counting.cpython-312.pyc
+?? textstats/__pycache__/files.cpython-312.pyc
+
+exit_code=0

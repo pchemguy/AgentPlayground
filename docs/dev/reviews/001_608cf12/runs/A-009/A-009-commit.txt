@@ -1,0 +1,48 @@
+$ git add -- docs/dev/SPEC.md
+
+exit_code=0
+$ git --no-optional-locks diff --cached --check
+
+exit_code=0
+$ git --no-optional-locks diff --cached --stat
+ docs/dev/SPEC.md | 58 +++++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 51 insertions(+), 7 deletions(-)
+
+exit_code=0
+$ git commit -m 'Incorporate accepted line-range behavior into SPEC' -m 'Define range validation, complete-input selection and objective acceptance while preserving whole-input APIs, formats, failures and planned stdin. Named-file feature completion remains independent of future stdin delivery.' -m 'SPEC-only document checkpoint on the active feature branch. Reviewed accepted feature contracts, links and heading spacing; git diff --check and 31 baseline unittest checks pass. No implementation, task completion, source archival or branch merge.'
+[feature/002_8a53078-line-ranges e6fe4c4] Incorporate accepted line-range behavior into SPEC
+ 1 file changed, 51 insertions(+), 7 deletions(-)
+
+exit_code=0
+$ git --no-optional-locks show --format=fuller --stat HEAD
+commit e6fe4c49c90b18cfb0f850ca38c6153a60845b34
+Author:     Codex <codex@openai.com>
+AuthorDate: Sat Oct 3 00:30:50 2026 -0400
+Commit:     Codex <codex@openai.com>
+CommitDate: Sat Oct 3 00:30:50 2026 -0400
+
+    Incorporate accepted line-range behavior into SPEC
+    
+    Define range validation, complete-input selection and objective acceptance while preserving whole-input APIs, formats, failures and planned stdin. Named-file feature completion remains independent of future stdin delivery.
+    
+    SPEC-only document checkpoint on the active feature branch. Reviewed accepted feature contracts, links and heading spacing; git diff --check and 31 baseline unittest checks pass. No implementation, task completion, source archival or branch merge.
+
+ docs/dev/SPEC.md | 58 +++++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 51 insertions(+), 7 deletions(-)
+
+exit_code=0
+$ git --no-optional-locks status --porcelain=v1 --untracked-files=all
+?? tests/integration/__pycache__/__init__.cpython-312.pyc
+?? tests/integration/__pycache__/test_cli.cpython-312.pyc
+?? tests/integration/__pycache__/test_distribution.cpython-312.pyc
+?? tests/unit/__pycache__/__init__.cpython-312.pyc
+?? tests/unit/__pycache__/test_api.cpython-312.pyc
+?? tests/unit/__pycache__/test_counting.cpython-312.pyc
+?? tests/unit/__pycache__/test_files.cpython-312.pyc
+?? textstats/__pycache__/__init__.cpython-312.pyc
+?? textstats/__pycache__/__main__.cpython-312.pyc
+?? textstats/__pycache__/cli.cpython-312.pyc
+?? textstats/__pycache__/counting.cpython-312.pyc
+?? textstats/__pycache__/files.cpython-312.pyc
+
+exit_code=0

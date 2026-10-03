@@ -1,0 +1,24 @@
+{
+  "id": "A-009",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "SPEC-only incorporation e6fe4c4 published on existing feature/002_8a53078-line-ranges; exact remote refs verified. Full intended contract preserves APIs/default/JSON/UTF-8/BOM/error/stdin obligations and all13 accepted range rows. Independent checks: only SPEC changed, all other tracked paths/blobs retained,3 links valid,97 pinned hashes and12 bytecode hashes preserved,11 unique task owners unchanged. FEATURE-TASKS remains sole active owner T-009\u2013T-011; needed sources retained; detailed deferred PROJECT/design/PLAN/task/navigation impacts reported. Consumer31 baseline tests passed; initial wording-only document-checker failure retained/corrected without product edit. No archive/implementation/task transfer/hosted write/merge/phase completion. Document acceptance only; ranges/stdin remain unimplemented. Explicit-source loading and journals, not native transcript or installed-client discovery.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-009-SPEC.md",
+    "/workspace/scratch/acceptance-out-008/A-009-baseline.json",
+    "/workspace/scratch/acceptance-out-008/A-009-check.py",
+    "/workspace/scratch/acceptance-out-008/A-009-commit.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-diff-check.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-document-check-initial.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-document-check.py",
+    "/workspace/scratch/acceptance-out-008/A-009-document-check.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-final.md",
+    "/workspace/scratch/acceptance-out-008/A-009-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-009-orientation.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-push.txt",
+    "/workspace/scratch/acceptance-out-008/A-009-semantic-review.json",
+    "/workspace/scratch/acceptance-out-008/A-009-unittest.txt",
+    "/workspace/scratch/acceptance-out-008/A-009.md"
+  ]
+}

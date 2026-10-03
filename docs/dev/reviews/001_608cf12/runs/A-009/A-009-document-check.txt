@@ -1,0 +1,10 @@
+$ python /workspace/scratch/acceptance-out-008/A-009-document-check.py
+PASS: Markdown heading spacing
+PASS: 3 local SPEC links resolve
+PASS: all 13 accepted selected-counting cases and table headings incorporated verbatim
+PASS: existing BOM/newline/API-error/resource/stdin contracts and whole-input table preserved
+PASS: accepted range syntax/order/output/error/compatibility clauses and superseded exclusion review
+PASS: tracked edit scope is docs/dev/SPEC.md only; active feature sources and task owners retained
+Document checks establish incorporation consistency, not range/stdin implementation acceptance.
+
+exit_code=0

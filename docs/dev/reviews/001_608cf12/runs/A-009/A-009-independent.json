@@ -1,0 +1,103 @@
+{
+  "head": "e6fe4c49c90b18cfb0f850ca38c6153a60845b34",
+  "baseline": "62b5408e80adc2ac12464e5f9163b3afd47a58ba",
+  "branch": "feature/002_8a53078-line-ranges",
+  "only_SPEC_changed": true,
+  "all_other_tracked_blobs_and_paths_preserved": true,
+  "single_parent_checkpoint": true,
+  "main_and_phase2_unchanged": true,
+  "exact_remote_refs_verified": true,
+  "tracked_clean": true,
+  "bytecode_hashes_preserved": 12,
+  "pinned_hashes_verified": 97,
+  "valid_SPEC_links": [
+    "PROJECT.md",
+    "DECOMPOSITION.md",
+    "PLAN.md"
+  ],
+  "task_owners": {
+    "documents": [
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-TASKS.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE_DECOMPOSITION.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-SPEC.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-PLAN.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/layout.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/PROJECT.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/ARCHITECTURE.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/DECOMPOSITION.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/SPEC.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/PLAN.md"
+    ],
+    "owners": {
+      "T-009": {
+        "id": "T-009",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-TASKS.md",
+        "line": 11,
+        "status": "Unchecked"
+      },
+      "T-010": {
+        "id": "T-010",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-TASKS.md",
+        "line": 14,
+        "status": "Unchecked"
+      },
+      "T-011": {
+        "id": "T-011",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/FEATURE-TASKS.md",
+        "line": 17,
+        "status": "Unchecked"
+      },
+      "T-001": {
+        "id": "T-001",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 13,
+        "status": "Checked"
+      },
+      "T-002": {
+        "id": "T-002",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 19,
+        "status": "Checked"
+      },
+      "T-003": {
+        "id": "T-003",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 23,
+        "status": "Checked"
+      },
+      "T-004": {
+        "id": "T-004",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 29,
+        "status": "Checked"
+      },
+      "T-005": {
+        "id": "T-005",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 33,
+        "status": "Checked"
+      },
+      "T-006": {
+        "id": "T-006",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 42,
+        "status": "Checked"
+      },
+      "T-007": {
+        "id": "T-007",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 48,
+        "status": "Unchecked"
+      },
+      "T-008": {
+        "id": "T-008",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 51,
+        "status": "Unchecked"
+      }
+    }
+  },
+  "feature_sources_retained": true,
+  "implementation_and_task_status_unchanged": true
+}

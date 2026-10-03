@@ -1,0 +1,12 @@
+$ python /workspace/scratch/acceptance-out-008/A-009-document-check.py
+PASS: Markdown heading spacing
+PASS: 3 local SPEC links resolve
+PASS: all 13 accepted selected-counting cases and table headings incorporated verbatim
+PASS: existing BOM/newline/API-error/resource/stdin contracts and whole-input table preserved
+Traceback (most recent call last):
+  File "/workspace/scratch/acceptance-out-008/A-009-document-check.py", line 37, in <module>
+    assert expected in spec, expected
+           ^^^^^^^^^^^^^^^^
+AssertionError: does not gate named-file range delivery
+
+exit_code=1
