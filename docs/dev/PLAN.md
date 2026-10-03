@@ -24,7 +24,15 @@ Add `--json` while preserving default output and all baseline failures. Depends 
 
 ### Milestone 2.2 — UTF-8 stdin
 
-Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 so both formats compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON composition, and retained named-file behavior are verified. Full nonempty discovery, documentation and extracted-source module smoke checks complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
+Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 so both formats compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON/range composition, and retained named-file behavior are verified. Invalid bytes outside selected stdin lines still fail; strict decoding is locale-independent and process stdin remains open. Full nonempty discovery, documentation and extracted-source module smoke checks plus all milestone 2.3 exits complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
+
+### Milestone 2.3 — Line-range counting
+
+Deliver private pure selected counting and complete-file adapter collaboration, then named-file `--lines START:END` with existing text/JSON formats and usage/failure semantics. Depends on completed T-001/T-002/T-006; stdin T-007/T-008 is independently owned and is not a prerequisite. Preserve unchanged public Python APIs and reuse existing physical ownership.
+
+Demonstrate singleton, inclusive middle/end, EOF-truncated and empty named-file selections with exact outputs plus malformed-range diagnostics. Finish with both formats/BOM modes, complete-input decode/read failures, baseline regressions, accurate module/user documentation and extracted-source named-file examples. The private decoded-text selection interface remains reusable by later stdin delivery without IO or CLI dependencies.
+
+Exit: all named-file SPEC selected-counting acceptance and unchanged regressions pass, full nonempty unittest discovery and documented/extracted-source examples succeed, and demonstration/limitations are recorded. Actual stdin implementation, locale/stream-lifetime and range composition checks remain T-007/T-008. Feature delivery integrates by an explicit verified two-parent merge into the paused Phase 2 branch; it does not complete Phase 2 or merge it into main. Phase 2 exits only after milestones 2.1, 2.2 and 2.3 are verified.
 
 ## Verification and decision policy
 

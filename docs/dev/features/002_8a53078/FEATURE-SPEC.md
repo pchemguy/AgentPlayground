@@ -1,6 +1,8 @@
+<!-- Historical accepted feature source; current contracts and executable work are owned by main documents. -->
+
 # Line-range counting specification delta
 
-Status: proposed and unimplemented. Package: [002_8a53078](features/002_8a53078/README.md). This additive delta revises the main [SPEC](SPEC.md) CLI invocation and its explicit exclusion of line selection; it also adds a selected-counting contract. The [PROJECT](PROJECT.md) line-selection non-goal remains the accepted main baseline until later explicit incorporation. All unchanged counting, UTF-8, resource, output and quality contracts stay owned by main SPEC. [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) owns affected collaboration.
+Status: proposed and unimplemented. Package: [002_8a53078](README.md). This additive delta revises the main [SPEC](../../SPEC.md) CLI invocation and its explicit exclusion of line selection; it also adds a selected-counting contract. The [PROJECT](../../PROJECT.md) line-selection non-goal remains the accepted main baseline until later explicit incorporation. All unchanged counting, UTF-8, resource, output and quality contracts stay owned by main SPEC. [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) owns affected collaboration.
 
 ## CLI range contract
 

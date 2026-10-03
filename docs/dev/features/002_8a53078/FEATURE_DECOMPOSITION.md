@@ -1,6 +1,8 @@
+<!-- Historical accepted feature source; current contracts and executable work are owned by main documents. -->
+
 # Line-range counting design delta
 
-Status: proposed and unimplemented. Active package: [002_8a53078](features/002_8a53078/README.md). Unchanged major blocks and dependency direction remain owned by [ARCHITECTURE](ARCHITECTURE.md); no architectural overlay or new physical layer is needed. This delta revises the affected logical responsibilities in [DECOMPOSITION](DECOMPOSITION.md), subject to later explicit incorporation.
+Status: proposed and unimplemented. Active package: [002_8a53078](README.md). Unchanged major blocks and dependency direction remain owned by [ARCHITECTURE](../../ARCHITECTURE.md); no architectural overlay or new physical layer is needed. This delta revises the affected logical responsibilities in [DECOMPOSITION](../../DECOMPOSITION.md), subject to later explicit incorporation.
 
 ## Affected components
 
@@ -14,4 +16,4 @@ The CLI owns endpoint syntax/validation, source selection and success/failure pr
 
 Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. The feature verifies source-independent selection through decoded strings and named files. Actual stdin integration checks remain owned by main T-007/T-008 after that source exists and are not feature-completion prerequisites. Existing public import/API tests protect the unchanged facade.
 
-The existing [layout](layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required during preparation. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.
+The existing [layout](../../layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required during preparation. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.

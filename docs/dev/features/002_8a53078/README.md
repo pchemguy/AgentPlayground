@@ -1,20 +1,20 @@
 # Line-range counting feature package
 
-Workflow: feature preparation only, campaign `002_8a53078`.
-Full baseline: `8a53078d0f734165075691dae0dbfa224a63446f` (published T-006 / JSON milestone).
-Working branch: `feature/002_8a53078-line-ranges`; remote destination: `origin/feature/002_8a53078-line-ranges` at `pchemguy/AgentPlayground`.
-Target: paused `phase/2-output-and-input-extensions`, baseline `8a53078d0f734165075691dae0dbfa224a63446f`; ultimate established integration branch is `main`, currently `29c27580db73cf128c42ddb9535e6d8f5c38ed39`. No merge is authorized by this preparation.
+Campaign: `002_8a53078`; completed named-file feature, historical archive.
+Full baseline: `8a53078d0f734165075691dae0dbfa224a63446f` (published T-006).
+Working branch: `feature/002_8a53078-line-ranges`; target: paused `phase/2-output-and-input-extensions`; remote: `origin` at `pchemguy/AgentPlayground`.
 
-## Active sources
+## Source dispositions and main owners
 
-- [Design delta](../../FEATURE_DECOMPOSITION.md): affected component collaboration; main architecture and layout reused.
-- [Behavior delta](../../FEATURE-SPEC.md): positive inclusive --lines endpoints, EOF subset, formats/BOM/UTF-8 and planned stdin compatibility.
-- [Delivery delta](../../FEATURE-PLAN.md): proposed Phase 2 milestone 2.3 and exits.
-- [Executable delta](../../FEATURE-TASKS.md): reserved unchecked T-009–T-011; sole active feature task owner.
-- [Main tasks](../../TASKS.md): T-006 complete; T-007/T-008 remain unstarted, independently owned.
+- [Design snapshot](FEATURE_DECOMPOSITION.md) incorporated into [DECOMPOSITION](../../DECOMPOSITION.md); existing architecture/layout unchanged.
+- [Behavior snapshot](FEATURE-SPEC.md) incorporated into [SPEC](../../SPEC.md) at e6fe4c4; scope incorporated into [PROJECT](../../PROJECT.md).
+- [Delivery snapshot](FEATURE-PLAN.md) incorporated into [PLAN](../../PLAN.md), including milestone 2.3 and incomplete Phase 2 exits.
+- [Historical task snapshot](FEATURE-TASKS.md) retired as executable owner; T-009–T-011 and their verified evidence transferred intact to [TASKS](../../TASKS.md), the sole executable owner.
 
-## Scope and disposition
+All four sources are archived after named-file implementation, acceptance verification and selected final incorporation. Historical wording records preparation; current main owners govern accepted behavior. No active work relies on a moved source as its sole authority. Main T-007/T-008 retain stable identities, remain unchecked and own future stdin/range composition and Phase 2 integration. Their updated dependencies reflect completed named-file delivery without inferring stdin completion.
 
-All proposed functionality is unimplemented. Prepare and persist documents only; stop before feature implementation, incorporation into main owners, any feature/phase merge, or resumption of main tasks. Existing PROJECT/SPEC line-selection exclusions remain the accepted baseline pending explicit incorporation. No unrelated active feature package was present; unrelated bytecode caches are preserved. Pinned vendor is unchanged.
+## Completion evidence and boundary
 
-No feature sources are archived: these root files remain active proposed deltas. Later explicit integration must address PROJECT, DECOMPOSITION, SPEC, PLAN and both task lists as applicable, retain historical completion evidence, reconcile phase-exit implications for T-008 while keeping actual stdin delivery/integration checks with separately owned T-007/T-008. This feature exits on complete named-file text/JSON delivery; planned stdin compatibility is an interface constraint, not a completion gate. Existing architecture/layout require no delta unless implementation exposes a material change. Hosted feature associations are pending; no issue creation or closure is claimed.
+T-009: 17 focused / 33 full tests; T-010: 23 CLI / 41 full tests and named-file text/JSON/BOM/usage demonstration; T-011: extracted-source range/BOM/strict-decode checks, executed documentation and 41 full tests. Main TASKS preserves actual RED/GREEN evidence and permission-denial limits. Hosted associations are T-009 #9, T-010 #10 and T-011 #11, same identities before and after transfer.
+
+Final feature verification and explicit two-parent integration/publication target the paused Phase 2 branch only. Phase 2 remains incomplete, main unchanged, and no main stdin work is resumed. Pinned vendor and unrelated bytecode caches are preserved.

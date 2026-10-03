@@ -1,6 +1,8 @@
+<!-- Historical accepted feature source; current contracts and executable work are owned by main documents. -->
+
 # Line-range counting executable delta
 
-Status: implementation active; checked entries record verified named-file work. Authoritative active inputs: [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE-PLAN](FEATURE-PLAN.md), unchanged [layout](layout.md) and main [TASKS](TASKS.md). Package: [002_8a53078](features/002_8a53078/README.md). This list owns only the scoped delta; it is not a second owner of existing tasks.
+Status: historical snapshot after completed incorporation. Executable ownership of T-009–T-011 and all durable verified evidence now resides solely in main TASKS. Checkboxes below are historical and cannot select work or establish current completion. Authoritative active inputs: [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE-PLAN](FEATURE-PLAN.md), unchanged [layout](../../layout.md) and main [TASKS](../../TASKS.md). Package: [002_8a53078](README.md). This list owns only the scoped delta; it is not a second owner of existing tasks.
 
 Affected main requirements: CLI invocation, selected-counting acceptance and the exclusion of line selection; unchanged output/BOM/UTF-8/failure contracts remain. Completed T-001/T-002/T-006 are dependencies whose behavior must remain compatible. T-007/T-008 are still unstarted in main TASKS. T-009–T-011 are newly reserved, unique project-wide IDs. Existing maintained hosted tracking covers main TASKS; feature issues are projected by stable IDs with Phase 2 / milestone 2.3 parentage; closures follow verified task commits.
 

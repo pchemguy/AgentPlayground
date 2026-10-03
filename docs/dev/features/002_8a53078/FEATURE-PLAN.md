@@ -1,6 +1,8 @@
+<!-- Historical accepted feature source; current contracts and executable work are owned by main documents. -->
+
 # Line-range counting delivery delta
 
-Status: planned and unimplemented. Package: [002_8a53078](features/002_8a53078/README.md). Derived from [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and unchanged main [PLAN](PLAN.md)/[layout](layout.md). This proposes additional milestone 2.3 within existing Phase 2 — Output and input extensions; main owners are not amended in this preparation.
+Status: planned and unimplemented. Package: [002_8a53078](README.md). Derived from [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and unchanged main [PLAN](../../PLAN.md)/[layout](../../layout.md). This proposes additional milestone 2.3 within existing Phase 2 — Output and input extensions; main owners are not amended in this preparation.
 
 ## Milestone 2.3 — Line-range counting
 
