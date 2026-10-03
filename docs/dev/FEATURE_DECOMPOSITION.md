@@ -12,6 +12,6 @@ The CLI owns endpoint syntax/validation, source selection and success/failure pr
 
 ## Verification and compatibility seams
 
-Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. Stdin checks become executable only after main task T-007 provides that source. Existing public import/API tests protect the unchanged facade.
+Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. The feature verifies source-independent selection through decoded strings and named files. Actual stdin integration checks remain owned by main T-007/T-008 after that source exists and are not feature-completion prerequisites. Existing public import/API tests protect the unchanged facade.
 
 The existing [layout](layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required during preparation. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.
