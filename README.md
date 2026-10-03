@@ -32,7 +32,31 @@ Results are immutable. The file API reads strict UTF-8, leaves files unchanged a
 
 The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
 
-Source-distribution verification remains in milestone 1.2; JSON and stdin are planned for phase 2. Input `-` currently names a file.
+JSON and stdin are planned for phase 2. Input `-` currently names a file; `--json` is not supported yet.
+
+## Source distribution
+
+Create a self-contained source archive from the checkout root with the standard library:
+
+```python
+from pathlib import Path
+import tarfile
+
+with tarfile.open("TextStats.tar.gz", "w:gz") as archive:
+    for path in sorted(Path("textstats").glob("*.py")):
+        archive.add(path, arcname=str(path))
+    archive.add("README.md", arcname="README.md")
+```
+
+The archive contains the Python package and this README. It excludes tests, development records, vendored infrastructure, tools, bytecode, Git internals and credentials. This is source deployment, without a wheel or external build backend. Extract the archive into a new directory and run Python from that directory:
+
+```sh
+python -c "import tarfile; tarfile.open('TextStats.tar.gz').extractall('TextStats', filter='data')"
+cd TextStats
+python -m textstats --help
+```
+
+On Python 3.11, use a current patch release supporting the `data` extraction filter. Alternatively, extract this locally created archive with your archive application. The named-file quick start and Python examples work from the extracted directory. UTF-8 decoding is strict; no locale-specific codec is used. Word splitting follows Unicode whitespace, while only CR, LF and CRLF terminate logical lines. Empty text after BOM handling yields zero lines and words; other Unicode line separators affect words without creating lines. File reads and CLI invocations leave input bytes unchanged.
 
 ## Development
 
