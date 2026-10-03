@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-03T03:50:21.986971+00:00",
+  "owner_intervention": "Removed only synthetic target-publication pre-receive hook after independent rejection record cbcd810 was pushed/remote-verified. No consumer or Git ref changes.",
+  "hook_previous_sha256": "c587e0e701002051bb690dedadfafe95c182c340afb35c850ec0ed864923eb29",
+  "hook_absent": true,
+  "retained_merge": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+  "remote_target_before": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+  "local_only": true
+}
