@@ -1,0 +1,222 @@
+{
+  "publication": [
+    {
+      "task": "T-006",
+      "issue": 6,
+      "state": "closed",
+      "comment_id": 5967588526,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/6#issuecomment-5967588526",
+      "evidence": "amendment and merge verified/published; no state change"
+    },
+    {
+      "task": "T-010",
+      "issue": 10,
+      "state": "closed",
+      "comment_id": 5967592515,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/10#issuecomment-5967592515",
+      "evidence": "amendment and merge verified/published; no state change"
+    },
+    {
+      "task": "T-011",
+      "issue": 11,
+      "state": "closed",
+      "comment_id": 5967595706,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/11#issuecomment-5967595706",
+      "evidence": "amendment and merge verified/published; no state change"
+    }
+  ],
+  "issues": [
+    {
+      "number": 11,
+      "title": "[T-011] Verify named-file line-range delivery and milestone exits",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/11",
+      "managed_ids": [
+        "T-011"
+      ],
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "[T-010] Deliver named-file line-range CLI counting",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/10",
+      "managed_ids": [
+        "T-010"
+      ],
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "[T-009] Add pure selected-counting and file-adapter collaboration",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/9",
+      "managed_ids": [
+        "T-009"
+      ],
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "[T-008] Verify complete stdin delivery and phase exits",
+      "state": "open",
+      "state_reason": null,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+      "managed_ids": [
+        "T-008"
+      ],
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "[T-007] Support stdin through the dash input",
+      "state": "open",
+      "state_reason": null,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+      "managed_ids": [
+        "T-007"
+      ],
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "[T-006] Retired JSON output scope",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+      "managed_ids": [
+        "T-006"
+      ],
+      "milestone": 3,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "[T-005] Verify baseline documentation and source distribution",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+      "managed_ids": [
+        "T-005"
+      ],
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "[T-004] Complete baseline failure and usage handling",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+      "managed_ids": [
+        "T-004"
+      ],
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "[T-003] Deliver the usable named-file module CLI",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+      "managed_ids": [
+        "T-003"
+      ],
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "[T-002] Expose UTF-8 named-file counting",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+      "managed_ids": [
+        "T-002"
+      ],
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ]
+    },
+    {
+      "number": 1,
+      "title": "[T-001] Implement the public counting core",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+      "managed_ids": [
+        "T-001"
+      ],
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline",
+        "acceptance-note"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+      "state": "open"
+    },
+    {
+      "number": 2,
+      "title": "sdd-1.2-Reliable-baseline-and-distribution",
+      "state": "open"
+    },
+    {
+      "number": 3,
+      "title": "sdd-2.1-Retired-JSON-output-scope",
+      "state": "open"
+    },
+    {
+      "number": 4,
+      "title": "sdd-2.2-UTF-8-stdin",
+      "state": "open"
+    },
+    {
+      "number": 5,
+      "title": "sdd-2.3-Line-range-counting",
+      "state": "open"
+    }
+  ],
+  "labels": [
+    {
+      "name": "sdd-phase-1-Named-file-baseline",
+      "description": "Named-file baseline delivery phase."
+    },
+    {
+      "name": "sdd-phase-2-Output-and-input-extensions",
+      "description": "Plain-output named-file ranges and planned strict UTF-8 stdin; Phase 2 remains incomplete."
+    }
+  ]
+}

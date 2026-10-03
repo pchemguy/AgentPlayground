@@ -1,0 +1,529 @@
+diff --git a/README.md b/README.md
+index 715115a..f64e1e8 100644
+--- a/README.md
++++ b/README.md
+@@ -30,23 +30,7 @@ assert count_file("sample.txt") == TextStats(lines=1, words=2)
+ 
+ Results are immutable. The file API reads strict UTF-8, leaves files unchanged and closes its own handle.
+ 
+-The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
+-
+-## JSON output
+-
+-Use `--json` for machine-readable counts from the same named UTF-8 files:
+-
+-```sh
+-python -m textstats --json sample.txt
+-```
+-
+-Output:
+-
+-```json
+-{"lines": 1, "words": 2}
+-```
+-
+-The output is one object with exactly `lines` and `words` integer fields, followed by a newline. JSON whitespace and key order may vary. It succeeds with status 0 and empty stderr; read/decode failures keep status 1, diagnostics on stderr and no stdout. `--json --keep-bom` composes with the same BOM policy. Without `--json`, the default text output stays the same.
++The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Every successful CLI invocation writes exactly `lines=<N> words=<N>` followed by one newline. `--json` is an unknown option returning status 2; a file named `--json` remains usable after `--`. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
+ 
+ Stdin is planned for milestone 2.2. Input `-` currently names a file.
+ 
+@@ -62,14 +46,14 @@ line positions. Repeated, reversed, zero, signed or open ranges are usage errors
+ ```sh
+ python -c "from pathlib import Path; Path('ranges.txt').write_text('alpha beta\nbeta\nlast two', encoding='utf-8')"
+ python -m textstats --lines 1:1 ranges.txt
+-python -m textstats --json --lines 2:3 ranges.txt
++python -m textstats --lines 2:3 ranges.txt
+ python -m textstats --lines 2:99 ranges.txt
+ python -m textstats --lines 4:99 ranges.txt
+ ```
+ 
+-Outputs respectively: `lines=1 words=2`, `{"lines": 2, "words": 3}`,
++Outputs respectively: `lines=1 words=2`, `lines=2 words=3`,
+ `lines=2 words=3`, and `lines=0 words=0`, each followed by a newline.
+-`--lines=START:END` also works and composes with `--keep-bom` and `--json`.
++`--lines=START:END` also works and composes with `--keep-bom`.
+ The complete file is strictly decoded even when invalid bytes lie outside the
+ selection. The original input BOM policy runs once before numbering lines;
+ a BOM originally on a later line remains ordinary content when selected.
+diff --git a/docs/dev/ARCHITECTURE.md b/docs/dev/ARCHITECTURE.md
+index 366ad4a..be2dd67 100644
+--- a/docs/dev/ARCHITECTURE.md
++++ b/docs/dev/ARCHITECTURE.md
+@@ -10,9 +10,9 @@ CLI → file adapter → counting core; CLI stdin → counting core; public faca
+ 
+ ## Choices and invariants
+ 
+-Use functions and an immutable result value rather than inheritance or a service container. Both CLI formats consume the same result to prevent duplicated counting rules. Read and decode one input before counting; a streaming framework would add complexity without a required load constraint. The file adapter closes owned handles on success and failure; the CLI never closes process stdin.
++Use functions and an immutable result value rather than inheritance or a service container. The CLI presents the core result through one plain-output path, without duplicating counting rules. Read and decode one input before counting; a streaming framework would add complexity without a required load constraint. The file adapter closes owned handles on success and failure; the CLI never closes process stdin.
+ 
+-BOM policy and counting semantics have one owner in the core, defined by [SPEC](SPEC.md). Unicode decoding and OS failures propagate through the API and become useful stderr diagnostics at the CLI boundary. No failure emits a partial success result. JSON and stdin extend the adapters without coupling the core to argument parsing.
++BOM policy and counting semantics have one owner in the core, defined by [SPEC](SPEC.md). Unicode decoding and OS failures propagate through the API and become useful stderr diagnostics at the CLI boundary. No failure emits a partial success result. Stdin extends the CLI adapter without coupling the core to argument parsing.
+ 
+ ## Verification seams
+ 
+diff --git a/docs/dev/DECOMPOSITION.md b/docs/dev/DECOMPOSITION.md
+index d9a2148..b97afd6 100644
+--- a/docs/dev/DECOMPOSITION.md
++++ b/docs/dev/DECOMPOSITION.md
+@@ -7,7 +7,7 @@ This refines [ARCHITECTURE](ARCHITECTURE.md). [SPEC](SPEC.md) owns normative pub
+ | Counting core | Immutable `TextStats` value; `count_text(text, *, strip_bom=True)`; canonical BOM/newline/word rules and private `_count_selected(text, line_range, *, strip_bom=True)` decoded-input selection. Does not read files or print. | Standard library only; direct string inputs and expected counts. |
+ | File adapter | `count_file(path, *, strip_bom=True)` acquires, strictly decodes the complete file, delegates, and closes its owned handle; private `_count_file_selected` passes optional validated endpoints to the core. Does not translate failures into process statuses. | Counting core; temporary files, invalid bytes, missing paths, and an independent unreadable-file check. |
+ | Public facade | Exports `TextStats`, `count_text`, `count_file`; keeps callers independent of internal module locations. Does not duplicate computation. | Core and file adapter; package-level import and documented calls. |
+-| CLI adapter | Parses one input, BOM/output options and one positive inclusive ASCII-decimal range before input acquisition; obtains a result, formats stdout and translates read/decode failures. Owns stdin acquisition in milestone 2.2 and delegates fully decoded stdin to the same pure selection owner. | File adapter and core; subprocess checks with separate stdout/stderr/status assertions. |
++| CLI adapter | Parses one input, BOM option and one positive inclusive ASCII-decimal range before input acquisition; obtains a result, formats stdout and translates read/decode failures. Owns stdin acquisition in milestone 2.2 and delegates fully decoded stdin to the same pure selection owner. | File adapter and core; subprocess checks with separate stdout/stderr/status assertions. |
+ | Module entry point | Delegates process invocation to the CLI and propagates its exit outcome. | CLI adapter; `python -m textstats` from an extracted source distribution. |
+ 
+ ## State and failure ownership
+diff --git a/docs/dev/PLAN.md b/docs/dev/PLAN.md
+index fb3f6ca..692905e 100644
+--- a/docs/dev/PLAN.md
++++ b/docs/dev/PLAN.md
+@@ -6,7 +6,7 @@ Deliver the [SPEC](SPEC.md) through an early usable named-file slice and small a
+ 
+ ### Milestone 1.1 — Usable named-file API and CLI
+ 
+-Deliver the public count value/functions, UTF-8 named-file reading, BOM option, universal newline and word semantics, and the default module CLI success path. Core and file adapter precede CLI integration; no infrastructure-only milestone delays the useful outcome. Baseline failure polish and source packaging evidence remain for 1.2, while JSON and stdin remain in phase 2.
++Deliver the public count value/functions, UTF-8 named-file reading, BOM option, universal newline and word semantics, and the default module CLI success path. Core and file adapter precede CLI integration; no infrastructure-only milestone delays the useful outcome. Baseline failure polish and source packaging evidence remain for 1.2, while ranges and stdin remain in phase 2.
+ 
+ Exit: demonstrate importable calls and `python -m textstats` on actual named files with exact expected counts/output; check empty input, BOM modes, Unicode whitespace, mixed terminators, and trailing terminators. Gather a concise API/CLI example to let the human judge usability and choose continue, amend, simplify, or stop at a requested checkpoint. This exit proves the usable success slice, not the entire baseline acceptance.
+ 
+@@ -18,21 +18,17 @@ Exit: useful stderr and statuses 1/2, no partial stdout or tracebacks, closed ow
+ 
+ ## Phase 2 — Output and input extensions
+ 
+-### Milestone 2.1 — JSON output
+-
+-Add `--json` while preserving default output and all baseline failures. Depends on completed phase 1. Exit: stdlib JSON parsing confirms exactly the keys `lines` and `words` with integer values; BOM option composes, default regressions and error channels pass, and examples show practical shell use. The demonstration informs the human's next bounded continuation decision.
+-
+ ### Milestone 2.2 — UTF-8 stdin
+ 
+-Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 so both formats compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON/range composition, and retained named-file behavior are verified. Invalid bytes outside selected stdin lines still fail; strict decoding is locale-independent and process stdin remains open. Full nonempty discovery, documentation and extracted-source module smoke checks plus all milestone 2.3 exits complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
++Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on the verified named-file baseline and T-010/T-011 range collaboration; plain output composes with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, plain-output/range composition, and retained named-file behavior are verified. Invalid bytes outside selected stdin lines still fail; strict decoding is locale-independent and process stdin remains open. Full nonempty discovery, documentation and extracted-source module smoke checks plus all milestone 2.3 exits complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
+ 
+ ### Milestone 2.3 — Line-range counting
+ 
+-Deliver private pure selected counting and complete-file adapter collaboration, then named-file `--lines START:END` with existing text/JSON formats and usage/failure semantics. Depends on completed T-001/T-002/T-006; stdin T-007/T-008 is independently owned and is not a prerequisite. Preserve unchanged public Python APIs and reuse existing physical ownership.
++Deliver private pure selected counting and complete-file adapter collaboration, then named-file `--lines START:END` with exact plain output and usage/failure semantics. Depends on completed T-001/T-002 and the named-file CLI baseline; stdin T-007/T-008 is independently owned and is not a prerequisite. Preserve unchanged public Python APIs and reuse existing physical ownership.
+ 
+-Demonstrate singleton, inclusive middle/end, EOF-truncated and empty named-file selections with exact outputs plus malformed-range diagnostics. Finish with both formats/BOM modes, complete-input decode/read failures, baseline regressions, accurate module/user documentation and extracted-source named-file examples. The private decoded-text selection interface remains reusable by later stdin delivery without IO or CLI dependencies.
++Demonstrate singleton, inclusive middle/end, EOF-truncated and empty named-file selections with exact outputs plus malformed-range diagnostics. Finish with plain output/both BOM modes, complete-input decode/read failures, baseline regressions, accurate module/user documentation and extracted-source named-file examples. The private decoded-text selection interface remains reusable by later stdin delivery without IO or CLI dependencies.
+ 
+-Exit: all named-file SPEC selected-counting acceptance and unchanged regressions pass, full nonempty unittest discovery and documented/extracted-source examples succeed, and demonstration/limitations are recorded. Actual stdin implementation, locale/stream-lifetime and range composition checks remain T-007/T-008. Feature delivery integrates by an explicit verified two-parent merge into the paused Phase 2 branch; it does not complete Phase 2 or merge it into main. Phase 2 exits only after milestones 2.1, 2.2 and 2.3 are verified.
++Exit: all named-file SPEC selected-counting acceptance and unchanged regressions pass, full nonempty unittest discovery and documented/extracted-source examples succeed, and demonstration/limitations are recorded. Actual stdin implementation, locale/stream-lifetime and range composition checks remain T-007/T-008. Feature delivery integrates by an explicit verified two-parent merge into the paused Phase 2 branch; it does not complete Phase 2 or merge it into main. Phase 2 exits only after retained milestones 2.2 and 2.3 are verified.
+ 
+ ## Verification and decision policy
+ 
+diff --git a/docs/dev/PROJECT.md b/docs/dev/PROJECT.md
+index 43a6b44..0cfb564 100644
+--- a/docs/dev/PROJECT.md
++++ b/docs/dev/PROJECT.md
+@@ -1,10 +1,10 @@
+ # TextStats project brief
+ 
+-TextStats helps Python users and shell users count lines and whitespace-separated words in UTF-8 text. It provides an importable API and `python -m textstats` with predictable machine-readable output and exit status.
++TextStats helps Python users and shell users count lines and whitespace-separated words in UTF-8 text. It provides an importable API and `python -m textstats` with predictable plain output and exit status.
+ 
+ ## Scope
+ 
+-The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
++The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
+ 
+ ## Constraints and non-goals
+ 
+diff --git a/docs/dev/SPEC.md b/docs/dev/SPEC.md
+index 5393318..0a0c418 100644
+--- a/docs/dev/SPEC.md
++++ b/docs/dev/SPEC.md
+@@ -25,9 +25,9 @@ Recognize CRLF as one terminator and lone CR or LF as one terminator. Nonempty t
+ 
+ ## CLI contract
+ 
+-Invocation: `python -m textstats [--keep-bom] [--json] [--lines START:END] INPUT`. Exactly one input is required. `--keep-bom` selects `strip_bom=False`; otherwise removal is enabled. `--json` selects JSON output. Input `-` selects stdin; `--` supports named files beginning with a dash. Standard `--help` writes help and exits 0. Omitting `--lines` preserves whole-input behavior.
++Invocation: `python -m textstats [--keep-bom] [--lines START:END] INPUT`. Exactly one input is required. `--keep-bom` selects `strip_bom=False`; otherwise removal is enabled. Input `-` selects stdin; `--` supports named files beginning with a dash. Standard `--help` writes help and exits 0. Omitting `--lines` preserves whole-input behavior.
+ 
+-Default success writes exactly `lines=<N> words=<N>\n` to stdout and no stderr. JSON success writes one valid JSON object with exactly the keys `lines` and `words`, each holding an integer count, followed by a newline; insignificant JSON whitespace/key order is not contractual. JSON, BOM and range options compose in either order. Selection adds no metadata or extra output fields.
++Success writes exactly `lines=<N> words=<N>\n` to stdout and no stderr. BOM and range options compose in either order. Selection adds no metadata or extra output fields. `--json` is an unknown option and returns usage status 2 before acquiring input; a literal file named `--json` remains usable after `--`.
+ 
+ Success returns 0. Missing/unreadable inputs and invalid UTF-8 return 1, produce no success stdout, and write a useful nonempty stderr diagnostic identifying the input and cause, without a traceback. Usage errors (including missing/extra inputs and unknown options) return 2 with useful stderr and no success stdout or traceback. Diagnostic wording is flexible. Files are never modified.
+ 
+@@ -49,7 +49,7 @@ Removing the only leading BOM can make input empty before numbering. An interior
+ 
+ Stdin bytes are decoded strictly as UTF-8 independent of locale, read until EOF, and are not closed by TextStats. Empty stdin yields zero counts. Stdin decoding/read failures have the same CLI status/channel contract, identifying stdin. Named-file behavior remains available after stdin support.
+ 
+-Range selection is source-independent: it applies identically to the complete decoded input from a named file or stdin, with the same BOM, newline, EOF-subset, format and error semantics. Named-file range delivery is independent of planned stdin delivery; compatibility of the selection interface is required, while actual stdin acquisition and integration acceptance remain part of stdin delivery.
++Range selection is source-independent: it applies identically to the complete decoded input from a named file or stdin, with the same BOM, newline, EOF-subset, output and error semantics. Named-file range delivery is independent of planned stdin delivery; compatibility of the selection interface is required, while actual stdin acquisition and integration acceptance remain part of stdin delivery.
+ 
+ ## Unsupported behavior
+ 
+@@ -59,9 +59,9 @@ No public Python range parameter or export, multiple ranges, negative/from-end p
+ 
+ Runtime and test dependencies are standard library, Python >=3.11. Professional module and public API docstrings explain purpose, arguments, results, exceptions, and resource ownership where relevant. Meaningful unittest coverage checks independent expected counts, real named-file/public imports, module subprocesses, channels/statuses, malformed bytes, BOM modes, mixed terminators, and option composition. Test directories must be discoverable packages. No empty test collection establishes acceptance.
+ 
+-Whole-input acceptance requires successful named-file API and module CLI examples, the counting table boundaries and Unicode whitespace, failure and usage channels/statuses, JSON parsed by the stdlib decoder, and an extracted source package launched through its module entry point.
++Whole-input acceptance requires successful named-file API and module CLI examples, the counting table boundaries and Unicode whitespace, failure and usage channels/statuses, an extracted source package launched through its module entry point.
+ 
+-Selected-counting acceptance uses these literal expected counts, with default BOM removal unless stated. Exercise named-file CLI text and JSON formats; pure counting checks establish the same boundaries.
++Selected-counting acceptance uses these literal expected counts, with default BOM removal unless stated. Exercise named-file CLI exact plain output; pure counting checks establish the same boundaries.
+ 
+ | Complete decoded input | Range | Selected lines | Selected words |
+ | --- | --- | ---: | ---: |
+@@ -79,6 +79,6 @@ Selected-counting acceptance uses these literal expected counts, with default BO
+ | `a\n` + U+FEFF + ` b` | `2:2` | 1 | 2 |
+ | two leading U+FEFF characters | `1:1` | 1 | 1 |
+ 
+-Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Verify invalid-range precedence over nonexistent input and actual invalid UTF-8 after END. Preserve no-range core/API/CLI/failure/JSON/distribution acceptance and unchanged files/owned-handle cleanup.
++Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Verify invalid-range precedence over nonexistent input and actual invalid UTF-8 after END. Preserve no-range core/API/CLI/failure/distribution acceptance and unchanged files/owned-handle cleanup.
+ 
+-Named-file range acceptance includes extracted-source invocations and documented selected examples in both formats, plus review of the source-independent selection interface for stdin compatibility. Future actual stdin acceptance exercises whole-input and selected empty/BOM/mixed-newline cases in both formats, locale-independent UTF-8, stream lifetime and read/decode failures (including after END). These stdin checks belong to stdin delivery and do not gate named-file range delivery.
++Named-file range acceptance includes extracted-source invocations and documented selected examples with exact plain output, plus review of the source-independent selection interface for stdin compatibility. Future actual stdin acceptance exercises whole-input and selected empty/BOM/mixed-newline cases with exact plain output, locale-independent UTF-8, stream lifetime and read/decode failures (including after END). These stdin checks belong to stdin delivery and do not gate named-file range delivery.
+diff --git a/docs/dev/TASKS.md b/docs/dev/TASKS.md
+index 908bc0a..576cf9d 100644
+--- a/docs/dev/TASKS.md
++++ b/docs/dev/TASKS.md
+@@ -1,6 +1,6 @@
+ # TextStats executable tasks
+ 
+-Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). Completion below records verified task work; unchecked tasks remain planned. IDs are project-wide and stable.
++Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). Completion below records verified task work; unchecked tasks remain planned. Historical evidence describes its original checkpoint; current scope and amendment reassessment determine acceptance. IDs are project-wide and stable.
+ 
+ Maintained hosted tracking is active for all tasks in this list at `pchemguy/AgentPlayground` on GitHub. Use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
+ 
+@@ -38,19 +38,13 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
+ ## Phase 2 — Output and input extensions
+ 
+ - [ ] Phase 2 — Output and input extensions
+-    - [x] Milestone 2.1 — JSON output
+-        - [x] T-006 — Add and verify JSON output
+-            Scope: CLI formatter/parser, CLI tests, README/docstrings and milestone 2.1 evidence. Depends on: T-005 and verified/published phase 1 integration.
+-            Outcome: `--json` emits the SPEC object/newline and composes with BOM policy, retaining default text and failure behavior. Evidence: stdlib parsed JSON keys/value types and fixed counts, default-output/channel regressions, documented demonstration and full discovery. Record the milestone decision evidence; pause on the phase branch if only 2.1 is requested.
+-            Checkpoint: milestone 2.1 / T-006 only on `phase/2-output-and-input-extensions`, from actual verified/published main `29c27580db73cf128c42ddb9535e6d8f5c38ed39`; target `main`, remote `origin`. Hosted association: [T-006 issue #6](https://github.com/pchemguy/AgentPlayground/issues/6). Phase 2 remains incomplete; T-007/T-008 are unstarted and excluded, with no phase merge at this boundary.
+-            Verified T-006 / milestone 2.1 (Python 3.12.14): `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli.JsonCliTests -v` observed RED with 5 tests, 15 failures and one argparse SystemExit scenario error because `--json` was unsupported. After the parser/formatter change, `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli -v` passed all 15 CLI tests; `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` passed all 31 tests without skips/warnings. Real named-file subprocesses and stdlib parsing verify one object/newline, exactly lines/words integer keys, fixed empty/whitespace/Unicode/mixed/trailing-newline counts, BOM modes/option order, unchanged files, dash-prefixed paths, default text regressions and read/decode/usage channels. Permission denial is simulated narrowly at the CLI adapter under this privileged runner; real missing/directory/malformed-byte fixtures supplement it. Affected module/API docstrings, README links and heading spacing reviewed. README quick-start/JSON examples executed in a temporary directory: text `lines=1 words=2`, JSON (1,2), BOM stripped (2,2), BOM kept (2,3), all status 0 with empty stderr. This demonstration meets PLAN 2.1 and informs the next human continuation/amendment/stop decision; no further decision or usability feedback is inferred. Pause on the published phase branch before milestone 2.2; stdin still treats `-` as a filename.
+     - [ ] Milestone 2.2 — UTF-8 stdin
+         - [ ] T-007 — Support stdin through the dash input
+-            Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006, T-010.
+-            Outcome: `-` reads strict UTF-8 stdin until EOF without closing it; both output formats/BOM modes and optional inclusive ranges work; read/decode failures identify stdin, including invalid bytes outside selection. Evidence: binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, appropriate stream-lifetime/read-failure checks, original BOM/Unicode/EOF selection boundaries in both formats, and named-file regressions. Counting remains owned by the core.
++            Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-005, T-010.
++            Outcome: `-` reads strict UTF-8 stdin until EOF without closing it; plain output/both BOM modes and optional inclusive ranges work; read/decode failures identify stdin, including invalid bytes outside selection. Evidence: binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, appropriate stream-lifetime/read-failure checks, original BOM/Unicode/EOF selection boundaries with exact plain output, and named-file regressions. Counting remains owned by the core.
+         - [ ] T-008 — Verify complete stdin delivery and phase exits
+             Scope: README, distribution/CLI integration checks and phase 2 exit evidence attached to this task. Depends on: T-007, T-011.
+-            Outcome: accurate pipe/API/JSON examples and complete intended acceptance with packaged module invocation. Evidence: both formats, BOM modes, ranges and sources compose; named-file errors/defaults remain correct; extracted-source stdin including selection/complete-decode failure, documentation checks and full nonempty unittest discovery meet PLAN 2.2 and all phase 2 exits (2.1/2.2/2.3). Preserve T-009–T-011 named-file evidence; their completion does not establish stdin acceptance. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.
++            Outcome: accurate pipe/API/plain-output examples and complete intended acceptance with packaged module invocation. Evidence: plain output, BOM modes, ranges and sources compose; named-file errors/defaults remain correct; extracted-source stdin including selection/complete-decode failure, documentation checks and full nonempty unittest discovery meet PLAN 2.2 and all retained phase 2 exits (2.2/2.3); 2.1 is retired. Preserve T-009–T-011 named-file evidence; their completion does not establish stdin acceptance. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.
+ 
+     - [x] Milestone 2.3 — Line-range counting
+         - [x] T-009 — Add pure selected-counting and file-adapter collaboration
+@@ -58,10 +52,12 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
+             Outcome: one core owner selects accepted logical segments after exactly-once global BOM handling; real named files strictly decode completely and close owned handles; unchanged public API remains available. Evidence: SPEC literal expectations for inclusive endpoints, EOF truncation/empty selection, blank/mixed/trailing lines, Unicode separators and original-interior BOM; malformed bytes outside the selection still raise and handle lifecycle/public no-range calls pass. No CLI formatting or stdin implementation belongs here.
+             Verified T-009 (Python 3.12.14): selected core/file RED collected 2 tests with 19 errors at absent private operations (modules collected successfully). GREEN core/file/API checks passed 17 tests; full discovery passed 33 tests. Literal expectations cover inclusive/EOF/empty/blank/mixed/Unicode/interior and global BOM boundaries; real complete-file invalid UTF-8 outside selection raises and closes handles; controlled acquired-handle read denial closes; whole-input public API regressions pass. Reviewed private module documentation and source-independent decoded-text seam. Actual stdin remains unimplemented. Hosted association: T-009 issue #9.
+         - [x] T-010 — Deliver named-file line-range CLI counting
+-            Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-006, T-009.
+-            Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; default/JSON/BOM options compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and parsed JSON, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather PLAN earliest changed-path demonstration. Do not start main T-007/T-008 without their separate authorized range.
++            Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-003, T-009.
++            Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; plain output and BOM option compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and exact plain output, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather PLAN earliest changed-path demonstration. Do not start main T-007/T-008 without their separate authorized range.
++            Current acceptance reassessed by campaign 003_d0eeeff: exact plain-output named-file range checks pass, retaining literal SPEC cases, both BOM modes and option orders, 5000-digit endpoint, usage precedence, complete decoding and unchanged inputs. Full discovery passes 39 tests; the revision report records amendment evidence. T-010 remains complete under its retained acceptance.
+             Verified T-010 (Python 3.12.14): actual module RED collected 8 tests with 38 behavioral failures because --lines was unsupported. GREEN CLI checks passed 23 tests; full discovery passed 41 tests. Literal text/parsed-JSON cases cover all selected SPEC rows, leading zeros, unterminated/singleton/EOF/blank/mixed/Unicode/BOM cases, option orders, unchanged files and dash filenames. Invalid syntax/repetition/missing values precede nonexistent input; strict invalid bytes before/after the selected range preserve status 1 and no success. A 5000-digit endpoint succeeds without an arbitrary parser bound. README quick start, JSON and four selected named-file commands executed with exact expected outputs/status 0/empty stderr; BOM modes and malformed range demonstrated separately. Help/docstrings reviewed; public API/no-range regressions remain green. Hosted association: T-010 issue #10. Earliest useful changed-path demonstration is complete; no human feedback is inferred, no stdin implementation performed.
+         - [x] T-011 — Verify named-file line-range delivery and milestone exits
+             Scope: tests/integration/test_cli.py and test_distribution.py, README/docstrings and milestone evidence; source-independent interface review against planned stdin contracts. Depends on: T-010.
+-            Outcome: packaged named-file line-range examples in both formats and BOM modes plus baseline regressions satisfy all PLAN 2.3 exits. Selection remains reusable for future decoded stdin without introducing CLI/IO dependencies into the core. Evidence: real named-file subprocess and extracted-source singleton/middle/EOF/empty/BOM/mixed-newline cases, strict whole-input failure/resource checks, public API/no-range regressions, executed documentation examples and `python -m unittest discover -s tests -v` with nonzero tests. Inspect the pure selection/private collaboration interface for compatibility with later main T-007/T-008; actual stdin implementation and integration verification remain with those main tasks and do not gate this feature. Record actual named-file demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
++            Outcome: packaged named-file line-range examples with plain output and both BOM modes plus baseline regressions satisfy all PLAN 2.3 exits. Selection remains reusable for future decoded stdin without introducing CLI/IO dependencies into the core. Evidence: real named-file subprocess and extracted-source singleton/middle/EOF/empty/BOM/mixed-newline cases, strict whole-input failure/resource checks, public API/no-range regressions, executed documentation examples and `python -m unittest discover -s tests -v` with nonzero tests. Inspect the pure selection/private collaboration interface for compatibility with later main T-007/T-008; actual stdin implementation and integration verification remain with those main tasks and do not gate this feature. Record actual named-file demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
++            Current T-011/Milestone 2.3 acceptance reassessed by campaign 003_d0eeeff: extracted-source named-file plain-output/BOM/range/strict-decode/API checks and four literal README outputs pass; full discovery passes 39 tests with no skips. T-011 and Milestone 2.3 remain complete. The decoded-string seam remains compatible with future source-independent stdin; no actual stdin acceptance is claimed.
+             Verified T-011 / milestone 2.3 named-file exits (Python 3.12.14): extracted-source distribution check passed; full discovery passed 41 tests without skips/warnings. Archive remains exactly five modules plus README, excludes infrastructure/secrets, removes PYTHONPATH and asserts deployed import location. Extracted module subprocesses verify singleton/middle/EOF/empty/blank/mixed/BOM selection in both formats, both BOM modes, unchanged inputs and complete-input malformed-byte failures beyond END. README selected shell block executes verbatim in deployment with four exact outputs. Existing pure/API/file/CLI tests verify all literal SPEC rows, usage/status/resource and no-range regressions. Reviewed _count_selected decoded-string seam: no IO/CLI imports, original BOM handling once, suitable for future fully decoded stdin. No actual stdin verification or implementation is claimed; narrow controlled permission denial supplements real filesystem failures under the privileged runner. This verification task extends characterization checks of existing T-010 behavior; no new behavior or artificial RED is claimed. Hosted association: T-011 issue #11. All named-file feature exits verified; Phase 2/main tasks remain incomplete.
+diff --git a/docs/dev/layout.md b/docs/dev/layout.md
+index 84b9c1b..151bef1 100644
+--- a/docs/dev/layout.md
++++ b/docs/dev/layout.md
+@@ -7,7 +7,7 @@ This maps [DECOMPOSITION](DECOMPOSITION.md) to intended paths. The map includes
+ | `textstats/counting.py` | Pure counting core and immutable result | `tests/unit/test_counting.py` |
+ | `textstats/files.py` | UTF-8 file adapter and owned handle lifecycle | `tests/unit/test_files.py` |
+ | `textstats/__init__.py` | Public exports | `tests/unit/test_api.py` |
+-| `textstats/cli.py` | Arguments, stdin selection, output and errors | `tests/integration/test_cli.py` |
++| `textstats/cli.py` | Arguments, stdin selection, plain output and errors | `tests/integration/test_cli.py` |
+ | `textstats/__main__.py` | Python module entry point | CLI subprocess checks |
+ | `tests/__init__.py` | Discoverable unittest root package | Full discovery |
+ | `tests/unit/__init__.py` | Discoverable core, public API and adapter checks | Focused unit checks and full discovery |
+diff --git a/tests/integration/test_cli.py b/tests/integration/test_cli.py
+index 546a933..4bdad29 100644
+--- a/tests/integration/test_cli.py
++++ b/tests/integration/test_cli.py
+@@ -1,6 +1,5 @@
+ """Verify the public module CLI through real named-file subprocesses."""
+ 
+-import json
+ import os
+ from pathlib import Path
+ import subprocess
+@@ -143,93 +142,48 @@ class CliFailureTests(unittest.TestCase):
+         self.assertIn("Permission denied", stderr.getvalue())
+ 
+ 
+-class JsonCliTests(unittest.TestCase):
+-    """Verify JSON serialization and its composition with existing CLI policy."""
++class RemovedJsonCliTests(unittest.TestCase):
++    """Reject the removed option before acquisition and preserve literal paths."""
+ 
+     run_cli = NamedFileCliTests.run_cli
++    assert_success = NamedFileCliTests.assert_success
+     assert_failure = CliFailureTests.assert_failure
+ 
+-    def assert_json_success(self, result, lines, words):
+-        """Require one object, exact keys, true integers and success channels."""
+-        self.assertEqual(result.returncode, 0, result.stderr)
+-        self.assertEqual(result.stderr, "")
+-        self.assertTrue(result.stdout.endswith("\n"))
+-        self.assertEqual(result.stdout.count("\n"), 1)
+-        value = json.loads(result.stdout)
+-        self.assertEqual(value, {"lines": lines, "words": words})
+-        self.assertEqual(set(value), {"lines", "words"})
+-        self.assertIs(type(value["lines"]), int)
+-        self.assertIs(type(value["words"]), int)
+-
+-    def test_json_named_file_boundaries(self):
+-        cases = [
+-            ("", 0, 0),
+-            (" \t", 1, 0),
+-            ("alpha beta", 1, 2),
+-            ("alpha\r\nbeta\rgamma\n", 3, 3),
+-            ("café\u00a0猫\u2028dog\n", 1, 3),
+-            ("alpha\n\n", 2, 1),
+-        ]
+-        with tempfile.TemporaryDirectory() as directory:
+-            path = Path(directory) / "file with spaces.txt"
+-            for text, lines, words in cases:
+-                with self.subTest(text=text):
+-                    data = text.encode("utf-8")
+-                    path.write_bytes(data)
+-                    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+-                    self.assertEqual(path.read_bytes(), data)
+-
+-    def test_json_bom_policy_and_option_order(self):
+-        cases = [
+-            ("\ufeff alpha\r\nbeta\n", (), 2, 2),
+-            ("\ufeff alpha\r\nbeta\n", ("--keep-bom",), 2, 3),
+-            ("\ufeff", (), 0, 0),
+-            ("\ufeff", ("--keep-bom",), 1, 1),
+-            ("alpha \ufeff beta", (), 1, 3),
+-        ]
+-        with tempfile.TemporaryDirectory() as directory:
+-            path = Path(directory) / "bom.txt"
+-            for text, options, lines, words in cases:
+-                with self.subTest(text=text, options=options):
+-                    path.write_bytes(text.encode("utf-8"))
+-                    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+-                    if options:
+-                        self.assert_json_success(self.run_cli(path, *options, "--json"), lines, words)
+-
+-    def test_json_read_and_decode_failure_channels(self):
++    def test_removed_option_precedes_source_acquisition(self):
+         with tempfile.TemporaryDirectory() as directory:
++            existing = Path(directory) / "bom.txt"
++            existing.write_bytes("\ufeff a\nb".encode("utf-8"))
+             missing = Path(directory) / "missing.txt"
+-            bad = Path(directory) / "bad.txt"
+-            bad.write_bytes(b"alpha\n\xff")
+-            for path in (missing, bad, Path(directory)):
+-                with self.subTest(path=path):
+-                    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+-            self.assertEqual(bad.read_bytes(), b"alpha\n\xff")
+-
+-    def test_json_dash_prefixed_named_file(self):
++            for path in [existing, missing, Path(directory)]:
++                for options in [("--json",), ("--keep-bom", "--json"),
++                                ("--lines=1:1", "--json"),
++                                ("--json", "--lines", "2:2", "--keep-bom")]:
++                    with self.subTest(path=path, options=options):
++                        result = self.run_cli(path, *options)
++                        self.assert_failure(result, 2)
++                        self.assertIn("unrecognized arguments: --json", result.stderr)
++            self.assertEqual(existing.read_bytes(), "\ufeff a\nb".encode("utf-8"))
++
++    def test_help_omits_removed_option(self):
++        result = self.run_cli("unused", "--help")
++        self.assertEqual((result.returncode, result.stderr), (0, ""))
++        self.assertNotIn("--json", result.stdout)
++        self.assertIn("--lines", result.stdout)
++        self.assertIn("--keep-bom", result.stdout)
++
++    def test_removed_option_name_is_a_literal_file_after_separator(self):
+         with tempfile.TemporaryDirectory() as directory:
+-            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
+-            self.assert_json_success(self.run_cli("-sample.txt", "--json", "--", cwd=directory), 1, 2)
+-
+-    def test_json_permission_denial_translation(self):
+-        from unittest.mock import patch
+-        import contextlib
+-        import io
+-        from textstats.cli import main
+-        stdout, stderr = io.StringIO(), io.StringIO()
+-        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
+-            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+-                status = main(["--json", "denied.txt"])
+-        self.assertEqual(status, 1)
+-        self.assertEqual(stdout.getvalue(), "")
+-        self.assertIn("denied.txt", stderr.getvalue())
+-        self.assertIn("Permission denied", stderr.getvalue())
++            (Path(directory) / "--json").write_bytes(b"a\nb c")
++            self.assert_success(self.run_cli("--json", "--", cwd=directory),
++                                "lines=2 words=3\n")
++            self.assert_success(self.run_cli("--json", "--lines=2:2", "--", cwd=directory),
++                                "lines=1 words=2\n")
+ 
+ 
+ class LineRangeCliTests(NamedFileCliTests):
+     """Verify inclusive selected counting, parser failures and complete decoding."""
+ 
+-    def test_literal_selected_cases_in_both_formats_and_bom_modes(self):
++    def test_literal_selected_cases_in_plain_output_and_bom_modes(self):
+         cases = [
+             ("alpha beta\nbeta\nlast two", "2:3", False, (2, 3)),
+             ("alpha beta\nbeta\nlast two", "1:1", False, (1, 2)),
+@@ -255,26 +209,18 @@ class LineRangeCliTests(NamedFileCliTests):
+             for text, span, keep, expected in cases:
+                 data = text.encode("utf-8")
+                 path.write_bytes(data)
+-                for use_json in [False, True]:
+-                    options = ["--lines=" + span]
+-                    if keep: options += ["--keep-bom"]
+-                    if use_json: options.insert(0, "--json")
+-                    with self.subTest(text=text, span=span, keep=keep, json=use_json):
+-                        result = self.run_cli(path, *options)
+-                        self.assertEqual((result.returncode, result.stderr), (0, ""))
+-                        if use_json:
+-                            parsed = json.loads(result.stdout)
+-                            self.assertEqual(parsed, dict(zip(["lines", "words"], expected)))
+-                            self.assertEqual({type(v) for v in parsed.values()}, {int})
+-                            self.assertTrue(result.stdout.endswith("\n"))
+-                        else:
+-                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+-                        self.assertEqual(path.read_bytes(), data)
++                options = ["--lines=" + span]
++                if keep:
++                    options += ["--keep-bom"]
++                with self.subTest(text=text, span=span, keep=keep):
++                    self.assert_success(self.run_cli(path, *options),
++                                        "lines=%d words=%d\n" % expected)
++                    self.assertEqual(path.read_bytes(), data)
+             path.write_bytes(b"a\nb")
+             self.assert_success(self.run_cli(path, "--lines", "1:"+"9"*5000), "lines=2 words=2\n")
+-            result = self.run_cli(path, "--keep-bom", "--lines", "2:2", "--json")
+-            self.assertEqual(json.loads(result.stdout), {"lines": 1, "words": 1})
+-            self.assertEqual((result.returncode, result.stderr), (0, ""))
++            for options in [("--keep-bom", "--lines", "2:2"),
++                            ("--lines", "2:2", "--keep-bom")]:
++                self.assert_success(self.run_cli(path, *options), "lines=1 words=1\n")
+ 
+     def test_invalid_ranges_precede_missing_input(self):
+         ranges = ["0:1", "2:1", "-1:2", "1:", ":2", "1:2:3", "1.0:2",
+@@ -298,7 +244,7 @@ class LineRangeCliTests(NamedFileCliTests):
+             path = Path(directory) / "invalid.txt"
+             for data in [b"valid\n\xff", b"\xff\nvalid"]:
+                 path.write_bytes(data)
+-                for options in [("--lines=1:1",), ("--json", "--lines=2:2")]:
++                for options in [("--lines=1:1",), ("--lines=2:2",)]:
+                     result = self.run_cli(path, *options)
+                     self.assertEqual((result.returncode, result.stdout), (1, ""))
+                     self.assertIn(str(path), result.stderr)
+diff --git a/tests/integration/test_distribution.py b/tests/integration/test_distribution.py
+index 4b94584..7606690 100644
+--- a/tests/integration/test_distribution.py
++++ b/tests/integration/test_distribution.py
+@@ -4,7 +4,6 @@ The test environment deliberately removes PYTHONPATH and checks the imported
+ package location so the installed source cannot silently use checkout modules.
+ """
+ 
+-import json
+ import os
+ from pathlib import Path
+ import re
+@@ -89,22 +88,17 @@ class SourceDistributionTests(unittest.TestCase):
+             for text, span, keep, expected in selected_cases:
+                 data = text.encode("utf-8")
+                 fixture.write_bytes(data)
+-                for use_json in [False, True]:
+-                    options = ["--lines", span]
+-                    if use_json: options += ["--json"]
+-                    if keep: options += ["--keep-bom"]
+-                    with self.subTest(deployed_range=span, text=text, json=use_json, keep=keep):
+-                        result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+-                            cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+-                        self.assertEqual((result.returncode, result.stderr), (0, ""))
+-                        if use_json:
+-                            self.assertEqual(json.loads(result.stdout), {"lines": expected[0], "words": expected[1]})
+-                            self.assertTrue(result.stdout.endswith("\n"))
+-                        else:
+-                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+-                        self.assertEqual(fixture.read_bytes(), data)
++                options = ["--lines", span]
++                if keep:
++                    options += ["--keep-bom"]
++                with self.subTest(deployed_range=span, text=text, keep=keep):
++                    result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
++                        cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
++                    self.assertEqual((result.returncode, result.stderr), (0, ""))
++                    self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
++                    self.assertEqual(fixture.read_bytes(), data)
+             fixture.write_bytes(b"valid\n\xff")
+-            for options in [["--lines=1:1"], ["--lines=1:1", "--json"]]:
++            for options in [["--lines=1:1"], ["--lines=1:1", "--keep-bom"]]:
+                 failure = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+                     cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+                 self.assertEqual((failure.returncode, failure.stdout), (1, ""))
+@@ -115,9 +109,15 @@ class SourceDistributionTests(unittest.TestCase):
+             documented = subprocess.run(selected_script, shell=True, cwd=deployed,
+                 env=environment, capture_output=True, text=True, timeout=10)
+             self.assertEqual((documented.returncode, documented.stderr), (0, ""))
+-            self.assertEqual(documented.stdout, 'lines=1 words=2\n{"lines": 2, "words": 3}\nlines=2 words=3\nlines=0 words=0\n')
++            self.assertEqual(documented.stdout, 'lines=1 words=2\nlines=2 words=3\nlines=2 words=3\nlines=0 words=0\n')
+             help_result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
+                 cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+             self.assertEqual(help_result.returncode, 0)
+             self.assertTrue(help_result.stdout)
++            self.assertNotIn("--json", help_result.stdout)
++            removed = subprocess.run([sys.executable, "-m", "textstats", "--json", "sample.txt"],
++                cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
++            self.assertEqual((removed.returncode, removed.stdout), (2, ""))
++            self.assertIn("unrecognized arguments: --json", removed.stderr)
++            self.assertNotIn("Traceback", removed.stderr)
+             self.assertEqual(help_result.stderr, "")
+diff --git a/textstats/cli.py b/textstats/cli.py
+index 8c104b7..80a589d 100644
+--- a/textstats/cli.py
++++ b/textstats/cli.py
+@@ -5,7 +5,6 @@ and the counting core owns newline, word and BOM semantics.
+ """
+ 
+ import argparse
+-import json
+ import re
+ import sys
+ from collections.abc import Sequence
+@@ -41,12 +40,11 @@ class _SingleRange(argparse.Action):
+ 
+ 
+ def main(argv: Sequence[str] | None = None) -> int:
+-    """Count one named UTF-8 file and write text or JSON success output.
++    """Count one named UTF-8 file and write exact plain success output.
+ 
+     Args:
+         argv: Command-line arguments without the program name. None selects
+             process arguments. --keep-bom retains the leading decoded BOM;
+-            --json selects one object with integer lines and words fields;
+             --lines START:END selects existing one-based inclusive lines.
+ 
+     Returns:
+@@ -65,7 +63,6 @@ def main(argv: Sequence[str] | None = None) -> int:
+         prog="python -m textstats", description="Count lines and words in one UTF-8 file."
+     )
+     parser.add_argument("--keep-bom", action="store_true", help="retain the leading UTF-8 BOM")
+-    parser.add_argument("--json", action="store_true", help="write counts as a JSON object")
+     parser.add_argument("--lines", type=_parse_range, action=_SingleRange,
+                         metavar="START:END",
+                         help="select one-based inclusive lines; count the available subset at EOF")
+@@ -81,8 +78,5 @@ def main(argv: Sequence[str] | None = None) -> int:
+     except (OSError, UnicodeDecodeError) as error:
+         print(f"textstats: {arguments.input}: {error}", file=sys.stderr)
+         return 1
+-    if arguments.json:
+-        print(json.dumps({"lines": result.lines, "words": result.words}))
+-    else:
+-        print(f"lines={result.lines} words={result.words}")
++    print(f"lines={result.lines} words={result.words}")
+     return 0

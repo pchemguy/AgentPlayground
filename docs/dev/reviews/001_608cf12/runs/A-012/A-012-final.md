@@ -1,0 +1,21 @@
+# A-012 final amendment publication
+
+Completed the human-commanded focused plain-output amendment using explicit pinned vendor/sdd-manager sources. CLI JSON parser/import/formatter and supported claims are removed. Successful CLI calls retain exactly `lines=<N> words=<N>\n`; `--json` now returns unknown-option usage status 2 before acquisition, with literal `-- --json` filenames usable. Public whole-input APIs, strict full-input UTF-8, original BOM ownership, line ranges/errors/resources and planned source-independent stdin remain intact.
+
+Current PROJECT/SPEC/design/PLAN/TASKS/layout, README, CLI and affected CLI/distribution tests are aligned. JSON-only T-006/Milestone 2.1 are removed from the current executable hierarchy; IDs and original historical delivery evidence remain reserved/retained in the minimal revision record and Git/provider history. T-010/T-011/Milestone 2.3 plain-output acceptance is freshly reverified. T-009 and Phase 1 regressions pass. T-007/T-008, Milestone 2.2 and Phase 2 remain incomplete; stdin still treats `-` as a named file at this checkpoint. No main tasks resumed, feature overlay created, phase completed or main merge performed.
+
+Campaign `003_d0eeeff`, baseline `d0eeeffc0432a45a603ef17cca457e9f04544876`; amendment branch `revision/003_d0eeeff-remove-json`, paused target `phase/2-output-and-input-extensions`, remote `origin` at pchemguy/AgentPlayground.
+
+Amendment commit `6561e287e59c8b4e86c7a3cdeaaa48a60df82154` is pushed and remote tip confirmed. Conflict-free explicit two-parent merge `1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6` has parents baseline `d0eeeffc0432a45a603ef17cca457e9f04544876` and amendment `6561e287e59c8b4e86c7a3cdeaaa48a60df82154`. Paused target is verified/pushed with exact remote containment confirmed. Main remains `29c27580db73cf128c42ddb9535e6d8f5c38ed39`. No tracked/staged changes remain; unrelated pre-existing bytecode and ignored credentials are preserved, pinned vendor and historical feature snapshots unchanged.
+
+Actual evidence: removal test-first RED collected 3 tests with 13 behavioral failures; same focused GREEN passed 3. Focused unit/API/file/CLI/distribution checks and mandatory full amendment discovery passed 39 tests; merged-state full discovery passed 39, no skips/warnings. Meaningful checks protect literal retained range/BOM/Unicode/newline/EOF cases, 5000-digit endpoints, usage precedence, full decode failures before/after selection, unchanged files and API/resource/error contracts. Checkout README quick-start/range/API examples and independent extracted-source README/import/module/archive checks pass. Archive membership remains exactly five modules plus README, excludes secrets/infrastructure/bytecode, removes PYTHONPATH and verifies imported location. Final links/heading spacing/diff checks pass. Narrow simulated permission-denial checks supplement real filesystem failure fixtures under the privileged runner; no actual planned stdin acceptance is claimed.
+
+Hosted generated scope reconciled on existing #6/#7/#8/#10/#11, milestone #1/#3/#4/#5 and Phase 2 label. Stable IDs, history, states, parentage, unrelated labels and human material are preserved. Retired #6 stays historically closed; #10/#11 stay closed with fresh retained acceptance; #7/#8 stay open. No new completion/reopening/closure or parent deletion inferred. Deduplicated amendment/merge evidence comments published:
+
+- T-006: https://github.com/pchemguy/AgentPlayground/issues/6#issuecomment-5967588526
+- T-010: https://github.com/pchemguy/AgentPlayground/issues/10#issuecomment-5967592515
+- T-011: https://github.com/pchemguy/AgentPlayground/issues/11#issuecomment-5967595706
+
+Evidence files: A-012.md action journal (including review correction of the initial retired-row draft); A-012-red.txt, A-012-green.txt, A-012-focused-tests.txt, A-012-amendment-tests-final.txt, A-012-checks.txt, A-012-merged-tests.txt, A-012-final-checks.txt; scoped commit/push/remote/merge outputs; safe hosted before/actions/after metadata. Journals are factual action records, not native transcripts. No installed-client discovery claim, plugin edits, assessor/evaluator content inspection or further case work occurred.
+
+Stopped completely after amendment publication and hosted evidence reconciliation. No pending authorization or automatic continuation is implied.

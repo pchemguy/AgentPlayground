@@ -1,0 +1,156 @@
+test_help_omits_removed_option (tests.integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option) ... FAIL
+test_removed_option_name_is_a_literal_file_after_separator (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_name_is_a_literal_file_after_separator) ... ok
+test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... 
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--json',)) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--keep-bom', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--lines=1:1', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--json', '--lines', '2:2', '--keep-bom')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--json',)) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--keep-bom', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--lines=1:1', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--json', '--lines', '2:2', '--keep-bom')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--json',)) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--keep-bom', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--lines=1:1', '--json')) ... FAIL
+  test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--json', '--lines', '2:2', '--keep-bom')) ... FAIL
+
+======================================================================
+FAIL: test_help_omits_removed_option (tests.integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 170, in test_help_omits_removed_option
+    self.assertNotIn("--json", result.stdout)
+AssertionError: '--json' unexpectedly found in 'usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\n\nCount lines and words in one UTF-8 file.\n\npositional arguments:\n  INPUT              named UTF-8 file\n\noptions:\n  -h, --help         show this help message and exit\n  --keep-bom         retain the leading UTF-8 BOM\n  --json             write counts as a JSON object\n  --lines START:END  select one-based inclusive lines; count the available\n                     subset at EOF\n'
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--json',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--keep-bom', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--lines=1:1', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/bom.txt'), options=('--json', '--lines', '2:2', '--keep-bom'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--json',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606/missing.txt: [Errno 2] No such file or directory: '/tmp/tmpcqbg8606/missing.txt'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--keep-bom', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606/missing.txt: [Errno 2] No such file or directory: '/tmp/tmpcqbg8606/missing.txt'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--lines=1:1', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606/missing.txt: [Errno 2] No such file or directory: '/tmp/tmpcqbg8606/missing.txt'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606/missing.txt'), options=('--json', '--lines', '2:2', '--keep-bom'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606/missing.txt: [Errno 2] No such file or directory: '/tmp/tmpcqbg8606/missing.txt'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--json',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606: [Errno 21] Is a directory: '/tmp/tmpcqbg8606'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--keep-bom', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606: [Errno 21] Is a directory: '/tmp/tmpcqbg8606'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--lines=1:1', '--json'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606: [Errno 21] Is a directory: '/tmp/tmpcqbg8606'
+
+
+======================================================================
+FAIL: test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) (path=PosixPath('/tmp/tmpcqbg8606'), options=('--json', '--lines', '2:2', '--keep-bom'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 163, in test_removed_option_precedes_source_acquisition
+    self.assert_failure(result, 2)
+  File "/workspace/scratch/AgentPlayground-sdd-008/tests/integration/test_cli.py", line 90, in assert_failure
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 1 != 2 : textstats: /tmp/tmpcqbg8606: [Errno 21] Is a directory: '/tmp/tmpcqbg8606'
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.447s
+
+FAILED (failures=13)

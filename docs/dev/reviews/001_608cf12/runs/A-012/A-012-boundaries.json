@@ -1,0 +1,97 @@
+{
+  "head": "1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6",
+  "parents": [
+    "d0eeeffc0432a45a603ef17cca457e9f04544876",
+    "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  ],
+  "amendment_branch": "revision/003_d0eeeff-remove-json",
+  "amendment_tip": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154",
+  "revision_record": "docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md",
+  "exact_remote_refs_verified": true,
+  "main_unchanged": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "tracked_clean": true,
+  "changed_paths": [
+    "README.md",
+    "docs/dev/ARCHITECTURE.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md",
+    "docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "textstats/cli.py"
+  ],
+  "no_feature_overlay_or_incorporation": true,
+  "historical_feature_sources_preserved": true,
+  "public_API_and_core_file_modules_unchanged": true,
+  "task_owners": {
+    "T-001": {
+      "id": "T-001",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 13,
+      "status": "Checked"
+    },
+    "T-002": {
+      "id": "T-002",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 19,
+      "status": "Checked"
+    },
+    "T-003": {
+      "id": "T-003",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 23,
+      "status": "Checked"
+    },
+    "T-004": {
+      "id": "T-004",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 29,
+      "status": "Checked"
+    },
+    "T-005": {
+      "id": "T-005",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 33,
+      "status": "Checked"
+    },
+    "T-007": {
+      "id": "T-007",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 42,
+      "status": "Unchecked"
+    },
+    "T-008": {
+      "id": "T-008",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 45,
+      "status": "Unchecked"
+    },
+    "T-009": {
+      "id": "T-009",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 50,
+      "status": "Checked"
+    },
+    "T-010": {
+      "id": "T-010",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 54,
+      "status": "Checked"
+    },
+    "T-011": {
+      "id": "T-011",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 59,
+      "status": "Checked"
+    }
+  },
+  "Phase2_and_stdin_incomplete": true,
+  "pinned_hashes_verified": 97,
+  "bytecode_hashes_preserved": 12,
+  "hosted_IDs_foreign_bodies_states_preserved": true,
+  "limits": "Behavior is separately checked by full suite, retained independent text/range oracles, JSON rejection and real literal filename/help checks. No complete native transcript."
+}

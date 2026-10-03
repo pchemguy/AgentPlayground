@@ -1,0 +1,6 @@
+Checkout README shell block: 'lines=1 words=2\n'
+Checkout README shell block: 'lines=1 words=2\nlines=2 words=3\nlines=2 words=3\nlines=0 words=0\n'
+Checkout README API block: passed silently
+Current Markdown links/heading spacing: passed
+Historical task evidence and untouched API/core/file modules: unchanged
+Pinned vendor diff: none

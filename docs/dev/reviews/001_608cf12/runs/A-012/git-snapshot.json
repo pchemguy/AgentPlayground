@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "branch": "phase/2-output-and-input-extensions",
+  "head": "1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6",
+  "parents": [
+    "d0eeeffc0432a45a603ef17cca457e9f04544876",
+    "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  ],
+  "status": [
+    "?? tests/integration/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_cli.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_distribution.cpython-312.pyc",
+    "?? tests/unit/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_counting.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_files.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/__main__.cpython-312.pyc",
+    "?? textstats/__pycache__/cli.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc",
+    "?? textstats/__pycache__/files.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "f087c9b261ff5db8aee9aad8260a804274320f33",
+    "refs/heads/feature/002_8a53078-line-ranges": "799e5c703dbc9c99a3832f19ea2aad44949f5e51",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+    "refs/heads/phase/2-output-and-input-extensions": "1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6",
+    "refs/heads/revision/003_d0eeeff-remove-json": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  },
+  "changed_paths": [
+    "README.md",
+    "docs/dev/ARCHITECTURE.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md",
+    "docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "textstats/cli.py"
+  ]
+}
