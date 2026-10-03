@@ -1,0 +1,21 @@
+# Line-range counting executable delta
+
+Status: preparation only; all feature work below is unimplemented and unchecked. Authoritative active inputs: [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE-PLAN](FEATURE-PLAN.md), unchanged [layout](layout.md) and main [TASKS](TASKS.md). Package: [002_8a53078](features/002_8a53078/README.md). This list owns only the scoped delta; it is not a second owner of existing tasks.
+
+Affected main requirements: CLI invocation, selected-counting acceptance and the exclusion of line selection; unchanged output/BOM/UTF-8/failure contracts remain. Completed T-001/T-002/T-006 are dependencies whose behavior must remain compatible. T-007/T-008 are still unstarted in main TASKS. T-009–T-011 are newly reserved, unique project-wide IDs. Existing maintained hosted tracking covers main TASKS; feature issue projection/associations remain pending and no issue IDs or completed hosted state are claimed.
+
+## Phase 2 — Output and input extensions
+
+- [ ] Phase 2 — Output and input extensions
+    - [ ] Milestone 2.3 — Line-range counting
+        - [ ] T-009 — Add pure selected-counting and file-adapter collaboration
+            Scope: counting.py and files.py private collaboration, tests/unit/test_counting.py, test_files.py and API regression checks with affected docstrings. Depends on: T-001, T-002.
+            Outcome: one core owner selects accepted logical segments after exactly-once global BOM handling; real named files strictly decode completely and close owned handles; unchanged public API remains available. Evidence: FEATURE-SPEC literal expectations for inclusive endpoints, EOF truncation/empty selection, blank/mixed/trailing lines, Unicode separators and original-interior BOM; malformed bytes outside the selection still raise and handle lifecycle/public no-range calls pass. No CLI formatting or stdin implementation belongs here.
+        - [ ] T-010 — Deliver named-file line-range CLI counting
+            Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-006, T-009.
+            Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; default/JSON/BOM options compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and parsed JSON, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather FEATURE-PLAN earliest changed-path demonstration. Pause here if stdin prerequisite is unavailable; do not start T-007.
+        - [ ] T-011 — Verify stdin composition and line-range milestone exits
+            Scope: cli.py collaboration only as needed for the established stdin source, tests/integration/test_cli.py and test_distribution.py, README/docstrings and milestone evidence. Depends on: T-010 and separately completed main T-007.
+            Outcome: selected stdin shares core semantics, strict locale-independent UTF-8 and process stream ownership; packaged named-file/stdin examples and baseline regressions satisfy all FEATURE-PLAN 2.3 exits. Evidence: binary subprocess inputs in both formats/BOM modes, empty/mixed/newline/BOM/EOF cases, read/decode failures including invalid bytes outside range, stream lifetime checks, extracted-source examples and `python -m unittest discover -s tests -v` with nonzero tests. Record actual demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
+
+Parent checkboxes here measure only the listed feature work. Feature preparation selects no executable task. Before later implementation, re-orient branch/target changes and task dependencies; before accepted incorporation, reconcile main TASKS and this list together without duplicate IDs or changed historical completion claims.
