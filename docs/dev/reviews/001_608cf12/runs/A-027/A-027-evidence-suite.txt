@@ -1,0 +1,31 @@
+test_states (workflows.test_boundary_readiness.ReadinessStates.test_states) ... ok
+test_escape_rejected (workflows.test_checkers.ApiTests.test_escape_rejected)
+Reject other repositories and encoded or literal traversal attempts. ... ok
+test_scoped_request (workflows.test_checkers.ApiTests.test_scoped_request)
+Construct literal repository-scoped JSON with no token in its URL. ... ok
+test_bad_snapshots (workflows.test_checkers.BoundaryTests.test_bad_snapshots)
+Reject one-parent merges, wrong parents, dirty state and escaped scope. ... ok
+test_valid_snapshot (workflows.test_checkers.BoundaryTests.test_valid_snapshot)
+Accept the exact literal boundary fixture. ... ok
+test_literal_success_and_failure (workflows.test_checkers.LiteralCliTests.test_literal_success_and_failure)
+Detect deliberately incorrect output and exit expectations. ... ok
+test_checkbox_hierarchy_and_linked_children (workflows.test_checkers.OwnershipTests.test_checkbox_hierarchy_and_linked_children)
+Accept nested hierarchy and reject duplicate checked current IDs. ... ok
+test_duplicate_and_archive (workflows.test_checkers.OwnershipTests.test_duplicate_and_archive)
+Reject duplicate IDs in active feature work but ignore archived rows. ... ok
+test_duplicate_in_same_document (workflows.test_checkers.OwnershipTests.test_duplicate_in_same_document)
+Reject duplicate executable rows even in one document. ... ok
+test_missing_or_ambiguous_tables (workflows.test_checkers.OwnershipTests.test_missing_or_ambiguous_tables)
+Reject absent task documents and tables with no status field. ... ok
+test_offline_cannot_mutate (workflows.test_controlled_host.ControlledHostTests.test_offline_cannot_mutate) ... ok
+test_uncertain_closure_is_visible_after_reread (workflows.test_controlled_host.ControlledHostTests.test_uncertain_closure_is_visible_after_reread) ... ok
+test_uncertain_comment_is_not_lost (workflows.test_controlled_host.ControlledHostTests.test_uncertain_comment_is_not_lost) ... ok
+test_bad_exit_and_channels (workflows.test_product_acceptance.AcceptanceSensitivity.test_bad_exit_and_channels) ... ok
+test_bad_stdout (workflows.test_product_acceptance.AcceptanceSensitivity.test_bad_stdout) ... ok
+test_correct_literal (workflows.test_product_acceptance.AcceptanceSensitivity.test_correct_literal) ... ok
+test_json_bool_is_not_count (workflows.test_product_acceptance.AcceptanceSensitivity.test_json_bool_is_not_count) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.154s
+
+OK

@@ -1,0 +1,213 @@
+[
+  {
+    "name": "mixed-subset",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:3",
+      "/tmp/textstats-assessor-8wg2ledb/mixed-subset.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=2 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unicode-physical",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "/tmp/textstats-assessor-8wg2ledb/unicode-physical.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "beyond",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:3",
+      "/tmp/textstats-assessor-8wg2ledb/beyond.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "trailing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:4",
+      "/tmp/textstats-assessor-8wg2ledb/trailing.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unterminated",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:2",
+      "/tmp/textstats-assessor-8wg2ledb/unterminated.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-default",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "/tmp/textstats-assessor-8wg2ledb/bom-default.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-kept",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "--keep-bom",
+      "/tmp/textstats-assessor-8wg2ledb/bom-kept.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-7",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "0:1",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-7.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-8",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:1",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-8.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-9",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:0",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-9.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-10",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "-1:2",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-10.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected one argument\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-11",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "x:2",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-11.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-12",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-12.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-13",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:2:3",
+      "/tmp/textstats-assessor-8wg2ledb/invalid-13.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  }
+]

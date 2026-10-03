@@ -1,0 +1,25 @@
+{
+  "A021": {
+    "partial_export_T009_exact_once": true,
+    "partial_remaining_sources_and_T010_T011_exact": true,
+    "final_all_three_blocks_exact": true,
+    "incorporation_paths": [
+      "docs/dev/DECOMPOSITION.md",
+      "docs/dev/PLAN.md",
+      "docs/dev/PROJECT.md",
+      "docs/dev/TASKS.md",
+      "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+      "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+      "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "docs/dev/features/002_8a53078/README.md"
+    ],
+    "all_local_document_links_checked": 57,
+    "no_source_test_vendor_changes": true,
+    "archives_remain_historical": true
+  },
+  "hosted_selected_metadata_unchanged_since_A013": true,
+  "retained_case_counts": {},
+  "registry_type": "list",
+  "recovery_bundles_all_valid": true
+}

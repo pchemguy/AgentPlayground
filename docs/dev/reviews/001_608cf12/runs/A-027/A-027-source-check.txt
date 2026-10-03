@@ -1,0 +1,24 @@
+{
+  "head": "af7cbe05c09f2e5bce391ef16d85a04abfec16da",
+  "branch": "revision/008_98a5562-runtime-acceptance",
+  "pinned_source": "529e98d4d3cd7002e3a49e34394552a44bf0a8d0",
+  "pinned_files_identical": 97,
+  "historical_notice_only_preservation": [
+    "EXPLORE_DRIVE_V1.md",
+    "EXPLORE_DRIVE_V2.md"
+  ],
+  "changed_paths": [
+    "EXPLORE_DRIVE_V1.md",
+    "EXPLORE_DRIVE_V2.md",
+    "README.md",
+    "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+    "docs/dev/reviews/008_98a5562/REVISION-PLAN.md",
+    "docs/dev/reviews/008_98a5562/REVISION-REPORT.md",
+    "docs/dev/reviews/008_98a5562/evidence/integration_verify.py",
+    "docs/dev/reviews/README.md"
+  ],
+  "local_links_checked": 60,
+  "diff_check_passed": true,
+  "limits": "Source metadata/docs verification, not installed-client execution."
+}
+

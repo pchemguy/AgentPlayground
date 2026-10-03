@@ -1,0 +1,61 @@
+[
+  {
+    "name": "json-rejected",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--json",
+      "/tmp/textstats-assessor-nj2hswbe/json-rejected.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: unrecognized arguments: --json\n",
+    "mismatches": []
+  },
+  {
+    "name": "json-range-rejected",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:2",
+      "--json",
+      "/tmp/textstats-assessor-nj2hswbe/json-range-rejected.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: unrecognized arguments: --json\n",
+    "mismatches": []
+  },
+  {
+    "name": "json-bom-rejected",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--json",
+      "--keep-bom",
+      "/tmp/textstats-assessor-nj2hswbe/json-bom-rejected.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: unrecognized arguments: --json\n",
+    "mismatches": []
+  },
+  {
+    "name": "json-before-missing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--json",
+      "/tmp/textstats-assessor-nj2hswbe/missing.txt"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: unrecognized arguments: --json\n",
+    "mismatches": []
+  }
+]

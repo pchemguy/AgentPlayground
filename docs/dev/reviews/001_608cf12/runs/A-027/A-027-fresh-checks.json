@@ -1,0 +1,771 @@
+{
+  "python": {
+    "command": [
+      "python",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "A-027-python.txt"
+  },
+  "live_suite": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "A-027-live-suite.txt"
+  },
+  "evidence_suite": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "A-027-evidence-suite.txt"
+  },
+  "named-success": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/named-success.json",
+      "/workspace/scratch/acceptance-out-008/A-027-named-success.json"
+    ],
+    "exit": 0,
+    "output": "A-027-named-success.txt"
+  },
+  "named-errors": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/named-errors.json",
+      "/workspace/scratch/acceptance-out-008/A-027-named-errors.json"
+    ],
+    "exit": 0,
+    "output": "A-027-named-errors.txt"
+  },
+  "ranges-contract-text": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/ranges-contract-text.json",
+      "/workspace/scratch/acceptance-out-008/A-027-ranges-contract-text.json"
+    ],
+    "exit": 0,
+    "output": "A-027-ranges-contract-text.txt"
+  },
+  "json-removal": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/json-removal.json",
+      "/workspace/scratch/acceptance-out-008/A-027-json-removal.json"
+    ],
+    "exit": 0,
+    "output": "A-027-json-removal.txt"
+  },
+  "stdin-contract-text": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/stdin-contract-text.json",
+      "/workspace/scratch/acceptance-out-008/A-027-stdin-contract-text.json"
+    ],
+    "exit": 0,
+    "output": "A-027-stdin-contract-text.txt"
+  },
+  "stdin-final": {
+    "command": [
+      "python",
+      "-m",
+      "tests.workflows.product_acceptance",
+      "/workspace/scratch/AgentPlayground-sdd-008",
+      "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/acceptance/oracle/stdin-final.json",
+      "/workspace/scratch/acceptance-out-008/A-027-stdin-final.json"
+    ],
+    "exit": 0,
+    "output": "A-027-stdin-final.txt"
+  },
+  "ownership_live": {
+    "documents": [
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/PROJECT.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/ARCHITECTURE.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/DECOMPOSITION.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/SPEC.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/PLAN.md",
+      "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/layout.md"
+    ],
+    "owners": {
+      "T-001": {
+        "id": "T-001",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 13,
+        "status": "Checked"
+      },
+      "T-002": {
+        "id": "T-002",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 19,
+        "status": "Checked"
+      },
+      "T-003": {
+        "id": "T-003",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 23,
+        "status": "Checked"
+      },
+      "T-004": {
+        "id": "T-004",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 29,
+        "status": "Checked"
+      },
+      "T-005": {
+        "id": "T-005",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 33,
+        "status": "Checked"
+      },
+      "T-007": {
+        "id": "T-007",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 42,
+        "status": "Checked"
+      },
+      "T-008": {
+        "id": "T-008",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 46,
+        "status": "Checked"
+      },
+      "T-009": {
+        "id": "T-009",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 53,
+        "status": "Checked"
+      },
+      "T-010": {
+        "id": "T-010",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 57,
+        "status": "Checked"
+      },
+      "T-011": {
+        "id": "T-011",
+        "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+        "line": 62,
+        "status": "Checked"
+      }
+    }
+  },
+  "ownership_A021": {
+    "documents": [
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/PROJECT.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/ARCHITECTURE.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/DECOMPOSITION.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/SPEC.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/PLAN.md",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/layout.md"
+    ],
+    "owners": {
+      "T-001": {
+        "id": "T-001",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 13,
+        "status": "Checked"
+      },
+      "T-002": {
+        "id": "T-002",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 19,
+        "status": "Checked"
+      },
+      "T-003": {
+        "id": "T-003",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 23,
+        "status": "Checked"
+      },
+      "T-004": {
+        "id": "T-004",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 29,
+        "status": "Checked"
+      },
+      "T-005": {
+        "id": "T-005",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 33,
+        "status": "Checked"
+      },
+      "T-006": {
+        "id": "T-006",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 42,
+        "status": "Checked"
+      },
+      "T-007": {
+        "id": "T-007",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 48,
+        "status": "Unchecked"
+      },
+      "T-008": {
+        "id": "T-008",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 51,
+        "status": "Unchecked"
+      },
+      "T-009": {
+        "id": "T-009",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 57,
+        "status": "Checked"
+      },
+      "T-010": {
+        "id": "T-010",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 61,
+        "status": "Checked"
+      },
+      "T-011": {
+        "id": "T-011",
+        "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+        "line": 65,
+        "status": "Checked"
+      }
+    }
+  },
+  "pin": {
+    "commit": "529e98d4d3cd7002e3a49e34394552a44bf0a8d0",
+    "files": 97,
+    "mismatches": []
+  },
+  "repositories": {
+    "/workspace/scratch/6420baa7afea": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "revision/008_98a5562-runtime-acceptance",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "af7cbe05c09f2e5bce391ef16d85a04abfec16da",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "M README.md\n M docs/dev/reviews/008_98a5562/REVIEW-REPORT.md\n M docs/dev/reviews/008_98a5562/REVISION-PLAN.md\n M docs/dev/reviews/008_98a5562/REVISION-REPORT.md\n M docs/dev/reviews/README.md",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "98a083b555a211e45f8a16bfd3ea83829b9aa25e refs/heads/feature/architecture-revision\nb3c53d75c1db9546f8843462ae2eaae8a00a0d27 refs/heads/main\n99d7415d693fef640b2036c7f7db0fcc569531b2 refs/heads/revision/007_df531c2-workflow-branches\naf7cbe05c09f2e5bce391ef16d85a04abfec16da refs/heads/revision/008_98a5562-runtime-acceptance\n4bce29ece7782e86376c6bbc5a93c1d6537a7d53 refs/heads/revision/247944a-review-campaigns\ncf456b5b9fcad0fbed42551b65c9e3fa9ca33b40 refs/heads/revision/39374c8-branch-workflows\n0b127d73b966e76714a5dd5363db51b789839b4a refs/heads/revision/core-workflows-006\n450c52ce7ce55b4f081f032469e1e5aaec447734 refs/heads/revision/design-delivery-004\n998fb878a036d47d0a4263181b58d2d4756fdb63 refs/heads/revision/token-management-005",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "fb9a0e404d840c1b6b6bbe8757f16b67e5f22cc0\trefs/heads/add-comprehensive-critical-review-2097742362202913710\n98a083b555a211e45f8a16bfd3ea83829b9aa25e\trefs/heads/feature/architecture-revision\n79fab0e91a06fcc100a0e18cb0e1295085c4146c\trefs/heads/main\n99d7415d693fef640b2036c7f7db0fcc569531b2\trefs/heads/revision/007_df531c2-workflow-branches\naf7cbe05c09f2e5bce391ef16d85a04abfec16da\trefs/heads/revision/008_98a5562-runtime-acceptance\n4bce29ece7782e86376c6bbc5a93c1d6537a7d53\trefs/heads/revision/247944a-review-campaigns\ncf456b5b9fcad0fbed42551b65c9e3fa9ca33b40\trefs/heads/revision/39374c8-branch-workflows\n0b127d73b966e76714a5dd5363db51b789839b4a\trefs/heads/revision/core-workflows-006\n450c52ce7ce55b4f081f032469e1e5aaec447734\trefs/heads/revision/design-delivery-004\n998fb878a036d47d0a4263181b58d2d4756fdb63\trefs/heads/revision/token-management-005",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/AgentPlayground-evidence-008": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "evaluation/008-runtime-acceptance",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "ba87305e680a52393c1b09957d2ca6f85b447ac8",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "ba87305e680a52393c1b09957d2ca6f85b447ac8 refs/heads/evaluation/008-runtime-acceptance\n799e5c703dbc9c99a3832f19ea2aad44949f5e51 refs/heads/feature/002_8a53078-line-ranges\n05c35532ce836c1e9681f6dd6c21e1801293236f refs/heads/main\n964e72bd5b7cab1393def96cb7a192938ca586ab refs/heads/phase/1-named-file-baseline\nc8da841a53befcc420aeb9e97435ca93f9c7051e refs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154 refs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "ba87305e680a52393c1b09957d2ca6f85b447ac8\trefs/heads/evaluation/008-runtime-acceptance\n799e5c703dbc9c99a3832f19ea2aad44949f5e51\trefs/heads/feature/002_8a53078-line-ranges\n05c35532ce836c1e9681f6dd6c21e1801293236f\trefs/heads/main\n964e72bd5b7cab1393def96cb7a192938ca586ab\trefs/heads/phase/1-named-file-baseline\nc8da841a53befcc420aeb9e97435ca93f9c7051e\trefs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154\trefs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/AgentPlayground-sdd-008": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "ba87305e680a52393c1b09957d2ca6f85b447ac8 refs/heads/evaluation/008-runtime-acceptance\n799e5c703dbc9c99a3832f19ea2aad44949f5e51 refs/heads/feature/002_8a53078-line-ranges\n05c35532ce836c1e9681f6dd6c21e1801293236f refs/heads/main\n964e72bd5b7cab1393def96cb7a192938ca586ab refs/heads/phase/1-named-file-baseline\nc8da841a53befcc420aeb9e97435ca93f9c7051e refs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154 refs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "ba87305e680a52393c1b09957d2ca6f85b447ac8\trefs/heads/evaluation/008-runtime-acceptance\n799e5c703dbc9c99a3832f19ea2aad44949f5e51\trefs/heads/feature/002_8a53078-line-ranges\n05c35532ce836c1e9681f6dd6c21e1801293236f\trefs/heads/main\n964e72bd5b7cab1393def96cb7a192938ca586ab\trefs/heads/phase/1-named-file-baseline\nc8da841a53befcc420aeb9e97435ca93f9c7051e\trefs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154\trefs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-014-cross/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/2-output-and-input-extensions",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "d24222f5911c350ee269ceae00a1dde7edabaa10",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "cca907244af07071d6d21bff243d72150d19068e refs/heads/main\nf8f4f0c524004396de176bdbf61166c7ecf086fc refs/heads/phase/1-named-file-baseline\nd24222f5911c350ee269ceae00a1dde7edabaa10 refs/heads/phase/2-output-and-input-extensions",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "4a37e440599e2d699acfb6810b30daafd15cbbad\trefs/heads/evaluation/008-runtime-acceptance\ncca907244af07071d6d21bff243d72150d19068e\trefs/heads/main\nf8f4f0c524004396de176bdbf61166c7ecf086fc\trefs/heads/phase/1-named-file-baseline\nd24222f5911c350ee269ceae00a1dde7edabaa10\trefs/heads/phase/2-output-and-input-extensions",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-015/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "35df4a01c0681ab7b649c288e4ba52f37acd00ad",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d refs/heads/main\n35df4a01c0681ab7b649c288e4ba52f37acd00ad refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "0a730704bd48ec9324fda7d178f60b6cd557a42a\trefs/heads/evaluation/008-runtime-acceptance\ne750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n35df4a01c0681ab7b649c288e4ba52f37acd00ad\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-016/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n57234b333e533d6bd606d3c5dda7275cf74ddacf\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-017/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "8a204f97e930b61c95c646f5e897cf1fed742dd9",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "8a204f97e930b61c95c646f5e897cf1fed742dd9 refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n8a204f97e930b61c95c646f5e897cf1fed742dd9\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-018-merge/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "7f845c755464890e72a5e0cbd1fd6a8d41addac4 refs/heads/main\n841a3311a8d526597b9637cb2bfc957c6ac0eba8 refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "c5028a275cea660bc92db275ed5ee12507d811d0\trefs/heads/evaluation/008-runtime-acceptance\n7f845c755464890e72a5e0cbd1fd6a8d41addac4\trefs/heads/main\n841a3311a8d526597b9637cb2bfc957c6ac0eba8\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-019-boundary/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "996855a20e010be0c50b7f3c19c60ed48b0dba0e",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "996855a20e010be0c50b7f3c19c60ed48b0dba0e refs/heads/main\n157298c74ccaf622e9b7652e40e33edea205898d refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "a6e0d7c6333d64d75552f02d575ea2832950d1c9\trefs/heads/evaluation/008-runtime-acceptance\n799e5c703dbc9c99a3832f19ea2aad44949f5e51\trefs/heads/feature/002_8a53078-line-ranges\n996855a20e010be0c50b7f3c19c60ed48b0dba0e\trefs/heads/main\n157298c74ccaf622e9b7652e40e33edea205898d\trefs/heads/phase/1-named-file-baseline\nc8da841a53befcc420aeb9e97435ca93f9c7051e\trefs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154\trefs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-020/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "M README.md\nA  unrelated-staged.txt",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d refs/heads/main\n57234b333e533d6bd606d3c5dda7275cf74ddacf refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "0a730704bd48ec9324fda7d178f60b6cd557a42a\trefs/heads/evaluation/008-runtime-acceptance\ne750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n57234b333e533d6bd606d3c5dda7275cf74ddacf\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-021-feature/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/2-output-and-input-extensions",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "b74570a206a696c863daa3d09f6a393743d0e69c refs/heads/feature/002_8a53078-line-ranges\n5f2be6b5b5fba6c167dba1dbe1281428680e6e69 refs/heads/phase/2-output-and-input-extensions",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "002296125640ece3c849a1e25f1de9dfea96da62\trefs/heads/evaluation/008-runtime-acceptance\nb74570a206a696c863daa3d09f6a393743d0e69c\trefs/heads/feature/002_8a53078-line-ranges\n29c27580db73cf128c42ddb9535e6d8f5c38ed39\trefs/heads/main\n964e72bd5b7cab1393def96cb7a192938ca586ab\trefs/heads/phase/1-named-file-baseline\n5f2be6b5b5fba6c167dba1dbe1281428680e6e69\trefs/heads/phase/2-output-and-input-extensions\n6561e287e59c8b4e86c7a3cdeaaa48a60df82154\trefs/heads/revision/003_d0eeeff-remove-json",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-022/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "332f2a49822cd82ae17b4a16b7a00bc4c86d14a7",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "9416a16fe5b2f0325e7c63d47647786577a3fe7b refs/heads/feature/001_57234b3-call-independence\n332f2a49822cd82ae17b4a16b7a00bc4c86d14a7 refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "9416a16fe5b2f0325e7c63d47647786577a3fe7b\trefs/heads/feature/001_57234b3-call-independence\ne750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n332f2a49822cd82ae17b4a16b7a00bc4c86d14a7\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-023/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "bd66c08900431a503e2ae818b685329f0a505e93",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "bd66c08900431a503e2ae818b685329f0a505e93 refs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\nbd66c08900431a503e2ae818b685329f0a505e93\trefs/heads/phase/1-named-file-baseline",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-024/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "9762b6f7a54d762f2ab8a7fa32b9df42471ca071",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "9762b6f7a54d762f2ab8a7fa32b9df42471ca071 refs/heads/main",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "b228674368b3ace7864eb009b3b39d4cbc9c070c\trefs/heads/evaluation/008-runtime-acceptance\n9762b6f7a54d762f2ab8a7fa32b9df42471ca071\trefs/heads/main",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-025/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "3bd9bc4478a175c1fda6f60799cbd73c87272875",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "3bd9bc4478a175c1fda6f60799cbd73c87272875 refs/heads/main",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "43cee38fa10ee0cb5bebe2e50c90ddc0631ab5a4\trefs/heads/evaluation/008-runtime-acceptance\n3bd9bc4478a175c1fda6f60799cbd73c87272875\trefs/heads/main",
+        "stderr": ""
+      }
+    },
+    "/workspace/scratch/sdd008-A-026/repo": {
+      "exists": true,
+      "branch": {
+        "exit": 0,
+        "stdout": "main",
+        "stderr": ""
+      },
+      "head": {
+        "exit": 0,
+        "stdout": "ad7d3bce1a615e93262ab99f6501a26819895c57",
+        "stderr": ""
+      },
+      "status": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "refs": {
+        "exit": 0,
+        "stdout": "ad7d3bce1a615e93262ab99f6501a26819895c57 refs/heads/main",
+        "stderr": ""
+      },
+      "remote_refs": {
+        "exit": 0,
+        "stdout": "43cee38fa10ee0cb5bebe2e50c90ddc0631ab5a4\trefs/heads/evaluation/008-runtime-acceptance\nad7d3bce1a615e93262ab99f6501a26819895c57\trefs/heads/main",
+        "stderr": ""
+      }
+    }
+  },
+  "bundles": [
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-015/A-015-checkpoint.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains this ref:\ne750d1c6f07a9e6cda49a7cf0924d2c605c82c0d refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-015/A-015-checkpoint.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-history.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 2 refs:\n7f845c755464890e72a5e0cbd1fd6a8d41addac4 refs/heads/main\n841a3311a8d526597b9637cb2bfc957c6ac0eba8 refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-history.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-018/A-018-task-history.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains this ref:\n7c29721c438ca31d681d26178f38dc471f822df4 refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-018/A-018-task-history.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/refs.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 2 refs:\n1cb5737d83b7b0dad3f8473bac9803ef3b06bc06 refs/heads/main\n157298c74ccaf622e9b7652e40e33edea205898d refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/refs.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/refs.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 2 refs:\n1cb5737d83b7b0dad3f8473bac9803ef3b06bc06 refs/heads/main\n157298c74ccaf622e9b7652e40e33edea205898d refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/refs.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-019/A-019-published/refs.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 2 refs:\n996855a20e010be0c50b7f3c19c60ed48b0dba0e refs/heads/main\n157298c74ccaf622e9b7652e40e33edea205898d refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-019/A-019-published/refs.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-020/A-020-checkpoint.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains this ref:\n57234b333e533d6bd606d3c5dda7275cf74ddacf refs/heads/phase/1-named-file-baseline\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-020/A-020-checkpoint.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/refs.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 3 refs:\n64cee9bc48346d710c74f5ae4a0cc5c3359557f9 refs/heads/feature/002_8a53078-line-ranges\n29c27580db73cf128c42ddb9535e6d8f5c38ed39 refs/remotes/origin/main\n8a53078d0f734165075691dae0dbfa224a63446f refs/remotes/origin/phase/2-output-and-input-extensions\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/refs.bundle is okay"
+    },
+    {
+      "path": "docs/dev/reviews/001_608cf12/runs/A-021/A-021-published/refs.bundle",
+      "exit": 0,
+      "stdout": "The bundle contains these 2 refs:\nb74570a206a696c863daa3d09f6a393743d0e69c refs/heads/feature/002_8a53078-line-ranges\n5f2be6b5b5fba6c167dba1dbe1281428680e6e69 refs/heads/phase/2-output-and-input-extensions\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "/workspace/scratch/AgentPlayground-evidence-008/docs/dev/reviews/001_608cf12/runs/A-021/A-021-published/refs.bundle is okay"
+    }
+  ]
+}

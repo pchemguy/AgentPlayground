@@ -1,0 +1,403 @@
+{
+  "current_exact_branch_remote": {
+    "/workspace/scratch/6420baa7afea": true,
+    "/workspace/scratch/AgentPlayground-evidence-008": true,
+    "/workspace/scratch/AgentPlayground-sdd-008": true,
+    "/workspace/scratch/sdd008-A-014-cross/repo": true,
+    "/workspace/scratch/sdd008-A-015/repo": true,
+    "/workspace/scratch/sdd008-A-016/repo": true,
+    "/workspace/scratch/sdd008-A-017/repo": true,
+    "/workspace/scratch/sdd008-A-018-merge/repo": true,
+    "/workspace/scratch/sdd008-A-019-boundary/repo": true,
+    "/workspace/scratch/sdd008-A-020/repo": true,
+    "/workspace/scratch/sdd008-A-021-feature/repo": true,
+    "/workspace/scratch/sdd008-A-022/repo": true,
+    "/workspace/scratch/sdd008-A-023/repo": true,
+    "/workspace/scratch/sdd008-A-024/repo": true,
+    "/workspace/scratch/sdd008-A-025/repo": true,
+    "/workspace/scratch/sdd008-A-026/repo": true
+  },
+  "boundary_objects": [
+    {
+      "case": 6,
+      "head": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+      "exact_ordered_parents": [
+        "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+        "964e72bd5b7cab1393def96cb7a192938ca586ab"
+      ],
+      "current_remote_containment": [
+        "refs/heads/feature/002_8a53078-line-ranges",
+        "refs/heads/main",
+        "refs/heads/phase/2-output-and-input-extensions",
+        "refs/heads/revision/003_d0eeeff-remove-json"
+      ]
+    },
+    {
+      "case": 10,
+      "head": "d0eeeffc0432a45a603ef17cca457e9f04544876",
+      "exact_ordered_parents": [
+        "8a53078d0f734165075691dae0dbfa224a63446f",
+        "799e5c703dbc9c99a3832f19ea2aad44949f5e51"
+      ],
+      "current_remote_containment": [
+        "refs/heads/main",
+        "refs/heads/phase/2-output-and-input-extensions",
+        "refs/heads/revision/003_d0eeeff-remove-json"
+      ]
+    },
+    {
+      "case": 12,
+      "head": "1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6",
+      "exact_ordered_parents": [
+        "d0eeeffc0432a45a603ef17cca457e9f04544876",
+        "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+      ],
+      "current_remote_containment": [
+        "refs/heads/main",
+        "refs/heads/phase/2-output-and-input-extensions"
+      ]
+    },
+    {
+      "case": 13,
+      "head": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+      "exact_ordered_parents": [
+        "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+        "c8da841a53befcc420aeb9e97435ca93f9c7051e"
+      ],
+      "current_remote_containment": [
+        "refs/heads/main"
+      ]
+    },
+    {
+      "case": 18,
+      "head": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+      "exact_ordered_parents": [
+        "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+        "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
+      ],
+      "current_remote_containment": [
+        "refs/heads/main"
+      ]
+    },
+    {
+      "case": 19,
+      "head": "996855a20e010be0c50b7f3c19c60ed48b0dba0e",
+      "exact_ordered_parents": [
+        "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+        "157298c74ccaf622e9b7652e40e33edea205898d"
+      ],
+      "current_remote_containment": [
+        "refs/heads/main"
+      ]
+    },
+    {
+      "case": 21,
+      "head": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69",
+      "exact_ordered_parents": [
+        "8a53078d0f734165075691dae0dbfa224a63446f",
+        "b74570a206a696c863daa3d09f6a393743d0e69c"
+      ],
+      "current_remote_containment": [
+        "refs/heads/phase/2-output-and-input-extensions"
+      ]
+    }
+  ],
+  "A021": {
+    "partial_export_T009_exact_once": true,
+    "partial_remaining_sources_and_T010_T011_exact": true,
+    "final_all_three_blocks_exact": true,
+    "incorporation_paths": [
+      "docs/dev/DECOMPOSITION.md",
+      "docs/dev/PLAN.md",
+      "docs/dev/PROJECT.md",
+      "docs/dev/TASKS.md",
+      "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+      "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+      "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "docs/dev/features/002_8a53078/README.md"
+    ],
+    "all_local_document_links_checked": 57,
+    "no_source_test_vendor_changes": true,
+    "archives_remain_historical": true
+  },
+  "hosted_selected_metadata_unchanged_since_A013": true,
+  "source_check": {
+    "head": "af7cbe05c09f2e5bce391ef16d85a04abfec16da",
+    "branch": "revision/008_98a5562-runtime-acceptance",
+    "pinned_source": "529e98d4d3cd7002e3a49e34394552a44bf0a8d0",
+    "pinned_files_identical": 97,
+    "historical_notice_only_preservation": [
+      "EXPLORE_DRIVE_V1.md",
+      "EXPLORE_DRIVE_V2.md"
+    ],
+    "changed_paths": [
+      "EXPLORE_DRIVE_V1.md",
+      "EXPLORE_DRIVE_V2.md",
+      "README.md",
+      "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+      "docs/dev/reviews/008_98a5562/REVISION-PLAN.md",
+      "docs/dev/reviews/008_98a5562/REVISION-REPORT.md",
+      "docs/dev/reviews/008_98a5562/evidence/integration_verify.py",
+      "docs/dev/reviews/README.md"
+    ],
+    "local_links_checked": 60,
+    "links": [
+      [
+        "EXPLORE_DRIVE_V1.md",
+        "README.md"
+      ],
+      [
+        "EXPLORE_DRIVE_V1.md",
+        "docs/dev/CAPABILITY-MAP.md"
+      ],
+      [
+        "EXPLORE_DRIVE_V2.md",
+        "README.md"
+      ],
+      [
+        "EXPLORE_DRIVE_V2.md",
+        "docs/dev/CAPABILITY-MAP.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-manage/references/workflows.md#core-development-workflows"
+      ],
+      [
+        "README.md",
+        "skills/sdd-manage/references/workflows.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-manage/references/branch-management.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-manage/references/git-workflows.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-manage/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-orient/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-conventions/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-design/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-specify/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-plan/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-tasks/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-implement/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-steer/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-integrate-feature/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-tdd/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-verify/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-docs/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-report/SKILL.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-forge/SKILL.md"
+      ],
+      [
+        "README.md",
+        "docs/dev/reviews/008_98a5562/REVISION-REPORT.md"
+      ],
+      [
+        "README.md",
+        "docs/dev/CAPABILITY-MAP.md"
+      ],
+      [
+        "README.md",
+        "docs/dev/reviews/README.md"
+      ],
+      [
+        "README.md",
+        "docs/dev/reviews/003_39374c8/REVISION-REPORT.md"
+      ],
+      [
+        "README.md",
+        "docs/dev/reviews/001_49143fa/REVIEW-REPORT.md"
+      ],
+      [
+        "README.md",
+        "skills/sdd-tdd/references/upstream-provenance.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+        "REVIEW-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+        "evidence/README.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+        "REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+        "REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVIEW-REPORT.md",
+        "REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVISION-PLAN.md",
+        "REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVISION-PLAN.md",
+        "REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVISION-REPORT.md",
+        "REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/008_98a5562/REVISION-REPORT.md",
+        "REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "001_49143fa/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "002_81011e7/REVIEW-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "002_81011e7/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "002_81011e7/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "002_81011e7/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "003_39374c8/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "003_39374c8/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "003_39374c8/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "004_af715bb/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "004_af715bb/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "004_af715bb/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "005_79fab0e/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "005_79fab0e/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "006_0393fee/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "006_0393fee/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "007_df531c2/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "007_df531c2/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "007_df531c2/REVISION-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "008_98a5562/REVIEW-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "008_98a5562/REVIEW-REPORT.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "008_98a5562/REVISION-PLAN.md"
+      ],
+      [
+        "docs/dev/reviews/README.md",
+        "008_98a5562/REVISION-REPORT.md"
+      ]
+    ],
+    "package_validator": {
+      "argv": [
+        "python",
+        "/root/.codex/skills/remote-skills/skill-6ab91e941cbc8191a00ce5e8e34d83fd/scripts/validate_plugin.py",
+        "/workspace/scratch/6420baa7afea"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "diff_check_passed": true,
+    "limits": "Source metadata/docs verification, not installed-client execution."
+  },
+  "retained_case_counts": {},
+  "registry_type": "list",
+  "recovery_bundles_all_valid": true
+}

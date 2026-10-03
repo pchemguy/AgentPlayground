@@ -1,0 +1,54 @@
+[
+  {
+    "name": "missing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-jyy2hjfm/missing.txt"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "textstats: /tmp/textstats-assessor-jyy2hjfm/missing.txt: [Errno 2] No such file or directory: '/tmp/textstats-assessor-jyy2hjfm/missing.txt'\n",
+    "mismatches": []
+  },
+  {
+    "name": "bad-utf8",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-jyy2hjfm/bad-utf8.txt"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "textstats: /tmp/textstats-assessor-jyy2hjfm/bad-utf8.txt: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+    "mismatches": []
+  },
+  {
+    "name": "no-input",
+    "argv": [
+      "python",
+      "-m",
+      "textstats"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: the following arguments are required: INPUT\n",
+    "mismatches": []
+  },
+  {
+    "name": "unknown-option",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--nonexistent",
+      "x"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: unrecognized arguments: --nonexistent\n",
+    "mismatches": []
+  }
+]
