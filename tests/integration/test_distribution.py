@@ -110,6 +110,47 @@ class SourceDistributionTests(unittest.TestCase):
                 env=environment, capture_output=True, text=True, timeout=10)
             self.assertEqual((documented.returncode, documented.stderr), (0, ""))
             self.assertEqual(documented.stdout, 'lines=1 words=2\nlines=2 words=3\nlines=2 words=3\nlines=0 words=0\n')
+            # Stdin must use deployed code, binary subprocess input and full decoding.
+            stdin_cases = [
+                (b"alpha beta\nbeta\nlast two", [], 0, b"lines=3 words=5\n"),
+                (b"", ["--lines", "1:3"], 0, b"lines=0 words=0\n"),
+                (b"a\r\nb c\rd\n", ["--lines", "2:3"], 0, b"lines=2 words=3\n"),
+                ("café\u00a0猫\u2028dog\n".encode(), [], 0, b"lines=1 words=3\n"),
+                ("\ufeff".encode(), ["--lines", "1:1"], 0, b"lines=0 words=0\n"),
+                ("\ufeff".encode(), ["--keep-bom", "--lines", "1:1"], 0, b"lines=1 words=1\n"),
+                ("a\n\ufeff b".encode(), ["--lines", "2:2"], 0, b"lines=1 words=2\n"),
+                ("\ufeff a\nb".encode(), ["--lines=2:2", "--keep-bom"], 0, b"lines=1 words=1\n"),
+                (b"a\n\n", ["--lines=2:99"], 0, b"lines=1 words=0\n"),
+                (b"a\n", ["--lines=9:99"], 0, b"lines=0 words=0\n"),
+                (b"good\n\xff", ["--lines=1:1"], 1, b""),
+                (b"good\n\xc3", ["--keep-bom", "--lines=1:1"], 1, b""),
+                (b"\xff\ngood", ["--lines=2:2"], 1, b""),
+            ]
+            for data, options, status, output in stdin_cases:
+                with self.subTest(deployed_stdin=data, options=options):
+                    stdin_environment = environment.copy()
+                    stdin_environment.update(LC_ALL="C", PYTHONUTF8="0",
+                        PYTHONCOERCECLOCALE="0", PYTHONIOENCODING="ascii:strict")
+                    result = subprocess.run([sys.executable, "-m", "textstats", *options, "-"],
+                        cwd=deployed, env=stdin_environment, input=data,
+                        capture_output=True, timeout=10)
+                    self.assertEqual((result.returncode, result.stdout), (status, output))
+                    if status:
+                        self.assertIn(b"stdin", result.stderr)
+                        self.assertIn(b"utf-8", result.stderr)
+                        self.assertNotIn(b"Traceback", result.stderr)
+                    else:
+                        self.assertEqual(result.stderr, b"")
+            # Execute current quick-start and stdin blocks verbatim after extraction.
+            for heading, output in [
+                ("Named-file quick start", "lines=1 words=2\n"),
+                ("UTF-8 stdin", "lines=3 words=5\nlines=2 words=3\nlines=0 words=0\nlines=2 words=3\n"),
+            ]:
+                script = re.search(r"## " + re.escape(heading) + r".*?```sh\n(.*?)```", readme, re.S).group(1)
+                documented = subprocess.run(script, shell=True, cwd=deployed,
+                    env=environment, capture_output=True, text=True, timeout=10)
+                self.assertEqual((documented.returncode, documented.stdout, documented.stderr),
+                                 (0, output, ""))
             help_result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
                 cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
             self.assertEqual(help_result.returncode, 0)
