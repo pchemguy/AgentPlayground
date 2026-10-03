@@ -1,0 +1,35 @@
+test_double_dash_supports_dash_prefixed_filename (integration.test_cli.BaselineFailureCliTests.test_double_dash_supports_dash_prefixed_filename) ... ok
+test_help_succeeds_without_stderr (integration.test_cli.BaselineFailureCliTests.test_help_succeeds_without_stderr) ... ok
+test_invalid_invocations_use_usage_status_and_channels (integration.test_cli.BaselineFailureCliTests.test_invalid_invocations_use_usage_status_and_channels) ... ok
+test_missing_malformed_and_directory_inputs (integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) ... ok
+test_permission_denial_at_real_file_open_boundary (integration.test_cli.BaselineFailureCliTests.test_permission_denial_at_real_file_open_boundary) ... ok
+test_json_named_file_boundaries_and_bom_modes (integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) ... ok
+test_json_read_failures_have_no_success_stdout (integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) ... ok
+test_json_usage_and_help_keep_baseline_contract (integration.test_cli.JsonOutputCliTests.test_json_usage_and_help_keep_baseline_contract) ... ok
+test_bom_only_and_interior_bom (integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_keep_bom_composes_with_named_input (integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_named_file_success_boundaries (integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_documented_archive_supports_external_import_and_module (integration.test_distribution.SourceDistributionTests.test_documented_archive_supports_external_import_and_module) ... ok
+test_public_calls_return_independent_values_without_output (unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok
+test_public_result_has_integer_counts (unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok
+test_result_is_immutable (unit.test_api.PublicApiTests.test_result_is_immutable) ... ok
+test_cr_lf_crlf_and_trailing_segments (unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok
+test_default_removes_one_leading_bom (unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok
+test_interior_bom_is_preserved_in_both_modes (unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok
+test_keep_bom_treats_bom_as_non_whitespace (unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok
+test_spec_counting_table (unit.test_counting.CountingTests.test_spec_counting_table) ... ok
+test_unicode_whitespace_does_not_create_lines (unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok
+test_bom_modes_are_applied_to_decoded_file (unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok
+test_real_files_match_fixed_expected_counts (unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok
+test_success_closes_real_owned_handle_without_output (unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok
+test_invalid_utf8_preserves_decode_error_and_closes_real_handle (unit.test_files.FileFailureTests.test_invalid_utf8_preserves_decode_error_and_closes_real_handle) ... ok
+test_missing_file_preserves_os_error_without_output (unit.test_files.FileFailureTests.test_missing_file_preserves_os_error_without_output) ... ok
+test_open_permission_error_retains_exception_identity (unit.test_files.FileFailureTests.test_open_permission_error_retains_exception_identity) ... ok
+test_read_failure_closes_real_handle_and_retains_os_error (unit.test_files.FileFailureTests.test_read_failure_closes_real_handle_and_retains_os_error) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 1.632s
+
+OK

@@ -1,0 +1,111 @@
+test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) ... 
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='', options=()) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='alpha\r\nbeta\rgamma\n', options=()) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='café\xa0猫\u2028dog\n', options=()) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff alpha\r\nbeta\n', options=()) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff alpha\r\nbeta\n', options=('--keep-bom',)) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff', options=()) ... FAIL
+  test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff', options=('--keep-bom',)) ... FAIL
+test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) ... 
+  test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) (path=PosixPath('/tmp/tmppm6gc1cn/missing.txt')) ... FAIL
+  test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) (path=PosixPath('/tmp/tmppm6gc1cn/invalid.txt')) ... FAIL
+test_json_usage_and_help_keep_baseline_contract (tests.integration.test_cli.JsonOutputCliTests.test_json_usage_and_help_keep_baseline_contract) ... FAIL
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='alpha\r\nbeta\rgamma\n', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='café\xa0猫\u2028dog\n', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff alpha\r\nbeta\n', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff alpha\r\nbeta\n', options=('--keep-bom',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff', options=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) (text='\ufeff', options=('--keep-bom',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 179, in test_json_named_file_boundaries_and_bom_modes
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : usage: python -m textstats [-h] [--keep-bom] INPUT
+python -m textstats: error: unrecognized arguments: --json
+
+
+======================================================================
+FAIL: test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) (path=PosixPath('/tmp/tmppm6gc1cn/missing.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 197, in test_json_read_failures_have_no_success_stdout
+    self.assertEqual(result.returncode, 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) (path=PosixPath('/tmp/tmppm6gc1cn/invalid.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 197, in test_json_read_failures_have_no_success_stdout
+    self.assertEqual(result.returncode, 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_json_usage_and_help_keep_baseline_contract (tests.integration.test_cli.JsonOutputCliTests.test_json_usage_and_help_keep_baseline_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 211, in test_json_usage_and_help_keep_baseline_contract
+    self.assertIn("--json", help_result.stdout)
+AssertionError: '--json' not found in 'usage: python -m textstats [-h] [--keep-bom] INPUT\n\nCount lines and words in one UTF-8 file.\n\npositional arguments:\n  INPUT       named UTF-8 file\n\noptions:\n  -h, --help  show this help message and exit\n  --keep-bom  retain the leading UTF-8 BOM\n'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.639s
+
+FAILED (failures=10)

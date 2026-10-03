@@ -1,0 +1,22 @@
+{
+  "main": "cca907244af07071d6d21bff243d72150d19068e",
+  "main_parents": [
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "f8f4f0c524004396de176bdbf61166c7ecf086fc"
+  ],
+  "phase1": "f8f4f0c524004396de176bdbf61166c7ecf086fc",
+  "phase2": "d24222f5911c350ee269ceae00a1dde7edabaa10",
+  "phase2_parent": "cca907244af07071d6d21bff243d72150d19068e",
+  "checked_task_ids": [
+    "T-001",
+    "T-002",
+    "T-003",
+    "T-004",
+    "T-005",
+    "T-006"
+  ],
+  "pinned_files": 97,
+  "local_only": true,
+  "tree_clean": true,
+  "limit": "Journal establishes actual main-publication-before-phase2 creation; Git ancestry alone establishes parentage, not wall-clock action ordering."
+}
