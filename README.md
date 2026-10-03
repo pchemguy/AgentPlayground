@@ -1,6 +1,8 @@
-# AgentPlayground — TextStats
+# TextStats
 
 TextStats counts logical lines and Unicode whitespace-separated words in UTF-8 text. Use Python 3.11 or newer from this source checkout; no external dependencies are needed.
+
+See the [project and repository guide](docs/README.md) for the project’s purpose, development documents and workflow acceptance records.
 
 ## Named-file quick start
 
