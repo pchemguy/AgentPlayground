@@ -1,3 +1,9 @@
+# Active final campaign assessment
+
+The user requested Resume. A-021 actual interrupted transfer/archive recovery independently Passed, committed/pushed f20a93baa371a90d39bef6b96a0469f19a9c42da. Current registry26 Passed/1 Pending(A-027). The fresh independent final assessor is active; source integration awaits its result. Prior stop instructions below are historical. Live main05c35532ce836c1e9681f6dd6c21e1801293236f remains complete and unchanged. A-021 local-origin target5f2be6b5b5fba6c167dba1dbe1281428680e6e69 is clean and published with feature b74570a206a696c863daa3d09f6a393743d0e69c; main and stdin/whole Phase2 remain incomplete in that historical isolated scenario. No setup replay or product continuation is required. Installed-client coverage stays open.
+
+## Historical checkpoints
+
 # Controlled stop after A-013 and A-019
 
 The user's extension, “Go through the next two cases without suspension after a-012”, completed A-013 and A-019 in order without an intervening campaign stop. Both independently **Passed**, published through `dd0866ba3e099ff46333952332eca7ce435e35c1`. All consumers stopped. Counts: **25 Passed, 2 Pending; 0 Failed, Blocked, Suspended or Running**. Stop before A-021; no automatic continuation is scheduled. This section supersedes historical checkpoint instructions below.
