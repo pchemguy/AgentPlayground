@@ -13,7 +13,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-005 | Passed | Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained. | [Run](runs/A-005/assessment.json) |
 | A-006 | Passed | Replacement isolated consumer pushed retained964e72b before checks, closed issue5 with unique evidence, verified all Phase1 exits and explicit main merge29c2758 with ordered parents d769b55/964e72b, then published. Independent merged-state26 tests and12 literal CLI cases passed; tracked clean, phase/main trees agree, remote equality and Phase2 absence checked. Pin/source-loading limits unchanged; prior approval failures and unchanged task content retained. | [Run](runs/A-006/assessment.json) |
 | A-007 | Passed | Fresh isolated consumer started phase2 from published Phase1 main29c2758; actual JSON RED then GREEN15 focused/31 full tests, scoped commit8a53078 published. T006/milestone2.1 checked, T007/T008 and phase2 incomplete/unmerged; main unchanged. Unique issue6 closed/completed with comment5965363214 and matching commit evidence. Independent31 tests/20 literal CLI cases, ordered ancestry/task ownership/unchanged core+file modules/pin/remote checks passed. Existing12 bytecode files preserved. Earlier isolated JSON trial not read/copied. Explicit-source/runtime/client-export limits retained. | [Run](runs/A-007/assessment.json) |
-| A-008 | Pending | Not executed | None |
+| A-008 | Passed | Feature preparation published at 62b5408 on feature/002_8a53078-line-ranges, reservation002_8a53078 from paused phase2 baseline8a53078. Five active proposed docs only; all pre-existing tracked blobs unchanged, unique unchecked T-009–T-011 and97 pinned hashes verified,26 local links valid. Main29c2758/phase2 unchanged and exact remote refs checked. Consumer31 baseline tests passed; feature is unimplemented. TST-002 records initial stdin gate, coordinator scope clarification and residual consistency correction; named-file feature completion now independent of future main stdin work. No incorporation/archive/implementation/merge/main-task resumption or hosted writes. Explicit-source loading only; no fabricated native transcript. | [Run](runs/A-008/assessment.json) |
 | A-009 | Pending | Not executed | None |
 | A-010 | Pending | Not executed | None |
 | A-011 | Pending | Not executed | None |
@@ -36,6 +36,6 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 ## Counts and limits
 
-Passed: 18, Failed: 0, Blocked: 0, Suspended: 0, Running: 0, Pending: 9.
+Passed: 19, Failed: 0, Blocked: 0, Suspended: 0, Running: 0, Pending: 8.
 
 Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.
