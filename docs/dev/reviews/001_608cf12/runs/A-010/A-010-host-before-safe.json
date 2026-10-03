@@ -1,0 +1,107 @@
+{
+  "issues": [
+    {
+      "number": 8,
+      "title": "[T-008] Verify complete stdin delivery and phase exits",
+      "state": "open",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.2-UTF-8-stdin"
+    },
+    {
+      "number": 7,
+      "title": "[T-007] Support stdin through the dash input",
+      "state": "open",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.2-UTF-8-stdin"
+    },
+    {
+      "number": 6,
+      "title": "[T-006] Add and verify JSON output",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "milestone": "sdd-2.1-JSON-output"
+    },
+    {
+      "number": 5,
+      "title": "[T-005] Verify baseline documentation and source distribution",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.2-Reliable-baseline-and-distribution"
+    },
+    {
+      "number": 4,
+      "title": "[T-004] Complete baseline failure and usage handling",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.2-Reliable-baseline-and-distribution"
+    },
+    {
+      "number": 3,
+      "title": "[T-003] Deliver the usable named-file module CLI",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    },
+    {
+      "number": 2,
+      "title": "[T-002] Expose UTF-8 named-file counting",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    },
+    {
+      "number": 1,
+      "title": "[T-001] Implement the public counting core",
+      "state": "closed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+      "labels": [
+        "sdd-phase-1-Named-file-baseline",
+        "acceptance-note"
+      ],
+      "milestone": "sdd-1.1-Usable-named-file-API-and-CLI"
+    }
+  ],
+  "milestones": [
+    {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+      "state": "open"
+    },
+    {
+      "number": 2,
+      "title": "sdd-1.2-Reliable-baseline-and-distribution",
+      "state": "open"
+    },
+    {
+      "number": 3,
+      "title": "sdd-2.1-JSON-output",
+      "state": "open"
+    },
+    {
+      "number": 4,
+      "title": "sdd-2.2-UTF-8-stdin",
+      "state": "open"
+    }
+  ]
+}

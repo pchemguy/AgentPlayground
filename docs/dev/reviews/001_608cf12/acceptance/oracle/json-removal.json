@@ -1,0 +1,41 @@
+[
+  {
+    "name": "json-rejected",
+    "input": "alpha\n",
+    "flags": [
+      "--json"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "json-range-rejected",
+    "input": "alpha\nbeta",
+    "flags": [
+      "--lines",
+      "2:2",
+      "--json"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "json-bom-rejected",
+    "input": "\ufeff\n",
+    "flags": [
+      "--json",
+      "--keep-bom"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  },
+  {
+    "name": "json-before-missing",
+    "source": "missing",
+    "flags": [
+      "--json"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true
+  }
+]

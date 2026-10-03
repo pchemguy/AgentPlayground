@@ -1,0 +1,20 @@
+{
+  "task_commits": {
+    "T-009": "dc25a834ef0b3dc9250372f3f61ceab70d2c660d",
+    "T-010": "26dd59c38e537d8dff64cddafcf8c25e7c21ceb8",
+    "T-011": "f391de5c9047726d55687a1d0f71b3dc1e08e20e"
+  },
+  "incorporation_archive_commit": "799e5c703dbc9c99a3832f19ea2aad44949f5e51",
+  "merge": "d0eeeffc0432a45a603ef17cca457e9f04544876",
+  "parents": [
+    "8a53078d0f734165075691dae0dbfa224a63446f",
+    "799e5c703dbc9c99a3832f19ea2aad44949f5e51"
+  ],
+  "main_unchanged": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "target_remote_verified": true,
+  "working_remote_verified": true,
+  "full_tests": 41,
+  "pinned_vendor_unchanged": true,
+  "tracked_worktree_clean": true,
+  "stopped": "paused Phase 2 after named-file feature integration; T-007/T-008 not resumed"
+}

@@ -1,0 +1,6 @@
+[feature/002_8a53078-line-ranges 799e5c7] Incorporate completed line-range feature owners and archive sources
+ 9 files changed, 62 insertions(+), 28 deletions(-)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-PLAN.md (87%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-SPEC.md (89%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-TASKS.md (90%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE_DECOMPOSITION.md (75%)
