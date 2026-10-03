@@ -2,7 +2,7 @@
 
 ## State and evidence
 
-Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source loading through fresh agents; automatic installed-client discovery is not claimed. Prompts, available consumer journals/final handoffs and independent actual checks are retained; no native complete tool transcript is fabricated.
+Pinned source: 529e98d; explicit skill-source loading. User authorized replacement isolated consumers. Latest A-006 task verification is preserved locally; Git publication needs explicit named-destination approval after automatic review rejected it. No completed phase/campaign is claimed.
 
 | Case | Status | Assessment | Records |
 | --- | --- | --- | --- |
@@ -11,7 +11,7 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-003 | Passed | Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation. | [Run](runs/A-003/assessment.json) |
 | A-004 | Passed | Actual first task T-001 on phase1: observed behavioral RED and9-test GREEN/full verification, professional docs, task commit3b201a3 pushed and issue1 completed with evidence. Independent literal API/BOM/newline/immutability checks passed; main d769b55 unchanged, no CLI/next task/partial merge. Foreign issue body/label retained. | [Run](runs/A-004/assessment.json) |
 | A-005 | Passed | Milestone1.1: 17 discovered tests and eight independent literal named-file CLI cases passed; T-0029042c20/T-0038836c49 published on paused phase1, issues2/3 completed, main unchanged. Test layout corrected with original moved test bytes preserved; TST-001 resolved. Historical RED/interruption retained. Raw hosted payload publication blocked by auto-review and omitted; only task-state checks retained. | [Run](runs/A-005/assessment.json) |
-| A-006 | Blocked | Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed. | [Run](runs/A-006/assessment.json) |
+| A-006 | Blocked | Authorized replacement consumer preserved and committed T-005 as 964e72b. Independent 26-test suite and 12 literal CLI cases passed, all 97 pinned files and existing task bytes unchanged. GitHub issue4 closed/completed using existing evidence; issue5 remains open because T005 publication is blocked. Automatic approval review rejected Git push to AgentPlayground as insufficiently explicit destination/payload authorization. No phase merge, Phase2, or dependent case; task commit retained. This is an approval-runtime blocker, not a pinned-plugin defect. | [Run](runs/A-006/assessment.json) |
 | A-007 | Pending | Not executed | None |
 | A-008 | Pending | Not executed | None |
 | A-009 | Pending | Not executed | None |
@@ -19,11 +19,11 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 | A-011 | Pending | Not executed | None |
 | A-012 | Pending | Not executed | None |
 | A-013 | Pending | Not executed | None |
-| A-014 | Blocked | Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed. | [Run](runs/A-014/assessment.json) |
+| A-014 | Blocked | Preserved prior work. Replacement consumers now authorized, but ordered continuation has not begun because A-006 publication is blocked by automatic approval review. Original case-specific resume remains applicable; no additional execution/pass claimed. | [Run](runs/A-014/assessment.json) |
 | A-015 | Passed | Original actual pre-commit rejection preserved. Fresh consumer resumed checked/verified T-001, rechecked7 tests, committed35df4a0 and pushed isolated phase origin; stopped without T-002/merge. Independent hashes of all5 code/test files exactly match pre-resume, proving no reimplementation; main e750d1c unchanged, remote phase equals commit. Controlled hook release explicitly recorded. | [Run](runs/A-015/assessment.json) |
 | A-016 | Passed | Actual clean unpublished consumer task commit57234b3 was pushed by fresh consumer before task selection/tests/edits; then both observed suites6 tests passed. Independent refs/status confirm exact retained commit now published, main e750d1c unchanged and no new commit. No credential discovery, next task or merge. | [Run](runs/A-016/assessment.json) |
 | A-017 | Passed | Actual consumer reproduced accepted lone-CR regression (7 tests/3 failures), repaired task-owned pending code, rechecked7 tests and pushed8a204f9. Independent literal2lines/2words and refs/checklist confirm T001-only completion; origin/main unchanged, no dependent task/partial merge. Initial failing attempt retained. Assessor local-main assumption corrected to actual origin/main without changing oracle. | [Run](runs/A-017/assessment.json) |
-| A-018 | Blocked | Continuation blocked: stopped consumer workers are absent from this runtime; additional agents are prohibited and evaluator/oracle isolation must be preserved. Existing work and publication checkpoints verified unchanged. No consumer continuation or new pass is claimed. Task-rejection/recovery remains evidenced; complete-phase merge-publication subcase remains unstarted. | [Run](runs/A-018/assessment.json) |
+| A-018 | Blocked | Preserved prior work. Replacement consumers now authorized, but ordered continuation has not begun because A-006 publication is blocked by automatic approval review. Original case-specific resume remains applicable; no additional execution/pass claimed. | [Run](runs/A-018/assessment.json) |
 | A-019 | Pending | Not executed | None |
 | A-020 | Passed | Owned T-001 commit57234b3 pushed to isolated bare phase branch;6 tests observed in consumer journal. Independent commit-path inspection excludes unrelated files/README, staged unrelated blob matches original; untracked contents and tracked unstaged README intent remain. Main not merged; no T-002. Bundle/snapshot retain actual state. | [Run](runs/A-020/assessment.json) |
 | A-021 | Pending | Not executed | None |
@@ -38,4 +38,4 @@ Pinned source: 529e98d4d3cd7002e3a49e34394552a44bf0a8d0. Explicit skill-source l
 
 Passed: 14, Failed: 0, Blocked: 3, Suspended: 0, Running: 0, Pending: 10.
 
-Fixture-only checks are not agent-driven passes. Injected failures are distinguished from real GitHub failures. Native client installation/discovery and complete raw tool-message export remain outside the available runtime.
+Only 26 product tests and 12 independent CLI cases for the latest task were rechecked. Green task checks do not complete A-006, which still requires published phase integration. New observer/setup scripts are assessor tools; prepared fixture setup was not run. Native discovery and full native tool-message export remain unavailable.

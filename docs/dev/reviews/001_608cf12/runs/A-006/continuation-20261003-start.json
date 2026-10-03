@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-03T03:10:34.935060+00:00",
+  "authorization": "User Proceed authorizes replacement isolated consumers for six selected cases; stop after A-009.",
+  "source_head": "f57f4bfd5907f7abf681007b2eb95c6cabfcf8b6",
+  "evaluation_head": "9c714981b61564a80768154745450b892fd9ff7d",
+  "requested_order": [
+    "A-006",
+    "A-014",
+    "A-018",
+    "A-007",
+    "A-008",
+    "A-009"
+  ],
+  "pending_before": {
+    "A-006": {
+      "head": "b9fabb0aab69bf891386f9bf47c503b78be6cf15",
+      "hashes": {
+        "README.md": "8d6b01399db6dfe636f0a3b09b1630003c8a70234411c6842ffa4078ea3c0431",
+        "docs/dev/TASKS.md": "2af2c922a5a0ab4d10be382b9ae08b411e69c69fa50cba52309067816aa7e89a",
+        "tests/integration/test_distribution.py": "72587908c64c0df8326022cec2191bb8797ae48653c77dd9fc8290babc6b46fa"
+      },
+      "index": "100644 f0b3be8f91fca9be7229bac3e07184d3ae81426a 0\tREADME.md\n100644 762f0b3d0419176d4c0634cef1350c3f6aeaa16d 0\tdocs/dev/TASKS.md\n100644 c33fa19cc20b6b8c1f1e3c3e49816058007fdd2d 0\ttests/integration/test_distribution.py\n"
+    },
+    "A-014": {
+      "head": "83eab02a70e7757e11f04f46a64849f69ba64df0",
+      "hashes": {
+        "tests/unit/test_files.py": "7ee3a8bfeda23f8c924228d56b0d34641e31a0e4d90715f0095faf0b5adab02d",
+        "tests/integration/test_cli.py": "90983489a76cc7e0a1a4373933f97b15b193bc2ef3527df0dadd3d785b661d9c"
+      },
+      "index": "100644 233aedbee4ebd46a672465f51312875804100b27 0\ttests/integration/test_cli.py\n100644 e8509492143e12564db1d9ddaf3217b12a6e6278 0\ttests/unit/test_files.py\n"
+    }
+  }
+}

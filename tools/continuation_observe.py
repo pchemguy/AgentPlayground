@@ -27,7 +27,7 @@ def observe(repo, suites, oracles):
                                for p in sorted((repo / 'textstats').glob('*.py'))}
     state['task_check'] = command([sys.executable, '-m', 'tests.workflows.task_ownership', str(repo / 'docs')], ROOT)
     state['suites'] = [command([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], repo)] if suites else []
-    state['oracles'] = {str(p.relative_to(ROOT)): run(repo, json.loads(p.read_text())) for p in oracles}
+    state['oracles'] = {str(p.resolve().relative_to(ROOT)): run(repo, json.loads(p.read_text())) for p in oracles}
     state['limits'] = 'Read-only observation is not a consumer action or autonomous pass decision. Tests create ordinary bytecode; credentials/raw provider bodies are excluded.'
     return state
 

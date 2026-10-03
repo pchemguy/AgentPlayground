@@ -1,3 +1,15 @@
+# Current stop: publication approval required
+
+On 2026-10-03 UTC+3 the user authorized replacement isolated consumers. A-006 resumed without exposing evaluator material: T-005 preserved and committed as `964e72bd5b7cab1393def96cb7a192938ca586ab`; exact three owned paths, original staged bytes and 97 pinned files independently checked. Full discovery26 and literal CLI12 passed. Issue4 closure completed using the existing single evidence comment; issue5 is still pending.
+
+Automatic approval review rejected publication to AgentPlayground; exact remote verification did not establish the explicit destination/payload authorization it required. Source REVISION-REPORT publication to Skill-SDD-Manager was also rejected twice. Do not retry through another tool/client. Obtain explicit user authorization for TextStats/its sanitized test records to pchemguy/AgentPlayground and revision records to pchemguy/Skill-SDD-Manager.
+
+After approval, first publish the retained phase1 commit `964e72b` to `origin/phase/1-named-file-baseline` before new task selection/testing/editing, reconcile issue5 without duplicate comments, complete verified explicit Phase1 integration to main, and independently publish A-006 assessment. Then resume A-014, run the remaining A-018 merge-publication subcase, then A-007–A-009, publishing each assessment before dependency advancement. Stop after A-009. No phase merge/Phase2 or other pending case started. Original restoration exports below are historical; do not apply staged patches over the now committed T-005. A-014 pending tests remain unchanged.
+
+The read-only observer was published as2064474 before the later rejection. Its relative-oracle-path bug was reproduced on the actual command and corrected locally by resolving the path before relative_to; repeated command passed. No plugin/product defect is attributed to that assessor bug. The merge-publication fixture setup script is retained but unused. All latest run evidence commits are local pending approval; prior published checkpoints remain unchanged.
+
+## Historical resume records
+
 # Controlled suspension and exact continuation
 
 ## Current stop: unavailable consumer workers
