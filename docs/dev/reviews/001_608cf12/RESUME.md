@@ -1,3 +1,19 @@
+# Controlled stop after A-007 and A-008
+
+The latest request, “Next two cases - go”, was executed as A-007 and A-008. Both are independently Passed; case records are published through `ed3bc377fc7db9f546f7ac0cae27a3829db48dab`. All consumers stopped. Counts: **19 Passed, 8 Pending; 0 Failed, Blocked, Suspended or Running**. Stop before A-009; no automatic resumption is scheduled. Earlier stop maps below are historical.
+
+## Next continuation
+
+1. Re-orient live `/workspace/scratch/AgentPlayground-sdd-008`, currently on `feature/002_8a53078-line-ranges` at published `62b5408e80adc2ac12464e5f9163b3afd47a58ba`. Feature reservation `docs/dev/features/002_8a53078/README.md` identifies full baseline/paused target `8a53078d0f734165075691dae0dbfa224a63446f` on `phase/2-output-and-input-extensions`. Main remains `29c27580db73cf128c42ddb9535e6d8f5c38ed39`, retained phase1 `964e72bd5b7cab1393def96cb7a192938ca586ab`. Exact remote refs verified. Owned tracked state clean; preserve unrelated bytecode and ignored credentials.
+2. A-007 delivered real JSON milestone2.1/T-006, independently31 tests/20 literal CLI cases passed. Issue6 closed/completed with exactly one evidence comment5965363214. Issues1–6 closed,7/8 open. Do not replay task implementation, issue creation/comments/closure, Phase1 integration or branch setup.
+3. A-008 prepared five active proposed documents only: root FEATURE_DECOMPOSITION.md, FEATURE-SPEC.md, FEATURE-PLAN.md, FEATURE-TASKS.md and its features README. Main owners, product/tests and all97 pinned files unchanged; T-009–T-011 uniquely owned and unchecked. No incorporation/archive/implementation/feature or phase merge. Initial37ff9bc and clarificatione0e85b2 remain ancestors of final62b5408; TST-002 retains original stdin-gated draft and coordinator clarification/review. Current named-file feature completion does not depend on future main stdin; compatibility remains an interface constraint for separately owned T-007/T-008. Do not restore superseded draft exits.
+4. **A-009 is next:** on a further continuation, use an isolated consumer with pinned explicit-source loading to request SPEC-only incorporation. Preserve FEATURE-TASKS as the sole executable feature-task owner and needed active sources, report impacts outside selected scope, and stop before feature implementation, whole-package archive or merge. Do not expose evaluator records/oracles to the consumer. Publish the independent case assessment before advancing dependent cases.
+5. Remaining cases: A-009–A-013, A-019, A-021 and A-027. Preserve their actual prerequisites and accepted source plan. Overall revision/source integration remains pending on `revision/008_98a5562-runtime-acceptance` targeting `feature/architecture-revision`; no complete-campaign claim.
+
+See SUSPENSION-A008-20261003.json for final identities/counts. Source loading is tested; automatic installed-client discovery and complete native tool-message export are not claimed. Python3.12.14 used, no3.11 execution. Complete available new journals and actual logs are retained without reconstruction. Named-destination publication and replacement-consumer authorization persist; former approval/unavailable-worker blockers below are resolved.
+
+## Historical checkpoints
+
 # Controlled stop after A-018
 
 The latest user instruction is **Suspend after A-018**. A-006, A-014 and A-018 are independently Passed; completed case evidence is published through `b1377fd`. All replacement consumer workers stopped. Counts: **17 Passed, 10 Pending; 0 Failed, Blocked, Suspended or Running**. The campaign is deliberately paused, not complete. A-007–A-009 remain unstarted; no automatic resumption is scheduled here.

@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-03T04:23:46.608885+00:00",
+  "instruction": "Next two cases - go; bounded A-007 and A-008, then stop before A-009",
+  "counts": {
+    "Passed": 19,
+    "Failed": 0,
+    "Blocked": 0,
+    "Suspended": 0,
+    "Running": 0,
+    "Pending": 8
+  },
+  "completed_this_continuation": [
+    "A-007",
+    "A-008"
+  ],
+  "next_positive_case": "A-009",
+  "live_main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "live_phase2": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "live_feature": "62b5408e80adc2ac12464e5f9163b3afd47a58ba",
+  "feature_branch": "feature/002_8a53078-line-ranges",
+  "feature_package": "docs/dev/features/002_8a53078",
+  "feature_unimplemented": true,
+  "main_tasks_remaining": [
+    "T-007",
+    "T-008"
+  ],
+  "feature_tasks_unchecked": [
+    "T-009",
+    "T-010",
+    "T-011"
+  ],
+  "pinned_files_verified": 97,
+  "all_existing_tracked_blobs_preserved_during_preparation": true,
+  "tracked_live_clean": true,
+  "case_evidence": "ed3bc377fc7db9f546f7ac0cae27a3829db48dab",
+  "consumer_workers": "Both current consumers completed and stopped; all prior consumers completed. No pending consumer tool.",
+  "scope_correction": "TST-002 resolved via recorded coordinator clarification and consistency correction; not an unassisted initial preparation claim."
+}
