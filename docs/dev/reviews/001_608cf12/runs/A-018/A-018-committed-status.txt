@@ -1,0 +1,3 @@
+$ git --no-optional-locks status --porcelain=v1
+
+Exit status: 0

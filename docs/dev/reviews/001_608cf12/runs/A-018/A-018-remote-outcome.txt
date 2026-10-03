@@ -1,0 +1,5 @@
+$ git ls-remote origin refs/heads/main refs/heads/phase/1-named-file-baseline
+d769b55aa63f92d5ccbd8022cb9e87f07e541fae	refs/heads/main
+841a3311a8d526597b9637cb2bfc957c6ac0eba8	refs/heads/phase/1-named-file-baseline
+
+Exit status: 0

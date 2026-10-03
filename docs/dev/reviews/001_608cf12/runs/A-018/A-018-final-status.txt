@@ -1,0 +1,4 @@
+$ git --no-optional-locks status --short --branch
+## main...origin/main [ahead 8]
+
+Exit status: 0

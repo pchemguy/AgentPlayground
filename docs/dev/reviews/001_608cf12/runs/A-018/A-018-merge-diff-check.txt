@@ -1,0 +1,3 @@
+$ git --no-optional-locks diff --cached --check
+
+Exit status: 0

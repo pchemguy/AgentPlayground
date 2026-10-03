@@ -1,0 +1,4 @@
+All 14 product/test Python modules have module docstrings.
+README, AGENTS and active docs/dev Markdown heading spacing/local links passed.
+README named-file quick-start and Python API examples executed verbatim in temporary directory: passed.
+Exit status: 0

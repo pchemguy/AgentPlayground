@@ -1,0 +1,4 @@
+$ git merge --no-ff --no-commit 841a3311a8d526597b9637cb2bfc957c6ac0eba8
+Automatic merge went well; stopped before committing as requested
+
+Exit status: 0

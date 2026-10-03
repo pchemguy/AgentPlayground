@@ -1,21 +1,35 @@
 {
   "schema_version": 1,
-  "branch": "phase/1-named-file-baseline",
-  "head": "7c29721c438ca31d681d26178f38dc471f822df4",
+  "branch": "main",
+  "head": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
   "parents": [
-    "57234b333e533d6bd606d3c5dda7275cf74ddacf"
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
   ],
   "status": [],
   "remote": "origin",
   "remote_heads": {
-    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
-    "refs/heads/phase/1-named-file-baseline": "7c29721c438ca31d681d26178f38dc471f822df4"
+    "refs/heads/evaluation/008-runtime-acceptance": "c5028a275cea660bc92db275ed5ee12507d811d0",
+    "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "refs/heads/phase/1-named-file-baseline": "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
   },
   "changed_paths": [
+    "AGENTS.md",
+    "README.md",
     "docs/dev/TASKS.md",
-    "tests/test_api.py",
-    "tests/test_files.py",
+    "docs/dev/layout.md",
+    "tests/__init__.py",
+    "tests/integration/__init__.py",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "tests/unit/__init__.py",
+    "tests/unit/test_api.py",
+    "tests/unit/test_counting.py",
+    "tests/unit/test_files.py",
     "textstats/__init__.py",
+    "textstats/__main__.py",
+    "textstats/cli.py",
+    "textstats/counting.py",
     "textstats/files.py"
   ]
 }

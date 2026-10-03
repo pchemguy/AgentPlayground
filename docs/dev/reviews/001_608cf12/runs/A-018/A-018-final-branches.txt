@@ -1,0 +1,5 @@
+$ git --no-optional-locks for-each-ref --format=%(refname) %(objectname) refs/heads/main refs/heads/phase/1-named-file-baseline refs/heads/phase/2-output-and-input-extensions
+refs/heads/main 7f845c755464890e72a5e0cbd1fd6a8d41addac4
+refs/heads/phase/1-named-file-baseline 841a3311a8d526597b9637cb2bfc957c6ac0eba8
+
+Exit status: 0
