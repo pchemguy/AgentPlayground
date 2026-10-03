@@ -10,9 +10,9 @@ CLI → file adapter → counting core; CLI stdin → counting core; public faca
 
 ## Choices and invariants
 
-Use functions and an immutable result value rather than inheritance or a service container. Both CLI formats consume the same result to prevent duplicated counting rules. Read and decode one input before counting; a streaming framework would add complexity without a required load constraint. The file adapter closes owned handles on success and failure; the CLI never closes process stdin.
+Use functions and an immutable result value rather than inheritance or a service container. The CLI presents the core result through one plain-output path, without duplicating counting rules. Read and decode one input before counting; a streaming framework would add complexity without a required load constraint. The file adapter closes owned handles on success and failure; the CLI never closes process stdin.
 
-BOM policy and counting semantics have one owner in the core, defined by [SPEC](SPEC.md). Unicode decoding and OS failures propagate through the API and become useful stderr diagnostics at the CLI boundary. No failure emits a partial success result. JSON and stdin extend the adapters without coupling the core to argument parsing.
+BOM policy and counting semantics have one owner in the core, defined by [SPEC](SPEC.md). Unicode decoding and OS failures propagate through the API and become useful stderr diagnostics at the CLI boundary. No failure emits a partial success result. Stdin extends the CLI adapter without coupling the core to argument parsing.
 
 ## Verification seams
 
