@@ -1,0 +1,1731 @@
+FILE AGENTS.md
+# AgentPlayground instructions
+
+Use the requested SDD skill entries under vendor/sdd-manager/skills as explicit instructions. All tracked project changes require scoped commits and pushes. Use main as the established integration branch and origin as the established remote. Preserve unrelated work and use explicit two-parent boundary merges.
+
+Use Python 3.11+ and standard-library unittest. Run python -m unittest discover -s tests -v for the declared full suite once tests exist; empty collection does not verify acceptance. Each test directory needs discoverable package structure. Professional module docstrings and blank lines around Markdown headings are required.
+
+Use existing Git authentication first. If access fails, sdd-manage may recover from the ignored root gh.tkn through a protected mechanism. Never output or track tokens. Hosted task tracking is authorized when requested by the case.
+
+Maintain brief action journals identifying significant commands/results, changes, commits and actual scope decisions in the requested run output; do not invent native transcripts. Do not read the evaluation branch or assessor oracle files. Stop at the user-requested boundary.
+
+FILE vendor/sdd-manager/skills/sdd-manage/SKILL.md
+---
+name: sdd-manage
+description: Coordinate SDD workflows for initial development, feature preparation, bounded or resumed task implementation, human-directed checkpoint amendments, accepted feature integration, focused review or maintenance, and hosted task synchronization. Use for multi-stage project requests, shared prerequisites, branch management and phase transitions, workflow transitions, stopping boundaries, recovering shell authentication, or supplying hosting credentials to sdd-forge.
+---
+
+# Coordinate specification-driven development
+
+Translate the user's objective into a scoped workflow and coordinate the responsible skills. Use the request and established session decisions as authorization; continue routine steps within that scope without repeated confirmation. Discussion, assessment, or review alone does not authorize edits. Start at the requested stage when its inputs are established, and stop at the requested boundary.
+
+| Coordination concern | Load |
+| --- | --- |
+| Select a practical workflow and its entry, outputs, and stopping point | [available workflows](references/workflows.md) |
+| Establish prerequisites, pass scope, resolve blockers, and persist results | [coordination protocol](references/coordination.md) |
+| Resolve identities, create/reuse workflow branches, or manage phase transitions | [branch management](references/branch-management.md) |
+| Integrate verified boundaries or continue a blocked merge | [Git workflows](references/git-workflows.md) |
+| Discover, save, or supply a repository token; recover shell/API authentication | [hosting credentials](references/credentials.md) |
+| Plan or coordinate focused/systematic review and accepted revisions | [review and revision](references/review-and-revision.md) |
+| Check representative requests and expected boundaries | [workflow examples](references/examples.md) |
+
+1. **Establish the request.** Identify the project, objective, requested operation, authoritative inputs, and stopping boundary. Distinguish initial preparation, feature deltas, task-list implementation, checkpoint steering, integration, and focused review. Ask only for missing decisions that materially prevent the requested work.
+2. **Orient at startup.** Invoke **sdd-orient** for a current scoped handoff: project and Git roots, governing instructions, documents, environment, branch and HEAD, dirty-path ownership, and interrupted task state. Read-only discussion can proceed outside Git; repository mutations require an eligible worktree. Re-orient when material state or scope changes.
+3. **Coordinate the responsible skills.** Follow the selected workflow. Supply the objective, allowed paths and effects, authoritative decisions, task IDs where applicable, Git baseline, pending-change ownership, and exit conditions. Load their instructions rather than reproducing their procedures. Preserve valid existing work; dirty state alone does not justify reset.
+4. **Respect ownership and decisions.** Leave executable range selection, main execution, completion, commits, and pushes to **sdd-implement**, and checkpoint amendments to **sdd-steer**. Leave accepted feature reconciliation to **sdd-integrate-feature**. Return governing-document amendments identified by **sdd-docs** to the user; do not automatically route them into authoring. Coordinate hosting only when requested or already active for the selected work.
+5. **Finish and stop.** Coordinate explicit integration/publication only when the workflow's integration gate is met: main development requires full phase completion; a partial task/milestone range pushes and pauses on its phase branch. Collect evidence and unresolved differences. For authorized repository changes outside implementation or steering, coordinate scoped verification, commit composition through **sdd-report**, commit, and push as specified by the request and project policy. Report blockers accurately. Never resume implementation after steering without a separate human instruction.
+
+Use **sdd-report** for presentation, keeping planned, implemented, verified, committed, pushed, and hosted states distinct. Return the accomplished objective, affected artifacts or task IDs, evidence and limitations, commit/push and hosting outcomes when applicable, remaining decisions, and the exact stopping point. Do not require a transaction journal, recovery directory, extra issue map, or a new skill for interruption recovery. This coordinator requires the focused skills selected by the workflow; if one is unavailable, report the blocked capability rather than claiming it ran.
+
+FILE vendor/sdd-manager/skills/sdd-manage/references/workflows.md
+# Available workflows
+
+Select by the user's objective, not by which documents happen to be missing. A scoped request may enter any stage whose required inputs are established. A combined request may authorize preparation and implementation together; retain its explicit implementation boundary. Do not require fresh approval for a transition already covered by that request.
+
+## Core development workflows
+
+Choose among three core workflows by the intended change. They describe purpose and overall path; focused skills and the operation catalog below supply reusable stages. A workflow name grants no authorization or branch destination. Apply **sdd-conventions**' **Workflow identity** and [branch management](branch-management.md) for actual names and target context.
+
+| Workflow | Purpose | Typical path |
+| --- | --- | --- |
+| Main / greenfield | Build the complete intended system from its initial definition. | Exploration → architecture/decomposition → SPEC → PLAN/layout → TASKS → bounded implementation and verification. |
+| Revision | Correct, simplify, or improve previously defined or implemented work. | Review plan when needed → review → review report → revision plan → revision → revision report. |
+| Feature | Add a scoped capability to an existing system. | Necessary feature design/specification/plan documents → FEATURE-TASKS → implementation → accepted document incorporation and verification. |
+
+- **Entry:** Greenfield follows the main path from exploration; an existing project may enter at an established stage. Main names the development purpose, not Git's main or default branch. Reuse accepted inputs rather than replaying stages.
+- **Revision scope:** Use [review and revision](review-and-revision.md) for formal campaigns. A focused prompt may define review scope or an accepted revision directly; do not invent a preceding review or mandatory artifact stage when it adds no needed evidence.
+- **Feature preparation:** Define the scoped feature package before dependent implementation, using only the design, specification, and planning deltas it needs. FEATURE-TASKS governs active task-list feature work. Reuse sufficient existing design/layout; not every correction needs a feature package.
+- **Shared execution:** Implement only the authorized bounded scope. Apply relevant verification and commit/push checkpoints under [Git workflows](git-workflows.md). Main development uses phase branches: partial ranges pause after pushes, complete phases explicitly integrate, and an authorized next phase starts from updated main. Revision/feature and steering use their applicable integration gates. Preparation, assessment, and review stop before implementation unless it is authorized. A narrow task request does not authorize unrelated incorporation or a whole-project campaign.
+
+### Steering as lightweight revision
+
+**sdd-steer** is the focused human-directed revision path at a paused task-list checkpoint, especially for reducing implemented functionality. The human supplies the amendment objective and commands execution. Steering directly updates affected existing documents, code, tests, and documentation; it creates no feature-document layer and requires no feature-document integration step or obligatory formal review/revision campaign.
+
+Steering still verifies, commits/pushes, explicitly integrates into the paused implementation branch, verifies/publishes that target, and reports. It returns control without handing off to or resuming sdd-implement; the human separately resumes the task list. A broader revision may use the formal campaign instead. Steering is a revision variant, not a fourth core workflow.
+
+## Operation catalog
+
+These entries select stages or supporting operations within a core workflow; they can also be requested independently within their stated boundaries.
+
+| Operation | Entry and coordination | Outputs and stop |
+| --- | --- | --- |
+| Prepare initial development | Use **sdd-design** for the brief, architecture, and decomposition; **sdd-specify** for behavior and acceptance; **sdd-plan** for delivery strategy and layout; **sdd-tasks** for TASKS. Resolve consequential decisions as they arise. | Selected preparation artifacts and open decisions. A preparation-only request stops before implementation. |
+| Prepare a feature | Inspect existing contracts and implementation. Use design deltas where needed, then **sdd-specify**, **sdd-plan**, and **sdd-tasks** for the necessary FEATURE-SPEC, FEATURE-PLAN, and FEATURE-TASKS. Reuse established design and layout where sufficient. | Bounded feature requirements, delivery strategy, and executable tasks. Stop at preparation unless implementation is included in the request. |
+| Implement a bounded range | Pass the owning TASKS or FEATURE-TASKS, requested IDs/count/milestone/phase, dependencies, and boundary to **sdd-implement**. It resolves the executable range and coordinates **sdd-tdd**, **sdd-docs**, **sdd-verify**, **sdd-report**, and active **sdd-forge** tracking. | Evidence-backed completed tasks, commits, pushes, and applicable issue closure. For main development, pause on an incomplete phase branch or explicitly integrate the verified full phase. For other workflows, integrate only the coherent authorized boundary. Verify/push applicable targets, then stop; retain branch state on a blocker. |
+| Resume interrupted implementation | Pass orientation's identified pending task and evidence to **sdd-implement**. It pushes outstanding commits before task selection, tests, or edits, even on a clean tree; it finishes pending work before advancing. Use the established boundary; clarify it if unavailable. | Continuation of the bounded implementation workflow. No separate recovery protocol or automatic reset. |
+| Steer at a checkpoint | Use **sdd-steer** for the human-defined focused amendment during partial implementation. An assessment request returns impact only; a command to implement authorizes direct changes to affected existing development documents, code, tests, and documentation. | Assessment, or a verified amendment branch explicitly merged into the paused implementation branch, merged-state verified and target pushed. Create no feature overlay and invoke no feature-document integration step. Stop; the human separately resumes implementation. |
+| Integrate accepted feature documents | Pass the accepted sources and explicit target set to **sdd-integrate-feature**. TASKS and FEATURE-TASKS are independently selectable; transferring task ownership requires both lists in scope. Document-only integration does not imply task reconciliation. | Selected main documents incorporated, task relationships reconciled only within scope, source disposition, and external impacts. Stop without executing tasks. |
+| Run a review/revision campaign | Use [review and revision](review-and-revision.md) for planned systematic review or prompt-driven focused review, stable findings, accepted revision planning, and authorized execution. Route concerns to focused owners. | Retained campaign plans/reports. Review stops before source changes unless revisions are authorized; implemented revisions finish with verified explicit merge/publication. |
+| Review or maintain a selected scope | Route design review to **sdd-design**, behavior review to **sdd-specify**, strategy/layout review to **sdd-plan**, task-list review to **sdd-tasks**, selection-only requests to **sdd-implement**, test strategy or test maintenance to **sdd-tdd**, documentation to **sdd-docs**, and acceptance checks to **sdd-verify**. Use **sdd-conventions** for relevant criteria. | Findings, evidence, or explicitly requested maintenance. Review and verification do not authorize repairs or completion updates. Stop at the selected scope. |
+| Synchronize hosted tracking | Use **sdd-forge** for the requested projection, association lookup, or issue reconciliation. Use available client authentication first and coordinate credential recovery through the credential protocol when needed; leave provider access checks and object mapping to its backend. | Repository and task-to-issue associations, changed hosted objects, differences, and access blockers. Stop after the hosted operation. |
+
+## Delivery strategy handoff
+
+Preparation carries the accepted design/contracts into an early meaningful end-to-end MVP and small testable capability increments through **sdd-plan**, then derives their bounded executable work through **sdd-tasks**. Retain complete intended design and SPEC, justified prerequisite exceptions, preserved useful behavior, and relevant exit evidence. A scoped feature uses the earliest meaningful changed path rather than rebuilding the whole project.
+
+Pass the selected range, owning capability/milestone outcomes, dependencies, verification obligations, and applicable human decision gates into implementation. At consequential checkpoints, return the demonstrated functionality and relevant usability/risk evidence for the human's continue/amend/simplify/stop decision. This does not authorize automatic steering, broaden the selected range, or require approval for routine work already authorized.
+
+## Feature sequencing
+
+- **Preparation:** Establish or reuse the convention's feature branch/package identity under [branch management](branch-management.md). Create its features-directory README linking the active root FEATURE sources; preserve another active package in the same worktree. Keep feature deltas distinguishable from the complete main documents. Creating a feature task list does not require immediate incorporation into TASKS.
+- **Implementation:** An accepted FEATURE-TASKS can drive implementation while its authoritative feature documents remain active. Identify those sources explicitly in the handoff.
+- **Document integration:** Incorporate accepted targets included in the request on the feature branch before final verification and Git merge. A complete feature implementation includes incorporation needed for a coherent final project; a preparation-only or narrow task request does not authorize unrelated incorporation. Do not infer acceptance from passing tests.
+- **Archive:** After accepted final incorporation and task/evidence disposition, **sdd-integrate-feature** retains eligible sources under the package directory, repairs selected links, and marks historical snapshots. Partial/narrow integration retains needed active documents; verify archive ownership before final merge.
+- **Git integration:** Merge the verified completed boundary into its established target by default with an explicit merge commit, verify the merged state, and publish the target. Preparation-only persists its documents on the feature branch and stops before implementation or full-feature merge.
+- **Consistency:** If the selected work requires an unresolved contract or dependency decision, report it before the dependent mutation. Continue independent authorized work when sound.
+
+## Cross-cutting operations
+
+- **Reporting:** Use **sdd-report** throughout, or independently for an issue, commit message, PR description, or progress report. Drafting PR text does not create or merge a PR.
+- **Hosted tracking:** Local workflows remain usable without hosting. When tracking is active, coordinate task associations before commit composition and verified closure through **sdd-forge**; issue state never supplies completion evidence.
+- **Authentication:** Attempt authorized pushes using existing shell authentication. Route access/credential failures to the coordinator's repository-token recovery protocol; preserve distinct Git and API access and the active backend's permission profile.
+- **Persistence:** Implementation and steering own their commits and pushes. Coordinate persistence of other authorized repository edits through the shared protocol; hosted-only changes have no local commit by implication.
+
+FILE vendor/sdd-manager/skills/sdd-manage/references/review-and-revision.md
+# Coordinate review and revision campaigns
+
+Use **sdd-conventions**' **Review campaigns** reference for campaign identity/storage and **sdd-report**'s **Campaign artifacts** reference for formats. Scope the work before choosing focused reviewers; a campaign does not require a separate review or revision skill.
+
+This is the formal campaign path for the [revision core workflow](workflows.md#core-development-workflows). A directly accepted focused amendment can enter revision planning without fabricating a preceding review. At a paused implementation checkpoint, [lightweight steering](workflows.md#steering-as-lightweight-revision) uses the human-defined objective and existing documents rather than requiring campaign artifacts. Both paths retain their own scope and stop rules.
+
+## Review
+
+1. Establish the request, authoritative instructions, exact reviewed source, concerns, criteria, evidence mode, and stopping boundary. A read-only review does not authorize source repairs or external effects. Writing requested review artifacts and their established commit/push checkpoints is distinct from changing the reviewed source.
+2. For a comprehensive/systematic review, create a review plan defining units, dependency order, criteria, representative positive/negative scenarios, tooling, evidence limits, and report checkpoints. For a focused review, the prompt may supply the plan; record its scope and criteria in the review report without requiring another file.
+3. Route each concern to its owning focused skill and relevant conventions. Review both sides of consequential handoffs, not merely file presence. Distinguish inspected source, consumer assessment, actual local execution, and authorized external verification. Record unavailable checks and unknowns without fabricating evidence.
+4. Maintain the review report as each unit is assessed. Allocate stable finding IDs, located baseline evidence, consequence, confidence, bounded correction, and objective recheck. Preserve no-finding coverage and deferred units. Commit and push the updated report after each planned review unit before dependent work.
+5. Consolidate coverage, canonical findings, counts, priorities, dependencies, and actual readiness. Return the report and proposed revision queue. Stop before revision unless the request already authorizes it; do not ask again when accepted revisions and their execution are already covered.
+
+## Plan accepted revisions
+
+For a directly accepted prompt-defined revision, record its objective, affected owners, and stable action IDs in the revision plan; omit nonexistent review stages and links rather than inventing findings or a review report. Resolve missing requirement/design decisions before dependent work.
+
+- Record which findings are accepted, deferred, rejected, or require a decision, with reasons and retained IDs. A recommendation need not be treated as a confirmed defect.
+- Build an ordered revision plan with affected owners, intended outcomes, dependencies, permitted effects, and verification/recheck criteria. Link actions to findings; one action may address several findings and a finding may require several actions.
+- Identify accepted changes to governing PROJECT/design/SPEC/PLAN/layout and TASKS/FEATURE-TASKS. Incorporate relevant decisions through the owning workflows so implementation has current authoritative inputs. The revision plan remains a retained campaign record, not a replacement SPEC or PLAN.
+- Preserve selected document scope and task ownership. **sdd-integrate-feature** incorporates accepted feature deltas; **sdd-tasks** creates/reviews task lists; **sdd-implement** owns task execution/completion. Human-commanded checkpoint amendments remain **sdd-steer**-owned. Do not turn an ordinary review into steering or create feature overlays by implication.
+
+## Revise, verify, and finish
+
+1. Establish/reuse the scoped working branch and target under [branch management](branch-management.md), using [Git workflows](git-workflows.md) for integration. A request to implement the accepted revision plan authorizes routine work within that boundary, including its default verified explicit merge/publication.
+2. Coordinate accepted governing-document updates and bounded source/test/document changes with their owners. Use task-list execution where executable tasks govern the work; use authorized focused maintenance where no task is assigned. Never invent a task ID from a finding ID.
+3. After each revision action, update the revision report with actual changed artifacts, relevant acceptance/recheck evidence, finding disposition, limitations, and Git state. Commit and push source and evidence together before dependent revisions. Unresolved failures retain their actual state; do not mark a finding verified from a planned check or commit alone.
+4. Recheck composition and relevant regressions after coupled changes. Keep original review evidence intact; append current verification or link it from canonical dispositions without rewriting the baseline observation as if it never occurred.
+5. Verify the completed authorized boundary, explicitly merge, verify the merged result, and publish the target. Record working/target branches, revision commits, merge, publication, and remaining findings. Keep all campaign artifacts in their original directory; no completion-time move or transaction journal is required.
+
+For a blocked campaign, preserve valid work and report the exact active action, affected source/evidence, branch/merge state, and needed decision or facility. A later authorized continuation resumes that campaign and scope rather than repeating completed review units or starting unrelated implementation.
+
+FILE vendor/sdd-manager/skills/sdd-steer/SKILL.md
+---
+name: sdd-steer
+description: Use when the human defines a focused amendment at a checkpoint during partial SDD task-list implementation, especially reducing previously implemented functionality, and requests impact assessment or amendment implementation across existing development documents, code, tests, and documentation. Stop after reporting; do not resume sdd-implement.
+---
+
+# Apply a human-directed checkpoint amendment
+
+Steering is the lightweight checkpoint variant of the revision core workflow. Use **sdd-manage**'s **Core development workflows** model in its **Available workflows** reference for purpose and routing; this skill owns the focused amendment procedure and requires no formal campaign artifacts.
+
+The human defines the objective at a checkpoint and decides whether to command its implementation. Distinguish an assessment request from an implementation request; discussion alone does not authorize repository changes. A command to implement the established amendment authorizes routine steps within that scope without repeated confirmation. **sdd-manage** coordinates scope and shared prerequisites. Use **sdd-manage**'s **Branch management** reference to establish or reuse an amendment branch from the paused implementation checkpoint, with that implementation branch as its target. Use a current **sdd-orient** handoff for repository instructions, Git and task state, pending-change ownership, and the implementation checkpoint.
+
+| Work | Load |
+| --- | --- |
+| Establish the objective, scope, and affected work | [objective and impact](references/objective-and-impact.md) |
+| Amend existing development documents and implemented behavior | [amendment execution](references/amendment-execution.md) |
+| Verify, commit, push, report, and stop | [verification and stop](references/verification-and-stop.md) |
+
+1. **Establish the amendment.** Allocate or recover its shared review-campaign identity and matching revision branch; retain a minimal REVISION-REPORT with objective, scope, full baseline and paused target, adding observed verification/publication at completion. Require no fabricated review or plan. Identify the human's intended end state, affected implemented features, retained behavior, relevant existing documents and task IDs, and the checkpoint baseline. Report missing decisions or conflicts that prevent the focused amendment.
+2. **Update existing development documents.** Within the commanded scope, directly amend affected SPEC, PLAN, TASKS or active FEATURE-TASKS, design, and layout so they describe the accepted end state. Preserve unaffected content and stable identities. Create no feature-document layer and invoke no feature-integration step.
+3. **Align implementation.** Use **sdd-tdd** for test strategy and changes, perform focused production changes, and use **sdd-docs** for module, API, README, and guide alignment. For a reduction, remove affected functionality consistently while protecting the retained contracts and dependencies. This skill owns the production edits and repairs within the amendment.
+4. **Verify and finish.** Use **sdd-verify** to assess the amendment and relevant regressions. Reassess affected completion claims, use **sdd-report** for the commit and result, commit and push the verified amendment, perform the default explicit merge into the paused implementation branch, verify and publish the target, and coordinate any warranted hosted reconciliation through **sdd-forge** when tracking is active.
+5. **Stop.** Report the resulting checkpoint, implemented amendment, verification and limitations, working/target branches, amendment and merge commits and publication state, and remaining work. Do not hand off to, invoke, or resume **sdd-implement**, select further tasks, or start another amendment. The human separately decides when to resume the main task list.
+
+**sdd-implement** owns the main task-list workflow; this skill owns the human-commanded checkpoint amendment, including its direct development-document updates, completion reassessment, commits, pushes, and issue-state coordination. A planning-only request returns findings and proposed scope, then stops. Preserve pending work and do not reset or delete unrelated implementation. Git and the current documents retain history; no separate transaction journal or recovery workflow is required.
+
+FILE vendor/sdd-manager/skills/sdd-steer/references/objective-and-impact.md
+# Objective and impact
+
+Read the human's objective, current checkpoint, owning TASKS or active FEATURE-TASKS, latest task commits, and relevant accepted design, SPEC, PLAN, and layout. Inspect actual implemented behavior and affected tests and documentation. Determine whether the request is assessment only or commands amendment implementation; do not convert discussion into execution.
+
+## Establish the boundary
+
+| Question | Finding |
+| --- | --- |
+| Intended end state | What functionality is removed, reduced, or otherwise amended? |
+| Retained contracts | Which supported behavior and compatibility obligations must remain valid? |
+| Implementation checkpoint | What has been committed, what task-list work remains, and what pending changes exist? |
+| Affected ownership | Which code, tests, existing development documents, README, or guides need focused changes? |
+| Dependency effects | Which consumers, interfaces, resources, build paths, or future tasks depend on the amended behavior? |
+| Acceptance | What observations will demonstrate the amendment and preservation of retained behavior? |
+
+Reducing previously implemented functionality is the primary use case; other focused amendments can follow the same human-directed boundary. Do not broaden the work to redesign unaffected components or complete pending main-list tasks.
+
+Resolve the established request against existing instructions and pending-change ownership. Preserve unrelated or incomplete main-workflow changes; report conflicting ownership or changes that cannot be separated before mutating the affected files. Do not invoke **sdd-implement** to finish them or reset the checkpoint automatically.
+
+If necessary decisions remain unresolved, explain the specific conflict, impact, and alternatives to the human and stop the dependent work. An already explicit implementation command needs no additional permission for routine steps. For an assessment-only request, return the proposed amendment boundary and expected evidence, then stop.
+
+## Amendment branch and continuation
+
+Establish the paused implementation branch and checkpoint as the amendment target under **sdd-manage**'s **Git workflows** reference. Create a scoped amendment branch before edits or reuse the branch for the same unfinished amendment. Record its objective, target, checkpoint, and stable affected IDs in existing task/change evidence or the amendment commit body. Preserve unrelated pending work; use a separate worktree when switching would endanger it. An assessment-only request creates no branch.
+
+A human command to continue a blocked amendment resumes its existing objective and branch. Inspect accepted documents, actual changes, task claims, failed checks, and pending merge/publication state; do not reinterpret it as main-task continuation. If the target or scope is unavailable or conflicting, report that decision before affected edits.
+
+FILE vendor/sdd-manager/skills/sdd-steer/references/amendment-execution.md
+# Execute the amendment
+
+## Revise existing development documents
+
+This workflow directly owns the document amendments necessary for the human-commanded objective. Edit only affected owners and focused children; preserve their distinct responsibilities.
+
+| Document | Focused amendment |
+| --- | --- |
+| PROJECT and design | Scope, component responsibilities, dependency direction, and interfaces affected by the objective. |
+| SPEC | Supported and unsupported behavior, contracts, errors, invariants, and acceptance. |
+| PLAN | Remaining delivery work, dependencies, phase or milestone outcomes, and exit conditions. |
+| TASKS or existing FEATURE-TASKS | Affected task scope, dependency edges, parentage, and current completion claims. |
+| Layout | Changed or removed physical owners and their documentation links. |
+
+Keep the selected documents coherent descriptions of the intended end state. Do not add a feature overlay, chronological amendment appendix, or a discarded-approaches inventory; Git preserves history. An already active FEATURE-TASKS may be amended within its scope without incorporating it into TASKS.
+
+Preserve stable task and parent IDs and unaffected completion evidence. Remove obsolete remaining work from the current task list where the accepted objective eliminates it; never reuse its IDs or mark removed work complete merely to tidy progress. Reassess previously checked items whose acceptance changes. Identify any newly necessary work beyond the focused objective for the human rather than executing it silently.
+
+## Align code, tests, and user documentation
+
+1. Use **sdd-tdd** to identify scenarios protecting retained contracts and exposing amended behavior. Existing accepted coverage may protect a behavior-preserving part of the change; missing historical RED evidence does not require deleting existing code.
+2. Perform focused production changes. Remove the amended feature's obsolete paths, interfaces, configuration, or resources where the objective requires it; inspect consumers before deleting or narrowing shared behavior. Do not leave dead paths solely to satisfy obsolete tests.
+3. Update tests against the revised accepted contracts. Remove obsolete scenarios or replace their expectations when the objective changes that behavior; preserve regression coverage for retained behavior. Do not weaken assertions to conceal an implementation defect.
+4. Use **sdd-docs** to align affected module/API documentation, README, guides, examples, and links with the accepted amendment and implementation. Additional governing-document decisions outside the commanded objective remain findings for the human; they are not automatic scope extensions.
+5. Use **sdd-verify**, repair amendment defects, and repeat affected checks until required evidence supports the result or a concrete blocker remains.
+
+Do not execute subsequent main-list tasks, invoke **sdd-integrate-feature**, or hand production repairs to **sdd-implement**. All work in this execution cycle remains within the commanded steering amendment. If blocked, preserve valid work and report its state without claiming completion or resuming the main workflow.
+
+FILE vendor/sdd-manager/skills/sdd-steer/references/verification-and-stop.md
+# Verify, publish the checkpoint, and stop
+
+## Verify the amendment
+
+Use **sdd-verify** to assess the revised acceptance conditions, affected dependents, integration points, and required project checks. For a reduction, establish that the removed functionality is absent from the supported implementation, relevant tests and documentation agree with the reduced scope, and retained behavior remains valid. Text deletion alone does not establish behavioral removal.
+
+Inspect governing documents and code together for obsolete claims, dangling references, inconsistent task scope, and unintended dependency effects. Use actual outcomes, including failures, warnings, skipped checks, and gaps; do not infer verification from a checklist edit. Return test-design changes to **sdd-tdd** and documentation fixes to **sdd-docs**, while this steering workflow owns production repairs.
+
+Reassess affected task and parent completion claims against the revised acceptance and exits. Preserve unaffected verified status. Mark amended work complete only when its implementation, tests, documentation, and required evidence are complete; do not imply that all remaining tasks or the whole project are done.
+
+## Commit and push
+
+Use **sdd-report** to describe the actual amendment, reason, verification, and supported result. Identify the commit as a steering amendment to affected stable task IDs, rather than completion of the next main-list task, and include only resolved issue references. Stage only amendment-owned document, code, test, status, and evidence changes, preserving unrelated staged and unstaged work. Inspect the staged diff and exclude unrelated staged content from the commit while preserving its index state. A normal commit includes all staged changes; use a path-scoped commit only for wholly amendment-owned file contents, or isolate selected changes in a temporary index. Stop if ownership cannot be separated safely. Commit the coherent verified amendment and its status together; honor the project-designated evidence location, otherwise record check/state/coverage facts and any authorized test-first exception beside affected owning entries or existing linked evidence, or in the change report/commit body for taskless work. Add no transaction journal. Inspect the resulting commit and remaining staged and unstaged diffs; after a temporary-index commit, reconcile any stale committed owned entries in the ordinary index without altering unrelated staged content.
+
+Push the amendment commit and outstanding commits on the current branch to its established remote branch and confirm remote containment. Use existing shell authentication first; on a 403 or explicit credential failure, coordinate **sdd-manage**'s **Hosting credentials** recovery and retry the same push. Do not guess a destination or force-push. On an unresolved push failure, preserve the commit and report the pending push; do not resume task-list implementation.
+
+When hosted tracking is active, use **sdd-forge** to reconcile issue state warranted by the revised task scope and evidence. Do not reopen an issue solely because historical functionality was removed, or close one solely because its task disappeared. Preserve issue history and report any access failure or ambiguous mapping as pending reconciliation.
+
+## Merge the amendment
+
+After working-branch acceptance and amendment persistence, use **sdd-manage**'s **Git workflows** reference for the default explicit merge into the paused implementation branch. Verify the merged state before making its two-parent merge commit, push the target, and confirm containment. Do not merge into the default branch unless it is the established paused target. Report an already integrated amendment without fabricating a second merge. Conflicts or failed merged checks remain scoped amendment work; preserve the exact merge state when blocked. A rejected target push retains the verified merge commit as pending publication.
+
+## Continue after a blocker
+
+Repair verification failures within the commanded scope and repeat affected checks until verified or concretely blocked. On a blocker, identify working and target branches, trusted checkpoint, pending paths and ownership, completed checks, failed or unavailable conditions, task claims requiring reassessment, and the needed decision or facility. Do not publish unverified work as a completed amendment.
+
+Before integration the target retains its paused checkpoint. A merge attempt may leave a separate target worktree in progress; report that state explicitly rather than describing it as a finished checkpoint. The human can command continuation of this same amendment after the blocker is addressed. Resume the branch or in-progress merge, finish verification/persistence/publication, and return control. No automatic reset, new feature overlay, task-list advancement, or handoff to **sdd-implement** is required.
+
+## Return control to the human
+
+Report the accepted objective, amended implemented behavior, retained behavior, existing development documents changed, affected task statuses, verification evidence and limitations, amendment and merge commits, working/target branches, target publication, and pending hosted reconciliation. Identify consequences for remaining tasks as findings, not instructions that automatically launch their implementation.
+
+Stop after the report, including when the amendment is successful. There is no handoff to **sdd-implement**, no automatic selection of its next task, and no automatic steering follow-up. The human decides whether and when to resume the main workflow or command another amendment.
+
+FILE vendor/sdd-manager/skills/sdd-orient/SKILL.md
+---
+name: sdd-orient
+description: Use when locating and inspecting a software project's repository before SDD work, checking Git worktree and interrupted-task state, discovering governing instructions and development documents, or handing a scoped project orientation to an orchestrating agent. Read-only; report whether a proposed mutation has the required Git and authority baseline.
+---
+
+# Orient in a project
+
+Establish a factual, scoped starting point before another SDD skill changes repository files. This skill is a shared, **read-only** capability. It neither authorizes a mutation nor decides which later workflow to run. Read [inspection and handoff](references/inspection-and-handoff.md) for the evidence checks and report contract.
+
+1. Establish the user's intended project path and proposed scope, if supplied. Distinguish the project root from its enclosing Git root; do not assume the current directory is the project.
+2. Identify applicable repository instructions, including root and path-scoped `AGENTS.md`, referenced policies, and project-designated sources. Inspect `docs/dev/PROJECT.md` for the project brief; if it contains operating instructions, preserve their applicability and report their scope and any conflict.
+3. Inspect Git, current branch or detached/unborn state, HEAD, worktree status, and changes affecting the intended paths. Suppress optional Git writes with command-scoped `git --no-optional-locks` or an equivalent scoped `GIT_OPTIONAL_LOCKS=0`. Git commands must not change the index, branch, working tree, or configuration.
+4. Discover present development documents and their focused children, the active feature or change context, relevant code and tests, and declared project commands. When a task list exists, identify the last committed task and compare it with the owning checklist, pending changes, and existing verification evidence. Distinguish completed work awaiting commit from incomplete work; pass the identified state to **sdd-implement** for continuation.
+5. Produce the scoped orientation report. Separate observed facts from inferences and unknowns, identify concrete blockers, and state whether the Git prerequisite for a contemplated mutation is met. Re-orient when the project path, target scope, HEAD, instructions, or material worktree state changes.
+
+If the target is outside a usable Git worktree, mark **repository mutation blocked**. Do not initialize Git, create files, clean worktrees, restore files, run tests with side effects, commit, or invoke a mutating workflow. A conversational or read-only inspection may continue.
+
+For a subagent, the orchestrator supplies the applicable path scope, instructions, relevant document authorities, Git baseline, known dirty paths, and prohibited mutations. A subagent can inspect additional evidence within its scope; the orchestrator rechecks the overall state before coordinating any mutation or commit.
+
+FILE vendor/sdd-manager/skills/sdd-orient/references/inspection-and-handoff.md
+# Inspection and handoff
+
+Use this reference for read-only orientation. Collect enough evidence for the contemplated action; do not dump an entire monorepo into context.
+
+## Project and authority
+
+- Resolve the user-supplied path or current directory to a project root. In a monorepo, distinguish the governed subproject from the containing repository. When candidates are genuinely ambiguous, report them instead of choosing one silently.
+- Read applicable root and more deeply scoped `AGENTS.md` files for anticipated paths. Follow their relevant references and project-designated instruction sources, including policies outside the project root when they apply.
+- Identify contradictory or unreadable instructions and the exact affected action. Record rules for language, build, test, documentation, generated files, source ownership, and commit practices when relevant.
+- Inspect `docs/dev/PROJECT.md` as the project brief. Determine the role of its actual contents. If it contains operating instructions, report them as applicable instructions and identify their scope and any conflict; document revision is a separate workflow.
+
+## Git evidence
+
+Use Git's inspection commands with optional writes suppressed. Plain `git status` can refresh index metadata even when file contents are unchanged. Apply `git --no-optional-locks` to each inspection command, or scope `GIT_OPTIONAL_LOCKS=0` to the inspection process; do not change repository or global configuration. For example, from the candidate project path:
+
+```text
+git --no-optional-locks rev-parse --is-inside-work-tree
+git --no-optional-locks rev-parse --show-toplevel
+git --no-optional-locks symbolic-ref --quiet --short HEAD
+git --no-optional-locks rev-parse --verify HEAD
+git --no-optional-locks status --porcelain=v1 --untracked-files=all
+```
+
+Distinguish a Git worktree from a bare repository, a Git directory outside the target project, or a path with no Git. Record branch or detached state; record an unborn HEAD explicitly. Note staged, unstaged, untracked, deleted, renamed, conflicted, and submodule changes where present. Scope status to the project and anticipated target paths without concealing relevant parent-level or shared files.
+
+Do not assume dirty paths belong to the current task or the agent. Do not interpret clean status alone as proof that the intended work is finished or that documents agree. For the Git prerequisite to be met, the project must be inside a usable worktree; a missing HEAD, conflict, or ambiguous ownership is an additional blocker for ordinary mutation until a later workflow defines how to handle it.
+
+For branch workflows, identify the working and target branches, starting checkpoint, remote destinations, branch occupancy in worktrees, and existing task/change evidence of the authorized boundary. Report in-progress merges, already merged commits awaiting publication, and unresolved target identity. Inspect Git ancestry and parent commits when relevant with optional writes suppressed; do not fetch, switch branches, create worktrees, or infer a target from a branch name alone.
+
+## Project evidence
+
+Look for present roots and referenced children; absence is a finding, not automatically a defect:
+
+```text
+docs/dev/PROJECT.md
+docs/dev/ARCHITECTURE.md   docs/dev/architecture/
+docs/dev/DECOMPOSITION.md  docs/dev/decomposition/
+docs/dev/SPEC.md           docs/dev/spec/
+docs/dev/PLAN.md           docs/dev/plan/
+docs/dev/TASKS.md          docs/dev/tasks/
+docs/dev/layout.md         docs/dev/layout/
+docs/dev/FEATURE_ARCHITECTURE.md
+docs/dev/FEATURE_DECOMPOSITION.md
+docs/dev/FEATURE-SPEC.md  docs/dev/FEATURE-PLAN.md
+docs/dev/FEATURE-TASKS.md
+docs/dev/verification-map.json
+```
+
+Inspect relevant reviews/features package navigation for branch identity and source disposition. Archived feature documents and historical task snapshots under docs/dev/features are retained evidence, not active FEATURE-TASKS; discover active ownership from main TASKS and explicitly active root sources. Observe partially moved paths/links as unfinished incorporation, without repairing them.
+
+Also identify project-specific equivalents and other execution evidence when present. Do not modify or restore such state during orientation. Feature documents describe an intended delta; FEATURE-TASKS holds only scoped feature work and is not the complete task baseline. Inspect it with TASKS when establishing active work and progress.
+
+Inspect relevant source, tests, manifests, and declared commands for building, focused checks, integration checks, documentation checks, and packaging. Note unavailable tools without installing dependencies or executing commands with side effects. Use project instructions over guessed defaults.
+
+## Task state at startup
+
+When TASKS or an active FEATURE-TASKS exists, establish the implementation starting point:
+
+1. Find the latest completed task identified by a task commit and inspect its committed checklist and result. Later maintenance, steering-amendment, or boundary-merge commits do not independently advance that task boundary. Trace completed task commits through merge parents rather than interpreting aggregate task IDs in a merge message as newly completed tasks. If no task has been committed, use the established preimplementation commit as the baseline.
+   Inspect owning entries and linked evidence for **Completion reassessment pending** notes. Report the affected IDs, changed acceptance, authoritative sources, and historical evidence as disputed completion, even when the tree is clean and boxes remain checked. Do not change status or clear notes during orientation.
+2. Compare the committed boundary with the owning working checklist and staged, unstaged, and untracked changes. If the last checked task is ahead of the last committed task, identify it as completed work awaiting commit; confirm that pending changes belong to it and existing completion evidence is present. Otherwise identify the current incomplete task from the selected execution order and changes since the boundary. Future unchecked tasks do not identify the interrupted task. If the tree is clean and the checklist agrees with the committed boundary, report no pending task changes.
+3. Include the task ID, owning list, last task commit, pending paths and ownership, existing verification evidence, and remaining work or ambiguity in the handoff to **sdd-implement**. It owns verification, completion, commits, pushes, and issue-closure coordination. Orientation observes existing evidence; it does not repeat implementation or run verification.
+
+Report ambiguous task identity, change ownership, or missing completion evidence without guessing. Git and the owning task list provide startup state; no separate transaction journal is required.
+
+## Interrupted document operations
+
+When changes belong to feature-document incorporation or a steering amendment, report that workflow separately from interrupted task execution. Inspect selected sources/owners and their checkpoint diff, existing scope evidence, unfinished reconciliation, and branch/merge state. Preserve task history and unresolved identities; do not assign a document-only operation to the next unchecked task. Route facts to **sdd-manage** and its active owner; orientation does not reconcile files or execute checks.
+
+## Orientation report
+
+Produce a concise human-readable handoff with these slots, using `none`, `unknown`, or `not inspected` distinctly:
+
+```text
+Target: project root; Git root; contemplated paths or workflow
+Git: worktree eligibility; branch/detached/unborn; HEAD; relevant status and ownership; working/target branches, checkpoint, and merge/publication state
+Instructions: applicable sources, scope, and conflicts
+Documents: main roots and relevant children; active feature/change documents
+Execution evidence: owning TASKS or FEATURE-TASKS; last committed task and commit; current task and status; pending changes; existing verification evidence; remaining work or ambiguity
+Tooling: relevant declared commands and environment limitations
+Readiness: read-only possible; repository mutation eligible or blocked; reasons
+Handoff: scoped facts for the next skill; unknowns and checks to repeat
+```
+
+This report is an observation at a particular repository state, not a lasting certificate or permission to mutate. Attribute factual claims to paths or Git output when the distinction matters. Do not invent completion states from checkboxes, timestamps, or file presence alone. The orchestrator must recheck stale facts and retain responsibility for authorization, workflow selection, and final validation.
+
+FILE docs/dev/PROJECT.md
+# TextStats project brief
+
+TextStats helps Python users and shell users count lines and whitespace-separated words in UTF-8 text. It provides an importable API and `python -m textstats` with predictable machine-readable output and exit status.
+
+## Scope
+
+The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
+
+## Constraints and non-goals
+
+Python 3.11 or newer, standard-library runtime and unittest, no external dependencies or services. Existing vendored tools and repository infrastructure are preserved. Recursive traversal, multiple-input aggregation, alternate encodings, wheel publication, and performance guarantees for arbitrarily large inputs are outside scope. Public Python APIs retain whole-input counting; range selection is a CLI option.
+
+## Terms and navigation
+
+A line is a logical segment separated by LF, CR, or CRLF; a trailing terminator does not create an extra line. Words are whitespace-separated tokens. [SPEC](SPEC.md) owns exact semantics and failures; [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) own design; [layout](layout.md) owns paths.
+
+FILE docs/dev/SPEC.md
+# TextStats specification
+
+This specifies the complete intended system from [PROJECT](PROJECT.md), with responsibilities in [DECOMPOSITION](DECOMPOSITION.md). [PLAN](PLAN.md) schedules realization without removing later requirements. It defines intended behavior, not implementation status.
+
+## Counting contract
+
+`TextStats` is an immutable public value with integer fields `lines` and `words`, both nonnegative. `count_text(text: str, *, strip_bom: bool = True) -> TextStats` and `count_file(path: str | os.PathLike[str], *, strip_bom: bool = True) -> TextStats` are importable directly from `textstats`. These public Python operations count the whole input; line selection introduces no public range parameter or export.
+
+When `strip_bom` is true, remove exactly one U+FEFF at the start of decoded input. Preserve an interior BOM; false preserves all BOMs. File bytes are decoded strictly as UTF-8. Apply this policy equally to strings, files, and stdin. BOM retention treats U+FEFF as an ordinary non-whitespace character; it may therefore contribute a word.
+
+Recognize CRLF as one terminator and lone CR or LF as one terminator. Nonempty text has one line per terminator plus one for a nonempty final segment. A final terminator adds no phantom line; empty text after BOM handling has zero lines. Other Unicode line separators do not terminate lines. Words are maximal tokens separated by Python Unicode whitespace (`str.split()` semantics), independent of line counting.
+
+| Input after BOM handling | lines | words |
+| --- | ---: | ---: |
+| empty string | 0 | 0 |
+| `alpha beta` | 1 | 2 |
+| `alpha\n` | 1 | 1 |
+| `\n` | 1 | 0 |
+| `alpha\r\nbeta\rgamma\n` | 3 | 3 |
+| `alpha\n\n` | 2 | 1 |
+| space followed by tab | 1 | 0 |
+| `alpha` + U+2028 + `beta` | 1 | 2 |
+
+`count_file` closes its own file handle on every outcome. Missing/unreadable files raise an `OSError` subtype; invalid UTF-8 raises `UnicodeDecodeError`. Calls produce no stdout/stderr and never return partial counts. Invalid caller argument types are outside the guaranteed input domain.
+
+## CLI contract
+
+Invocation: `python -m textstats [--keep-bom] [--json] [--lines START:END] INPUT`. Exactly one input is required. `--keep-bom` selects `strip_bom=False`; otherwise removal is enabled. `--json` selects JSON output. Input `-` selects stdin; `--` supports named files beginning with a dash. Standard `--help` writes help and exits 0. Omitting `--lines` preserves whole-input behavior.
+
+Default success writes exactly `lines=<N> words=<N>\n` to stdout and no stderr. JSON success writes one valid JSON object with exactly the keys `lines` and `words`, each holding an integer count, followed by a newline; insignificant JSON whitespace/key order is not contractual. JSON, BOM and range options compose in either order. Selection adds no metadata or extra output fields.
+
+Success returns 0. Missing/unreadable inputs and invalid UTF-8 return 1, produce no success stdout, and write a useful nonempty stderr diagnostic identifying the input and cause, without a traceback. Usage errors (including missing/extra inputs and unknown options) return 2 with useful stderr and no success stdout or traceback. Diagnostic wording is flexible. Files are never modified.
+
+### Range syntax and validation
+
+One optional `--lines START:END` may appear in normal argparse option order; `--lines=START:END` is also supported. Endpoints consist of one or more ASCII decimal digits representing positive integers, with START <= END. Leading zeros have decimal meaning; there is no arbitrary upper endpoint limit. Signs, whitespace, Unicode digits, empty/open endpoints, extra colons, zero, reversed ranges and repeated `--lines` options are usage errors.
+
+Malformed or missing range values and repetitions return status 2 with useful nonempty stderr, no success stdout and no traceback. Validate usage before acquiring input: an invalid range is a usage error even when the input does not exist. Help documents inclusive one-based endpoints and available-subset behavior.
+
+### Selected counting
+
+Read and strictly decode the complete source as UTF-8 before counting. Read/decode failures anywhere, including outside the requested range, return status 1 with no partial success output. Apply the configured BOM policy to the complete decoded input exactly once before identifying and numbering logical lines by the counting contract.
+
+Number lines from 1. Select existing lines whose positions satisfy START <= position <= END, retaining their original contents and terminators. Count only the selected lines and their Unicode whitespace-separated words. `lines` is the number actually selected, including blank logical lines; it need not equal END minus START plus one when a request extends beyond EOF. Selection beyond EOF or from empty input succeeds with (0,0), status 0 and no stderr. A nonempty unterminated final segment is selectable; a final terminator creates no phantom line. Unicode separators other than CR/LF may divide words but never line positions.
+
+Removing the only leading BOM can make input empty before numbering. An interior U+FEFF is never removed because selection exposes it at the beginning. `--keep-bom` affects the actual leading input BOM only; if line 1 is excluded that leading BOM contributes no selected word. Retaining it follows ordinary-character semantics. Selection preserves input and source resource ownership.
+
+### Stdin compatibility
+
+Stdin bytes are decoded strictly as UTF-8 independent of locale, read until EOF, and are not closed by TextStats. Empty stdin yields zero counts. Stdin decoding/read failures have the same CLI status/channel contract, identifying stdin. Named-file behavior remains available after stdin support.
+
+Range selection is source-independent: it applies identically to the complete decoded input from a named file or stdin, with the same BOM, newline, EOF-subset, format and error semantics. Named-file range delivery is independent of planned stdin delivery; compatibility of the selection interface is required, while actual stdin acquisition and integration acceptance remain part of stdin delivery.
+
+## Unsupported behavior
+
+No public Python range parameter or export, multiple ranges, negative/from-end positions, alternate encodings or streaming guarantee is provided. The complete decoded input is required even for a range ending before EOF.
+
+## Quality and acceptance
+
+Runtime and test dependencies are standard library, Python >=3.11. Professional module and public API docstrings explain purpose, arguments, results, exceptions, and resource ownership where relevant. Meaningful unittest coverage checks independent expected counts, real named-file/public imports, module subprocesses, channels/statuses, malformed bytes, BOM modes, mixed terminators, and option composition. Test directories must be discoverable packages. No empty test collection establishes acceptance.
+
+Whole-input acceptance requires successful named-file API and module CLI examples, the counting table boundaries and Unicode whitespace, failure and usage channels/statuses, JSON parsed by the stdlib decoder, and an extracted source package launched through its module entry point.
+
+Selected-counting acceptance uses these literal expected counts, with default BOM removal unless stated. Exercise named-file CLI text and JSON formats; pure counting checks establish the same boundaries.
+
+| Complete decoded input | Range | Selected lines | Selected words |
+| --- | --- | ---: | ---: |
+| `alpha beta\nbeta\nlast two` | `2:3` | 2 | 3 |
+| `alpha beta\nbeta\nlast two` | `1:1` | 1 | 2 |
+| `alpha beta\nbeta\nlast two` | `2:99` | 2 | 3 |
+| `alpha beta\nbeta\nlast two` | `4:99` | 0 | 0 |
+| empty input | `1:3` | 0 | 0 |
+| `a\n\n` | `2:9` | 1 | 0 |
+| `a\r\nb c\rd\n` | `2:3` | 2 | 3 |
+| `a` + U+2028 + `b\nc` | `1:1` | 1 | 2 |
+| U+FEFF only | `1:1` | 0 | 0 |
+| U+FEFF only, keep BOM | `1:1` | 1 | 1 |
+| U+FEFF + ` a\nb`, either BOM mode | `2:2` | 1 | 1 |
+| `a\n` + U+FEFF + ` b` | `2:2` | 1 | 2 |
+| two leading U+FEFF characters | `1:1` | 1 | 1 |
+
+Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Verify invalid-range precedence over nonexistent input and actual invalid UTF-8 after END. Preserve no-range core/API/CLI/failure/JSON/distribution acceptance and unchanged files/owned-handle cleanup.
+
+Named-file range acceptance includes extracted-source invocations and documented selected examples in both formats, plus review of the source-independent selection interface for stdin compatibility. Future actual stdin acceptance exercises whole-input and selected empty/BOM/mixed-newline cases in both formats, locale-independent UTF-8, stream lifetime and read/decode failures (including after END). These stdin checks belong to stdin delivery and do not gate named-file range delivery.
+
+FILE docs/dev/PLAN.md
+# TextStats delivery plan
+
+Deliver the [SPEC](SPEC.md) through an early usable named-file slice and small adapter increments. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) permit the pure counting rules to remain stable. This is delivery strategy, not completed progress.
+
+## Phase 1 — Named-file baseline
+
+### Milestone 1.1 — Usable named-file API and CLI
+
+Deliver the public count value/functions, UTF-8 named-file reading, BOM option, universal newline and word semantics, and the default module CLI success path. Core and file adapter precede CLI integration; no infrastructure-only milestone delays the useful outcome. Baseline failure polish and source packaging evidence remain for 1.2, while JSON and stdin remain in phase 2.
+
+Exit: demonstrate importable calls and `python -m textstats` on actual named files with exact expected counts/output; check empty input, BOM modes, Unicode whitespace, mixed terminators, and trailing terminators. Gather a concise API/CLI example to let the human judge usability and choose continue, amend, simplify, or stop at a requested checkpoint. This exit proves the usable success slice, not the entire baseline acceptance.
+
+### Milestone 1.2 — Reliable baseline and distribution
+
+Finish API error preservation and CLI read/decode/usage failures, professional docstrings and user documentation, and source distribution/module entry-point checks. Depends on 1.1. Distribution uses a self-contained source archive and Python module execution, avoiding third-party build tools; wheel and console-script publication are outside scope.
+
+Exit: useful stderr and statuses 1/2, no partial stdout or tracebacks, closed owned handles, help/status 0, dash-prefixed paths through `--`, successful extracted-source imports and module launch, accurate examples, and full nonempty unittest discovery. Phase 1 exits only after both milestones and these checks pass; explicitly merge the complete verified phase into main and verify/push the merged state. Retain partial ranges on the phase branch.
+
+## Phase 2 — Output and input extensions
+
+### Milestone 2.1 — JSON output
+
+Add `--json` while preserving default output and all baseline failures. Depends on completed phase 1. Exit: stdlib JSON parsing confirms exactly the keys `lines` and `words` with integer values; BOM option composes, default regressions and error channels pass, and examples show practical shell use. The demonstration informs the human's next bounded continuation decision.
+
+### Milestone 2.2 — UTF-8 stdin
+
+Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 so both formats compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON/range composition, and retained named-file behavior are verified. Invalid bytes outside selected stdin lines still fail; strict decoding is locale-independent and process stdin remains open. Full nonempty discovery, documentation and extracted-source module smoke checks plus all milestone 2.3 exits complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
+
+### Milestone 2.3 — Line-range counting
+
+Deliver private pure selected counting and complete-file adapter collaboration, then named-file `--lines START:END` with existing text/JSON formats and usage/failure semantics. Depends on completed T-001/T-002/T-006; stdin T-007/T-008 is independently owned and is not a prerequisite. Preserve unchanged public Python APIs and reuse existing physical ownership.
+
+Demonstrate singleton, inclusive middle/end, EOF-truncated and empty named-file selections with exact outputs plus malformed-range diagnostics. Finish with both formats/BOM modes, complete-input decode/read failures, baseline regressions, accurate module/user documentation and extracted-source named-file examples. The private decoded-text selection interface remains reusable by later stdin delivery without IO or CLI dependencies.
+
+Exit: all named-file SPEC selected-counting acceptance and unchanged regressions pass, full nonempty unittest discovery and documented/extracted-source examples succeed, and demonstration/limitations are recorded. Actual stdin implementation, locale/stream-lifetime and range composition checks remain T-007/T-008. Feature delivery integrates by an explicit verified two-parent merge into the paused Phase 2 branch; it does not complete Phase 2 or merge it into main. Phase 2 exits only after milestones 2.1, 2.2 and 2.3 are verified.
+
+## Verification and decision policy
+
+Use Python >=3.11 and `python -m unittest discover -s tests -v` once tests exist, with independent expected values and subprocess evidence. Focused checks accompany each bounded task; milestone exits combine relevant acceptance and regressions. Record actual commands, results, and remaining limitations when implementation occurs. Permission-denied behavior needs evidence that remains meaningful under privileged runners; simulated OS denial can supplement real filesystem fixtures.
+
+Main is the integration target and origin the remote. Future implementation uses `phase/1-named-file-baseline` then `phase/2-output-and-input-extensions`, starting phase 2 from published verified main. Complete phases integrate; partial ranges push and pause. Consequential checkpoint decisions remain human decisions, without redundant approval for already authorized routine steps. This preparation authorizes no execution of those phases. No unresolved material planning decisions remain.
+
+FILE docs/dev/TASKS.md
+# TextStats executable tasks
+
+Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). Completion below records verified task work; unchecked tasks remain planned. IDs are project-wide and stable.
+
+Maintained hosted tracking is active for all tasks in this list at `pchemguy/AgentPlayground` on GitHub. Use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
+
+Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integration branch `main`, remote `origin`. Preparation stops here. Future bounded implementation selects from this list through sdd-implement; the first selectable task is T-001. Phase branch names and full-phase integration gates are in PLAN. Never infer completion from this list alone.
+
+## Phase 1 — Named-file baseline
+
+- [x] Phase 1 — Named-file baseline
+    - [x] Milestone 1.1 — Usable named-file API and CLI
+        - [x] T-001 — Implement the public counting core
+            Scope: `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.
+            Outcome: immutable public result and `count_text` with SPEC counting/BOM semantics; independent expected values cover empty, whitespace, Unicode, CR/LF/CRLF and trailing terminators. Evidence: focused unittest checks and package-level import, including BOM-only/preserved interior BOM cases. No IO or CLI behavior belongs here.
+            Checkpoint: T-001 only on `phase/1-named-file-baseline`, from `d769b55aa63f92d5ccbd8022cb9e87f07e541fae`; target `main`, remote `origin`. No milestone/phase exit or integration is claimed.
+            Observed evidence (Python 3.12.14): `python -m unittest tests.test_counting tests.test_api -v` first collected 9 tests and failed with 24 scenario errors at intentional `NotImplementedError` API declarations (not import/setup errors). After implementation the same focused command passed all 9 tests. `python -m unittest discover -s tests -v` passed 9 tests, with no skips or warnings. Fixed expected values cover SPEC table, mixed/trailing terminators, Unicode whitespace/separators, exactly one leading BOM, retained/interior BOM, integer counts, immutable public results and silent independent calls. Package-level API examples passed; all five new module docstrings were reviewed against their responsibilities using Google-style public API documentation. T-002 and later tasks remain unstarted; named-file/CLI/distribution and parent exits are not checked.
+            Test-layout maintenance: the accepted unit/integration organization moves these unchanged tests to `tests/unit/`; historical commands above retain their original paths. Current equivalents are `python -m unittest tests.unit.test_counting tests.unit.test_api -v`. Both this focused command and full discovery passed 9 tests after the move. `layout.md` owns the accepted path correction; no counting contract or behavior changed.
+        - [x] T-002 — Expose UTF-8 named-file counting
+            Scope: file adapter, public exports and file/API tests with relevant docstrings. Depends on: T-001.
+            Outcome: `count_file` reads real UTF-8 files and delegates BOM policy while owning/closing its handle. Evidence: temporary-file public API calls with fixed expected counts and success-path handle lifecycle; keep pure counting tests independent. Failure completion belongs to T-004.
+            Verified checkpoint (Python 3.12.14): `python -m unittest tests.unit.test_files -v` observed RED with 3 tests/15 scenario errors from the intentionally unimplemented API, then GREEN with 3 passing tests. `python -m unittest discover -s tests -v` passed 12 tests. Real temporary files exercised public imports, string/Path paths, strict UTF-8 success, BOM modes, Unicode whitespace, mixed/trailing terminators, unchanged bytes and silent calls; instrumented real handles were closed on success. Module/facade/public API docstrings reviewed. Failure-path acceptance remains T-004. Working branch `phase/1-named-file-baseline`, target `main`, remote `origin`; no parent exit claimed at this task checkpoint.
+        - [x] T-003 — Deliver the usable named-file module CLI
+            Scope: CLI adapter, module entry point, CLI subprocess tests and a concise README example. Depends on: T-002.
+            Outcome: one named input, default output, `--keep-bom`, exit 0 and silent stderr. Evidence: actual `python -m textstats` subprocesses, exact stdout/status assertions and milestone 1.1 API/CLI demonstration with empty/BOM/mixed-newline fixtures. Record the bounded milestone exit and any human feedback; do not claim phase completion.
+            Verified checkpoint (Python 3.12.14): `python -m unittest tests.integration.test_cli -v` observed RED with 5 tests/12 scenario failures at the explicitly unimplemented CLI, then GREEN with 5 passing tests. `python -m unittest discover -s tests -v` passed all 17 tests, without skips/warnings. Real module subprocesses verify exact stdout/status 0/silent stderr for named inputs, empty/whitespace, Unicode, BOM modes/interior BOM, mixed/trailing terminators, spaces in paths, unchanged input, and literal dash-as-filename before stdin delivery. README shell/API examples executed verbatim against the source package; module/API docstrings and local links reviewed. CLI read/decode failure translation remains T-004; JSON/stdin remain phase 2.
+            Milestone 1.1 exit verified: real named-file public API and module CLI demonstration yielded empty (0,0), BOM removed (2,2), BOM retained (2,3), and Unicode/mixed/trailing terminators (3,4), with exact default output and success channels. All T-001–T-003 task conditions and the PLAN 1.1 usable-success slice are met. No human usability feedback or continuation decision is inferred. Pause on published `phase/1-named-file-baseline` with target `main` unchanged; phase 1 remains incomplete, T-004/T-005 unstarted, no merge authorized at this checkpoint.
+    - [x] Milestone 1.2 — Reliable baseline and distribution
+        - [x] T-004 — Complete baseline failure and usage handling
+            Scope: file/CLI adapters, focused file and CLI tests and error docstrings. Depends on: T-003.
+            Outcome: preserve API OSError/UnicodeDecodeError, close owned handles on failure, useful CLI diagnostics/status 1 with no success output; usage status 2, help status 0, dash-prefixed filenames through `--`. Evidence: missing/unreadable/malformed UTF-8 files, invalid invocations and channel checks. Use meaningful permission-denial evidence under privileged runners and document its limits.
+            Verified T-004 (Python 3.12.14): focused file/CLI RED collected 16 tests, with three behavioral failures (directory, missing file and malformed UTF-8 traceback leakage) and one propagated PermissionError scenario error. After CLI translation, focused checks passed 16 tests; `python -m unittest discover -s tests -v` passed 25 with no skips/warnings. Existing API behavior already passed characterization: missing-file OSError preservation, invalid-byte UnicodeDecodeError with real handle closure, and simulated read denial with acquired-handle cleanup. Real module subprocesses cover status 1, no stdout/traceback, input/cause diagnostics, usage status 2, help status 0 and dash-prefixed filenames via `--`. Privileged runner limitation: permission denial is simulated narrowly at file read and CLI adapter boundaries; real missing/directory/malformed-byte fixtures supplement it. CLI/file docstrings reviewed. Working phase branch, target main, remote origin; T-005 and phase exits remain pending.
+        - [x] T-005 — Verify baseline documentation and source distribution
+            Scope: README, all public/module docstrings, distribution tests and baseline exit evidence attached to this task. Depends on: T-004.
+            Outcome: documented API, BOM, input/output/statuses and source usage; stdlib archive/extraction checks establish imports and module execution outside the checkout. Evidence: meaningful extracted-package tests, documented example checks, `python -m unittest discover -s tests -v` with nonzero tests, and all PLAN 1.2/phase 1 exits. Exclude infrastructure and secrets from distribution. Phase integration occurs only after all phase exits pass, with explicit merge and merged-state verification/push per policy.
+            Verified T-005 / milestone 1.2 / phase 1 exits (Python 3.12.14): `python -m unittest tests.integration.test_distribution -v` passed one distribution acceptance test; full discovery passed all 26 tests without skips/warnings. The documented stdlib archive recipe includes exactly five package modules and README, excluding bytecode, tools/vendor, Git internals and credentials. Extracted-source subprocesses remove PYTHONPATH and verify the actual imported module path; public API, empty/BOM modes/Unicode/mixed/trailing-newline module invocations, help, malformed-byte failure and unchanged inputs pass. README quick-start, public calls, archive creation, extraction and help snippets executed verbatim in temporary source/deployment directories. All product/test module docstrings, public API docs, README local links and Markdown heading spacing reviewed. This task verifies existing behavior and source deployment rather than adding runtime functionality; its new checks passed as characterization, and no historical RED cycle is claimed. Existing core/file/CLI checks establish the PLAN 1.1 and 1.2 success/failure/usage/resource obligations; narrow simulated permission denial remains the documented privileged-runner limitation. Phase branch acceptance is verified for T-001–T-005 only; main integration/publication will be assessed separately. T-006–T-008 remain unstarted.
+
+## Phase 2 — Output and input extensions
+
+- [ ] Phase 2 — Output and input extensions
+    - [x] Milestone 2.1 — JSON output
+        - [x] T-006 — Add and verify JSON output
+            Scope: CLI formatter/parser, CLI tests, README/docstrings and milestone 2.1 evidence. Depends on: T-005 and verified/published phase 1 integration.
+            Outcome: `--json` emits the SPEC object/newline and composes with BOM policy, retaining default text and failure behavior. Evidence: stdlib parsed JSON keys/value types and fixed counts, default-output/channel regressions, documented demonstration and full discovery. Record the milestone decision evidence; pause on the phase branch if only 2.1 is requested.
+            Checkpoint: milestone 2.1 / T-006 only on `phase/2-output-and-input-extensions`, from actual verified/published main `29c27580db73cf128c42ddb9535e6d8f5c38ed39`; target `main`, remote `origin`. Hosted association: [T-006 issue #6](https://github.com/pchemguy/AgentPlayground/issues/6). Phase 2 remains incomplete; T-007/T-008 are unstarted and excluded, with no phase merge at this boundary.
+            Verified T-006 / milestone 2.1 (Python 3.12.14): `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli.JsonCliTests -v` observed RED with 5 tests, 15 failures and one argparse SystemExit scenario error because `--json` was unsupported. After the parser/formatter change, `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli -v` passed all 15 CLI tests; `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` passed all 31 tests without skips/warnings. Real named-file subprocesses and stdlib parsing verify one object/newline, exactly lines/words integer keys, fixed empty/whitespace/Unicode/mixed/trailing-newline counts, BOM modes/option order, unchanged files, dash-prefixed paths, default text regressions and read/decode/usage channels. Permission denial is simulated narrowly at the CLI adapter under this privileged runner; real missing/directory/malformed-byte fixtures supplement it. Affected module/API docstrings, README links and heading spacing reviewed. README quick-start/JSON examples executed in a temporary directory: text `lines=1 words=2`, JSON (1,2), BOM stripped (2,2), BOM kept (2,3), all status 0 with empty stderr. This demonstration meets PLAN 2.1 and informs the next human continuation/amendment/stop decision; no further decision or usability feedback is inferred. Pause on the published phase branch before milestone 2.2; stdin still treats `-` as a filename.
+    - [ ] Milestone 2.2 — UTF-8 stdin
+        - [ ] T-007 — Support stdin through the dash input
+            Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006, T-010.
+            Outcome: `-` reads strict UTF-8 stdin until EOF without closing it; both output formats/BOM modes and optional inclusive ranges work; read/decode failures identify stdin, including invalid bytes outside selection. Evidence: binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, appropriate stream-lifetime/read-failure checks, original BOM/Unicode/EOF selection boundaries in both formats, and named-file regressions. Counting remains owned by the core.
+        - [ ] T-008 — Verify complete stdin delivery and phase exits
+            Scope: README, distribution/CLI integration checks and phase 2 exit evidence attached to this task. Depends on: T-007, T-011.
+            Outcome: accurate pipe/API/JSON examples and complete intended acceptance with packaged module invocation. Evidence: both formats, BOM modes, ranges and sources compose; named-file errors/defaults remain correct; extracted-source stdin including selection/complete-decode failure, documentation checks and full nonempty unittest discovery meet PLAN 2.2 and all phase 2 exits (2.1/2.2/2.3). Preserve T-009–T-011 named-file evidence; their completion does not establish stdin acceptance. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.
+
+    - [x] Milestone 2.3 — Line-range counting
+        - [x] T-009 — Add pure selected-counting and file-adapter collaboration
+            Scope: counting.py and files.py private collaboration, tests/unit/test_counting.py, test_files.py and API regression checks with affected docstrings. Depends on: T-001, T-002.
+            Outcome: one core owner selects accepted logical segments after exactly-once global BOM handling; real named files strictly decode completely and close owned handles; unchanged public API remains available. Evidence: SPEC literal expectations for inclusive endpoints, EOF truncation/empty selection, blank/mixed/trailing lines, Unicode separators and original-interior BOM; malformed bytes outside the selection still raise and handle lifecycle/public no-range calls pass. No CLI formatting or stdin implementation belongs here.
+            Verified T-009 (Python 3.12.14): selected core/file RED collected 2 tests with 19 errors at absent private operations (modules collected successfully). GREEN core/file/API checks passed 17 tests; full discovery passed 33 tests. Literal expectations cover inclusive/EOF/empty/blank/mixed/Unicode/interior and global BOM boundaries; real complete-file invalid UTF-8 outside selection raises and closes handles; controlled acquired-handle read denial closes; whole-input public API regressions pass. Reviewed private module documentation and source-independent decoded-text seam. Actual stdin remains unimplemented. Hosted association: T-009 issue #9.
+        - [x] T-010 — Deliver named-file line-range CLI counting
+            Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-006, T-009.
+            Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; default/JSON/BOM options compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and parsed JSON, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather PLAN earliest changed-path demonstration. Do not start main T-007/T-008 without their separate authorized range.
+            Verified T-010 (Python 3.12.14): actual module RED collected 8 tests with 38 behavioral failures because --lines was unsupported. GREEN CLI checks passed 23 tests; full discovery passed 41 tests. Literal text/parsed-JSON cases cover all selected SPEC rows, leading zeros, unterminated/singleton/EOF/blank/mixed/Unicode/BOM cases, option orders, unchanged files and dash filenames. Invalid syntax/repetition/missing values precede nonexistent input; strict invalid bytes before/after the selected range preserve status 1 and no success. A 5000-digit endpoint succeeds without an arbitrary parser bound. README quick start, JSON and four selected named-file commands executed with exact expected outputs/status 0/empty stderr; BOM modes and malformed range demonstrated separately. Help/docstrings reviewed; public API/no-range regressions remain green. Hosted association: T-010 issue #10. Earliest useful changed-path demonstration is complete; no human feedback is inferred, no stdin implementation performed.
+        - [x] T-011 — Verify named-file line-range delivery and milestone exits
+            Scope: tests/integration/test_cli.py and test_distribution.py, README/docstrings and milestone evidence; source-independent interface review against planned stdin contracts. Depends on: T-010.
+            Outcome: packaged named-file line-range examples in both formats and BOM modes plus baseline regressions satisfy all PLAN 2.3 exits. Selection remains reusable for future decoded stdin without introducing CLI/IO dependencies into the core. Evidence: real named-file subprocess and extracted-source singleton/middle/EOF/empty/BOM/mixed-newline cases, strict whole-input failure/resource checks, public API/no-range regressions, executed documentation examples and `python -m unittest discover -s tests -v` with nonzero tests. Inspect the pure selection/private collaboration interface for compatibility with later main T-007/T-008; actual stdin implementation and integration verification remain with those main tasks and do not gate this feature. Record actual named-file demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
+            Verified T-011 / milestone 2.3 named-file exits (Python 3.12.14): extracted-source distribution check passed; full discovery passed 41 tests without skips/warnings. Archive remains exactly five modules plus README, excludes infrastructure/secrets, removes PYTHONPATH and asserts deployed import location. Extracted module subprocesses verify singleton/middle/EOF/empty/blank/mixed/BOM selection in both formats, both BOM modes, unchanged inputs and complete-input malformed-byte failures beyond END. README selected shell block executes verbatim in deployment with four exact outputs. Existing pure/API/file/CLI tests verify all literal SPEC rows, usage/status/resource and no-range regressions. Reviewed _count_selected decoded-string seam: no IO/CLI imports, original BOM handling once, suitable for future fully decoded stdin. No actual stdin verification or implementation is claimed; narrow controlled permission denial supplements real filesystem failures under the privileged runner. This verification task extends characterization checks of existing T-010 behavior; no new behavior or artificial RED is claimed. Hosted association: T-011 issue #11. All named-file feature exits verified; Phase 2/main tasks remain incomplete.
+
+FILE docs/dev/ARCHITECTURE.md
+# TextStats architecture
+
+The [project brief](PROJECT.md) calls for a small local utility with two consumers: Python callers and the module CLI. This document describes the intended system, not existing implementation.
+
+## Blocks and dependency direction
+
+The counting core owns decoded-text statistics. The file adapter owns UTF-8 decoding and its file handle. The command-line adapter owns arguments, stdin, presentation, diagnostics, and process outcomes. The public facade exports the core result type and counting operations.
+
+CLI → file adapter → counting core; CLI stdin → counting core; public facade → core and file adapter. The core has no filesystem or CLI dependency. No network access, persistent application state, plugin registry, or shared mutable counter is needed. Results belong to each invocation; callers retain their input strings and stdin.
+
+## Choices and invariants
+
+Use functions and an immutable result value rather than inheritance or a service container. Both CLI formats consume the same result to prevent duplicated counting rules. Read and decode one input before counting; a streaming framework would add complexity without a required load constraint. The file adapter closes owned handles on success and failure; the CLI never closes process stdin.
+
+BOM policy and counting semantics have one owner in the core, defined by [SPEC](SPEC.md). Unicode decoding and OS failures propagate through the API and become useful stderr diagnostics at the CLI boundary. No failure emits a partial success result. JSON and stdin extend the adapters without coupling the core to argument parsing.
+
+## Verification seams
+
+Pure text examples verify the core; temporary UTF-8 files verify decoding and handle ownership; subprocess invocations verify the public module entry point, output channels, exit codes, and stdin. [DECOMPOSITION](DECOMPOSITION.md) refines these logical owners and [layout](layout.md) assigns physical homes.
+
+FILE docs/dev/DECOMPOSITION.md
+# TextStats logical decomposition
+
+This refines [ARCHITECTURE](ARCHITECTURE.md). [SPEC](SPEC.md) owns normative public contracts; the interfaces below show collaboration.
+
+| Component | Responsibility and interface | Dependencies and verification seam |
+| --- | --- | --- |
+| Counting core | Immutable `TextStats` value; `count_text(text, *, strip_bom=True)`; canonical BOM/newline/word rules and private `_count_selected(text, line_range, *, strip_bom=True)` decoded-input selection. Does not read files or print. | Standard library only; direct string inputs and expected counts. |
+| File adapter | `count_file(path, *, strip_bom=True)` acquires, strictly decodes the complete file, delegates, and closes its owned handle; private `_count_file_selected` passes optional validated endpoints to the core. Does not translate failures into process statuses. | Counting core; temporary files, invalid bytes, missing paths, and an independent unreadable-file check. |
+| Public facade | Exports `TextStats`, `count_text`, `count_file`; keeps callers independent of internal module locations. Does not duplicate computation. | Core and file adapter; package-level import and documented calls. |
+| CLI adapter | Parses one input, BOM/output options and one positive inclusive ASCII-decimal range before input acquisition; obtains a result, formats stdout and translates read/decode failures. Owns stdin acquisition in milestone 2.2 and delegates fully decoded stdin to the same pure selection owner. | File adapter and core; subprocess checks with separate stdout/stderr/status assertions. |
+| Module entry point | Delegates process invocation to the CLI and propagates its exit outcome. | CLI adapter; `python -m textstats` from an extracted source distribution. |
+
+## State and failure ownership
+
+Each call yields a new immutable value. No cached input or global counts exist. File handles belong to the file adapter, stdin belongs to the invoking process, and output streams belong to the CLI environment. API exceptions retain their standard-library types; only the CLI maps them to stderr/status. Failed reads or decoding never feed incomplete text to the core.
+
+The core can be verified without filesystem mocks. Adapter checks should use real temporary files where possible; a narrowly simulated permission denial may supplement platform-sensitive unreadability tests. CLI checks assert user-visible behavior rather than internal function calls. Separate modules are justified by distinct IO and pure-logic failure boundaries; additional factories/interfaces are unnecessary.
+
+## Selected-input collaboration
+
+The core applies original whole-input BOM policy exactly once before selecting CR/LF/CRLF segments with their terminators. An originally interior BOM remains content even when selection exposes it first. Unicode separators affect words without creating line positions. The file adapter never stops reading or decoding at END. Public facade signatures and exports remain whole-input operations. CLI validation and output formatting do not enter the core; private decoded-input selection is independent of its named-file or future stdin source.
+
+FILE docs/dev/layout.md
+# TextStats physical layout
+
+This maps [DECOMPOSITION](DECOMPOSITION.md) to intended paths. The map includes implemented and planned components; path presence alone does not establish completion.
+
+| Path | Owner and purpose | Checks |
+| --- | --- | --- |
+| `textstats/counting.py` | Pure counting core and immutable result | `tests/unit/test_counting.py` |
+| `textstats/files.py` | UTF-8 file adapter and owned handle lifecycle | `tests/unit/test_files.py` |
+| `textstats/__init__.py` | Public exports | `tests/unit/test_api.py` |
+| `textstats/cli.py` | Arguments, stdin selection, output and errors | `tests/integration/test_cli.py` |
+| `textstats/__main__.py` | Python module entry point | CLI subprocess checks |
+| `tests/__init__.py` | Discoverable unittest root package | Full discovery |
+| `tests/unit/__init__.py` | Discoverable core, public API and adapter checks | Focused unit checks and full discovery |
+| `tests/integration/__init__.py` | Discoverable module subprocess and distribution checks | Focused integration checks and full discovery |
+| `tests/integration/test_distribution.py` | Extracted-source import/module checks using stdlib temporary directories and archive facilities | Distribution acceptance |
+| `README.md` | User installation from source, examples, API/options/statuses | Documented examples checked against CLI/API |
+| `docs/dev/*.md` | Governing brief, design, specification, strategy, tasks, layout | Document consistency/navigation |
+
+Root package placement supports direct `python -m textstats` and stdlib-only source deployment without an external build backend. Temporary UTF-8 fixtures belong in test-created temporary directories, not repository output files. Product tests belong in `tests/unit/` for core/API/file-adapter checks and `tests/integration/` for module subprocess/distribution checks. Every test directory requires `__init__.py` for standard-library discovery. Archives and temporary extraction environments are verification outputs, not tracked product files; packaging includes the package and README while excluding vendor/tooling, Git internals and credentials.
+
+The CLI depends on core/file owners; they never import CLI. Public docstrings live with their owners, the facade documents its exports, and user instructions live in README. Preserve `vendor/sdd-manager`, existing tooling, repository instructions and retained development records as infrastructure. No location decision blocks task derivation.
+
+FILE docs/dev/features/002_8a53078/README.md
+# Line-range counting feature package
+
+Campaign: `002_8a53078`; completed named-file feature, historical archive.
+Full baseline: `8a53078d0f734165075691dae0dbfa224a63446f` (published T-006).
+Working branch: `feature/002_8a53078-line-ranges`; target: paused `phase/2-output-and-input-extensions`; remote: `origin` at `pchemguy/AgentPlayground`.
+
+## Source dispositions and main owners
+
+- [Design snapshot](FEATURE_DECOMPOSITION.md) incorporated into [DECOMPOSITION](../../DECOMPOSITION.md); existing architecture/layout unchanged.
+- [Behavior snapshot](FEATURE-SPEC.md) incorporated into [SPEC](../../SPEC.md) at e6fe4c4; scope incorporated into [PROJECT](../../PROJECT.md).
+- [Delivery snapshot](FEATURE-PLAN.md) incorporated into [PLAN](../../PLAN.md), including milestone 2.3 and incomplete Phase 2 exits.
+- [Historical task snapshot](FEATURE-TASKS.md) retired as executable owner; T-009–T-011 and their verified evidence transferred intact to [TASKS](../../TASKS.md), the sole executable owner.
+
+All four sources are archived after named-file implementation, acceptance verification and selected final incorporation. Historical wording records preparation; current main owners govern accepted behavior. No active work relies on a moved source as its sole authority. Main T-007/T-008 retain stable identities, remain unchecked and own future stdin/range composition and Phase 2 integration. Their updated dependencies reflect completed named-file delivery without inferring stdin completion.
+
+## Completion evidence and boundary
+
+T-009: 17 focused / 33 full tests; T-010: 23 CLI / 41 full tests and named-file text/JSON/BOM/usage demonstration; T-011: extracted-source range/BOM/strict-decode checks, executed documentation and 41 full tests. Main TASKS preserves actual RED/GREEN evidence and permission-denial limits. Hosted associations are T-009 #9, T-010 #10 and T-011 #11, same identities before and after transfer.
+
+Final feature verification and explicit two-parent integration/publication target the paused Phase 2 branch only. Phase 2 remains incomplete, main unchanged, and no main stdin work is resumed. Pinned vendor and unrelated bytecode caches are preserved.
+
+FILE README.md
+# AgentPlayground — TextStats
+
+TextStats counts logical lines and Unicode whitespace-separated words in UTF-8 text. Use Python 3.11 or newer from this source checkout; no external dependencies are needed.
+
+## Named-file quick start
+
+From the checkout root, create a small UTF-8 file and run the module:
+
+```sh
+python -c "from pathlib import Path; Path('sample.txt').write_text('alpha beta\n', encoding='utf-8')"
+python -m textstats sample.txt
+```
+
+Output:
+
+```text
+lines=1 words=2
+```
+
+The command succeeds with status 0 and empty stderr. `--keep-bom` retains a leading UTF-8 BOM; otherwise exactly one leading BOM is removed. CR, LF and CRLF terminate lines, and a final terminator creates no extra line.
+
+## Python calls
+
+```python
+from textstats import TextStats, count_file, count_text
+
+assert count_text("alpha beta\n") == TextStats(lines=1, words=2)
+assert count_file("sample.txt") == TextStats(lines=1, words=2)
+```
+
+Results are immutable. The file API reads strict UTF-8, leaves files unchanged and closes its own handle.
+
+The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
+
+## JSON output
+
+Use `--json` for machine-readable counts from the same named UTF-8 files:
+
+```sh
+python -m textstats --json sample.txt
+```
+
+Output:
+
+```json
+{"lines": 1, "words": 2}
+```
+
+The output is one object with exactly `lines` and `words` integer fields, followed by a newline. JSON whitespace and key order may vary. It succeeds with status 0 and empty stderr; read/decode failures keep status 1, diagnostics on stderr and no stdout. `--json --keep-bom` composes with the same BOM policy. Without `--json`, the default text output stays the same.
+
+Stdin is planned for milestone 2.2. Input `-` currently names a file.
+
+## Selected named-file lines
+
+Use `--lines START:END` to count existing one-based inclusive logical lines.
+Endpoints are positive ASCII decimal integers; leading zeros are accepted.
+Requests extending beyond EOF count only available lines; selection beyond
+EOF returns zero counts. Blank lines count as lines, and only CR, LF and CRLF
+terminate logical lines. Unicode separators may divide words without creating
+line positions. Repeated, reversed, zero, signed or open ranges are usage errors.
+
+```sh
+python -c "from pathlib import Path; Path('ranges.txt').write_text('alpha beta\nbeta\nlast two', encoding='utf-8')"
+python -m textstats --lines 1:1 ranges.txt
+python -m textstats --json --lines 2:3 ranges.txt
+python -m textstats --lines 2:99 ranges.txt
+python -m textstats --lines 4:99 ranges.txt
+```
+
+Outputs respectively: `lines=1 words=2`, `{"lines": 2, "words": 3}`,
+`lines=2 words=3`, and `lines=0 words=0`, each followed by a newline.
+`--lines=START:END` also works and composes with `--keep-bom` and `--json`.
+The complete file is strictly decoded even when invalid bytes lie outside the
+selection. The original input BOM policy runs once before numbering lines;
+a BOM originally on a later line remains ordinary content when selected.
+Public Python calls continue to count the whole input with unchanged signatures.
+Stdin selection is planned with milestone 2.2; this feature counts named files.
+
+## Source distribution
+
+Create a self-contained source archive from the checkout root with the standard library:
+
+```python
+from pathlib import Path
+import tarfile
+
+with tarfile.open("TextStats.tar.gz", "w:gz") as archive:
+    for path in sorted(Path("textstats").glob("*.py")):
+        archive.add(path, arcname=str(path))
+    archive.add("README.md", arcname="README.md")
+```
+
+The archive contains the Python package and this README. It excludes tests, development records, vendored infrastructure, tools, bytecode, Git internals and credentials. This is source deployment, without a wheel or external build backend. Extract the archive into a new directory and run Python from that directory:
+
+```sh
+python -c "import tarfile; tarfile.open('TextStats.tar.gz').extractall('TextStats', filter='data')"
+cd TextStats
+python -m textstats --help
+```
+
+On Python 3.11, use a current patch release supporting the `data` extraction filter. Alternatively, extract this locally created archive with your archive application. The named-file quick start and Python examples work from the extracted directory. UTF-8 decoding is strict; no locale-specific codec is used. Word splitting follows Unicode whitespace, while only CR, LF and CRLF terminate logical lines. Empty text after BOM handling yields zero lines and words; other Unicode line separators affect words without creating lines. File reads and CLI invocations leave input bytes unchanged.
+
+## Development
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+Core/API/file tests live in `tests/unit/`; module subprocess and distribution tests live in `tests/integration/`. See [delivery plan](docs/dev/PLAN.md) and [tasks](docs/dev/TASKS.md) for the intended increments and current evidence.
+
+FILE tests/__init__.py
+"""Discoverable standard-library tests for TextStats."""
+
+FILE tests/integration/__init__.py
+"""Discoverable subprocess and source-distribution integration checks."""
+
+FILE tests/integration/test_cli.py
+"""Verify the public module CLI through real named-file subprocesses."""
+
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import unittest
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+
+class NamedFileCliTests(unittest.TestCase):
+    """Protect exact success output, BOM modes and unchanged named inputs."""
+
+    def run_cli(self, path, *options, cwd=PROJECT_ROOT):
+        """Launch the actual module while keeping verification bytecode-free."""
+        environment = os.environ.copy()
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        environment["PYTHONPATH"] = str(PROJECT_ROOT)
+        return subprocess.run(
+            [sys.executable, "-m", "textstats", *options, str(path)],
+            cwd=cwd, env=environment, capture_output=True, text=True,
+            encoding="utf-8", timeout=10, check=False,
+        )
+
+    def assert_success(self, result, expected_stdout):
+        """Check all observable success channels with literal output."""
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, expected_stdout)
+        self.assertEqual(result.stderr, "")
+
+    def test_named_file_success_boundaries(self):
+        cases = [
+            ("", "lines=0 words=0\n"),
+            ("alpha beta", "lines=1 words=2\n"),
+            ("alpha\r\nbeta\rgamma\n", "lines=3 words=3\n"),
+            ("café\u00a0猫\u2028dog\n", "lines=1 words=3\n"),
+            ("alpha\n\n", "lines=2 words=1\n"),
+            (" \t", "lines=1 words=0\n"),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "sample.txt"
+            for text, output in cases:
+                with self.subTest(text=text):
+                    path.write_bytes(text.encode("utf-8"))
+                    self.assert_success(self.run_cli(path), output)
+
+    def test_keep_bom_composes_with_named_input(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.txt"
+            path.write_bytes("\ufeff alpha\r\nbeta\n".encode("utf-8"))
+            self.assert_success(self.run_cli(path), "lines=2 words=2\n")
+            self.assert_success(self.run_cli(path, "--keep-bom"), "lines=2 words=3\n")
+
+    def test_bom_only_and_interior_bom(self):
+        cases = [
+            ("\ufeff", (), "lines=0 words=0\n"),
+            ("\ufeff", ("--keep-bom",), "lines=1 words=1\n"),
+            ("alpha \ufeff beta", (), "lines=1 words=3\n"),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.txt"
+            for text, options, output in cases:
+                with self.subTest(text=text, options=options):
+                    path.write_bytes(text.encode("utf-8"))
+                    self.assert_success(self.run_cli(path, *options), output)
+
+    def test_named_input_with_spaces_is_not_modified(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "file with spaces.txt"
+            data = b"alpha beta\n"
+            path.write_bytes(data)
+            self.assert_success(self.run_cli(path), "lines=1 words=2\n")
+            self.assertEqual(path.read_bytes(), data)
+
+    def test_dash_is_a_named_file_before_stdin_delivery(self):
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "-").write_bytes(b"named input\n")
+            self.assert_success(self.run_cli("-", cwd=directory), "lines=1 words=2\n")
+
+
+class CliFailureTests(unittest.TestCase):
+    """Protect process failure/usage channels and useful diagnostics."""
+
+    run_cli = NamedFileCliTests.run_cli
+    assert_success = NamedFileCliTests.assert_success
+
+    def assert_failure(self, result, status, name=None):
+        self.assertEqual(result.returncode, status, result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertTrue(result.stderr.strip())
+        self.assertNotIn("Traceback", result.stderr)
+        if name is not None:
+            self.assertIn(name, result.stderr)
+
+    def test_missing_and_invalid_utf8_inputs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            bad = Path(directory) / "invalid.txt"
+            bad.write_bytes(b"valid\n\xff")
+            for path in (missing, bad):
+                with self.subTest(path=path.name):
+                    self.assert_failure(self.run_cli(path), 1, path.name)
+            self.assertEqual(bad.read_bytes(), b"valid\n\xff")
+
+    def test_directory_cannot_be_read_as_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.assert_failure(self.run_cli(directory), 1, directory)
+
+    def test_usage_and_help(self):
+        environment = os.environ.copy()
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        for arguments in ([], ["a", "b"], ["--unknown"], ["--json"]):
+            with self.subTest(arguments=arguments):
+                result = subprocess.run([sys.executable, "-m", "textstats", *arguments],
+                    cwd=PROJECT_ROOT, env=environment, capture_output=True, text=True, timeout=10)
+                self.assert_failure(result, 2)
+        result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
+            cwd=PROJECT_ROOT, env=environment, capture_output=True, text=True, timeout=10)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("INPUT", result.stdout)
+        self.assertEqual(result.stderr, "")
+
+    def test_dash_prefixed_file_via_separator(self):
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
+            self.assert_success(self.run_cli("-sample.txt", "--", cwd=directory), "lines=1 words=2\n")
+
+    def test_permission_denial_translation_in_process(self):
+        from unittest.mock import patch
+        import contextlib
+        import io
+        from textstats.cli import main
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                status = main(["denied.txt"])
+        self.assertEqual(status, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("denied.txt", stderr.getvalue())
+        self.assertIn("Permission denied", stderr.getvalue())
+
+
+class JsonCliTests(unittest.TestCase):
+    """Verify JSON serialization and its composition with existing CLI policy."""
+
+    run_cli = NamedFileCliTests.run_cli
+    assert_failure = CliFailureTests.assert_failure
+
+    def assert_json_success(self, result, lines, words):
+        """Require one object, exact keys, true integers and success channels."""
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertTrue(result.stdout.endswith("\n"))
+        self.assertEqual(result.stdout.count("\n"), 1)
+        value = json.loads(result.stdout)
+        self.assertEqual(value, {"lines": lines, "words": words})
+        self.assertEqual(set(value), {"lines", "words"})
+        self.assertIs(type(value["lines"]), int)
+        self.assertIs(type(value["words"]), int)
+
+    def test_json_named_file_boundaries(self):
+        cases = [
+            ("", 0, 0),
+            (" \t", 1, 0),
+            ("alpha beta", 1, 2),
+            ("alpha\r\nbeta\rgamma\n", 3, 3),
+            ("café\u00a0猫\u2028dog\n", 1, 3),
+            ("alpha\n\n", 2, 1),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "file with spaces.txt"
+            for text, lines, words in cases:
+                with self.subTest(text=text):
+                    data = text.encode("utf-8")
+                    path.write_bytes(data)
+                    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+                    self.assertEqual(path.read_bytes(), data)
+
+    def test_json_bom_policy_and_option_order(self):
+        cases = [
+            ("\ufeff alpha\r\nbeta\n", (), 2, 2),
+            ("\ufeff alpha\r\nbeta\n", ("--keep-bom",), 2, 3),
+            ("\ufeff", (), 0, 0),
+            ("\ufeff", ("--keep-bom",), 1, 1),
+            ("alpha \ufeff beta", (), 1, 3),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.txt"
+            for text, options, lines, words in cases:
+                with self.subTest(text=text, options=options):
+                    path.write_bytes(text.encode("utf-8"))
+                    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+                    if options:
+                        self.assert_json_success(self.run_cli(path, *options, "--json"), lines, words)
+
+    def test_json_read_and_decode_failure_channels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            bad = Path(directory) / "bad.txt"
+            bad.write_bytes(b"alpha\n\xff")
+            for path in (missing, bad, Path(directory)):
+                with self.subTest(path=path):
+                    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+            self.assertEqual(bad.read_bytes(), b"alpha\n\xff")
+
+    def test_json_dash_prefixed_named_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
+            self.assert_json_success(self.run_cli("-sample.txt", "--json", "--", cwd=directory), 1, 2)
+
+    def test_json_permission_denial_translation(self):
+        from unittest.mock import patch
+        import contextlib
+        import io
+        from textstats.cli import main
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                status = main(["--json", "denied.txt"])
+        self.assertEqual(status, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("denied.txt", stderr.getvalue())
+        self.assertIn("Permission denied", stderr.getvalue())
+
+
+class LineRangeCliTests(NamedFileCliTests):
+    """Verify inclusive selected counting, parser failures and complete decoding."""
+
+    def test_literal_selected_cases_in_both_formats_and_bom_modes(self):
+        cases = [
+            ("alpha beta\nbeta\nlast two", "2:3", False, (2, 3)),
+            ("alpha beta\nbeta\nlast two", "1:1", False, (1, 2)),
+            ("alpha beta\nbeta\nlast two", "2:99", False, (2, 3)),
+            ("alpha beta\nbeta\nlast two", "4:99", False, (0, 0)),
+            ("", "1:3", False, (0, 0)),
+            ("a\n\n", "2:9", False, (1, 0)),
+            ("a\r\nb c\rd\n", "2:3", False, (2, 3)),
+            ("a\u2028b\nc", "1:1", False, (1, 2)),
+            ("\ufeff", "1:1", False, (0, 0)),
+            ("\ufeff", "1:1", True, (1, 1)),
+            ("\ufeff a\nb", "2:2", False, (1, 1)),
+            ("\ufeff a\nb", "2:2", True, (1, 1)),
+            ("a\n\ufeff b", "2:2", False, (1, 2)),
+            ("\ufeff\ufeff", "1:1", False, (1, 1)),
+            ("a\nb", "01:02", False, (2, 2)),
+            ("a\nb", "2:2", False, (1, 1)),
+            ("a\r\r", "2:9", False, (1, 0)),
+            ("a\r\n\r\n", "2:9", False, (1, 0)),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "selected.txt"
+            for text, span, keep, expected in cases:
+                data = text.encode("utf-8")
+                path.write_bytes(data)
+                for use_json in [False, True]:
+                    options = ["--lines=" + span]
+                    if keep: options += ["--keep-bom"]
+                    if use_json: options.insert(0, "--json")
+                    with self.subTest(text=text, span=span, keep=keep, json=use_json):
+                        result = self.run_cli(path, *options)
+                        self.assertEqual((result.returncode, result.stderr), (0, ""))
+                        if use_json:
+                            parsed = json.loads(result.stdout)
+                            self.assertEqual(parsed, dict(zip(["lines", "words"], expected)))
+                            self.assertEqual({type(v) for v in parsed.values()}, {int})
+                            self.assertTrue(result.stdout.endswith("\n"))
+                        else:
+                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+                        self.assertEqual(path.read_bytes(), data)
+            path.write_bytes(b"a\nb")
+            self.assert_success(self.run_cli(path, "--lines", "1:"+"9"*5000), "lines=2 words=2\n")
+            result = self.run_cli(path, "--keep-bom", "--lines", "2:2", "--json")
+            self.assertEqual(json.loads(result.stdout), {"lines": 1, "words": 1})
+            self.assertEqual((result.returncode, result.stderr), (0, ""))
+
+    def test_invalid_ranges_precede_missing_input(self):
+        ranges = ["0:1", "2:1", "-1:2", "1:", ":2", "1:2:3", "1.0:2",
+                  "+1:2", " 1:2", "1:2 ", "١:٢", "１:２"]
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            for span in ranges:
+                with self.subTest(span=span):
+                    result = self.run_cli(missing, "--lines="+span)
+                    self.assertEqual((result.returncode, result.stdout), (2, ""))
+                    self.assertTrue(result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
+            for options in [("--lines",), ("--lines", "1:2", "--lines=1:1")]:
+                result = self.run_cli(missing, *options)
+                self.assertEqual((result.returncode, result.stdout), (2, ""))
+                self.assertTrue(result.stderr)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_decode_failure_outside_selection_and_named_dash_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "invalid.txt"
+            for data in [b"valid\n\xff", b"\xff\nvalid"]:
+                path.write_bytes(data)
+                for options in [("--lines=1:1",), ("--json", "--lines=2:2")]:
+                    result = self.run_cli(path, *options)
+                    self.assertEqual((result.returncode, result.stdout), (1, ""))
+                    self.assertIn(str(path), result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
+                    self.assertEqual(path.read_bytes(), data)
+            for name in ["-", "-range.txt"]:
+                (Path(directory) / name).write_bytes(b"a\nb c")
+                self.assert_success(self.run_cli(name, "--lines=2:2", "--", cwd=directory),
+                                    "lines=1 words=2\n")
+            help_result = self.run_cli(path, "--help")
+            self.assertEqual((help_result.returncode, help_result.stderr), (0, ""))
+            self.assertIn("inclusive", help_result.stdout)
+            self.assertIn("one-based", help_result.stdout)
+
+FILE tests/integration/test_distribution.py
+"""Verify the documented source archive and deployment outside the checkout.
+
+The test environment deliberately removes PYTHONPATH and checks the imported
+package location so the installed source cannot silently use checkout modules.
+"""
+
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+import tarfile
+import tempfile
+import unittest
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+
+class SourceDistributionTests(unittest.TestCase):
+    """Exercise archive contents, independent imports, CLI and README examples."""
+
+    def test_documented_archive_deploys_only_product_sources(self):
+        readme = (PROJECT_ROOT / "README.md").read_text()
+        scripts = re.findall(r"```python\n(.*?)```", readme, re.S)
+        recipe = next(script for script in scripts if 'tarfile.open' in script)
+        environment = os.environ.copy()
+        environment.pop("PYTHONPATH", None)
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, deployed = root / "source", root / "deployed"
+            source.mkdir()
+            deployed.mkdir()
+            shutil.copytree(PROJECT_ROOT / "textstats", source / "textstats")
+            shutil.copy(PROJECT_ROOT / "README.md", source / "README.md")
+            # Deliberate excluded inputs detect over-broad archive recipes.
+            (source / "gh.tkn").write_text("synthetic-not-a-credential")
+            (source / "vendor").mkdir()
+            (source / "vendor" / "unrelated.txt").write_text("infrastructure")
+            recipe_result = subprocess.run([sys.executable, "-c", recipe], cwd=source,
+                env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual(recipe_result.returncode, 0, recipe_result.stderr)
+            with tarfile.open(source / "TextStats.tar.gz") as archive:
+                self.assertEqual(set(archive.getnames()), {
+                    "README.md", "textstats/__init__.py", "textstats/__main__.py",
+                    "textstats/cli.py", "textstats/counting.py", "textstats/files.py"})
+                archive.extractall(deployed, filter="data")
+            fixture = deployed / "sample.txt"
+            fixture.write_bytes(b"alpha beta\n")
+            api_script = scripts[0] + "\nimport textstats\nfrom pathlib import Path\nassert Path(textstats.__file__).resolve().parent == Path.cwd() / 'textstats'\n"
+            api = subprocess.run([sys.executable, "-c", api_script], cwd=deployed,
+                env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual((api.returncode, api.stdout, api.stderr), (0, "", ""))
+            cases = [
+                (b"", [], 0, "lines=0 words=0\n"),
+                ("\ufeff alpha\r\nbeta\n".encode(), [], 0, "lines=2 words=2\n"),
+                ("\ufeff alpha\r\nbeta\n".encode(), ["--keep-bom"], 0, "lines=2 words=3\n"),
+                ("café\u00a0猫\r\nthird\rfourth\n".encode(), [], 0, "lines=3 words=4\n"),
+                (b"valid\n\xff", [], 1, ""),
+            ]
+            for data, options, status, output in cases:
+                fixture.write_bytes(data)
+                with self.subTest(data=data, options=options):
+                    result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+                        cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+                    self.assertEqual(result.returncode, status, result.stderr)
+                    self.assertEqual(result.stdout, output)
+                    if status == 0:
+                        self.assertEqual(result.stderr, "")
+                    else:
+                        self.assertIn("sample.txt", result.stderr)
+                        self.assertNotIn("Traceback", result.stderr)
+                    self.assertEqual(fixture.read_bytes(), data)
+            selected_cases = [
+                ("alpha beta\nbeta\nlast two", "1:1", False, (1, 2)),
+                ("alpha beta\nbeta\nlast two", "2:3", False, (2, 3)),
+                ("alpha beta\nbeta\nlast two", "2:99", False, (2, 3)),
+                ("alpha beta\nbeta\nlast two", "4:99", False, (0, 0)),
+                ("", "1:3", False, (0, 0)),
+                ("a\r\nb c\rd\n", "2:3", False, (2, 3)),
+                ("a\n\n", "2:9", False, (1, 0)),
+                ("\ufeff", "1:1", False, (0, 0)),
+                ("\ufeff", "1:1", True, (1, 1)),
+                ("a\n\ufeff b", "2:2", False, (1, 2)),
+                ("\ufeff a\nb", "2:2", True, (1, 1)),
+            ]
+            for text, span, keep, expected in selected_cases:
+                data = text.encode("utf-8")
+                fixture.write_bytes(data)
+                for use_json in [False, True]:
+                    options = ["--lines", span]
+                    if use_json: options += ["--json"]
+                    if keep: options += ["--keep-bom"]
+                    with self.subTest(deployed_range=span, text=text, json=use_json, keep=keep):
+                        result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+                            cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+                        self.assertEqual((result.returncode, result.stderr), (0, ""))
+                        if use_json:
+                            self.assertEqual(json.loads(result.stdout), {"lines": expected[0], "words": expected[1]})
+                            self.assertTrue(result.stdout.endswith("\n"))
+                        else:
+                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+                        self.assertEqual(fixture.read_bytes(), data)
+            fixture.write_bytes(b"valid\n\xff")
+            for options in [["--lines=1:1"], ["--lines=1:1", "--json"]]:
+                failure = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+                    cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+                self.assertEqual((failure.returncode, failure.stdout), (1, ""))
+                self.assertIn("sample.txt", failure.stderr)
+                self.assertNotIn("Traceback", failure.stderr)
+            # Execute the documented selected named-file shell block verbatim.
+            selected_script = re.search(r"## Selected named-file lines.*?```sh\n(.*?)```", readme, re.S).group(1)
+            documented = subprocess.run(selected_script, shell=True, cwd=deployed,
+                env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual((documented.returncode, documented.stderr), (0, ""))
+            self.assertEqual(documented.stdout, 'lines=1 words=2\n{"lines": 2, "words": 3}\nlines=2 words=3\nlines=0 words=0\n')
+            help_result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
+                cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual(help_result.returncode, 0)
+            self.assertTrue(help_result.stdout)
+            self.assertEqual(help_result.stderr, "")
+
+FILE tests/unit/__init__.py
+"""Discoverable tests of the pure core, public API and file adapter."""
+
+FILE tests/unit/test_api.py
+"""Exercise the package facade and immutable public result as a caller."""
+
+import contextlib
+import io
+import unittest
+
+from textstats import TextStats, count_text
+
+
+class PublicApiTests(unittest.TestCase):
+    """Protect public imports, independent invocation results and silence."""
+
+    def test_public_result_has_integer_counts(self):
+        result = TextStats(lines=2, words=3)
+        self.assertEqual((result.lines, result.words), (2, 3))
+        self.assertIs(type(result.lines), int)
+        self.assertIs(type(result.words), int)
+
+    def test_result_is_immutable(self):
+        result = count_text("alpha beta")
+        for field in ("lines", "words"):
+            with self.subTest(field=field):
+                with self.assertRaises(AttributeError):
+                    setattr(result, field, 9)
+                with self.assertRaises(AttributeError):
+                    delattr(result, field)
+        self.assertEqual((result.lines, result.words), (1, 2))
+
+    def test_public_calls_return_independent_values_without_output(self):
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+            first = count_text("alpha\nbeta")
+            second = count_text("", strip_bom=False)
+        self.assertIsInstance(first, TextStats)
+        self.assertIsInstance(second, TextStats)
+        self.assertIsNot(first, second)
+        self.assertEqual((first.lines, first.words), (2, 2))
+        self.assertEqual((second.lines, second.words), (0, 0))
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertEqual(stderr.getvalue(), "")
+
+FILE tests/unit/test_counting.py
+"""Verify pure counting against hand-checked SPEC examples and boundaries."""
+
+import unittest
+
+from textstats.counting import count_text
+
+
+class CountingTests(unittest.TestCase):
+    """Protect newline, whitespace and single-leading-BOM semantics."""
+
+    def assert_counts(self, text, lines, words, **options):
+        """Compare public counts with independent literal expectations."""
+        result = count_text(text, **options)
+        self.assertEqual(result.lines, lines)
+        self.assertEqual(result.words, words)
+        self.assertIs(type(result.lines), int)
+        self.assertIs(type(result.words), int)
+
+    def test_spec_counting_table(self):
+        cases = [
+            ("", 0, 0), ("alpha beta", 1, 2), ("alpha\n", 1, 1),
+            ("\n", 1, 0), ("alpha\r\nbeta\rgamma\n", 3, 3),
+            ("alpha\n\n", 2, 1), (" \t", 1, 0),
+            ("alpha\u2028beta", 1, 2),
+        ]
+        for text, lines, words in cases:
+            with self.subTest(text=text):
+                self.assert_counts(text, lines, words)
+
+    def test_cr_lf_crlf_and_trailing_segments(self):
+        cases = [
+            ("\r", 1, 0), ("\r\n", 1, 0), ("a\rb", 2, 2),
+            ("a\r\nb", 2, 2), ("\r\n\r\n", 2, 0),
+            ("a\r\nb\rc\nd", 4, 4), ("a\n\r", 2, 1),
+            ("\r\n\r\nend", 3, 1),
+        ]
+        for text, lines, words in cases:
+            with self.subTest(text=text):
+                self.assert_counts(text, lines, words)
+
+    def test_unicode_whitespace_does_not_create_lines(self):
+        self.assert_counts("café\u00a0猫\u2003dog\u2029fin", 1, 4)
+        self.assert_counts("a\vb\fc\x85d\u2028e", 1, 5)
+        self.assert_counts("\u2028\u2029\u00a0", 1, 0)
+
+    def test_default_removes_one_leading_bom(self):
+        self.assert_counts("\ufeff", 0, 0)
+        self.assert_counts("\ufeffalpha beta\n", 1, 2)
+        self.assert_counts("\ufeff\ufeff", 1, 1)
+        self.assert_counts("\ufeff\n", 1, 0)
+
+    def test_keep_bom_treats_bom_as_non_whitespace(self):
+        self.assert_counts("\ufeff", 1, 1, strip_bom=False)
+        self.assert_counts("\ufeff alpha\n", 1, 2, strip_bom=False)
+        self.assert_counts("", 0, 0, strip_bom=False)
+
+    def test_interior_bom_is_preserved_in_both_modes(self):
+        for strip_bom in (True, False):
+            with self.subTest(strip_bom=strip_bom):
+                self.assert_counts("alpha \ufeff beta", 1, 3, strip_bom=strip_bom)
+                self.assert_counts(" \ufeff", 1, 1, strip_bom=strip_bom)
+
+
+class SelectedCountingTests(unittest.TestCase):
+    """Verify private source-independent selection with literal expectations."""
+
+    def test_selected_logical_segments_and_original_bom_policy(self):
+        from textstats import counting
+        cases = [
+            ("alpha beta\nbeta\nlast two", (2, 3), True, (2, 3)),
+            ("alpha beta\nbeta\nlast two", (1, 1), True, (1, 2)),
+            ("alpha beta\nbeta\nlast two", (2, 99), True, (2, 3)),
+            ("alpha beta\nbeta\nlast two", (4, 99), True, (0, 0)),
+            ("", (1, 3), True, (0, 0)),
+            ("a\n\n", (2, 9), True, (1, 0)),
+            ("a\r\nb c\rd\n", (2, 3), True, (2, 3)),
+            ("a\u2028b\nc", (1, 1), True, (1, 2)),
+            ("\ufeff", (1, 1), True, (0, 0)),
+            ("\ufeff", (1, 1), False, (1, 1)),
+            ("\ufeff a\nb", (2, 2), True, (1, 1)),
+            ("\ufeff a\nb", (2, 2), False, (1, 1)),
+            ("a\n\ufeff b", (2, 2), True, (1, 2)),
+            ("\ufeff\ufeff", (1, 1), True, (1, 1)),
+            ("a\r\r", (2, 9), True, (1, 0)),
+            ("a\r\n\r\n", (2, 9), True, (1, 0)),
+            ("a\nb", (2, 2), True, (1, 1)),
+        ]
+        for text, span, strip, expected in cases:
+            with self.subTest(text=text, span=span, strip=strip):
+                result = counting._count_selected(text, span, strip_bom=strip)
+                self.assertEqual((result.lines, result.words), expected)
+        for text in ["", "a\r\nb\n", "\ufeff\ufeff a", "a\n\ufeff b"]:
+            for strip in [False, True]:
+                self.assertEqual(counting._count_selected(text, (1, 999), strip_bom=strip),
+                                 counting.count_text(text, strip_bom=strip))
+
+FILE tests/unit/test_files.py
+"""Check the public file API with real UTF-8 fixtures and owned handles."""
+
+import builtins
+import contextlib
+import io
+from pathlib import Path
+import tempfile
+import unittest
+from unittest.mock import patch
+
+from textstats import TextStats, count_file
+
+
+class FileCountingTests(unittest.TestCase):
+    """Verify decoding, BOM delegation and success-path resource ownership."""
+
+    def test_real_files_match_fixed_expected_counts(self):
+        cases = [
+            (b"", 0, 0),
+            ("alpha\r\nbeta\rgamma\n".encode("utf-8"), 3, 3),
+            ("café\u00a0猫\u2028dog\n".encode("utf-8"), 1, 3),
+            (b" \t\n\n", 2, 0),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "sample.txt"
+            for data, lines, words in cases:
+                path.write_bytes(data)
+                for public_path in (path, str(path)):
+                    with self.subTest(data=data, path_type=type(public_path)):
+                        result = count_file(public_path)
+                        self.assertIsInstance(result, TextStats)
+                        self.assertEqual((result.lines, result.words), (lines, words))
+                        self.assertEqual(path.read_bytes(), data)
+
+    def test_bom_modes_are_applied_to_decoded_file(self):
+        cases = [
+            ("\ufeff", True, 0, 0), ("\ufeff", False, 1, 1),
+            ("\ufeff alpha\r\nbeta\n", True, 2, 2),
+            ("\ufeff alpha\r\nbeta\n", False, 2, 3),
+            ("\ufeff\ufeff", True, 1, 1),
+            ("alpha \ufeff beta", True, 1, 3),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.txt"
+            for text, strip_bom, lines, words in cases:
+                path.write_bytes(text.encode("utf-8"))
+                with self.subTest(text=text, strip_bom=strip_bom):
+                    result = count_file(path, strip_bom=strip_bom)
+                    self.assertEqual((result.lines, result.words), (lines, words))
+
+    def test_success_closes_real_owned_handle_without_output(self):
+        handles = []
+
+        def observe_open(*args, **kwargs):
+            handle = builtins.open(*args, **kwargs)
+            handles.append(handle)
+            return handle
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "sample.txt"
+            path.write_bytes(b"alpha beta\n")
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with patch("textstats.files.open", side_effect=observe_open, create=True):
+                with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                    result = count_file(path)
+            self.assertEqual((result.lines, result.words), (1, 2))
+            self.assertTrue(handles, "The file adapter must acquire its own handle")
+            self.assertTrue(all(handle.closed for handle in handles))
+            self.assertEqual(stdout.getvalue(), "")
+            self.assertEqual(stderr.getvalue(), "")
+
+
+class FileFailureTests(unittest.TestCase):
+    """Protect original exceptions and owned-handle cleanup on read failure."""
+
+    def test_missing_file_preserves_oserror_without_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                with self.assertRaises(FileNotFoundError):
+                    count_file(Path(directory) / "missing.txt")
+            self.assertEqual((stdout.getvalue(), stderr.getvalue()), ("", ""))
+
+    def test_decode_failure_closes_real_handle_and_preserves_bytes(self):
+        handles = []
+        def observe_open(*args, **kwargs):
+            handle = builtins.open(*args, **kwargs)
+            handles.append(handle)
+            return handle
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "invalid.txt"
+            path.write_bytes(b"valid prefix\n\xff")
+            with patch("textstats.files.open", side_effect=observe_open, create=True):
+                with self.assertRaises(UnicodeDecodeError):
+                    count_file(path)
+            self.assertTrue(handles)
+            self.assertTrue(all(handle.closed for handle in handles))
+            self.assertEqual(path.read_bytes(), b"valid prefix\n\xff")
+
+    def test_read_denial_closes_acquired_handle_and_preserves_exception(self):
+        class DeniedReader(io.StringIO):
+            def read(self, *args, **kwargs):
+                raise PermissionError("controlled read denial")
+        handle = DeniedReader("partial data")
+        with patch("textstats.files.open", return_value=handle, create=True):
+            with self.assertRaises(PermissionError):
+                count_file("denied.txt")
+        self.assertTrue(handle.closed)
+
+
+class SelectedFileTests(unittest.TestCase):
+    """Exercise strict complete reads and cleanup before private selection."""
+
+    def test_real_selected_files_and_decode_failure_close_handles(self):
+        from textstats import files
+        handles = []
+        def observe_open(*args, **kwargs):
+            handle = builtins.open(*args, **kwargs)
+            handles.append(handle)
+            return handle
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "selected.txt"
+            for data, expected in [(b"a\r\nb c\rd\n", (2, 3)),
+                                   ("a\n\ufeff b".encode(), (1, 2))]:
+                path.write_bytes(data)
+                with patch("textstats.files.open", side_effect=observe_open, create=True):
+                    result = files._count_file_selected(path, (2, 99))
+                self.assertEqual((result.lines, result.words), expected)
+                self.assertEqual(path.read_bytes(), data)
+            path.write_bytes(b"valid\n\xff")
+            with patch("textstats.files.open", side_effect=observe_open, create=True):
+                with self.assertRaises(UnicodeDecodeError):
+                    files._count_file_selected(path, (1, 1))
+            self.assertTrue(handles)
+            self.assertTrue(all(handle.closed for handle in handles))
+        class DeniedReader(io.StringIO):
+            def read(self, *args, **kwargs):
+                raise PermissionError("controlled read denial")
+        handle = DeniedReader("partial")
+        with patch("textstats.files.open", return_value=handle, create=True):
+            with self.assertRaises(PermissionError):
+                files._count_file_selected("denied.txt", (1, 1))
+        self.assertTrue(handle.closed)
+
+FILE textstats/__init__.py
+"""Public text statistics API: TextStats, count_text and count_file."""
+
+from .counting import TextStats, count_text
+from .files import count_file
+
+__all__ = ["TextStats", "count_text", "count_file"]
+
+FILE textstats/__main__.py
+"""Run the TextStats command-line adapter with python -m textstats."""
+
+from .cli import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+FILE textstats/cli.py
+"""Present named-file TextStats results through the module CLI.
+
+Argument parsing and output belong here; the file adapter owns UTF-8 input
+and the counting core owns newline, word and BOM semantics.
+"""
+
+import argparse
+import json
+import re
+import sys
+from collections.abc import Sequence
+
+from .files import count_file, _count_file_selected
+
+
+
+def _parse_range(value: str) -> tuple[int, int]:
+    """Validate positive ASCII-decimal endpoints without a digit-count limit."""
+    if re.fullmatch(r"[0-9]+:[0-9]+", value) is None:
+        raise argparse.ArgumentTypeError("expected positive inclusive START:END")
+    def decimal(digits: str) -> int:
+        # Small chunks avoid Python's string-to-integer digit safety limit.
+        number = 0
+        for offset in range(0, len(digits), 9):
+            chunk = digits[offset:offset + 9]
+            number = number * 10 ** len(chunk) + int(chunk)
+        return number
+    start, end = (decimal(part) for part in value.split(":"))
+    if start == 0 or end == 0 or start > end:
+        raise argparse.ArgumentTypeError("endpoints must satisfy 1 <= START <= END")
+    return start, end
+
+
+class _SingleRange(argparse.Action):
+    """Reject repeated range options before any source is acquired."""
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        if getattr(namespace, self.dest) is not None:
+            parser.error("--lines may be specified only once")
+        setattr(namespace, self.dest, values)
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    """Count one named UTF-8 file and write text or JSON success output.
+
+    Args:
+        argv: Command-line arguments without the program name. None selects
+            process arguments. --keep-bom retains the leading decoded BOM;
+            --json selects one object with integer lines and words fields;
+            --lines START:END selects existing one-based inclusive lines.
+
+    Returns:
+        Zero after writing one lines/words record to stdout; one for read or
+        UTF-8 decoding failure with a useful stderr diagnostic and no success
+        output. Successful calls produce no stderr and never modify input.
+
+    Raises:
+        SystemExit: argparse handles help or invalid command-line arguments.
+
+    The file adapter owns its handles. API read/decode exceptions are translated
+    here without a traceback. Stdin remains planned for milestone 2.2;
+    at this checkpoint '-' is a literal named file.
+    """
+    parser = argparse.ArgumentParser(
+        prog="python -m textstats", description="Count lines and words in one UTF-8 file."
+    )
+    parser.add_argument("--keep-bom", action="store_true", help="retain the leading UTF-8 BOM")
+    parser.add_argument("--json", action="store_true", help="write counts as a JSON object")
+    parser.add_argument("--lines", type=_parse_range, action=_SingleRange,
+                        metavar="START:END",
+                        help="select one-based inclusive lines; count the available subset at EOF")
+    parser.add_argument("input", metavar="INPUT", help="named UTF-8 file")
+    arguments = parser.parse_args(argv)
+    try:
+        if arguments.lines is None:
+            result = count_file(arguments.input, strip_bom=not arguments.keep_bom)
+        else:
+            result = _count_file_selected(
+                arguments.input, arguments.lines, strip_bom=not arguments.keep_bom
+            )
+    except (OSError, UnicodeDecodeError) as error:
+        print(f"textstats: {arguments.input}: {error}", file=sys.stderr)
+        return 1
+    if arguments.json:
+        print(json.dumps({"lines": result.lines, "words": result.words}))
+    else:
+        print(f"lines={result.lines} words={result.words}")
+    return 0
+
+FILE textstats/counting.py
+"""Compute immutable statistics from decoded text without performing IO.
+
+Only CR, LF and CRLF terminate logical lines. Word boundaries follow Python's
+Unicode whitespace rules; one leading BOM may be removed before counting.
+"""
+
+from dataclasses import dataclass
+import re
+
+
+@dataclass(frozen=True, slots=True)
+class TextStats:
+    """Immutable, nonnegative counts produced by a text counting operation.
+
+    Attributes:
+        lines: Number of logical lines, without a phantom trailing line.
+        words: Number of whitespace-separated tokens.
+    """
+
+    lines: int
+    words: int
+
+
+def count_text(text: str, *, strip_bom: bool = True) -> TextStats:
+    """Count logical lines and Unicode whitespace-separated words.
+
+    Args:
+        text: Decoded input string. Only CR, LF and CRLF terminate lines;
+            other Unicode separators may divide words but do not divide lines.
+        strip_bom: Remove exactly one leading U+FEFF when true. Interior BOMs,
+            and all BOMs when false, remain ordinary non-whitespace characters.
+
+    Returns:
+        A new immutable result with nonnegative integer counts. Empty text
+        after BOM handling has zero lines and words. A trailing terminator
+        creates no extra line.
+
+    This pure operation does not print, mutate input or acquire resources.
+    Caller argument types outside the declared signature are not supported.
+    """
+    return _count_selected(text, None, strip_bom=strip_bom)
+
+
+def _count_selected(
+    text: str, line_range: tuple[int, int] | None, *, strip_bom: bool = True
+) -> TextStats:
+    """Count a decoded source after global BOM handling and optional selection.
+
+    Endpoints are validated positive inclusive positions supplied by the CLI.
+    This private source-independent seam can also accept future decoded stdin.
+    Selected segments retain terminators; their exposed BOM is never stripped.
+    """
+    if strip_bom and text.startswith("\ufeff"):
+        text = text[1:]
+    if line_range is not None:
+        start, end = line_range
+        segments = re.finditer(r"[^\r\n]*(?:\r\n|\r|\n)|[^\r\n]+$", text)
+        text = "".join(
+            match.group() for position, match in enumerate(segments, 1)
+            if start <= position <= end
+        )
+
+    # Subtract paired terminators so that CRLF counts once, not twice.
+    lines = text.count("\r") + text.count("\n") - text.count("\r\n")
+    if text and not text.endswith(("\r", "\n")):
+        lines += 1
+    return TextStats(lines=lines, words=len(text.split()))
+
+FILE textstats/files.py
+"""Read named UTF-8 files and delegate statistics to the pure counting core.
+
+The file adapter owns each handle it opens; it does not print or translate
+standard-library read and decoding exceptions into process outcomes.
+"""
+
+import os
+
+from .counting import TextStats, _count_selected
+
+
+def count_file(path: str | os.PathLike[str], *, strip_bom: bool = True) -> TextStats:
+    """Read a complete UTF-8 file and return immutable text statistics.
+
+    Args:
+        path: Named file path, as a string or string-valued path-like object.
+        strip_bom: Remove exactly one leading decoded BOM when true; false
+            retains every BOM. The counting core owns this policy.
+
+    Returns:
+        Nonnegative line and word counts using count_text semantics.
+
+    Raises:
+        OSError: The named file cannot be opened or read.
+        UnicodeDecodeError: File bytes are not valid UTF-8.
+
+    The adapter opens and closes its own handle, including on failure. It
+    leaves the file unchanged and produces no stdout or stderr output.
+    """
+    return _count_file_selected(path, None, strip_bom=strip_bom)
+
+
+def _count_file_selected(
+    path: str | os.PathLike[str], line_range: tuple[int, int] | None,
+    *, strip_bom: bool = True,
+) -> TextStats:
+    """Strictly decode the entire owned file before private core selection.
+
+    Owned handles close on success and all read/decode failures. Selection
+    never skips validation of bytes outside its requested endpoints.
+    """
+    with open(path, "r", encoding="utf-8", newline="") as handle:
+        text = handle.read()
+    return _count_selected(text, line_range, strip_bom=strip_bom)

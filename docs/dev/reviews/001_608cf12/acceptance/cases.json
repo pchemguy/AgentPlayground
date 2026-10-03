@@ -325,14 +325,26 @@
   },
   {
     "id": "A-011",
-    "status": "Pending",
-    "prompt_path": null,
+    "status": "Passed",
+    "prompt_path": "runs/A-011/A-011-prompt.txt",
     "oracle_path": null,
-    "run_path": null,
-    "evidence": [],
+    "run_path": "runs/A-011",
+    "evidence": [
+      "runs/A-011/A-011-prompt.txt",
+      "runs/A-011/A-011-host-independent.json",
+      "runs/A-011/A-011-baseline.json",
+      "runs/A-011/git-snapshot.json",
+      "runs/A-011/A-011-check.py",
+      "runs/A-011/A-011-final.md",
+      "runs/A-011/A-011-inspection.txt",
+      "runs/A-011/A-011.md",
+      "runs/A-011/assessment.json",
+      "runs/A-011/A-011-inspected-sources.txt",
+      "runs/A-011/A-011-independent.json"
+    ],
     "native_transcript": null,
-    "assessment": null,
-    "assessed_at": null
+    "assessment": "Assessment-only JSON-removal scope and retained contracts reported at d0eeeff on paused phase2. Covers current docs/code/tests/README, T-006/2.1 retired-scope disposition, T-010/T-011/2.3 reassessment, future plain stdin and warranted hosted reconciliation. --json becomes unknown-option usage2; API/counting/BOM/range/UTF-8/errors/resources preserved. Independent HEAD/branch/all refs/tree/index/worktree unchanged, no new untracked repo files,12 bytecode hashes and selected metadata for11 hosted tasks unchanged. No branch/campaign reservation, repository mutation, tests, hosted actions, task continuation or merge by consumer. Live hosting was not read by consumer; parent GET observation is separately labeled. Actual inspection/journal/full assessment retained; native transcript unavailable.",
+    "assessed_at": "2026-10-03T08:59:38.683560+00:00"
   },
   {
     "id": "A-012",
