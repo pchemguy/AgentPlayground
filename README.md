@@ -30,23 +30,7 @@ assert count_file("sample.txt") == TextStats(lines=1, words=2)
 
 Results are immutable. The file API reads strict UTF-8, leaves files unchanged and closes its own handle.
 
-The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
-
-## JSON output
-
-Use `--json` for machine-readable counts from the same named UTF-8 files:
-
-```sh
-python -m textstats --json sample.txt
-```
-
-Output:
-
-```json
-{"lines": 1, "words": 2}
-```
-
-The output is one object with exactly `lines` and `words` integer fields, followed by a newline. JSON whitespace and key order may vary. It succeeds with status 0 and empty stderr; read/decode failures keep status 1, diagnostics on stderr and no stdout. `--json --keep-bom` composes with the same BOM policy. Without `--json`, the default text output stays the same.
+The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Every successful CLI invocation writes exactly `lines=<N> words=<N>` followed by one newline. `--json` is an unknown option returning status 2; a file named `--json` remains usable after `--`. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
 
 Stdin is planned for milestone 2.2. Input `-` currently names a file.
 
@@ -62,14 +46,14 @@ line positions. Repeated, reversed, zero, signed or open ranges are usage errors
 ```sh
 python -c "from pathlib import Path; Path('ranges.txt').write_text('alpha beta\nbeta\nlast two', encoding='utf-8')"
 python -m textstats --lines 1:1 ranges.txt
-python -m textstats --json --lines 2:3 ranges.txt
+python -m textstats --lines 2:3 ranges.txt
 python -m textstats --lines 2:99 ranges.txt
 python -m textstats --lines 4:99 ranges.txt
 ```
 
-Outputs respectively: `lines=1 words=2`, `{"lines": 2, "words": 3}`,
+Outputs respectively: `lines=1 words=2`, `lines=2 words=3`,
 `lines=2 words=3`, and `lines=0 words=0`, each followed by a newline.
-`--lines=START:END` also works and composes with `--keep-bom` and `--json`.
+`--lines=START:END` also works and composes with `--keep-bom`.
 The complete file is strictly decoded even when invalid bytes lie outside the
 selection. The original input BOM policy runs once before numbering lines;
 a BOM originally on a later line remains ordinary content when selected.

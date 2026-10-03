@@ -5,7 +5,6 @@ and the counting core owns newline, word and BOM semantics.
 """
 
 import argparse
-import json
 import re
 import sys
 from collections.abc import Sequence
@@ -41,12 +40,11 @@ class _SingleRange(argparse.Action):
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Count one named UTF-8 file and write text or JSON success output.
+    """Count one named UTF-8 file and write exact plain success output.
 
     Args:
         argv: Command-line arguments without the program name. None selects
             process arguments. --keep-bom retains the leading decoded BOM;
-            --json selects one object with integer lines and words fields;
             --lines START:END selects existing one-based inclusive lines.
 
     Returns:
@@ -65,7 +63,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         prog="python -m textstats", description="Count lines and words in one UTF-8 file."
     )
     parser.add_argument("--keep-bom", action="store_true", help="retain the leading UTF-8 BOM")
-    parser.add_argument("--json", action="store_true", help="write counts as a JSON object")
     parser.add_argument("--lines", type=_parse_range, action=_SingleRange,
                         metavar="START:END",
                         help="select one-based inclusive lines; count the available subset at EOF")
@@ -81,8 +78,5 @@ def main(argv: Sequence[str] | None = None) -> int:
     except (OSError, UnicodeDecodeError) as error:
         print(f"textstats: {arguments.input}: {error}", file=sys.stderr)
         return 1
-    if arguments.json:
-        print(json.dumps({"lines": result.lines, "words": result.words}))
-    else:
-        print(f"lines={result.lines} words={result.words}")
+    print(f"lines={result.lines} words={result.words}")
     return 0

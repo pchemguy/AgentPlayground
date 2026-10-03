@@ -25,9 +25,9 @@ Recognize CRLF as one terminator and lone CR or LF as one terminator. Nonempty t
 
 ## CLI contract
 
-Invocation: `python -m textstats [--keep-bom] [--json] [--lines START:END] INPUT`. Exactly one input is required. `--keep-bom` selects `strip_bom=False`; otherwise removal is enabled. `--json` selects JSON output. Input `-` selects stdin; `--` supports named files beginning with a dash. Standard `--help` writes help and exits 0. Omitting `--lines` preserves whole-input behavior.
+Invocation: `python -m textstats [--keep-bom] [--lines START:END] INPUT`. Exactly one input is required. `--keep-bom` selects `strip_bom=False`; otherwise removal is enabled. Input `-` selects stdin; `--` supports named files beginning with a dash. Standard `--help` writes help and exits 0. Omitting `--lines` preserves whole-input behavior.
 
-Default success writes exactly `lines=<N> words=<N>\n` to stdout and no stderr. JSON success writes one valid JSON object with exactly the keys `lines` and `words`, each holding an integer count, followed by a newline; insignificant JSON whitespace/key order is not contractual. JSON, BOM and range options compose in either order. Selection adds no metadata or extra output fields.
+Success writes exactly `lines=<N> words=<N>\n` to stdout and no stderr. BOM and range options compose in either order. Selection adds no metadata or extra output fields. `--json` is an unknown option and returns usage status 2 before acquiring input; a literal file named `--json` remains usable after `--`.
 
 Success returns 0. Missing/unreadable inputs and invalid UTF-8 return 1, produce no success stdout, and write a useful nonempty stderr diagnostic identifying the input and cause, without a traceback. Usage errors (including missing/extra inputs and unknown options) return 2 with useful stderr and no success stdout or traceback. Diagnostic wording is flexible. Files are never modified.
 
@@ -49,7 +49,7 @@ Removing the only leading BOM can make input empty before numbering. An interior
 
 Stdin bytes are decoded strictly as UTF-8 independent of locale, read until EOF, and are not closed by TextStats. Empty stdin yields zero counts. Stdin decoding/read failures have the same CLI status/channel contract, identifying stdin. Named-file behavior remains available after stdin support.
 
-Range selection is source-independent: it applies identically to the complete decoded input from a named file or stdin, with the same BOM, newline, EOF-subset, format and error semantics. Named-file range delivery is independent of planned stdin delivery; compatibility of the selection interface is required, while actual stdin acquisition and integration acceptance remain part of stdin delivery.
+Range selection is source-independent: it applies identically to the complete decoded input from a named file or stdin, with the same BOM, newline, EOF-subset, output and error semantics. Named-file range delivery is independent of planned stdin delivery; compatibility of the selection interface is required, while actual stdin acquisition and integration acceptance remain part of stdin delivery.
 
 ## Unsupported behavior
 
@@ -59,9 +59,9 @@ No public Python range parameter or export, multiple ranges, negative/from-end p
 
 Runtime and test dependencies are standard library, Python >=3.11. Professional module and public API docstrings explain purpose, arguments, results, exceptions, and resource ownership where relevant. Meaningful unittest coverage checks independent expected counts, real named-file/public imports, module subprocesses, channels/statuses, malformed bytes, BOM modes, mixed terminators, and option composition. Test directories must be discoverable packages. No empty test collection establishes acceptance.
 
-Whole-input acceptance requires successful named-file API and module CLI examples, the counting table boundaries and Unicode whitespace, failure and usage channels/statuses, JSON parsed by the stdlib decoder, and an extracted source package launched through its module entry point.
+Whole-input acceptance requires successful named-file API and module CLI examples, the counting table boundaries and Unicode whitespace, failure and usage channels/statuses, an extracted source package launched through its module entry point.
 
-Selected-counting acceptance uses these literal expected counts, with default BOM removal unless stated. Exercise named-file CLI text and JSON formats; pure counting checks establish the same boundaries.
+Selected-counting acceptance uses these literal expected counts, with default BOM removal unless stated. Exercise named-file CLI exact plain output; pure counting checks establish the same boundaries.
 
 | Complete decoded input | Range | Selected lines | Selected words |
 | --- | --- | ---: | ---: |
@@ -79,6 +79,6 @@ Selected-counting acceptance uses these literal expected counts, with default BO
 | `a\n` + U+FEFF + ` b` | `2:2` | 1 | 2 |
 | two leading U+FEFF characters | `1:1` | 1 | 1 |
 
-Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Verify invalid-range precedence over nonexistent input and actual invalid UTF-8 after END. Preserve no-range core/API/CLI/failure/JSON/distribution acceptance and unchanged files/owned-handle cleanup.
+Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Verify invalid-range precedence over nonexistent input and actual invalid UTF-8 after END. Preserve no-range core/API/CLI/failure/distribution acceptance and unchanged files/owned-handle cleanup.
 
-Named-file range acceptance includes extracted-source invocations and documented selected examples in both formats, plus review of the source-independent selection interface for stdin compatibility. Future actual stdin acceptance exercises whole-input and selected empty/BOM/mixed-newline cases in both formats, locale-independent UTF-8, stream lifetime and read/decode failures (including after END). These stdin checks belong to stdin delivery and do not gate named-file range delivery.
+Named-file range acceptance includes extracted-source invocations and documented selected examples with exact plain output, plus review of the source-independent selection interface for stdin compatibility. Future actual stdin acceptance exercises whole-input and selected empty/BOM/mixed-newline cases with exact plain output, locale-independent UTF-8, stream lifetime and read/decode failures (including after END). These stdin checks belong to stdin delivery and do not gate named-file range delivery.

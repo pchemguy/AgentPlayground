@@ -7,7 +7,7 @@ This maps [DECOMPOSITION](DECOMPOSITION.md) to intended paths. The map includes 
 | `textstats/counting.py` | Pure counting core and immutable result | `tests/unit/test_counting.py` |
 | `textstats/files.py` | UTF-8 file adapter and owned handle lifecycle | `tests/unit/test_files.py` |
 | `textstats/__init__.py` | Public exports | `tests/unit/test_api.py` |
-| `textstats/cli.py` | Arguments, stdin selection, output and errors | `tests/integration/test_cli.py` |
+| `textstats/cli.py` | Arguments, stdin selection, plain output and errors | `tests/integration/test_cli.py` |
 | `textstats/__main__.py` | Python module entry point | CLI subprocess checks |
 | `tests/__init__.py` | Discoverable unittest root package | Full discovery |
 | `tests/unit/__init__.py` | Discoverable core, public API and adapter checks | Focused unit checks and full discovery |

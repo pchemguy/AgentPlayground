@@ -1,6 +1,5 @@
 """Verify the public module CLI through real named-file subprocesses."""
 
-import json
 import os
 from pathlib import Path
 import subprocess
@@ -143,93 +142,48 @@ class CliFailureTests(unittest.TestCase):
         self.assertIn("Permission denied", stderr.getvalue())
 
 
-class JsonCliTests(unittest.TestCase):
-    """Verify JSON serialization and its composition with existing CLI policy."""
+class RemovedJsonCliTests(unittest.TestCase):
+    """Reject the removed option before acquisition and preserve literal paths."""
 
     run_cli = NamedFileCliTests.run_cli
+    assert_success = NamedFileCliTests.assert_success
     assert_failure = CliFailureTests.assert_failure
 
-    def assert_json_success(self, result, lines, words):
-        """Require one object, exact keys, true integers and success channels."""
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(result.stderr, "")
-        self.assertTrue(result.stdout.endswith("\n"))
-        self.assertEqual(result.stdout.count("\n"), 1)
-        value = json.loads(result.stdout)
-        self.assertEqual(value, {"lines": lines, "words": words})
-        self.assertEqual(set(value), {"lines", "words"})
-        self.assertIs(type(value["lines"]), int)
-        self.assertIs(type(value["words"]), int)
-
-    def test_json_named_file_boundaries(self):
-        cases = [
-            ("", 0, 0),
-            (" \t", 1, 0),
-            ("alpha beta", 1, 2),
-            ("alpha\r\nbeta\rgamma\n", 3, 3),
-            ("café\u00a0猫\u2028dog\n", 1, 3),
-            ("alpha\n\n", 2, 1),
-        ]
+    def test_removed_option_precedes_source_acquisition(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "file with spaces.txt"
-            for text, lines, words in cases:
-                with self.subTest(text=text):
-                    data = text.encode("utf-8")
-                    path.write_bytes(data)
-                    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
-                    self.assertEqual(path.read_bytes(), data)
-
-    def test_json_bom_policy_and_option_order(self):
-        cases = [
-            ("\ufeff alpha\r\nbeta\n", (), 2, 2),
-            ("\ufeff alpha\r\nbeta\n", ("--keep-bom",), 2, 3),
-            ("\ufeff", (), 0, 0),
-            ("\ufeff", ("--keep-bom",), 1, 1),
-            ("alpha \ufeff beta", (), 1, 3),
-        ]
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "bom.txt"
-            for text, options, lines, words in cases:
-                with self.subTest(text=text, options=options):
-                    path.write_bytes(text.encode("utf-8"))
-                    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
-                    if options:
-                        self.assert_json_success(self.run_cli(path, *options, "--json"), lines, words)
-
-    def test_json_read_and_decode_failure_channels(self):
-        with tempfile.TemporaryDirectory() as directory:
+            existing = Path(directory) / "bom.txt"
+            existing.write_bytes("\ufeff a\nb".encode("utf-8"))
             missing = Path(directory) / "missing.txt"
-            bad = Path(directory) / "bad.txt"
-            bad.write_bytes(b"alpha\n\xff")
-            for path in (missing, bad, Path(directory)):
-                with self.subTest(path=path):
-                    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
-            self.assertEqual(bad.read_bytes(), b"alpha\n\xff")
+            for path in [existing, missing, Path(directory)]:
+                for options in [("--json",), ("--keep-bom", "--json"),
+                                ("--lines=1:1", "--json"),
+                                ("--json", "--lines", "2:2", "--keep-bom")]:
+                    with self.subTest(path=path, options=options):
+                        result = self.run_cli(path, *options)
+                        self.assert_failure(result, 2)
+                        self.assertIn("unrecognized arguments: --json", result.stderr)
+            self.assertEqual(existing.read_bytes(), "\ufeff a\nb".encode("utf-8"))
 
-    def test_json_dash_prefixed_named_file(self):
+    def test_help_omits_removed_option(self):
+        result = self.run_cli("unused", "--help")
+        self.assertEqual((result.returncode, result.stderr), (0, ""))
+        self.assertNotIn("--json", result.stdout)
+        self.assertIn("--lines", result.stdout)
+        self.assertIn("--keep-bom", result.stdout)
+
+    def test_removed_option_name_is_a_literal_file_after_separator(self):
         with tempfile.TemporaryDirectory() as directory:
-            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
-            self.assert_json_success(self.run_cli("-sample.txt", "--json", "--", cwd=directory), 1, 2)
-
-    def test_json_permission_denial_translation(self):
-        from unittest.mock import patch
-        import contextlib
-        import io
-        from textstats.cli import main
-        stdout, stderr = io.StringIO(), io.StringIO()
-        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
-            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
-                status = main(["--json", "denied.txt"])
-        self.assertEqual(status, 1)
-        self.assertEqual(stdout.getvalue(), "")
-        self.assertIn("denied.txt", stderr.getvalue())
-        self.assertIn("Permission denied", stderr.getvalue())
+            (Path(directory) / "--json").write_bytes(b"a\nb c")
+            self.assert_success(self.run_cli("--json", "--", cwd=directory),
+                                "lines=2 words=3\n")
+            self.assert_success(self.run_cli("--json", "--lines=2:2", "--", cwd=directory),
+                                "lines=1 words=2\n")
 
 
 class LineRangeCliTests(NamedFileCliTests):
     """Verify inclusive selected counting, parser failures and complete decoding."""
 
-    def test_literal_selected_cases_in_both_formats_and_bom_modes(self):
+    def test_literal_selected_cases_in_plain_output_and_bom_modes(self):
         cases = [
             ("alpha beta\nbeta\nlast two", "2:3", False, (2, 3)),
             ("alpha beta\nbeta\nlast two", "1:1", False, (1, 2)),
@@ -255,26 +209,18 @@ class LineRangeCliTests(NamedFileCliTests):
             for text, span, keep, expected in cases:
                 data = text.encode("utf-8")
                 path.write_bytes(data)
-                for use_json in [False, True]:
-                    options = ["--lines=" + span]
-                    if keep: options += ["--keep-bom"]
-                    if use_json: options.insert(0, "--json")
-                    with self.subTest(text=text, span=span, keep=keep, json=use_json):
-                        result = self.run_cli(path, *options)
-                        self.assertEqual((result.returncode, result.stderr), (0, ""))
-                        if use_json:
-                            parsed = json.loads(result.stdout)
-                            self.assertEqual(parsed, dict(zip(["lines", "words"], expected)))
-                            self.assertEqual({type(v) for v in parsed.values()}, {int})
-                            self.assertTrue(result.stdout.endswith("\n"))
-                        else:
-                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
-                        self.assertEqual(path.read_bytes(), data)
+                options = ["--lines=" + span]
+                if keep:
+                    options += ["--keep-bom"]
+                with self.subTest(text=text, span=span, keep=keep):
+                    self.assert_success(self.run_cli(path, *options),
+                                        "lines=%d words=%d\n" % expected)
+                    self.assertEqual(path.read_bytes(), data)
             path.write_bytes(b"a\nb")
             self.assert_success(self.run_cli(path, "--lines", "1:"+"9"*5000), "lines=2 words=2\n")
-            result = self.run_cli(path, "--keep-bom", "--lines", "2:2", "--json")
-            self.assertEqual(json.loads(result.stdout), {"lines": 1, "words": 1})
-            self.assertEqual((result.returncode, result.stderr), (0, ""))
+            for options in [("--keep-bom", "--lines", "2:2"),
+                            ("--lines", "2:2", "--keep-bom")]:
+                self.assert_success(self.run_cli(path, *options), "lines=1 words=1\n")
 
     def test_invalid_ranges_precede_missing_input(self):
         ranges = ["0:1", "2:1", "-1:2", "1:", ":2", "1:2:3", "1.0:2",
@@ -298,7 +244,7 @@ class LineRangeCliTests(NamedFileCliTests):
             path = Path(directory) / "invalid.txt"
             for data in [b"valid\n\xff", b"\xff\nvalid"]:
                 path.write_bytes(data)
-                for options in [("--lines=1:1",), ("--json", "--lines=2:2")]:
+                for options in [("--lines=1:1",), ("--lines=2:2",)]:
                     result = self.run_cli(path, *options)
                     self.assertEqual((result.returncode, result.stdout), (1, ""))
                     self.assertIn(str(path), result.stderr)
