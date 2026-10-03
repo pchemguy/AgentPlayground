@@ -1,10 +1,10 @@
 # TextStats project brief
 
-TextStats helps Python users and shell users count lines and whitespace-separated words in UTF-8 text. It provides an importable API and `python -m textstats` with predictable machine-readable output and exit status.
+TextStats helps Python users and shell users count lines and whitespace-separated words in UTF-8 text. It provides an importable API and `python -m textstats` with predictable plain output and exit status.
 
 ## Scope
 
-The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
+The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
 
 ## Constraints and non-goals
 

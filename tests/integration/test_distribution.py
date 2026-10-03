@@ -4,7 +4,6 @@ The test environment deliberately removes PYTHONPATH and checks the imported
 package location so the installed source cannot silently use checkout modules.
 """
 
-import json
 import os
 from pathlib import Path
 import re
@@ -89,22 +88,17 @@ class SourceDistributionTests(unittest.TestCase):
             for text, span, keep, expected in selected_cases:
                 data = text.encode("utf-8")
                 fixture.write_bytes(data)
-                for use_json in [False, True]:
-                    options = ["--lines", span]
-                    if use_json: options += ["--json"]
-                    if keep: options += ["--keep-bom"]
-                    with self.subTest(deployed_range=span, text=text, json=use_json, keep=keep):
-                        result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
-                            cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
-                        self.assertEqual((result.returncode, result.stderr), (0, ""))
-                        if use_json:
-                            self.assertEqual(json.loads(result.stdout), {"lines": expected[0], "words": expected[1]})
-                            self.assertTrue(result.stdout.endswith("\n"))
-                        else:
-                            self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
-                        self.assertEqual(fixture.read_bytes(), data)
+                options = ["--lines", span]
+                if keep:
+                    options += ["--keep-bom"]
+                with self.subTest(deployed_range=span, text=text, keep=keep):
+                    result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
+                        cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+                    self.assertEqual((result.returncode, result.stderr), (0, ""))
+                    self.assertEqual(result.stdout, "lines=%d words=%d\n" % expected)
+                    self.assertEqual(fixture.read_bytes(), data)
             fixture.write_bytes(b"valid\n\xff")
-            for options in [["--lines=1:1"], ["--lines=1:1", "--json"]]:
+            for options in [["--lines=1:1"], ["--lines=1:1", "--keep-bom"]]:
                 failure = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
                     cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
                 self.assertEqual((failure.returncode, failure.stdout), (1, ""))
@@ -115,9 +109,15 @@ class SourceDistributionTests(unittest.TestCase):
             documented = subprocess.run(selected_script, shell=True, cwd=deployed,
                 env=environment, capture_output=True, text=True, timeout=10)
             self.assertEqual((documented.returncode, documented.stderr), (0, ""))
-            self.assertEqual(documented.stdout, 'lines=1 words=2\n{"lines": 2, "words": 3}\nlines=2 words=3\nlines=0 words=0\n')
+            self.assertEqual(documented.stdout, 'lines=1 words=2\nlines=2 words=3\nlines=2 words=3\nlines=0 words=0\n')
             help_result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
                 cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
             self.assertEqual(help_result.returncode, 0)
             self.assertTrue(help_result.stdout)
+            self.assertNotIn("--json", help_result.stdout)
+            removed = subprocess.run([sys.executable, "-m", "textstats", "--json", "sample.txt"],
+                cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual((removed.returncode, removed.stdout), (2, ""))
+            self.assertIn("unrecognized arguments: --json", removed.stderr)
+            self.assertNotIn("Traceback", removed.stderr)
             self.assertEqual(help_result.stderr, "")
