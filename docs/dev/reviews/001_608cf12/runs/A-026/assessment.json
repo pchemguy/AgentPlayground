@@ -1,0 +1,13 @@
+{
+  "id": "A-026",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-026/repo",
+  "assessment": "Fresh verify consumer observed 1 test/1 pre-existing baseline failure exit1 and zero selected tests exit5. Independent evaluator reran both and checked unchanged fixture/status. Empty suite did not establish acceptance; verify made no source/test/task repair. Actual Python3.12.14 recorded.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-026-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-026.md",
+    "/workspace/scratch/acceptance-out-008/A-026-final.md",
+    "/workspace/scratch/acceptance-out-008/A-026-independent.json",
+    "/workspace/scratch/sdd008-A-026/baseline-results.txt"
+  ]
+}

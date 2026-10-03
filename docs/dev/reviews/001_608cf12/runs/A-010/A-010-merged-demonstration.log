@@ -1,0 +1,20 @@
+$ python -c "from pathlib import Path; Path('sample.txt').write_text('alpha beta\n', encoding='utf-8')"
+status 0 stdout '' stderr ''
+$ python -m textstats sample.txt
+status 0 stdout 'lines=1 words=2\n' stderr ''
+$ python -m textstats --json sample.txt
+status 0 stdout '{"lines": 1, "words": 2}\n' stderr ''
+$ python -c "from pathlib import Path; Path('ranges.txt').write_text('alpha beta\nbeta\nlast two', encoding='utf-8')"
+status 0 stdout '' stderr ''
+$ python -m textstats --lines 1:1 ranges.txt
+status 0 stdout 'lines=1 words=2\n' stderr ''
+$ python -m textstats --json --lines 2:3 ranges.txt
+status 0 stdout '{"lines": 2, "words": 3}\n' stderr ''
+$ python -m textstats --lines 2:99 ranges.txt
+status 0 stdout 'lines=2 words=3\n' stderr ''
+$ python -m textstats --lines 4:99 ranges.txt
+status 0 stdout 'lines=0 words=0\n' stderr ''
+BOM demonstration ['--lines=1:1'] 0 'lines=1 words=1\n' ''
+BOM demonstration ['--lines=1:1', '--keep-bom'] 0 'lines=1 words=2\n' ''
+BOM demonstration ['--lines=2:2', '--keep-bom', '--json'] 0 '{"lines": 1, "words": 1}\n' ''
+Malformed range demonstration 2 '' 'usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n'

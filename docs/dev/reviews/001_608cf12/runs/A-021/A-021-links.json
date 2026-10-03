@@ -1,0 +1,291 @@
+{
+  "checked": 57,
+  "errors": [],
+  "links": [
+    {
+      "document": "docs/dev/ARCHITECTURE.md",
+      "target": "PROJECT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/ARCHITECTURE.md",
+      "target": "SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/ARCHITECTURE.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/ARCHITECTURE.md",
+      "target": "layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/DECOMPOSITION.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/DECOMPOSITION.md",
+      "target": "SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PLAN.md",
+      "target": "SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PLAN.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PLAN.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/PROJECT.md",
+      "target": "layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/SPEC.md",
+      "target": "PROJECT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/SPEC.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/SPEC.md",
+      "target": "PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "PROJECT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/TASKS.md",
+      "target": "features/002_8a53078/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+      "target": "../../PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+      "target": "../../SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "FEATURE_DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "FEATURE-SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "FEATURE-PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "../../layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "../../DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "../../layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "FEATURE-SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+      "target": "FEATURE-PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../PROJECT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "FEATURE_DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "FEATURE-SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "FEATURE-PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "FEATURE-TASKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/features/002_8a53078/README.md",
+      "target": "../../layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/layout.md",
+      "target": "DECOMPOSITION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/dev/reviews/001_608cf12/README.md",
+      "target": "../../../../vendor/PROVENANCE.json",
+      "exists": true
+    }
+  ]
+}

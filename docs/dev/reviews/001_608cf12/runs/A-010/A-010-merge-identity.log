@@ -1,0 +1,24 @@
+commit d0eeeffc0432a45a603ef17cca457e9f04544876
+Merge: 8a53078 799e5c7
+Author:     Codex <codex@openai.com>
+AuthorDate: Sat Oct 3 16:50:55 2026 +0800
+Commit:     Codex <codex@openai.com>
+CommitDate: Sat Oct 3 16:50:55 2026 +0800
+
+    Merge verified named-file line ranges into paused Phase 2 (T-009–T-011)
+    
+    What: deliver inclusive --lines START:END for named UTF-8 files, preserving
+    whole-input public APIs, text/JSON, original BOM policy and full strict decoding.
+    Incorporate PROJECT/DECOMPOSITION/PLAN/task owners against accepted SPEC and
+    archive eligible feature sources under campaign 002_8a53078.
+    
+    Verification: prospective merged state passed 41 standard-library unittest
+    tests, document link/heading/module/public-API/ownership checks and executed
+    README text/JSON/range/BOM examples. No merge conflicts or material resolutions.
+    
+    Parents: paused target 8a53078d0f734165075691dae0dbfa224a63446f;
+    verified feature 799e5c703dbc9c99a3832f19ea2aad44949f5e51.
+    
+    Result: integrate feature only into phase/2-output-and-input-extensions.
+    T-007/T-008, milestone 2.2 and Phase 2 remain incomplete; main is unchanged.
+    No stdin resumption or Phase 2/main integration is authorized by this boundary.

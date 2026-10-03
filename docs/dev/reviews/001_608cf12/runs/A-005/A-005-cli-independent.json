@@ -1,0 +1,107 @@
+[
+  {
+    "name": "empty",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/empty.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "mixed",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/mixed.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=3 words=4\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unicode-separator",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/unicode-separator.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "trailing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/trailing.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=2 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unterminated",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/unterminated.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-empty",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/bom-empty.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-retained",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--keep-bom",
+      "/tmp/textstats-assessor-yld5tw2_/bom-retained.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "double-bom",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "/tmp/textstats-assessor-yld5tw2_/double-bom.txt"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  }
+]

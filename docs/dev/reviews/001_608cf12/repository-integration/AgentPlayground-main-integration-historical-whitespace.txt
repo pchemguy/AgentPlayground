@@ -1,0 +1,814 @@
+docs/dev/reviews/001_608cf12/runs/A-002/A-002-final.md:45: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-002/A-002.md:85: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-005/A-005-T002-red.log:1: trailing whitespace.
++test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... 
+docs/dev/reviews/001_608cf12/runs/A-005/A-005-T002-red.log:8: trailing whitespace.
++test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... 
+docs/dev/reviews/001_608cf12/runs/A-005/A-005-T003-red.log:1: trailing whitespace.
++test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... 
+docs/dev/reviews/001_608cf12/runs/A-005/A-005-T003-red.log:7: trailing whitespace.
++test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:6: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:8: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:35: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:37: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:43: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:45: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:66: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-006/A-006-pending/staged.diff:68: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-RED.log:1: trailing whitespace.
++test_json_bom_policy_and_option_order (tests.integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) ... 
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-RED.log:8: trailing whitespace.
++test_json_named_file_boundaries (tests.integration.test_cli.JsonCliTests.test_json_named_file_boundaries) ... 
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-RED.log:16: trailing whitespace.
++test_json_read_and_decode_failure_channels (tests.integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) ... 
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-push.log:1: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-push.log:2: trailing whitespace.
++remote: Create a pull request for 'phase/2-output-and-input-extensions' on GitHub by visiting:        
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-push.log:3: trailing whitespace.
++remote:      https://github.com/pchemguy/AgentPlayground/pull/new/phase/2-output-and-input-extensions        
+docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-push.log:4: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:10: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:12: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:15: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:18: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:20: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:23: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:25: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:33: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:50: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:57: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:59: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:62: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:69: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-clarification-diff.txt:71: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-push.txt:3: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-push.txt:4: trailing whitespace.
++remote: Create a pull request for 'feature/002_8a53078-line-ranges' on GitHub by visiting:        
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-push.txt:5: trailing whitespace.
++remote:      https://github.com/pchemguy/AgentPlayground/pull/new/feature/002_8a53078-line-ranges        
+docs/dev/reviews/001_608cf12/runs/A-008/A-008-push.txt:6: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-commit.txt:25: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-commit.txt:27: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:16: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:19: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:21: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:24: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:26: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:28: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:30: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:33: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:36: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:55: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:57: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:65: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-009/A-009-diff-check.txt:90: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-T009-RED.log:1: trailing whitespace.
++test_selected_logical_segments_and_original_bom_policy (tests.unit.test_counting.SelectedCountingTests.test_selected_logical_segments_and_original_bom_policy) ... 
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-T010-RED.log:6: trailing whitespace.
++test_literal_selected_cases_in_both_formats_and_bom_modes (tests.integration.test_cli.LineRangeCliTests.test_literal_selected_cases_in_both_formats_and_bom_modes) ... 
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-merge-identity.log:9: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-merge-identity.log:14: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-merge-identity.log:18: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-010/A-010-merge-identity.log:21: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment-push.txt:1: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment-push.txt:2: trailing whitespace.
++remote: Create a pull request for 'revision/003_d0eeeff-remove-json' on GitHub by visiting:        
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment-push.txt:3: trailing whitespace.
++remote:      https://github.com/pchemguy/AgentPlayground/pull/new/revision/003_d0eeeff-remove-json        
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment-push.txt:4: trailing whitespace.
++remote: 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:6: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:8: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:27: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:29: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:39: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:53: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:55: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:58: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:61: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:63: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:75: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:82: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:84: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:87: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:89: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:91: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:93: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:99: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:102: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:104: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:107: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:110: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:113: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:115: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:122: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:125: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:127: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:130: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:132: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:138: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:140: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:143: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:146: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:148: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:150: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:152: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:155: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:157: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:159: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:161: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:164: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:167: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:173: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:176: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:185: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:188: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:190: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:193: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:211: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:249: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:256: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:257: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:262: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:266: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:368: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:369: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:372: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:412: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:431: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:492: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:499: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:500: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:504: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-amendment.diff:510: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt:3: trailing whitespace.
++test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt:33: trailing whitespace.
++AssertionError: 0 != 2 : 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt:43: trailing whitespace.
++AssertionError: 0 != 2 : 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt:53: trailing whitespace.
++AssertionError: 0 != 2 : 
+docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt:63: trailing whitespace.
++AssertionError: 0 != 2 : 
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-RED.txt:1: trailing whitespace.
++test_binary_whole_input_and_bom_modes (tests.integration.test_cli.StdinCliTests.test_binary_whole_input_and_bom_modes) ... 
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-RED.txt:11: trailing whitespace.
++test_full_decode_errors_before_and_after_selection (tests.integration.test_cli.StdinCliTests.test_full_decode_errors_before_and_after_selection) ... 
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-RED.txt:21: trailing whitespace.
++test_selected_binary_input_matches_literal_contract (tests.integration.test_cli.StdinCliTests.test_selected_binary_input_matches_literal_contract) ... 
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-commit.txt:8: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-T008-commit.txt:8: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-merge-commit.txt:10: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-013/A-013-merge.txt:45: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-T004-red-repaired-fixture.log:11: trailing whitespace.
++test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) ... 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-T004-red.log:14: trailing whitespace.
++test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) ... 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-T006-RED.log:1: trailing whitespace.
++test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) ... 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-T006-RED.log:9: trailing whitespace.
++test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) ... 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:7: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:20: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:22: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:23: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:28: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:45: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-014/A-014-pending/unstaged.diff:50: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-015/A-015-red.log:2: trailing whitespace.
++test_contract_examples (tests.test_counting.CountingTests.test_contract_examples) ... 
+docs/dev/reviews/001_608cf12/runs/A-015/A-015-red.log:11: trailing whitespace.
++test_each_terminator_and_final_segment (tests.test_counting.CountingTests.test_each_terminator_and_final_segment) ... 
+docs/dev/reviews/001_608cf12/runs/A-017/A-017-before-failure.log:5: trailing whitespace.
++test_counting_boundaries (test_counting.CountingTests.test_counting_boundaries) ... 
+docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge.md:265: trailing whitespace.
++remote: controlled target-publication rejection: retain verified merge and stop        
+docs/dev/reviews/001_608cf12/runs/A-018/A-018-push.txt:2: trailing whitespace.
++remote: controlled target-publication rejection: retain verified merge and stop        
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-check-commands.log:535: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-check-commands.log:537: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-check-commands.log:742: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:104: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:304: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:317: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:390: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:393: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:395: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:397: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:399: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:434: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:436: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:443: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:446: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:466: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:469: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1293: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1295: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1297: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1299: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1304: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1306: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1310: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1312: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1314: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1317: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1321: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1323: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1325: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1327: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1329: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1331: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1335: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1341: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1343: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1349: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1351: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1353: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1357: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log:1399: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README.md:1: leftover conflict marker
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README.md:7: leftover conflict marker
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README.md:75: leftover conflict marker
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:7: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:20: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:23: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:25: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:27: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:29: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:64: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:66: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:73: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:76: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:96: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/staged.patch:99: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:14: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:16: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:18: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:20: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:25: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:27: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:31: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:33: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:35: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:38: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:42: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:44: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:46: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:48: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:50: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:52: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:56: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:62: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:64: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:70: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:72: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:74: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/unstaged.patch:78: trailing whitespace.
+++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:7: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:88: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:90: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:97: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:100: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:102: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:104: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:106: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:141: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:143: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:150: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:153: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:173: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/staged.patch:176: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:6: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:17: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:21: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:35: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:38: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:40: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:42: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:45: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:47: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:49: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:51: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:54: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:62: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:65: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:67: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:70: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:72: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:74: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:76: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:79: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:81: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:88: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:91: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:96: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:98: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:114: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:117: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:119: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:121: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:123: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:131: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:133: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:146: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:148: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:154: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:156: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:159: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:161: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:164: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:166: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:172: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:174: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:177: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:180: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:182: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:209: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:219: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:222: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:235: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:238: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-diff.patch:241: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:6: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:17: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:21: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:35: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:38: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:40: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:42: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:45: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:47: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:49: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:51: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:54: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:62: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:65: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:67: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:70: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:72: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:74: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:76: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:79: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:81: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:88: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:91: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:96: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:98: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:114: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:117: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:119: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:121: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:123: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:131: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:133: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:146: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:148: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:154: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:156: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:159: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:161: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:164: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:166: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:172: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:174: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:177: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:180: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:182: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:209: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:219: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:222: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:235: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:238: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/unstaged.patch:241: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:51: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:53: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:225: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:230: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:232: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:234: trailing whitespace.
++    
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-git-outputs.txt:286: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:6: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:17: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:21: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:35: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:38: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:40: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:42: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:45: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:47: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:49: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:51: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:54: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:62: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:65: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:67: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:70: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:72: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:74: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:76: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:79: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:81: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:88: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:91: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:96: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:98: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:114: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:117: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:119: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:121: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:123: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:131: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:133: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:146: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:148: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:154: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:156: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:159: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:161: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:164: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:166: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:172: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:174: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:177: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:180: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:182: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:209: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:219: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:222: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:235: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:238: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-start-diff.patch:241: trailing whitespace.
++ 
+docs/dev/reviews/001_608cf12/runs/A-022/A-022-reassess.md:15: trailing whitespace.
++Later calls cannot alter prior counts or inherit their BOM policy. ... 
+docs/dev/reviews/001_608cf12/runs/A-026/A-026-final.md:20: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-026/A-026.md:63: new blank line at EOF.
+docs/dev/reviews/001_608cf12/runs/A-027/A-027-source-check.txt:24: new blank line at EOF.

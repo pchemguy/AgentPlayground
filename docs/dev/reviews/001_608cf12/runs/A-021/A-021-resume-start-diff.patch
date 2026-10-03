@@ -1,0 +1,245 @@
+diff --git a/docs/dev/DECOMPOSITION.md b/docs/dev/DECOMPOSITION.md
+index 09cee46..1c1b9a4 100644
+--- a/docs/dev/DECOMPOSITION.md
++++ b/docs/dev/DECOMPOSITION.md
+@@ -4,10 +4,10 @@ This refines [ARCHITECTURE](ARCHITECTURE.md). [SPEC](SPEC.md) owns normative pub
+ 
+ | Component | Responsibility and interface | Dependencies and verification seam |
+ | --- | --- | --- |
+-| Counting core | Immutable `TextStats` value; `count_text(text, *, strip_bom=True)`; newline and word rules. Does not read files or print. | Standard library only; direct string inputs and expected counts. |
+-| File adapter | `count_file(path, *, strip_bom=True)` acquires, decodes, delegates, and closes its owned handle. Does not translate failures into process statuses. | Counting core; temporary files, invalid bytes, missing paths, and an independent unreadable-file check. |
++| Counting core | Immutable `TextStats` value; `count_text(text, *, strip_bom=True)`; newline and word rules; private decoded-text selection applies global BOM handling once before selecting logical segments. Does not read files or print. | Standard library only; direct string inputs and literal whole-input/selected expected counts. |
++| File adapter | `count_file(path, *, strip_bom=True)` acquires and strictly decodes the complete input, delegates whole-input or private selected counting, and closes its owned handle. Does not translate failures into process statuses. | Counting core; temporary files, invalid bytes including outside selection, missing paths, and an independent unreadable-file check. |
+ | Public facade | Exports `TextStats`, `count_text`, `count_file`; keeps callers independent of internal module locations. Does not duplicate computation. | Core and file adapter; package-level import and documented calls. |
+-| CLI adapter | Parses one input, BOM and output options, obtains a result, formats stdout, translates read/decode failures. Owns stdin selection in milestone 2.2. | File adapter and core; subprocess checks with separate stdout/stderr/status assertions. |
++| CLI adapter | Parses one input, BOM, output and positive inclusive range options; validates usage before acquisition, obtains a result, formats stdout, translates read/decode failures. Owns stdin selection in milestone 2.2. | File adapter and core; subprocess checks with separate stdout/stderr/status assertions. |
+ | Module entry point | Delegates process invocation to the CLI and propagates its exit outcome. | CLI adapter; `python -m textstats` from an extracted source distribution. |
+ 
+ ## State and failure ownership
+@@ -15,3 +15,9 @@ This refines [ARCHITECTURE](ARCHITECTURE.md). [SPEC](SPEC.md) owns normative pub
+ Each call yields a new immutable value. No cached input or global counts exist. File handles belong to the file adapter, stdin belongs to the invoking process, and output streams belong to the CLI environment. API exceptions retain their standard-library types; only the CLI maps them to stderr/status. Failed reads or decoding never feed incomplete text to the core.
+ 
+ The core can be verified without filesystem mocks. Adapter checks should use real temporary files where possible; a narrowly simulated permission denial may supplement platform-sensitive unreadability tests. CLI checks assert user-visible behavior rather than internal function calls. Separate modules are justified by distinct IO and pure-logic failure boundaries; additional factories/interfaces are unnecessary.
++
++## Selected-counting collaboration
++
++The pure core owns selection over complete decoded text, using CR/LF/CRLF logical segments and retaining selected contents/terminators. Private collaboration shares canonical BOM/counting rules; it never strips a BOM again when an originally interior BOM becomes the first selected character. The public facade and Python signatures continue to count the whole input. SPEC owns exact endpoint, EOF-subset and counting behavior.
++
++The file adapter strictly decodes all bytes before selection, including bytes beyond END. The CLI owns endpoint syntax and validation and consumes the same immutable result in both formats. Planned stdin acquires complete strict UTF-8 input until EOF without closing process stdin and delegates to the same pure selection seam. Named-file selection verifies that source-independent seam; actual stdin composition, locale, lifetime and failures remain with T-007/T-008. No architectural block or physical layout change is required.
+diff --git a/docs/dev/FEATURE-PLAN.md b/docs/dev/FEATURE-PLAN.md
+index 80559ab..fd8ddeb 100644
+--- a/docs/dev/FEATURE-PLAN.md
++++ b/docs/dev/FEATURE-PLAN.md
+@@ -1,12 +1,12 @@
+ # Line-range counting delivery delta
+ 
+-Status: planned and unimplemented. Package: [002_8a53078](features/002_8a53078/README.md). Derived from [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and unchanged main [PLAN](PLAN.md)/[layout](layout.md). This proposes additional milestone 2.3 within existing Phase 2 — Output and input extensions; main owners are not amended in this preparation.
++Status: named-file milestone implementation verified; accepted delivery strategy is incorporated into main [PLAN](PLAN.md). Retained active for remaining feature task/evidence dependencies. Package: [002_8a53078](features/002_8a53078/README.md). Derived from [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and unchanged main [PLAN](PLAN.md)/[layout](layout.md). Main PLAN owns milestone 2.3 within existing Phase 2 — Output and input extensions.
+ 
+ ## Milestone 2.3 — Line-range counting
+ 
+ Preserve the usable published named-file/JSON checkpoint. First establish pure selected counting with the accepted BOM/newline boundaries and adapter reuse, then deliver the earliest useful changed path: `--lines START:END` on actual named files with both existing formats and usage/failure semantics. No infrastructure-only phase, new package, public API or source-layout allocation is needed.
+ 
+-Named-file delivery depends on completed main T-006; pure selection builds on T-001/T-002. Demonstrate a singleton, an inclusive middle/end range, an EOF-truncated range and an empty selection with exact outputs, plus malformed-range diagnostics. This provides practical feedback for the human to continue, amend, simplify or stop at an authorized checkpoint; preparation alone does not authorize that demonstration or implementation.
++Named-file delivery depends on completed main T-006; pure selection builds on T-001/T-002. Demonstrate a singleton, an inclusive middle/end range, an EOF-truncated range and an empty selection with exact outputs, plus malformed-range diagnostics. This provides practical feedback for the human to continue, amend, simplify or stop at an authorized checkpoint; historical T-010/T-011 evidence records that demonstration; no human feedback is inferred.
+ 
+ Finish the feature against the currently implemented named-file capability: verify both formats and BOM modes, complete-input decode/read failures, regression preservation, accurate user/module documentation and extracted-source named-file use. Planned stdin compatibility is an interface constraint on source-independent core selection; actual stdin implementation/composition/lifetime/locale verification stays with separately owned main T-007/T-008 and does not gate this feature exit. Those tasks remain unstarted. Later incorporation must reconcile their phase-exit implications without duplicating or marking main tasks complete from feature evidence.
+ 
+@@ -16,6 +16,6 @@ Exit: all named-file FEATURE-SPEC acceptance and unchanged baseline regressions
+ 
+ The feature targets the paused `phase/2-output-and-input-extensions` checkpoint. The complete feature delivery is named-file line-range counting with text/JSON output. T-007/T-008 are not prerequisites to feature completion; preserve the source-independent selection interface for their later stdin delivery. No main task resumption or unrelated future capability is required.
+ 
+-Preparation persists active FEATURE documents on the feature branch and stops. Later explicit scope must decide incorporation into PROJECT, DECOMPOSITION, SPEC, PLAN and both task owners; existing ARCHITECTURE/layout can be reused if unchanged. Keep active feature sources until incorporation/task/evidence disposition qualifies them for archival. Full feature integration requires coherent implementation, applicable incorporation, verified explicit two-parent merge into the phase target and target publication. It does not complete or merge Phase 2 into main, nor authorize continuation of main tasks.
++Selected incorporation reconciles PROJECT, DECOMPOSITION, SPEC, PLAN and both task owners on the existing feature branch; unchanged ARCHITECTURE/layout are reused. The bounded interruption transfers only T-009, retaining T-010/T-011 ownership in FEATURE-TASKS. Keep active feature sources until incorporation/task/evidence disposition qualifies them for archival. Full feature integration requires coherent implementation, applicable incorporation, verified explicit two-parent merge into the phase target and target publication. It does not complete or merge Phase 2 into main, nor authorize continuation of main tasks.
+ 
+ The physical map is reused: pure selection in `textstats/counting.py`, private named-file collaboration in `textstats/files.py`, CLI argument/source collaboration in `textstats/cli.py`, tests under existing unit/integration owners, user instructions in README. No new physical ownership decision blocks task derivation. Principal risk is accidental BOM reapplication or permissive Unicode splitting for line positions; core-level independent cases protect these contracts. No unresolved routine design or delivery choice remains.
+diff --git a/docs/dev/FEATURE-SPEC.md b/docs/dev/FEATURE-SPEC.md
+index d0c9e0b..9761190 100644
+--- a/docs/dev/FEATURE-SPEC.md
++++ b/docs/dev/FEATURE-SPEC.md
+@@ -1,10 +1,10 @@
+ # Line-range counting specification delta
+ 
+-Status: proposed and unimplemented. Package: [002_8a53078](features/002_8a53078/README.md). This additive delta revises the main [SPEC](SPEC.md) CLI invocation and its explicit exclusion of line selection; it also adds a selected-counting contract. The [PROJECT](PROJECT.md) line-selection non-goal remains the accepted main baseline until later explicit incorporation. All unchanged counting, UTF-8, resource, output and quality contracts stay owned by main SPEC. [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) owns affected collaboration.
++Status: named-file implementation verified; accepted behavior is already incorporated into main [SPEC](SPEC.md). Retained active as the referenced acceptance/evidence source for remaining feature owners. Package: [002_8a53078](features/002_8a53078/README.md). This additive delta revises the main [SPEC](SPEC.md) CLI invocation and its explicit exclusion of line selection; it also adds a selected-counting contract. The [PROJECT](PROJECT.md) includes accepted CLI line selection. All unchanged counting, UTF-8, resource, output and quality contracts stay owned by main SPEC. [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) owns affected collaboration.
+ 
+ ## CLI range contract
+ 
+-Proposed invocation: `python -m textstats [--keep-bom] [--json] [--lines START:END] INPUT`. One optional range may appear in normal argparse option order; `--lines=START:END` is also supported. Both endpoints consist of one or more ASCII decimal digits representing positive integers, with START <= END. Leading zeros are accepted with decimal meaning; no arbitrary upper endpoint limit is imposed. Signs, whitespace, Unicode digits, empty/open endpoints, extra colons, zero and reversed ranges are unsupported. Repeating `--lines` is a usage error rather than silently overriding a previous value.
++Accepted invocation: `python -m textstats [--keep-bom] [--json] [--lines START:END] INPUT`. One optional range may appear in normal argparse option order; `--lines=START:END` is also supported. Both endpoints consist of one or more ASCII decimal digits representing positive integers, with START <= END. Leading zeros are accepted with decimal meaning; no arbitrary upper endpoint limit is imposed. Signs, whitespace, Unicode digits, empty/open endpoints, extra colons, zero and reversed ranges are unsupported. Repeating `--lines` is a usage error rather than silently overriding a previous value.
+ 
+ Malformed/missing range values and repetitions return status 2 with useful nonempty stderr, no success stdout and no traceback. Validate usage before acquiring the input, so an invalid range is a usage failure even with a nonexistent input. Help documents inclusive one-based endpoints and available-subset behavior. Existing help status 0 and `--` semantics remain.
+ 
+@@ -22,7 +22,7 @@ An interior U+FEFF is never removed because selection exposes it at the beginnin
+ 
+ Default selected success remains exactly `lines=<N> words=<N>\n`; JSON remains one object with exactly `lines` and `words` integer fields plus newline. Both have status 0 and empty stderr. Add no selection metadata or extra output fields. Options compose in either order with JSON and BOM policy.
+ 
+-Once main milestone 2.2/T-007 delivers `-`, selection applies identically to complete strictly decoded stdin, independent of locale, with EOF and stream-lifetime rules from main SPEC. This preparation does not implement or resume stdin; at the observed checkpoint `-` remains a named file. Invalid UTF-8/read failures identify the applicable source and keep status 1.
++Once main milestone 2.2/T-007 delivers `-`, selection applies identically to complete strictly decoded stdin, independent of locale, with EOF and stream-lifetime rules from main SPEC. This named-file checkpoint does not implement or resume stdin; at the observed checkpoint `-` remains a named file. Invalid UTF-8/read failures identify the applicable source and keep status 1.
+ 
+ ## Objective acceptance
+ 
+diff --git a/docs/dev/FEATURE-TASKS.md b/docs/dev/FEATURE-TASKS.md
+index 56a1a57..71552b6 100644
+--- a/docs/dev/FEATURE-TASKS.md
++++ b/docs/dev/FEATURE-TASKS.md
+@@ -1,17 +1,15 @@
+ # Line-range counting executable delta
+ 
+-Status: implementation active; checked entries record verified named-file work. Authoritative active inputs: [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE-PLAN](FEATURE-PLAN.md), unchanged [layout](layout.md) and main [TASKS](TASKS.md). Package: [002_8a53078](features/002_8a53078/README.md). This list owns only the scoped delta; it is not a second owner of existing tasks.
++Status: named-file implementation verified; bounded incorporation is active. Checked entries record historical verified named-file work. Authoritative active inputs: [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE-PLAN](FEATURE-PLAN.md), unchanged [layout](layout.md) and main [TASKS](TASKS.md). Package: [002_8a53078](features/002_8a53078/README.md). This list owns only the scoped delta; it is not a second owner of existing tasks.
+ 
+-Affected main requirements: CLI invocation, selected-counting acceptance and the exclusion of line selection; unchanged output/BOM/UTF-8/failure contracts remain. Completed T-001/T-002/T-006 are dependencies whose behavior must remain compatible. T-007/T-008 are still unstarted in main TASKS. T-009–T-011 are newly reserved, unique project-wide IDs. Existing maintained hosted tracking covers main TASKS; feature issues are projected by stable IDs with Phase 2 / milestone 2.3 parentage; closures follow verified task commits.
++Affected main requirements: CLI invocation, selected-counting acceptance and the exclusion of line selection; unchanged output/BOM/UTF-8/failure contracts remain. Completed T-001/T-002/T-006 are dependencies whose behavior must remain compatible. T-007/T-008 are still unstarted in main TASKS. T-009–T-011 are stable unique project-wide IDs. Historical hosted associations retain Phase 2 / milestone 2.3 parentage; hosting is disabled in this isolated local-origin checkpoint. Issue references are provenance only.
++
++T-009 ownership and its complete verified entry/evidence now belong solely to main [TASKS](TASKS.md). Its independently executable source row is retired; remaining T-010 depends on that main-owned T-009. T-010/T-011 remain the sole executable entries here until a later authorized transfer. All active feature sources remain needed for those entries and their historical evidence.
+ 
+ ## Phase 2 — Output and input extensions
+ 
+ - [x] Phase 2 — Output and input extensions
+     - [x] Milestone 2.3 — Line-range counting
+-        - [x] T-009 — Add pure selected-counting and file-adapter collaboration
+-            Scope: counting.py and files.py private collaboration, tests/unit/test_counting.py, test_files.py and API regression checks with affected docstrings. Depends on: T-001, T-002.
+-            Outcome: one core owner selects accepted logical segments after exactly-once global BOM handling; real named files strictly decode completely and close owned handles; unchanged public API remains available. Evidence: FEATURE-SPEC literal expectations for inclusive endpoints, EOF truncation/empty selection, blank/mixed/trailing lines, Unicode separators and original-interior BOM; malformed bytes outside the selection still raise and handle lifecycle/public no-range calls pass. No CLI formatting or stdin implementation belongs here.
+-            Verified T-009 (Python 3.12.14): selected core/file RED collected 2 tests with 19 errors at absent private operations (modules collected successfully). GREEN core/file/API checks passed 17 tests; full discovery passed 33 tests. Literal expectations cover inclusive/EOF/empty/blank/mixed/Unicode/interior and global BOM boundaries; real complete-file invalid UTF-8 outside selection raises and closes handles; controlled acquired-handle read denial closes; whole-input public API regressions pass. Reviewed private module documentation and source-independent decoded-text seam. Actual stdin remains unimplemented. Hosted association: T-009 issue #9.
+         - [x] T-010 — Deliver named-file line-range CLI counting
+             Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-006, T-009.
+             Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; default/JSON/BOM options compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and parsed JSON, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather FEATURE-PLAN earliest changed-path demonstration. Continue only within a later authorized feature task range; do not start main T-007/T-008.
+diff --git a/docs/dev/FEATURE_DECOMPOSITION.md b/docs/dev/FEATURE_DECOMPOSITION.md
+index 375aa6f..44e6911 100644
+--- a/docs/dev/FEATURE_DECOMPOSITION.md
++++ b/docs/dev/FEATURE_DECOMPOSITION.md
+@@ -1,6 +1,6 @@
+ # Line-range counting design delta
+ 
+-Status: proposed and unimplemented. Active package: [002_8a53078](features/002_8a53078/README.md). Unchanged major blocks and dependency direction remain owned by [ARCHITECTURE](ARCHITECTURE.md); no architectural overlay or new physical layer is needed. This delta revises the affected logical responsibilities in [DECOMPOSITION](DECOMPOSITION.md), subject to later explicit incorporation.
++Status: named-file implementation verified; accepted collaboration is incorporated into main [DECOMPOSITION](DECOMPOSITION.md). Retained active to support remaining feature task/evidence owners. Active package: [002_8a53078](features/002_8a53078/README.md). Unchanged major blocks and dependency direction remain owned by [ARCHITECTURE](ARCHITECTURE.md); no architectural overlay or new physical layer is needed. This delta revises the affected logical responsibilities in [DECOMPOSITION](DECOMPOSITION.md), with main DECOMPOSITION now owning the complete intended collaboration.
+ 
+ ## Affected components
+ 
+@@ -14,4 +14,4 @@ The CLI owns endpoint syntax/validation, source selection and success/failure pr
+ 
+ Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. The feature verifies source-independent selection through decoded strings and named files. Actual stdin integration checks remain owned by main T-007/T-008 after that source exists and are not feature-completion prerequisites. Existing public import/API tests protect the unchanged facade.
+ 
+-The existing [layout](layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required during preparation. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.
++The existing [layout](layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required for this feature. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.
+diff --git a/docs/dev/PLAN.md b/docs/dev/PLAN.md
+index 70062e5..3041fbf 100644
+--- a/docs/dev/PLAN.md
++++ b/docs/dev/PLAN.md
+@@ -24,7 +24,17 @@ Add `--json` while preserving default output and all baseline failures. Depends
+ 
+ ### Milestone 2.2 — UTF-8 stdin
+ 
+-Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 so both formats compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON composition, and retained named-file behavior are verified. Full nonempty discovery, documentation and extracted-source module smoke checks complete the phase. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
++Add `-` as stdin with strict UTF-8 and process-owned stream lifetime. Depends on 2.1 and the named-file range capability in 2.3 so both formats, BOM modes and whole-input/selected counting compose with both sources. Exit: piped text, empty input, BOM modes, mixed newlines, malformed bytes, stdin read failures, JSON and range composition, locale-independent strict decoding, failures outside selected endpoints, and retained named-file behavior are verified. Full nonempty discovery, documentation and extracted-source whole-input/selected stdin module checks complete the phase only after milestone 2.3 also meets its named-file exits. Integrate by an explicit two-parent merge only at the full phase exit and verify/push main.
++
++### Milestone 2.3 — Line-range counting
++
++Deliver optional `--lines START:END` on named files in both text and JSON formats, preserving BOM policy, complete-input strict UTF-8 decoding, baseline failures and unchanged public Python APIs. Pure selection depends on T-001/T-002; named-file CLI delivery depends on T-006 and the selection core. This milestone can finish at the paused JSON checkpoint before 2.2: numeric labels do not require stdin first.
++
++First establish pure decoded-text selection and file-adapter collaboration, then demonstrate the earliest useful changed path on real named files: singleton, inclusive middle/end, EOF-truncated and empty selection with exact outputs, plus malformed-range diagnostics. Record the demonstration and limitations for the human continuation/amendment/stop decision without inferring feedback.
++
++Exit: SPEC named-file selection acceptance in both formats and BOM modes, syntax and usage precedence, complete-input decode/read failures and owned-handle cleanup, baseline/public API regressions, meaningful full unittest discovery, accurate documentation and extracted-source selected examples. The decoded-text selection seam must remain compatible with future stdin; actual stdin integration is owned by milestone 2.2/T-007/T-008 and does not gate this named-file milestone. Phase 2 remains incomplete until both milestones' exits are met.
++
++The feature campaign targets the paused phase branch. Coherent incorporation, source/task evidence disposition and verified explicit two-parent feature integration update that phase's accepted inputs; they do not complete Phase 2 or merge it into main. Retain active feature sources while remaining owners depend on them.
+ 
+ ## Verification and decision policy
+ 
+diff --git a/docs/dev/PROJECT.md b/docs/dev/PROJECT.md
+index 9ab1aa5..6ff4e55 100644
+--- a/docs/dev/PROJECT.md
++++ b/docs/dev/PROJECT.md
+@@ -4,11 +4,11 @@ TextStats helps Python users and shell users count lines and whitespace-separate
+ 
+ ## Scope
+ 
+-The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, and stdin selected by `-`. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
++The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, optional one-based inclusive CLI line-range selection, and stdin selected by `-`. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
+ 
+ ## Constraints and non-goals
+ 
+-Python 3.11 or newer, standard-library runtime and unittest, no external dependencies or services. Existing vendored tools and repository infrastructure are preserved. Future line selection, recursive traversal, multiple-input aggregation, alternate encodings, wheel publication, and performance guarantees for arbitrarily large inputs are outside scope. No product functionality is implemented by this preparation.
++Python 3.11 or newer, standard-library runtime and unittest, no external dependencies or services. Existing vendored tools and repository infrastructure are preserved. Public Python range parameters, multiple ranges, negative/from-end positions, recursive traversal, multiple-input aggregation, alternate encodings, wheel publication, and performance guarantees for arbitrarily large inputs are outside scope. The brief describes the complete intended system; delivery status and verified evidence belong to TASKS.
+ 
+ ## Terms and navigation
+ 
+diff --git a/docs/dev/TASKS.md b/docs/dev/TASKS.md
+index 19dca3c..244e43a 100644
+--- a/docs/dev/TASKS.md
++++ b/docs/dev/TASKS.md
+@@ -2,9 +2,9 @@
+ 
+ Derived from [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [PLAN](PLAN.md), and [layout](layout.md). Completion below records verified task work; unchecked tasks remain planned. IDs are project-wide and stable.
+ 
+-Maintained hosted tracking is active for all tasks in this list at `pchemguy/AgentPlayground` on GitHub. Use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
++Historical hosted tracking associated tasks in this list with `pchemguy/AgentPlayground` on GitHub. Hosting is disabled in this isolated local-origin checkpoint; issue associations below are provenance only. When hosting is separately authorized, use sdd-forge to reconcile phase labels, milestones, and task issues by stable IDs, preserving parentage and unrelated hosted fields. This list remains authoritative for scope and evidence-backed completion; hosted synchronization does not establish implementation or verification.
+ 
+-Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integration branch `main`, remote `origin`. Preparation stops here. Future bounded implementation selects from this list through sdd-implement; the first selectable task is T-001. Phase branch names and full-phase integration gates are in PLAN. Never infer completion from this list alone.
++Task execution uses the phase branches and complete-phase integration gates in PLAN, with established integration branch `main` and remote `origin`. Current feature incorporation uses campaign `002_8a53078` on `feature/002_8a53078-line-ranges`, targeting paused `phase/2-output-and-input-extensions` at `8a53078d0f734165075691dae0dbfa224a63446f`. No execution of remaining T-007/T-008 or phase completion is authorized at this document boundary. Never infer completion from this list alone.
+ 
+ ## Phase 1 — Named-file baseline
+ 
+@@ -46,8 +46,15 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
+             Verified T-006 / milestone 2.1 (Python 3.12.14): `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli.JsonCliTests -v` observed RED with 5 tests, 15 failures and one argparse SystemExit scenario error because `--json` was unsupported. After the parser/formatter change, `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli -v` passed all 15 CLI tests; `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` passed all 31 tests without skips/warnings. Real named-file subprocesses and stdlib parsing verify one object/newline, exactly lines/words integer keys, fixed empty/whitespace/Unicode/mixed/trailing-newline counts, BOM modes/option order, unchanged files, dash-prefixed paths, default text regressions and read/decode/usage channels. Permission denial is simulated narrowly at the CLI adapter under this privileged runner; real missing/directory/malformed-byte fixtures supplement it. Affected module/API docstrings, README links and heading spacing reviewed. README quick-start/JSON examples executed in a temporary directory: text `lines=1 words=2`, JSON (1,2), BOM stripped (2,2), BOM kept (2,3), all status 0 with empty stderr. This demonstration meets PLAN 2.1 and informs the next human continuation/amendment/stop decision; no further decision or usability feedback is inferred. Pause on the published phase branch before milestone 2.2; stdin still treats `-` as a filename.
+     - [ ] Milestone 2.2 — UTF-8 stdin
+         - [ ] T-007 — Support stdin through the dash input
+-            Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006.
+-            Outcome: `-` reads strict UTF-8 stdin until EOF without closing it; both output formats/BOM modes work and read/decode failures identify stdin. Evidence: binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, appropriate stream-lifetime/read-failure checks and named-file regressions. Counting remains owned by the core.
++            Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006 and named-file selection T-010 (currently owned by [FEATURE-TASKS](FEATURE-TASKS.md)).
++            Outcome: `-` reads strict UTF-8 stdin until EOF without closing it; both output formats/BOM modes and whole-input/selected counting work and read/decode failures identify stdin. Evidence: binary subprocess input covering empty/BOM/mixed terminators/invalid bytes, locale independence, selected BOM/EOF/mixed-newline cases, invalid UTF-8 outside the selected range, appropriate stream-lifetime/read-failure checks and named-file regressions. Counting remains owned by the core.
+         - [ ] T-008 — Verify complete stdin delivery and phase exits
+-            Scope: README, distribution/CLI integration checks and phase 2 exit evidence attached to this task. Depends on: T-007.
+-            Outcome: accurate pipe/API/JSON examples and complete intended acceptance with packaged module invocation. Evidence: both formats and sources compose; named-file errors/defaults remain correct; extracted-source stdin smoke, documentation checks and full nonempty unittest discovery meet PLAN 2.2/phase 2 exits. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.
++            Scope: README, distribution/CLI integration checks and phase 2 exit evidence attached to this task. Depends on: T-007 and verified named-file milestone 2.3/T-011 (currently owned by [FEATURE-TASKS](FEATURE-TASKS.md)).
++            Outcome: accurate pipe/API/JSON examples and complete intended acceptance with packaged module invocation. Evidence: both formats, BOM policies, whole-input/selected counting and sources compose; named-file errors/defaults remain correct; extracted-source whole-input/selected stdin smoke, documentation checks and full nonempty unittest discovery meet PLAN 2.2/phase 2 exits. Explicitly integrate only the complete verified phase, verify merged-state regressions and push main; then stop at the authorized boundary.
++
++    - [x] Milestone 2.3 — Line-range counting
++        Named-file exits are historically verified by T-009–T-011; this checkbox measures that named-file milestone only. Phase 2 remains unchecked because T-007/T-008 are unstarted. Task ownership is split during bounded incorporation: remaining T-010/T-011 entries and evidence stay in [FEATURE-TASKS](FEATURE-TASKS.md), which is still active. No feature integration or current phase exit is established by this document edit.
++        - [x] T-009 — Add pure selected-counting and file-adapter collaboration
++            Scope: counting.py and files.py private collaboration, tests/unit/test_counting.py, test_files.py and API regression checks with affected docstrings. Depends on: T-001, T-002.
++            Outcome: one core owner selects accepted logical segments after exactly-once global BOM handling; real named files strictly decode completely and close owned handles; unchanged public API remains available. Evidence: FEATURE-SPEC literal expectations for inclusive endpoints, EOF truncation/empty selection, blank/mixed/trailing lines, Unicode separators and original-interior BOM; malformed bytes outside the selection still raise and handle lifecycle/public no-range calls pass. No CLI formatting or stdin implementation belongs here.
++            Verified T-009 (Python 3.12.14): selected core/file RED collected 2 tests with 19 errors at absent private operations (modules collected successfully). GREEN core/file/API checks passed 17 tests; full discovery passed 33 tests. Literal expectations cover inclusive/EOF/empty/blank/mixed/Unicode/interior and global BOM boundaries; real complete-file invalid UTF-8 outside selection raises and closes handles; controlled acquired-handle read denial closes; whole-input public API regressions pass. Reviewed private module documentation and source-independent decoded-text seam. Actual stdin remains unimplemented. Hosted association: T-009 issue #9.
+diff --git a/docs/dev/features/002_8a53078/README.md b/docs/dev/features/002_8a53078/README.md
+index c9ae92d..0fd039c 100644
+--- a/docs/dev/features/002_8a53078/README.md
++++ b/docs/dev/features/002_8a53078/README.md
+@@ -1,20 +1,25 @@
+ # Line-range counting feature package
+ 
+-Workflow: feature preparation only, campaign `002_8a53078`.
+-Full baseline: `8a53078d0f734165075691dae0dbfa224a63446f` (published T-006 / JSON milestone).
+-Working branch: `feature/002_8a53078-line-ranges`; remote destination: `origin/feature/002_8a53078-line-ranges` at `pchemguy/AgentPlayground`.
+-Target: paused `phase/2-output-and-input-extensions`, baseline `8a53078d0f734165075691dae0dbfa224a63446f`; ultimate established integration branch is `main`, currently `29c27580db73cf128c42ddb9535e6d8f5c38ed39`. No merge is authorized by this preparation.
++Workflow: partial accepted feature incorporation, campaign `002_8a53078`.
++Full baseline: `8a53078d0f734165075691dae0dbfa224a63446f` (historically published T-006 / JSON milestone).
++Working branch: `feature/002_8a53078-line-ranges`; established destination: `origin/feature/002_8a53078-line-ranges`.
++Target: paused `phase/2-output-and-input-extensions` at the full baseline above; ultimate integration branch `main` at `29c27580db73cf128c42ddb9535e6d8f5c38ed39`.
++Local origin is `/workspace/scratch/sdd008-A-021-feature/remote.git`; hosting is disabled and historical issue associations are provenance only.
+ 
+-## Active sources
++## Main owners and active sources
+ 
+-- [Design delta](../../FEATURE_DECOMPOSITION.md): affected component collaboration; main architecture and layout reused.
+-- [Behavior delta](../../FEATURE-SPEC.md): positive inclusive --lines endpoints, EOF subset, formats/BOM/UTF-8 and planned stdin compatibility.
+-- [Delivery delta](../../FEATURE-PLAN.md): proposed Phase 2 milestone 2.3 and exits.
+-- [Executable delta](../../FEATURE-TASKS.md): reserved unchecked T-009–T-011; sole active feature task owner.
+-- [Main tasks](../../TASKS.md): T-006 complete; T-007/T-008 remain unstarted, independently owned.
++| Concern | Main owner | Retained active source and disposition |
++| --- | --- | --- |
++| Purpose/scope | [PROJECT](../../PROJECT.md) | CLI ranges incorporated; public API remains whole-input. |
++| Collaboration | [DECOMPOSITION](../../DECOMPOSITION.md) | [FEATURE_DECOMPOSITION](../../FEATURE_DECOMPOSITION.md) retained for remaining task/evidence references. |
++| Behavior | [SPEC](../../SPEC.md) | [FEATURE-SPEC](../../FEATURE-SPEC.md) already incorporated; retained for remaining acceptance/evidence references. |
++| Delivery | [PLAN](../../PLAN.md) | [FEATURE-PLAN](../../FEATURE-PLAN.md) incorporated; retained for remaining task and milestone evidence. |
++| Tasks | [TASKS](../../TASKS.md) and [FEATURE-TASKS](../../FEATURE-TASKS.md) | Bounded transfer selects exactly T-009 into main; T-010/T-011 remain feature-owned. Consult owning entries for verified evidence. |
+ 
+-## Scope and disposition
++[ARCHITECTURE](../../ARCHITECTURE.md) and [layout](../../layout.md) are reused unchanged. Main T-007/T-008 remain unstarted and own actual stdin implementation/composition and Phase 2 exits. Named-file text/JSON range work has historical verification in T-009–T-011; it does not complete stdin or Phase 2.
+ 
+-All proposed functionality is unimplemented. Prepare and persist documents only; stop before feature implementation, incorporation into main owners, any feature/phase merge, or resumption of main tasks. Existing PROJECT/SPEC line-selection exclusions remain the accepted baseline pending explicit incorporation. No unrelated active feature package was present; unrelated bytecode caches are preserved. Pinned vendor is unchanged.
++## Incomplete incorporation boundary
+ 
+-No feature sources are archived: these root files remain active proposed deltas. Later explicit integration must address PROJECT, DECOMPOSITION, SPEC, PLAN and both task lists as applicable, retain historical completion evidence, reconcile phase-exit implications for T-008 while keeping actual stdin delivery/integration checks with separately owned T-007/T-008. This feature exits on complete named-file text/JSON delivery; planned stdin compatibility is an interface constraint, not a completion gate. Existing architecture/layout require no delta unless implementation exposes a material change. Hosted feature associations are pending; no issue creation or closure is claimed.
++Stop immediately after transferring T-009 and retiring its independently executable source row. T-010/T-011 transfer, final task-list reconciliation, source archival, resulting links and final verification/integration remain unfinished. No source is archived at this boundary: active feature owners still depend on the root sources above. Later archival may retain eligible basenames under this directory only after actual dependency/evidence disposition and authorized remaining link updates; archived task snapshots must not become executable owners.
++
++No commit, push or merge is authorized for this intentionally incomplete boundary. Retain dirty edits and the existing index intent on the working branch. No target publication, hosted mutations, stdin execution or main-phase completion is claimed.

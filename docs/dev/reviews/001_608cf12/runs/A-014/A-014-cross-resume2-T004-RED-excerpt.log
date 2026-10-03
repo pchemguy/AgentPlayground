@@ -1,0 +1,14 @@
+Observed-output excerpt copied from the original resume run, not a rerun or reconstructed native transcript.
+Command: python -m unittest tests.unit.test_files tests.integration.test_cli -v
+State: preserved pending T-004 tests at 83eab02, before CLI production change.
+
+ERROR: test_permission_denial_at_real_file_open_boundary (tests.integration.test_cli.BaselineFailureCliTests.test_permission_denial_at_real_file_open_boundary)
+PermissionError: [Errno 13] Permission denied: '/tmp/tmp_fx3fi1d/denied.txt'
+
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpxpbjxixc/missing.txt'))
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpxpbjxixc/invalid.txt'))
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpxpbjxixc'))
+
+Ran 17 tests in 0.960s
+
+FAILED (failures=3, errors=1)

@@ -1,0 +1,33 @@
+{
+  "assessor_correction": "Initial local-main-ref check exited128 because isolated clone has only local phase branch. Used observed origin/main and actual bare remote main instead; acceptance oracle unchanged and no consumer failure inferred.",
+  "git rev-parse HEAD": {
+    "stdout": "8a204f97e930b61c95c646f5e897cf1fed742dd9\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "git rev-parse refs/remotes/origin/main": {
+    "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "git status --short": {
+    "stdout": "?? tests/__pycache__/\n?? textstats/__pycache__/\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "git log -1 --format=%H %P %s": {
+    "stdout": "8a204f97e930b61c95c646f5e897cf1fed742dd9 57234b333e533d6bd606d3c5dda7275cf74ddacf Retain lone-CR regression coverage and reverify counting (T-001)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "git ls-remote origin refs/heads/phase/1-named-file-baseline refs/heads/main": {
+    "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n8a204f97e930b61c95c646f5e897cf1fed742dd9\trefs/heads/phase/1-named-file-baseline\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "literal_accepted_result": {
+    "stdout": "Literal lone-CR expected2 lines/2 words passed\n",
+    "stderr": "",
+    "exit": 0
+  }
+}

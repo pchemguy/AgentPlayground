@@ -1,0 +1,34 @@
+{
+  "source": {
+    "head": "7e7f51009fda628edc94200b756d316886935213",
+    "branch": "feature/architecture-revision",
+    "tracked_status": "",
+    "pending_merge": false
+  },
+  "live": {
+    "head": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+    "branch": "main",
+    "tracked_status": "",
+    "pending_merge": false
+  },
+  "evidence": {
+    "head": "8bf3ab7d0497134b1fbc61645549be302ff49617",
+    "branch": "evaluation/008-runtime-acceptance",
+    "tracked_status": "",
+    "pending_merge": false
+  },
+  "A021": {
+    "head": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69",
+    "branch": "phase/2-output-and-input-extensions",
+    "tracked_status": "",
+    "pending_merge": false
+  },
+  "case_counts": {
+    "Passed": 27
+  },
+  "source_explicit_merge": "606da0d81eafb39a67aaeadbe0803b2bc84fb526",
+  "source_revision_retained": "29060f7498834cd1508e69348317e96b0e208f0c",
+  "all_consumers_stopped": true,
+  "automatic_continuation": false,
+  "limits": "Explicit-source mode only; installed-client discovery/routing/activation/display and Python3.11 execution Not run; available journals are not native complete transcripts. Controlled failure variants and TST001\u2013004 disclosures retained."
+}

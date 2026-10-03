@@ -1,0 +1,14 @@
+{
+  "id": "A-018",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-018-merge/repo",
+  "assessment": "Both task and merge publication failures/recovery verified in local forks. Prior task7c29721 retained/published unchanged. New consumer verified26 phase/prospective tests, retained merge7f845c7 after actual controlled target-hook rejection; independent26 tests/12 literal CLI cases, old remote/no Phase2/intact policy checked and failure recordcbcd810 published. Owner removed only synthetic hook. Fresh recovery published exact same merge7f845c7, rechecked26 tests and stopped. Independent post-publication remote equality/identical HEAD+parents+product hashes/clean task state/no duplicate boundary/no Phase2 confirmed. Complete recovery journals, outputs, owner intervention and verified history bundles retained. Local injected failure, not live GitHub rejection.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-018-merge-recovery-final.md",
+    "/workspace/scratch/acceptance-out-008/A-018-merge-recovery.md",
+    "/workspace/scratch/acceptance-out-008/A-018-merge-recovery-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-018-merge-recovered-boundaries.json",
+    "/workspace/scratch/acceptance-out-008/A-018-merge-recovered-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-018-merge-restoration.json"
+  ]
+}

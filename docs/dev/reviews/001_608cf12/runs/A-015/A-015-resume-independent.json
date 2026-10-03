@@ -1,0 +1,35 @@
+{
+  "unchanged_implementation_and_tests": true,
+  "sha256": {
+    "tests/__init__.py": "783a4411dc9ac243a6ae24c4bba09af1cf95b076edc0f9f1ef9efbfe38e70aab",
+    "tests/test_api.py": "9d24c46b6fc153ced1798b5afdbb94884018ef7eb951c1478b7a75a15ffe76eb",
+    "tests/test_counting.py": "2195e6c01982c842a2e446ded5d1703f4c6fc0c62bce5e7e2952648619276415",
+    "textstats/__init__.py": "e63bd64ff9b6101e2759468b4eba7b0989376830d9517f01c01961032fe07ed5",
+    "textstats/counting.py": "5b3dcf958f369d2576569216e0038e8f61079628a1e1c542c62ce9790c07c491"
+  },
+  "git rev-parse HEAD": {
+    "exit": 0,
+    "stdout": "35df4a01c0681ab7b649c288e4ba52f37acd00ad\n",
+    "stderr": ""
+  },
+  "git show --format=fuller --stat HEAD": {
+    "exit": 0,
+    "stdout": "commit 35df4a01c0681ab7b649c288e4ba52f37acd00ad\nAuthor:     Fixture <fixture@example.invalid>\nAuthorDate: Fri Oct 2 10:52:12 2026 -0500\nCommit:     Fixture <fixture@example.invalid>\nCommitDate: Fri Oct 2 10:52:12 2026 -0500\n\n    Implement public counting core (T-001)\n    \n    Provide immutable TextStats and public count_text with exact leading-BOM, CR/LF/CRLF line and Unicode whitespace word semantics. Preserve completed interrupted implementation and its historical evidence.\n    \n    Verification: focused unittest and full discovery each passed 7 tests under Python 3.12.14 with bytecode writing disabled; staged diff check passed. Phase 1 and milestone 1.1 remain incomplete. Stop at the bounded T-001 checkpoint.\n\n docs/dev/TASKS.md      |  7 +++++--\n tests/__init__.py      |  1 +\n tests/test_api.py      | 25 +++++++++++++++++++++++++\n tests/test_counting.py | 47 +++++++++++++++++++++++++++++++++++++++++++++++\n textstats/__init__.py  |  5 +++++\n textstats/counting.py  | 41 +++++++++++++++++++++++++++++++++++++++++\n 6 files changed, 124 insertions(+), 2 deletions(-)\n",
+    "stderr": ""
+  },
+  "git status --short": {
+    "exit": 0,
+    "stdout": "?? tests/__pycache__/\n?? textstats/__pycache__/\n",
+    "stderr": ""
+  },
+  "git rev-parse main": {
+    "exit": 0,
+    "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\n",
+    "stderr": ""
+  },
+  "git ls-remote origin refs/heads/phase/1-named-file-baseline": {
+    "exit": 0,
+    "stdout": "35df4a01c0681ab7b649c288e4ba52f37acd00ad\trefs/heads/phase/1-named-file-baseline\n",
+    "stderr": ""
+  }
+}

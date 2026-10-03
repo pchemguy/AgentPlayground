@@ -6,4 +6,4 @@ Use Python 3.11+ and standard-library unittest. Run python -m unittest discover 
 
 Use existing Git authentication first. If access fails, sdd-manage may recover from the ignored root gh.tkn through a protected mechanism. Never output or track tokens. Hosted task tracking is authorized when requested by the case.
 
-Maintain brief action journals identifying significant commands/results, changes, commits and actual scope decisions in the requested run output; do not invent native transcripts. Do not read the evaluation branch or assessor oracle files. Stop at the user-requested boundary.
+Maintain brief action journals identifying significant commands/results, changes, commits and actual scope decisions in the requested run output; do not invent native transcripts. During consumer acceptance runs, do not inspect retained evaluator records or oracle files under docs/dev/reviews/. Assessors and explicitly authorized repository maintenance may inspect them. Stop at the user-requested boundary.

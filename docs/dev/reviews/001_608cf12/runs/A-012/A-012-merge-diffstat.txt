@@ -1,0 +1,13 @@
+ README.md                                       |  24 +----
+ docs/dev/ARCHITECTURE.md                        |   4 +-
+ docs/dev/DECOMPOSITION.md                       |   2 +-
+ docs/dev/PLAN.md                                |  14 +--
+ docs/dev/PROJECT.md                             |   4 +-
+ docs/dev/SPEC.md                                |  14 +--
+ docs/dev/TASKS.md                               |  22 ++--
+ docs/dev/layout.md                              |   2 +-
+ docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md |  46 ++++++++
+ tests/integration/test_cli.py                   | 136 +++++++-----------------
+ tests/integration/test_distribution.py          |  34 +++---
+ textstats/cli.py                                |  10 +-
+ 12 files changed, 137 insertions(+), 175 deletions(-)

@@ -1,0 +1,20 @@
+{
+  "id": "A-014",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-014-cross/repo",
+  "assessment": "Preserved prerequisite-stop subcase; replacement isolated consumer resumed real T004 RED, committed/pushed e048cf8 and T005f8f4f0c, verified complete phase1 and published explicit main mergecca9072 before phase2 creation. T006 JSON RED/GREEN checkpointd24222f then published, stopping beforeT007 without phase2 merge. Independent30 tests,20 literal default/error/JSON CLI cases, task ownership/pin/ancestry/remote and clean-state checks passed. No live hosted writes. Original observed RED excerpts and missing-full-log limits labeled; complete new JSON logs plus verified product-history bundle retained.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-T006-RED.log",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-phase1-GREEN-excerpt.log",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-final.md",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-history.bundle",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-boundaries.json",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2.md",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-full-suite.log",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-T004-RED-excerpt.log",
+    "/workspace/scratch/acceptance-out-008/A-014-cross-resume2-T006-GREEN.log",
+    "/workspace/scratch/acceptance-out-008/continuation-20261003-stop-amendment.json"
+  ]
+}

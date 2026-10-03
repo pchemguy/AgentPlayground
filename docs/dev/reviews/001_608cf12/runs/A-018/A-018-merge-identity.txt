@@ -1,0 +1,23 @@
+$ git --no-optional-locks show -s --format=%H%n%P%n%B HEAD
+7f845c755464890e72a5e0cbd1fd6a8d41addac4
+d769b55aa63f92d5ccbd8022cb9e87f07e541fae 841a3311a8d526597b9637cb2bfc957c6ac0eba8
+Merge phase 1 named-file baseline (T-001–T-005)
+
+Integrate phase/1-named-file-baseline into main at the complete Phase 1
+boundary. Target parent: d769b55aa63f92d5ccbd8022cb9e87f07e541fae.
+Working parent: 841a3311a8d526597b9637cb2bfc957c6ac0eba8.
+
+Deliver counting and UTF-8 named-file API, module CLI, baseline failure and
+usage handling, documented examples and isolated source distribution.
+Phase and prospective merged-state full unittest discovery each passed
+26 tests on Python 3.12.14; README API/CLI examples and document checks
+passed. Prospective tree equals verified phase tip; diff check passed.
+No conflicts or conflict resolutions. Permission-denial evidence is narrowly
+simulated under the privileged runner; real missing/directory/invalid-byte
+fixtures supplement it. No manufactured RED for already complete work.
+
+This local experiment disables hosted tracking. Phase 2 remains unstarted;
+target publication is assessed separately after this local merge commit.
+
+
+Exit status: 0

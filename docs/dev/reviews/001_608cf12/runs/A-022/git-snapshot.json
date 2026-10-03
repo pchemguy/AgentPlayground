@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "332f2a49822cd82ae17b4a16b7a00bc4c86d14a7",
+  "parents": [
+    "88dd40678e31c2b4fbce5ed7ca84519940ce9b9d"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/feature/001_57234b3-call-independence": "9416a16fe5b2f0325e7c63d47647786577a3fe7b",
+    "refs/heads/main": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d",
+    "refs/heads/phase/1-named-file-baseline": "332f2a49822cd82ae17b4a16b7a00bc4c86d14a7"
+  },
+  "changed_paths": [
+    "docs/dev/TASKS.md",
+    "tests/test_api.py",
+    "textstats/counting.py"
+  ]
+}

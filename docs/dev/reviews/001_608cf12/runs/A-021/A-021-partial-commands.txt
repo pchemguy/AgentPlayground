@@ -1,0 +1,117 @@
+$ git --no-optional-locks status --porcelain=v2
+exit=0
+
+$ git rev-parse --show-toplevel HEAD
+/workspace/scratch/sdd008-A-021-feature/repo
+64cee9bc48346d710c74f5ae4a0cc5c3359557f9
+exit=0
+
+$ git symbolic-ref --short HEAD
+feature/002_8a53078-line-ranges
+exit=0
+
+$ git rev-parse origin/feature/002_8a53078-line-ranges origin/phase/2-output-and-input-extensions origin/main
+64cee9bc48346d710c74f5ae4a0cc5c3359557f9
+8a53078d0f734165075691dae0dbfa224a63446f
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+exit=0
+
+$ git remote -v
+origin	/workspace/scratch/sdd008-A-021-feature/remote.git (fetch)
+origin	/workspace/scratch/sdd008-A-021-feature/remote.git (push)
+exit=0
+
+$ git diff --cached --raw
+exit=0
+
+$ git diff --raw
+exit=0
+
+$ git log -5 --oneline
+64cee9b Declare isolated feature incorporation continuation scope
+f391de5 Verify named-file range delivery and feature exits (T-011)
+26dd59c Deliver named-file inclusive line ranges (T-010)
+dc25a83 Add source-independent selected counting (T-009)
+e6fe4c4 Incorporate accepted line-range behavior into SPEC
+exit=0
+
+Mutation: selected-context reconciliation via Python pathlib
+Reconciled PROJECT, DECOMPOSITION, PLAN, TASKS existing dependencies; retained active feature source statuses/navigation and package README. No task transfer yet.
+exit=0
+
+Mutation: final pre-transfer context reconciliation via Python pathlib
+Current main workflow paragraph and active FEATURE-TASKS historical status reconciled.
+exit=0
+
+Mutation: exactly T-009 ownership transfer via Python pathlib
+Moved existing checked owning block and evidence unchanged to TASKS; removed FEATURE-TASKS owning row and added main-owner navigation. T-010/T-011 retained. Repository mutation stops here.
+exit=0
+
+$ git --no-optional-locks status --porcelain=v2
+1 .M N... 100644 100644 100644 09cee4667d13cd9d2bc2e90fe49c68a9e69c7d36 09cee4667d13cd9d2bc2e90fe49c68a9e69c7d36 docs/dev/DECOMPOSITION.md
+1 .M N... 100644 100644 100644 80559ab965979ed016c594532bfd83ef008271d9 80559ab965979ed016c594532bfd83ef008271d9 docs/dev/FEATURE-PLAN.md
+1 .M N... 100644 100644 100644 d0c9e0b38d3fb48a585bcfef3034344f1c5ea424 d0c9e0b38d3fb48a585bcfef3034344f1c5ea424 docs/dev/FEATURE-SPEC.md
+1 .M N... 100644 100644 100644 56a1a5753db0874c3fd3ac029a341214b0987e04 56a1a5753db0874c3fd3ac029a341214b0987e04 docs/dev/FEATURE-TASKS.md
+1 .M N... 100644 100644 100644 375aa6f4feb822d93629efb300ddfb703c1202d6 375aa6f4feb822d93629efb300ddfb703c1202d6 docs/dev/FEATURE_DECOMPOSITION.md
+1 .M N... 100644 100644 100644 70062e5e35d4bc1f199c662f9b305bc8f2615c15 70062e5e35d4bc1f199c662f9b305bc8f2615c15 docs/dev/PLAN.md
+1 .M N... 100644 100644 100644 9ab1aa592c6795b71b01a039c0cc082866476f3e 9ab1aa592c6795b71b01a039c0cc082866476f3e docs/dev/PROJECT.md
+1 .M N... 100644 100644 100644 19dca3ccb8ba993db4de9234d03981a2e098d7b6 19dca3ccb8ba993db4de9234d03981a2e098d7b6 docs/dev/TASKS.md
+1 .M N... 100644 100644 100644 c9ae92d43ad4ca589ebc5963994a5fbb4454f03c c9ae92d43ad4ca589ebc5963994a5fbb4454f03c docs/dev/features/002_8a53078/README.md
+exit=0
+
+$ git diff --check
+exit=0
+
+$ git diff --stat
+ docs/dev/DECOMPOSITION.md               | 12 +++++++++---
+ docs/dev/FEATURE-PLAN.md                |  6 +++---
+ docs/dev/FEATURE-SPEC.md                |  6 +++---
+ docs/dev/FEATURE-TASKS.md               | 10 ++++------
+ docs/dev/FEATURE_DECOMPOSITION.md       |  4 ++--
+ docs/dev/PLAN.md                        | 12 +++++++++++-
+ docs/dev/PROJECT.md                     |  4 ++--
+ docs/dev/TASKS.md                       | 19 +++++++++++++------
+ docs/dev/features/002_8a53078/README.md | 31 ++++++++++++++++++-------------
+ 9 files changed, 65 insertions(+), 39 deletions(-)
+exit=0
+
+$ git diff --cached --raw
+exit=0
+
+$ git rev-parse HEAD origin/feature/002_8a53078-line-ranges origin/phase/2-output-and-input-extensions origin/main
+64cee9bc48346d710c74f5ae4a0cc5c3359557f9
+64cee9bc48346d710c74f5ae4a0cc5c3359557f9
+8a53078d0f734165075691dae0dbfa224a63446f
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+exit=0
+
+Read-only Python document/ownership/preservation checks
+{
+  "preserved_files_checked": 114,
+  "preservation_failures": [],
+  "owning_rows_main_feature": {
+    "T-009": [
+      1,
+      0
+    ],
+    "T-010": [
+      0,
+      1
+    ],
+    "T-011": [
+      0,
+      1
+    ]
+  },
+  "t009_existing_block_exact": true,
+  "t010_t011_existing_blocks_exact": true,
+  "missing_changed_document_links": [],
+  "heading_spacing_findings": [],
+  "retained_active_sources": [
+    "docs/dev/FEATURE_DECOMPOSITION.md",
+    "docs/dev/FEATURE-SPEC.md",
+    "docs/dev/FEATURE-PLAN.md",
+    "docs/dev/FEATURE-TASKS.md"
+  ]
+}
+exit=0

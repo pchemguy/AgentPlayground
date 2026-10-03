@@ -1,0 +1,19 @@
+{
+  "head": "e6fe4c49c90b18cfb0f850ca38c6153a60845b34",
+  "main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "phase2": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "bytecode_hashes": {
+    "textstats/__pycache__/__main__.cpython-312.pyc": "61a7888579b6156d5d0af8a29ef915f3acef93e213ac9d33e273a0ba8f0c5f2b",
+    "textstats/__pycache__/counting.cpython-312.pyc": "ea9165ca2f79b3d5eb98d2bae6ea3147f0d24439669d7c9170b64724eaa00cc7",
+    "textstats/__pycache__/files.cpython-312.pyc": "8b7e8f092be1acb128a70d23dee602379cc8a47f21206eb4e87668258cb90415",
+    "textstats/__pycache__/cli.cpython-312.pyc": "6f02daba101c4a34249d6c6c0b18bc7014888098bed3ae27b21397329c92a967",
+    "textstats/__pycache__/__init__.cpython-312.pyc": "69b497af75d2d5f10191084458091598edf07763a5471be5f696a9e967eb09ea",
+    "tests/integration/__pycache__/test_distribution.cpython-312.pyc": "474390b5cb0fa9647e1911024d1c8a3887b4e7d1190b718ce42f5d518ad9f8a3",
+    "tests/integration/__pycache__/__init__.cpython-312.pyc": "8f68eb69f895566e368c5e2fbd8a9d3edb6e38af83533b9a3ea499602f9f251e",
+    "tests/integration/__pycache__/test_cli.cpython-312.pyc": "1305954f898957cbbd9bcdad27967e4a1b0ec88ecb66c8f6f5a0dfb44d6967a8",
+    "tests/unit/__pycache__/test_api.cpython-312.pyc": "1574688751f7af034d9b53643f2d38925c342727cbcaf233ce732b2f2f17f862",
+    "tests/unit/__pycache__/test_files.cpython-312.pyc": "34c272174a1faaf715f96cb242f6959409a8d230614880d3ea365e885558f44b",
+    "tests/unit/__pycache__/test_counting.cpython-312.pyc": "180246d4d22f80a5dbea073d715ae98632a9a21264265e2b09a1c0f94a812311",
+    "tests/unit/__pycache__/__init__.cpython-312.pyc": "308937d63f9b0c1fea5301c075b7950c9768cfca3e42383e18eabb1188abf0bb"
+  }
+}

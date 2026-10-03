@@ -1,0 +1,1324 @@
+{
+  "schema_version": 1,
+  "branch": "feature/002_8a53078-line-ranges",
+  "head": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+  "parents": [
+    "f391de5c9047726d55687a1d0f71b3dc1e08e20e"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "002296125640ece3c849a1e25f1de9dfea96da62",
+    "refs/heads/feature/002_8a53078-line-ranges": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+    "refs/heads/phase/2-output-and-input-extensions": "8a53078d0f734165075691dae0dbfa224a63446f",
+    "refs/heads/revision/003_d0eeeff-remove-json": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  },
+  "changed_paths": [
+    "AGENTS.md"
+  ],
+  "tracked_status": [],
+  "main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "log": [
+    "64cee9bc48346d710c74f5ae4a0cc5c3359557f9 f391de5c9047726d55687a1d0f71b3dc1e08e20e Declare isolated feature incorporation continuation scope",
+    "002296125640ece3c849a1e25f1de9dfea96da62 8aa0ede0c4a5e78691c3b90af6db177a88c30461 Prepare isolated A-021 interruption fixture helper",
+    "8aa0ede0c4a5e78691c3b90af6db177a88c30461 dd0866ba3e099ff46333952332eca7ce435e35c1 Suspend safely after A-013 and A-019 publication",
+    "dd0866ba3e099ff46333952332eca7ce435e35c1 6a6c2c02f8b36c2c4eae8a9d607246e1fd600180 Record A-019 consumer acceptance assessment",
+    "6a6c2c02f8b36c2c4eae8a9d607246e1fd600180 0295eed9aa817a05bfdd9c14afefbec946d9fcb1 Record A-019 consumer acceptance assessment",
+    "0295eed9aa817a05bfdd9c14afefbec946d9fcb1 a6e0d7c6333d64d75552f02d575ea2832950d1c9 Record A-013 consumer acceptance assessment",
+    "a6e0d7c6333d64d75552f02d575ea2832950d1c9 f087c9b261ff5db8aee9aad8260a804274320f33 Record A-012 consumer acceptance assessment",
+    "6561e287e59c8b4e86c7a3cdeaaa48a60df82154 d0eeeffc0432a45a603ef17cca457e9f04544876 Remove CLI JSON at paused checkpoint (T-006, T-010, T-011)",
+    "f087c9b261ff5db8aee9aad8260a804274320f33 66820aca60d1b1e34c732f4061d5c23e200e977b Record A-011 consumer acceptance assessment",
+    "66820aca60d1b1e34c732f4061d5c23e200e977b de2845629e9b85728c097b7d07cf70cd07f090b1 Record A-010 consumer acceptance assessment",
+    "d0eeeffc0432a45a603ef17cca457e9f04544876 8a53078d0f734165075691dae0dbfa224a63446f 799e5c703dbc9c99a3832f19ea2aad44949f5e51 Merge verified named-file line ranges into paused Phase 2 (T-009\u2013T-011)",
+    "799e5c703dbc9c99a3832f19ea2aad44949f5e51 f391de5c9047726d55687a1d0f71b3dc1e08e20e Incorporate completed line-range feature owners and archive sources"
+  ],
+  "product_hashes": {
+    "textstats/__init__.py": "b344c61963b78e90b5d3c6239c434469ae8109b697ff12b9d2c006000c2145ce",
+    "textstats/__main__.py": "620e8a2f5e4c657c8d82439d61f5e540efcbb9f4e2ccee55116e1fa472b8dd3c",
+    "textstats/cli.py": "3e67bcdadd80e4188b08cc7e49cc5f8b353de8d3094d9434aa2df91b2d7c1205",
+    "textstats/counting.py": "90016a23367e4f54a03641a52cd454c8e39b4513dbb7b40fe80c1d221ef9f119",
+    "textstats/files.py": "b3766c59d5f34fd0dc90726b994711a3d624696d1b1847e857795e61d93d88fd"
+  },
+  "task_check": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "tests.workflows.task_ownership",
+      "/workspace/scratch/sdd008-A-021-feature/repo/docs"
+    ],
+    "cwd": "/workspace/scratch/AgentPlayground-evidence-008",
+    "returncode": 0,
+    "stdout": "{\n  \"documents\": [\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE_DECOMPOSITION.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-SPEC.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-PLAN.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/layout.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/PROJECT.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/ARCHITECTURE.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/DECOMPOSITION.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/SPEC.md\",\n    \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/PLAN.md\"\n  ],\n  \"owners\": {\n    \"T-009\": {\n      \"id\": \"T-009\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md\",\n      \"line\": 11,\n      \"status\": \"Checked\"\n    },\n    \"T-010\": {\n      \"id\": \"T-010\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md\",\n      \"line\": 15,\n      \"status\": \"Checked\"\n    },\n    \"T-011\": {\n      \"id\": \"T-011\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md\",\n      \"line\": 19,\n      \"status\": \"Checked\"\n    },\n    \"T-001\": {\n      \"id\": \"T-001\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 13,\n      \"status\": \"Checked\"\n    },\n    \"T-002\": {\n      \"id\": \"T-002\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 19,\n      \"status\": \"Checked\"\n    },\n    \"T-003\": {\n      \"id\": \"T-003\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 23,\n      \"status\": \"Checked\"\n    },\n    \"T-004\": {\n      \"id\": \"T-004\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 29,\n      \"status\": \"Checked\"\n    },\n    \"T-005\": {\n      \"id\": \"T-005\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 33,\n      \"status\": \"Checked\"\n    },\n    \"T-006\": {\n      \"id\": \"T-006\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 42,\n      \"status\": \"Checked\"\n    },\n    \"T-007\": {\n      \"id\": \"T-007\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 48,\n      \"status\": \"Unchecked\"\n    },\n    \"T-008\": {\n      \"id\": \"T-008\",\n      \"document\": \"/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md\",\n      \"line\": 51,\n      \"status\": \"Unchecked\"\n    }\n  }\n}\n",
+    "stderr": ""
+  },
+  "suites": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/sdd008-A-021-feature/repo",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_dash_prefixed_file_via_separator (integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok\ntest_directory_cannot_be_read_as_file (integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok\ntest_missing_and_invalid_utf8_inputs (integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok\ntest_permission_denial_translation_in_process (integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok\ntest_usage_and_help (integration.test_cli.CliFailureTests.test_usage_and_help) ... ok\ntest_json_bom_policy_and_option_order (integration.test_cli.JsonCliTests.test_json_bom_policy_and_option_order) ... ok\ntest_json_dash_prefixed_named_file (integration.test_cli.JsonCliTests.test_json_dash_prefixed_named_file) ... ok\ntest_json_named_file_boundaries (integration.test_cli.JsonCliTests.test_json_named_file_boundaries) ... ok\ntest_json_permission_denial_translation (integration.test_cli.JsonCliTests.test_json_permission_denial_translation) ... ok\ntest_json_read_and_decode_failure_channels (integration.test_cli.JsonCliTests.test_json_read_and_decode_failure_channels) ... ok\ntest_bom_only_and_interior_bom (integration.test_cli.LineRangeCliTests.test_bom_only_and_interior_bom) ... ok\ntest_dash_is_a_named_file_before_stdin_delivery (integration.test_cli.LineRangeCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok\ntest_decode_failure_outside_selection_and_named_dash_paths (integration.test_cli.LineRangeCliTests.test_decode_failure_outside_selection_and_named_dash_paths) ... ok\ntest_invalid_ranges_precede_missing_input (integration.test_cli.LineRangeCliTests.test_invalid_ranges_precede_missing_input) ... ok\ntest_keep_bom_composes_with_named_input (integration.test_cli.LineRangeCliTests.test_keep_bom_composes_with_named_input) ... ok\ntest_literal_selected_cases_in_both_formats_and_bom_modes (integration.test_cli.LineRangeCliTests.test_literal_selected_cases_in_both_formats_and_bom_modes) ... ok\ntest_named_file_success_boundaries (integration.test_cli.LineRangeCliTests.test_named_file_success_boundaries) ... ok\ntest_named_input_with_spaces_is_not_modified (integration.test_cli.LineRangeCliTests.test_named_input_with_spaces_is_not_modified) ... ok\ntest_bom_only_and_interior_bom (integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok\ntest_dash_is_a_named_file_before_stdin_delivery (integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok\ntest_keep_bom_composes_with_named_input (integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok\ntest_named_file_success_boundaries (integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok\ntest_named_input_with_spaces_is_not_modified (integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok\ntest_documented_archive_deploys_only_product_sources (integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok\ntest_public_calls_return_independent_values_without_output (unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok\ntest_public_result_has_integer_counts (unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok\ntest_result_is_immutable (unit.test_api.PublicApiTests.test_result_is_immutable) ... ok\ntest_cr_lf_crlf_and_trailing_segments (unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok\ntest_default_removes_one_leading_bom (unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok\ntest_interior_bom_is_preserved_in_both_modes (unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok\ntest_keep_bom_treats_bom_as_non_whitespace (unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok\ntest_spec_counting_table (unit.test_counting.CountingTests.test_spec_counting_table) ... ok\ntest_unicode_whitespace_does_not_create_lines (unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok\ntest_selected_logical_segments_and_original_bom_policy (unit.test_counting.SelectedCountingTests.test_selected_logical_segments_and_original_bom_policy) ... ok\ntest_bom_modes_are_applied_to_decoded_file (unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok\ntest_real_files_match_fixed_expected_counts (unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok\ntest_success_closes_real_owned_handle_without_output (unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok\ntest_decode_failure_closes_real_handle_and_preserves_bytes (unit.test_files.FileFailureTests.test_decode_failure_closes_real_handle_and_preserves_bytes) ... ok\ntest_missing_file_preserves_oserror_without_output (unit.test_files.FileFailureTests.test_missing_file_preserves_oserror_without_output) ... ok\ntest_read_denial_closes_acquired_handle_and_preserves_exception (unit.test_files.FileFailureTests.test_read_denial_closes_acquired_handle_and_preserves_exception) ... ok\ntest_real_selected_files_and_decode_failure_close_handles (unit.test_files.SelectedFileTests.test_real_selected_files_and_decode_failure_close_handles) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 4.779s\n\nOK\n"
+    }
+  ],
+  "oracles": {
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-success.json": [
+      {
+        "name": "empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "mixed",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/mixed.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=3 words=4\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unicode-separator",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/unicode-separator.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "trailing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/trailing.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unterminated",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/unterminated.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/bom-empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-retained",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--keep-bom",
+          "/tmp/textstats-assessor-v_g71rku/bom-retained.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "double-bom",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v_g71rku/double-bom.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-errors.json": [
+      {
+        "name": "missing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v2n18xms/missing.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-v2n18xms/missing.txt: [Errno 2] No such file or directory: '/tmp/textstats-assessor-v2n18xms/missing.txt'\n",
+        "mismatches": []
+      },
+      {
+        "name": "bad-utf8",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-v2n18xms/bad-utf8.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-v2n18xms/bad-utf8.txt: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+        "mismatches": []
+      },
+      {
+        "name": "no-input",
+        "argv": [
+          "python",
+          "-m",
+          "textstats"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: the following arguments are required: INPUT\n",
+        "mismatches": []
+      },
+      {
+        "name": "unknown-option",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--nonexistent",
+          "x"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: unrecognized arguments: --nonexistent\n",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/json-success.json": [
+      {
+        "name": "empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 0, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "mixed",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/mixed.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 3, \"words\": 4}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unicode-separator",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/unicode-separator.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "trailing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/trailing.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unterminated",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/unterminated.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/bom-empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 0, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-retained",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--keep-bom",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/bom-retained.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "double-bom",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "/tmp/textstats-assessor-4i06yqzt/double-bom.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/ranges-success-errors.json": [
+      {
+        "name": "mixed-subset",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "/tmp/textstats-assessor-k847n89m/mixed-subset.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unicode-physical",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-k847n89m/unicode-physical.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "beyond",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "/tmp/textstats-assessor-k847n89m/beyond.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "trailing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:4",
+          "/tmp/textstats-assessor-k847n89m/trailing.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unterminated",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "/tmp/textstats-assessor-k847n89m/unterminated.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-default",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-k847n89m/bom-default.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-kept",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--keep-bom",
+          "/tmp/textstats-assessor-k847n89m/bom-kept.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-7",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "0:1",
+          "/tmp/textstats-assessor-k847n89m/invalid-7.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-8",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:1",
+          "/tmp/textstats-assessor-k847n89m/invalid-8.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-9",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:0",
+          "/tmp/textstats-assessor-k847n89m/invalid-9.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-10",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "-1:2",
+          "/tmp/textstats-assessor-k847n89m/invalid-10.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected one argument\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-11",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "x:2",
+          "/tmp/textstats-assessor-k847n89m/invalid-11.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-12",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1",
+          "/tmp/textstats-assessor-k847n89m/invalid-12.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-13",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:2:3",
+          "/tmp/textstats-assessor-k847n89m/invalid-13.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/ranges-contract.json": [
+      {
+        "name": "contract-0-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "/tmp/textstats-assessor-oyp09gqn/contract-0-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=3\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-0-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-0-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 3}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-1-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-1-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-1-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-1-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-2-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:99",
+          "/tmp/textstats-assessor-oyp09gqn/contract-2-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=3\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-2-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:99",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-2-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 3}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-3-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "4:99",
+          "/tmp/textstats-assessor-oyp09gqn/contract-3-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-3-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "4:99",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-3-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 0, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-4-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:3",
+          "/tmp/textstats-assessor-oyp09gqn/contract-4-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-4-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:3",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-4-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 0, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-5-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:9",
+          "/tmp/textstats-assessor-oyp09gqn/contract-5-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-5-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:9",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-5-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-6-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "/tmp/textstats-assessor-oyp09gqn/contract-6-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=3\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-6-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:3",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-6-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 3}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-7-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-7-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-7-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-7-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-8-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-8-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-8-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-8-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 0, \"words\": 0}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-9-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--keep-bom",
+          "/tmp/textstats-assessor-oyp09gqn/contract-9-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-9-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--keep-bom",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-9-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-10-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-10-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-10-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-10-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-11-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-11-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-11-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-11-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-12-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-12-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-12-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-12-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-13-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "01:02",
+          "/tmp/textstats-assessor-oyp09gqn/contract-13-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=3\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-13-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "01:02",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-13-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 3}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-14-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "--keep-bom",
+          "/tmp/textstats-assessor-oyp09gqn/contract-14-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-14-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:2",
+          "--keep-bom",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-14-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 1, \"words\": 1}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-15-text",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "/tmp/textstats-assessor-oyp09gqn/contract-15-text.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-15-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "--json",
+          "/tmp/textstats-assessor-oyp09gqn/contract-15-json.txt"
+        ],
+        "returncode": 0,
+        "stdout": "{\"lines\": 2, \"words\": 2}\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-0",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "0:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-0.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-1",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "2:1",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-1.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-2",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "-1:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-2.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected one argument\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-3",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-3.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-4",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          ":2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-4.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-5",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:2:3",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-5.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-6",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1.0:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-6.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-7",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "+1:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-7.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-8",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          " 1:2",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-8.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-9",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:2 ",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-9.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-10",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "\uff11:\uff12",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-10.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "contract-invalid-11",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "\u0661:\u0662",
+          "/tmp/textstats-assessor-oyp09gqn/contract-invalid-11.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+        "mismatches": []
+      },
+      {
+        "name": "repeated-range",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "--lines",
+          "1:2",
+          "/tmp/textstats-assessor-oyp09gqn/repeated-range.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: --lines may be specified only once\n",
+        "mismatches": []
+      },
+      {
+        "name": "invalid-before-missing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "0:1",
+          "/tmp/textstats-assessor-oyp09gqn/missing.txt"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] [--json] [--lines START:END]\n                           INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+        "mismatches": []
+      },
+      {
+        "name": "decode-after-end",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/decode-after-end.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-oyp09gqn/decode-after-end.txt: 'utf-8' codec can't decode byte 0xff in position 2: invalid start byte\n",
+        "mismatches": []
+      },
+      {
+        "name": "decode-after-end-json",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--json",
+          "--lines",
+          "1:1",
+          "/tmp/textstats-assessor-oyp09gqn/decode-after-end-json.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-oyp09gqn/decode-after-end-json.txt: 'utf-8' codec can't decode byte 0xff in position 2: invalid start byte\n",
+        "mismatches": []
+      },
+      {
+        "name": "equals-range",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--lines=2:2",
+          "/tmp/textstats-assessor-oyp09gqn/equals-range.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      }
+    ]
+  },
+  "limits": "Read-only observation is not a consumer action or autonomous pass decision. Tests create ordinary bytecode; credentials/raw provider bodies are excluded."
+}

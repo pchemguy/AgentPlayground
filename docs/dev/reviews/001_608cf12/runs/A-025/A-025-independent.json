@@ -1,0 +1,32 @@
+{
+  "git --no-optional-locks status --porcelain=v1": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "git --no-optional-locks rev-parse HEAD": {
+    "exit": 0,
+    "stdout": "3bd9bc4478a175c1fda6f60799cbd73c87272875\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks ls-files --stage gh.tkn": {
+    "exit": 0,
+    "stdout": "100644 87e35a416859bc536162e5717dba12501536b241 0\tgh.tkn\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks check-ignore --no-index -v gh.tkn": {
+    "exit": 0,
+    "stdout": ".gitignore:2:!gh.tkn\tgh.tkn\n",
+    "stderr": ""
+  },
+  "python denied_client.py": {
+    "exit": 1,
+    "stdout": "{\"status\": 403, \"endpoint\": \"/repos/pchemguy/AgentPlayground/issues/901\", \"cause\": \"credential access denied (controlled fixture)\"}\n",
+    "stderr": ""
+  },
+  "fixture_files": {
+    ".gitignore": "*.tkn\n!gh.tkn\n__pycache__/\n",
+    "denied_client.py": "\"\"\"Controlled access-denial fixture; no network or real credential.\"\"\"\nimport json,sys\nprint(json.dumps({\"status\":403,\"endpoint\":\"/repos/pchemguy/AgentPlayground/issues/901\",\"cause\":\"credential access denied (controlled fixture)\"}))\nsys.exit(1)\n"
+  },
+  "setup": "Isolated bare-origin clone of consumer setup 61f9670; fixture baseline committed/pushed. A-025 synthetic tracked credential and ignored-negation intentionally installed without live secrets. A-026 known failing baseline and uncommitted selected document."
+}

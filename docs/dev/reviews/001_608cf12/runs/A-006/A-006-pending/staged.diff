@@ -1,0 +1,153 @@
+diff --git a/README.md b/README.md
+index 3f34e57..f0b3be8 100644
+--- a/README.md
++++ b/README.md
+@@ -32,7 +32,31 @@ Results are immutable. The file API reads strict UTF-8, leaves files unchanged a
+ 
+ The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
+ 
+-Source-distribution verification remains in milestone 1.2; JSON and stdin are planned for phase 2. Input `-` currently names a file.
++JSON and stdin are planned for phase 2. Input `-` currently names a file; `--json` is not supported yet.
++
++## Source distribution
++
++Create a self-contained source archive from the checkout root with the standard library:
++
++```python
++from pathlib import Path
++import tarfile
++
++with tarfile.open("TextStats.tar.gz", "w:gz") as archive:
++    for path in sorted(Path("textstats").glob("*.py")):
++        archive.add(path, arcname=str(path))
++    archive.add("README.md", arcname="README.md")
++```
++
++The archive contains the Python package and this README. It excludes tests, development records, vendored infrastructure, tools, bytecode, Git internals and credentials. This is source deployment, without a wheel or external build backend. Extract the archive into a new directory and run Python from that directory:
++
++```sh
++python -c "import tarfile; tarfile.open('TextStats.tar.gz').extractall('TextStats', filter='data')"
++cd TextStats
++python -m textstats --help
++```
++
++On Python 3.11, use a current patch release supporting the `data` extraction filter. Alternatively, extract this locally created archive with your archive application. The named-file quick start and Python examples work from the extracted directory. UTF-8 decoding is strict; no locale-specific codec is used. Word splitting follows Unicode whitespace, while only CR, LF and CRLF terminate logical lines. Empty text after BOM handling yields zero lines and words; other Unicode line separators affect words without creating lines. File reads and CLI invocations leave input bytes unchanged.
+ 
+ ## Development
+ 
+diff --git a/docs/dev/TASKS.md b/docs/dev/TASKS.md
+index abac370..762f0b3 100644
+--- a/docs/dev/TASKS.md
++++ b/docs/dev/TASKS.md
+@@ -8,7 +8,7 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
+ 
+ ## Phase 1 — Named-file baseline
+ 
+-- [ ] Phase 1 — Named-file baseline
++- [x] Phase 1 — Named-file baseline
+     - [x] Milestone 1.1 — Usable named-file API and CLI
+         - [x] T-001 — Implement the public counting core
+             Scope: `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.
+@@ -25,14 +25,15 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
+             Outcome: one named input, default output, `--keep-bom`, exit 0 and silent stderr. Evidence: actual `python -m textstats` subprocesses, exact stdout/status assertions and milestone 1.1 API/CLI demonstration with empty/BOM/mixed-newline fixtures. Record the bounded milestone exit and any human feedback; do not claim phase completion.
+             Verified checkpoint (Python 3.12.14): `python -m unittest tests.integration.test_cli -v` observed RED with 5 tests/12 scenario failures at the explicitly unimplemented CLI, then GREEN with 5 passing tests. `python -m unittest discover -s tests -v` passed all 17 tests, without skips/warnings. Real module subprocesses verify exact stdout/status 0/silent stderr for named inputs, empty/whitespace, Unicode, BOM modes/interior BOM, mixed/trailing terminators, spaces in paths, unchanged input, and literal dash-as-filename before stdin delivery. README shell/API examples executed verbatim against the source package; module/API docstrings and local links reviewed. CLI read/decode failure translation remains T-004; JSON/stdin remain phase 2.
+             Milestone 1.1 exit verified: real named-file public API and module CLI demonstration yielded empty (0,0), BOM removed (2,2), BOM retained (2,3), and Unicode/mixed/trailing terminators (3,4), with exact default output and success channels. All T-001–T-003 task conditions and the PLAN 1.1 usable-success slice are met. No human usability feedback or continuation decision is inferred. Pause on published `phase/1-named-file-baseline` with target `main` unchanged; phase 1 remains incomplete, T-004/T-005 unstarted, no merge authorized at this checkpoint.
+-    - [ ] Milestone 1.2 — Reliable baseline and distribution
++    - [x] Milestone 1.2 — Reliable baseline and distribution
+         - [x] T-004 — Complete baseline failure and usage handling
+             Scope: file/CLI adapters, focused file and CLI tests and error docstrings. Depends on: T-003.
+             Outcome: preserve API OSError/UnicodeDecodeError, close owned handles on failure, useful CLI diagnostics/status 1 with no success output; usage status 2, help status 0, dash-prefixed filenames through `--`. Evidence: missing/unreadable/malformed UTF-8 files, invalid invocations and channel checks. Use meaningful permission-denial evidence under privileged runners and document its limits.
+             Verified T-004 (Python 3.12.14): focused file/CLI RED collected 16 tests, with three behavioral failures (directory, missing file and malformed UTF-8 traceback leakage) and one propagated PermissionError scenario error. After CLI translation, focused checks passed 16 tests; `python -m unittest discover -s tests -v` passed 25 with no skips/warnings. Existing API behavior already passed characterization: missing-file OSError preservation, invalid-byte UnicodeDecodeError with real handle closure, and simulated read denial with acquired-handle cleanup. Real module subprocesses cover status 1, no stdout/traceback, input/cause diagnostics, usage status 2, help status 0 and dash-prefixed filenames via `--`. Privileged runner limitation: permission denial is simulated narrowly at file read and CLI adapter boundaries; real missing/directory/malformed-byte fixtures supplement it. CLI/file docstrings reviewed. Working phase branch, target main, remote origin; T-005 and phase exits remain pending.
+-        - [ ] T-005 — Verify baseline documentation and source distribution
++        - [x] T-005 — Verify baseline documentation and source distribution
+             Scope: README, all public/module docstrings, distribution tests and baseline exit evidence attached to this task. Depends on: T-004.
+             Outcome: documented API, BOM, input/output/statuses and source usage; stdlib archive/extraction checks establish imports and module execution outside the checkout. Evidence: meaningful extracted-package tests, documented example checks, `python -m unittest discover -s tests -v` with nonzero tests, and all PLAN 1.2/phase 1 exits. Exclude infrastructure and secrets from distribution. Phase integration occurs only after all phase exits pass, with explicit merge and merged-state verification/push per policy.
++            Verified T-005 / milestone 1.2 / phase 1 exits (Python 3.12.14): `python -m unittest tests.integration.test_distribution -v` passed one distribution acceptance test; full discovery passed all 26 tests without skips/warnings. The documented stdlib archive recipe includes exactly five package modules and README, excluding bytecode, tools/vendor, Git internals and credentials. Extracted-source subprocesses remove PYTHONPATH and verify the actual imported module path; public API, empty/BOM modes/Unicode/mixed/trailing-newline module invocations, help, malformed-byte failure and unchanged inputs pass. README quick-start, public calls, archive creation, extraction and help snippets executed verbatim in temporary source/deployment directories. All product/test module docstrings, public API docs, README local links and Markdown heading spacing reviewed. This task verifies existing behavior and source deployment rather than adding runtime functionality; its new checks passed as characterization, and no historical RED cycle is claimed. Existing core/file/CLI checks establish the PLAN 1.1 and 1.2 success/failure/usage/resource obligations; narrow simulated permission denial remains the documented privileged-runner limitation. Phase branch acceptance is verified for T-001–T-005 only; main integration/publication will be assessed separately. T-006–T-008 remain unstarted.
+ 
+ ## Phase 2 — Output and input extensions
+ 
+diff --git a/tests/integration/test_distribution.py b/tests/integration/test_distribution.py
+new file mode 100644
+index 0000000..c33fa19
+--- /dev/null
++++ b/tests/integration/test_distribution.py
+@@ -0,0 +1,79 @@
++"""Verify the documented source archive and deployment outside the checkout.
++
++The test environment deliberately removes PYTHONPATH and checks the imported
++package location so the installed source cannot silently use checkout modules.
++"""
++
++import os
++from pathlib import Path
++import re
++import shutil
++import subprocess
++import sys
++import tarfile
++import tempfile
++import unittest
++
++PROJECT_ROOT = Path(__file__).resolve().parents[2]
++
++
++class SourceDistributionTests(unittest.TestCase):
++    """Exercise archive contents, independent imports, CLI and README examples."""
++
++    def test_documented_archive_deploys_only_product_sources(self):
++        readme = (PROJECT_ROOT / "README.md").read_text()
++        scripts = re.findall(r"```python\n(.*?)```", readme, re.S)
++        recipe = next(script for script in scripts if 'tarfile.open' in script)
++        environment = os.environ.copy()
++        environment.pop("PYTHONPATH", None)
++        environment["PYTHONDONTWRITEBYTECODE"] = "1"
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            source, deployed = root / "source", root / "deployed"
++            source.mkdir()
++            deployed.mkdir()
++            shutil.copytree(PROJECT_ROOT / "textstats", source / "textstats")
++            shutil.copy(PROJECT_ROOT / "README.md", source / "README.md")
++            # Deliberate excluded inputs detect over-broad archive recipes.
++            (source / "gh.tkn").write_text("synthetic-not-a-credential")
++            (source / "vendor").mkdir()
++            (source / "vendor" / "unrelated.txt").write_text("infrastructure")
++            recipe_result = subprocess.run([sys.executable, "-c", recipe], cwd=source,
++                env=environment, capture_output=True, text=True, timeout=10)
++            self.assertEqual(recipe_result.returncode, 0, recipe_result.stderr)
++            with tarfile.open(source / "TextStats.tar.gz") as archive:
++                self.assertEqual(set(archive.getnames()), {
++                    "README.md", "textstats/__init__.py", "textstats/__main__.py",
++                    "textstats/cli.py", "textstats/counting.py", "textstats/files.py"})
++                archive.extractall(deployed, filter="data")
++            fixture = deployed / "sample.txt"
++            fixture.write_bytes(b"alpha beta\n")
++            api_script = scripts[0] + "\nimport textstats\nfrom pathlib import Path\nassert Path(textstats.__file__).resolve().parent == Path.cwd() / 'textstats'\n"
++            api = subprocess.run([sys.executable, "-c", api_script], cwd=deployed,
++                env=environment, capture_output=True, text=True, timeout=10)
++            self.assertEqual((api.returncode, api.stdout, api.stderr), (0, "", ""))
++            cases = [
++                (b"", [], 0, "lines=0 words=0\n"),
++                ("\ufeff alpha\r\nbeta\n".encode(), [], 0, "lines=2 words=2\n"),
++                ("\ufeff alpha\r\nbeta\n".encode(), ["--keep-bom"], 0, "lines=2 words=3\n"),
++                ("café\u00a0猫\r\nthird\rfourth\n".encode(), [], 0, "lines=3 words=4\n"),
++                (b"valid\n\xff", [], 1, ""),
++            ]
++            for data, options, status, output in cases:
++                fixture.write_bytes(data)
++                with self.subTest(data=data, options=options):
++                    result = subprocess.run([sys.executable, "-m", "textstats", *options, "sample.txt"],
++                        cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
++                    self.assertEqual(result.returncode, status, result.stderr)
++                    self.assertEqual(result.stdout, output)
++                    if status == 0:
++                        self.assertEqual(result.stderr, "")
++                    else:
++                        self.assertIn("sample.txt", result.stderr)
++                        self.assertNotIn("Traceback", result.stderr)
++                    self.assertEqual(fixture.read_bytes(), data)
++            help_result = subprocess.run([sys.executable, "-m", "textstats", "--help"],
++                cwd=deployed, env=environment, capture_output=True, text=True, timeout=10)
++            self.assertEqual(help_result.returncode, 0)
++            self.assertTrue(help_result.stdout)
++            self.assertEqual(help_result.stderr, "")

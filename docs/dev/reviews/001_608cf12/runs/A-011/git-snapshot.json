@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "branch": "phase/2-output-and-input-extensions",
+  "head": "d0eeeffc0432a45a603ef17cca457e9f04544876",
+  "parents": [
+    "8a53078d0f734165075691dae0dbfa224a63446f",
+    "799e5c703dbc9c99a3832f19ea2aad44949f5e51"
+  ],
+  "status": [
+    "?? tests/integration/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_cli.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_distribution.cpython-312.pyc",
+    "?? tests/unit/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_counting.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_files.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/__main__.cpython-312.pyc",
+    "?? textstats/__pycache__/cli.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc",
+    "?? textstats/__pycache__/files.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "66820aca60d1b1e34c732f4061d5c23e200e977b",
+    "refs/heads/feature/002_8a53078-line-ranges": "799e5c703dbc9c99a3832f19ea2aad44949f5e51",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+    "refs/heads/phase/2-output-and-input-extensions": "d0eeeffc0432a45a603ef17cca457e9f04544876"
+  },
+  "changed_paths": [
+    "README.md",
+    "docs/dev/DECOMPOSITION.md",
+    "docs/dev/PLAN.md",
+    "docs/dev/PROJECT.md",
+    "docs/dev/SPEC.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/features/002_8a53078/FEATURE-PLAN.md",
+    "docs/dev/features/002_8a53078/FEATURE-SPEC.md",
+    "docs/dev/features/002_8a53078/FEATURE-TASKS.md",
+    "docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md",
+    "docs/dev/features/002_8a53078/README.md",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "tests/unit/test_counting.py",
+    "tests/unit/test_files.py",
+    "textstats/cli.py",
+    "textstats/counting.py",
+    "textstats/files.py"
+  ]
+}

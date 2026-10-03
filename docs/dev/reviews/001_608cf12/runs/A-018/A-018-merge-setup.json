@@ -1,0 +1,12 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-018-merge/repo",
+  "remote": "/workspace/scratch/sdd008-A-018-merge/remote.git",
+  "verified_phase_tip": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+  "target_before": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+  "fixture_working_tip": "841a3311a8d526597b9637cb2bfc957c6ac0eba8",
+  "hook": "/workspace/scratch/sdd008-A-018-merge/remote.git/hooks/pre-receive",
+  "injected": true,
+  "live_hosted": false,
+  "initial_hook_sha256": "c587e0e701002051bb690dedadfafe95c182c340afb35c850ec0ed864923eb29",
+  "credentials_absent": true
+}

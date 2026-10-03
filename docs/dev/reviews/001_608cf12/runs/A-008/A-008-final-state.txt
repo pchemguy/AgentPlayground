@@ -1,0 +1,23 @@
+$ git --no-optional-locks rev-parse HEAD
+62b5408e80adc2ac12464e5f9163b3afd47a58ba
+Exit status: 0
+
+$ git --no-optional-locks status --short
+?? tests/integration/__pycache__/
+?? tests/unit/__pycache__/
+?? textstats/__pycache__/
+Exit status: 0
+
+$ git --no-optional-locks diff 8a53078d0f734165075691dae0dbfa224a63446f HEAD --name-status
+A	docs/dev/FEATURE-PLAN.md
+A	docs/dev/FEATURE-SPEC.md
+A	docs/dev/FEATURE-TASKS.md
+A	docs/dev/FEATURE_DECOMPOSITION.md
+A	docs/dev/features/002_8a53078/README.md
+Exit status: 0
+
+$ git --no-optional-locks ls-remote --heads origin feature/002_8a53078-line-ranges phase/2-output-and-input-extensions main
+62b5408e80adc2ac12464e5f9163b3afd47a58ba	refs/heads/feature/002_8a53078-line-ranges
+29c27580db73cf128c42ddb9535e6d8f5c38ed39	refs/heads/main
+8a53078d0f734165075691dae0dbfa224a63446f	refs/heads/phase/2-output-and-input-extensions
+Exit status: 0

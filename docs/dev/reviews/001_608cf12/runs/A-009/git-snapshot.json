@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "branch": "feature/002_8a53078-line-ranges",
+  "head": "e6fe4c49c90b18cfb0f850ca38c6153a60845b34",
+  "parents": [
+    "62b5408e80adc2ac12464e5f9163b3afd47a58ba"
+  ],
+  "status": [
+    "?? tests/integration/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_cli.cpython-312.pyc",
+    "?? tests/integration/__pycache__/test_distribution.cpython-312.pyc",
+    "?? tests/unit/__pycache__/__init__.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_api.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_counting.cpython-312.pyc",
+    "?? tests/unit/__pycache__/test_files.cpython-312.pyc",
+    "?? textstats/__pycache__/__init__.cpython-312.pyc",
+    "?? textstats/__pycache__/__main__.cpython-312.pyc",
+    "?? textstats/__pycache__/cli.cpython-312.pyc",
+    "?? textstats/__pycache__/counting.cpython-312.pyc",
+    "?? textstats/__pycache__/files.cpython-312.pyc"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "8f3595ea87fbceace299337b0a767759dbb1250e",
+    "refs/heads/feature/002_8a53078-line-ranges": "e6fe4c49c90b18cfb0f850ca38c6153a60845b34",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+    "refs/heads/phase/2-output-and-input-extensions": "8a53078d0f734165075691dae0dbfa224a63446f"
+  },
+  "changed_paths": [
+    "docs/dev/SPEC.md"
+  ]
+}

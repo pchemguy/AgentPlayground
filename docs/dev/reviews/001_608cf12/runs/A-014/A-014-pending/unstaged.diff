@@ -1,0 +1,189 @@
+diff --git a/tests/integration/test_cli.py b/tests/integration/test_cli.py
+index 233aedb..ce4b37e 100644
+--- a/tests/integration/test_cli.py
++++ b/tests/integration/test_cli.py
+@@ -1,27 +1,37 @@
+ """Verify the public module CLI through real named-file subprocesses."""
+ 
++import contextlib
++import errno
++import io
+ import os
+ from pathlib import Path
+ import subprocess
+ import sys
+ import tempfile
+ import unittest
++from unittest.mock import patch
++
++from textstats.cli import main
+ 
+ PROJECT_ROOT = Path(__file__).resolve().parents[2]
+ 
+ 
+-class NamedFileCliTests(unittest.TestCase):
+-    """Protect exact success output, BOM modes and unchanged named inputs."""
++class CliProcessChecks:
++    """Share real module subprocess checks without duplicating test collection."""
+ 
+     def run_cli(self, path, *options, cwd=PROJECT_ROOT):
+         """Launch the actual module while keeping verification bytecode-free."""
++        return self.run_command([*options, str(path)], cwd=cwd)
++
++    def run_command(self, arguments, *, cwd=PROJECT_ROOT, preexec_fn=None):
++        """Launch arbitrary CLI arguments for usage and OS failure checks."""
+         environment = os.environ.copy()
+         environment["PYTHONDONTWRITEBYTECODE"] = "1"
+         environment["PYTHONPATH"] = str(PROJECT_ROOT)
+         return subprocess.run(
+-            [sys.executable, "-m", "textstats", *options, str(path)],
++            [sys.executable, "-m", "textstats", *arguments],
+             cwd=cwd, env=environment, capture_output=True, text=True,
+-            encoding="utf-8", timeout=10, check=False,
++            encoding="utf-8", timeout=10, check=False, preexec_fn=preexec_fn,
+         )
+ 
+     def assert_success(self, result, expected_stdout):
+@@ -30,6 +40,9 @@ class NamedFileCliTests(unittest.TestCase):
+         self.assertEqual(result.stdout, expected_stdout)
+         self.assertEqual(result.stderr, "")
+ 
++class NamedFileCliTests(CliProcessChecks, unittest.TestCase):
++    """Protect exact success output, BOM modes and unchanged named inputs."""
++
+     def test_named_file_success_boundaries(self):
+         cases = [
+             ("", "lines=0 words=0\n"),
+@@ -78,3 +91,65 @@ class NamedFileCliTests(unittest.TestCase):
+         with tempfile.TemporaryDirectory() as directory:
+             (Path(directory) / "-").write_bytes(b"named input\n")
+             self.assert_success(self.run_cli("-", cwd=directory), "lines=1 words=2\n")
++
++
++class BaselineFailureCliTests(CliProcessChecks, unittest.TestCase):
++    """Check error/usage channels and actual filesystem permission denial."""
++
++    def assert_read_failure(self, result, input_name, cause):
++        """Require a useful named diagnostic without success output/traceback."""
++        self.assertEqual(result.returncode, 1)
++        self.assertEqual(result.stdout, "")
++        self.assertIn(str(input_name), result.stderr)
++        self.assertIn(cause, result.stderr.lower())
++        self.assertNotIn("Traceback", result.stderr)
++
++    def test_missing_malformed_and_directory_inputs(self):
++        with tempfile.TemporaryDirectory() as directory:
++            missing = Path(directory) / "missing.txt"
++            invalid = Path(directory) / "invalid.txt"
++            invalid.write_bytes(b"alpha\n\xff")
++            for path, cause in [(missing, "no such file"), (invalid, "utf-8"),
++                                (Path(directory), "directory")]:
++                with self.subTest(path=path):
++                    self.assert_read_failure(self.run_cli(path), path, cause)
++
++    def test_invalid_invocations_use_usage_status_and_channels(self):
++        for arguments in ([], ["first", "second"], ["--unknown", "file"], ["--keep-bom"]):
++            with self.subTest(arguments=arguments):
++                result = self.run_command(arguments)
++                self.assertEqual(result.returncode, 2)
++                self.assertEqual(result.stdout, "")
++                self.assertTrue(result.stderr.strip())
++                self.assertNotIn("Traceback", result.stderr)
++
++    def test_help_succeeds_without_stderr(self):
++        result = self.run_command(["--help"])
++        self.assertEqual(result.returncode, 0)
++        self.assertTrue(result.stdout.strip())
++        self.assertIn("--keep-bom", result.stdout)
++        self.assertEqual(result.stderr, "")
++
++    def test_double_dash_supports_dash_prefixed_filename(self):
++        with tempfile.TemporaryDirectory() as directory:
++            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
++            self.assert_success(self.run_command(["--", "-sample.txt"], cwd=directory),
++                                "lines=1 words=2\n")
++
++    def test_permission_denial_at_real_file_open_boundary(self):
++        # This privileged runner cannot change its child's UID/GID. A controlled
++        # EACCES at open supplements the real missing/malformed file subprocesses.
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "denied.txt"
++            path.write_bytes(b"alpha beta\n")
++            denied = PermissionError(errno.EACCES, os.strerror(errno.EACCES), str(path))
++            stdout, stderr = io.StringIO(), io.StringIO()
++            with patch("textstats.files.open", side_effect=denied, create=True):
++                with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
++                    status = main([str(path)])
++            self.assertEqual(status, 1)
++            self.assertEqual(stdout.getvalue(), "")
++            self.assertIn(str(path), stderr.getvalue())
++            self.assertIn("permission denied", stderr.getvalue().lower())
++            self.assertNotIn("Traceback", stderr.getvalue())
++            self.assertEqual(path.read_bytes(), b"alpha beta\n")
+diff --git a/tests/unit/test_files.py b/tests/unit/test_files.py
+index e850949..83dae90 100644
+--- a/tests/unit/test_files.py
++++ b/tests/unit/test_files.py
+@@ -68,3 +68,62 @@ class FileCountingTests(unittest.TestCase):
+             self.assertTrue(all(handle.closed for handle in handles))
+             self.assertEqual(stdout.getvalue(), "")
+             self.assertEqual(stderr.getvalue(), "")
++
++
++class FileFailureTests(unittest.TestCase):
++    """Verify standard API errors, silent failure and owned-handle closure."""
++
++    def test_missing_file_preserves_os_error_without_output(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "missing.txt"
++            stdout, stderr = io.StringIO(), io.StringIO()
++            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
++                with self.assertRaises(FileNotFoundError):
++                    count_file(path)
++            self.assertEqual(stdout.getvalue(), "")
++            self.assertEqual(stderr.getvalue(), "")
++
++    def test_invalid_utf8_preserves_decode_error_and_closes_real_handle(self):
++        handles = []
++
++        def observe_open(*args, **kwargs):
++            handle = builtins.open(*args, **kwargs)
++            handles.append(handle)
++            return handle
++
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "invalid.txt"
++            path.write_bytes(b"valid prefix\n\xff")
++            stdout, stderr = io.StringIO(), io.StringIO()
++            with patch("textstats.files.open", side_effect=observe_open, create=True):
++                with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
++                    with self.assertRaises(UnicodeDecodeError):
++                        count_file(path)
++            self.assertTrue(handles)
++            self.assertTrue(all(handle.closed for handle in handles))
++            self.assertEqual(path.read_bytes(), b"valid prefix\n\xff")
++            self.assertEqual(stdout.getvalue(), "")
++            self.assertEqual(stderr.getvalue(), "")
++
++    def test_open_permission_error_retains_exception_identity(self):
++        denied = PermissionError("permission denied")
++        with patch("textstats.files.open", side_effect=denied, create=True):
++            with self.assertRaises(PermissionError) as raised:
++                count_file("denied.txt")
++        self.assertIs(raised.exception, denied)
++
++    def test_read_failure_closes_real_handle_and_retains_os_error(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "sample.txt"
++            path.write_bytes(b"alpha beta")
++            handle = builtins.open(path, encoding="utf-8")
++            failure = OSError("simulated device read failure")
++            try:
++                with patch.object(handle, "read", side_effect=failure):
++                    with patch("textstats.files.open", return_value=handle, create=True):
++                        with self.assertRaises(OSError) as raised:
++                            count_file(path)
++                self.assertIs(raised.exception, failure)
++                self.assertTrue(handle.closed)
++            finally:
++                handle.close()

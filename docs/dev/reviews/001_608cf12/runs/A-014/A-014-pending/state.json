@@ -1,0 +1,28 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-014-cross/repo",
+  "branch": "phase/1-named-file-baseline",
+  "head": "83eab02a70e7757e11f04f46a64849f69ba64df0",
+  "parents": [
+    "8836c497ec94946580948f68c4ffe79713936a8a"
+  ],
+  "status": [
+    "M tests/integration/test_cli.py",
+    " M tests/unit/test_files.py"
+  ],
+  "owned_pending": [
+    {
+      "path": "tests/integration/test_cli.py",
+      "exists": true,
+      "sha256": "90983489a76cc7e0a1a4373933f97b15b193bc2ef3527df0dadd3d785b661d9c",
+      "index": "100644 233aedbee4ebd46a672465f51312875804100b27 0\ttests/integration/test_cli.py"
+    },
+    {
+      "path": "tests/unit/test_files.py",
+      "exists": true,
+      "sha256": "7ee3a8bfeda23f8c924228d56b0d34641e31a0e4d90715f0095faf0b5adab02d",
+      "index": "100644 e8509492143e12564db1d9ddaf3217b12a6e6278 0\ttests/unit/test_files.py"
+    }
+  ],
+  "merge_pending": false,
+  "scope": "Bytecode and unrelated paths omitted from content export; credentials excluded. No staging/reset/commit/checkout occurs."
+}

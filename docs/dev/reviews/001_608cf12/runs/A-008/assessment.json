@@ -1,0 +1,29 @@
+{
+  "id": "A-008",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Feature preparation published at 62b5408 on feature/002_8a53078-line-ranges, reservation002_8a53078 from paused phase2 baseline8a53078. Five active proposed docs only; all pre-existing tracked blobs unchanged, unique unchecked T-009\u2013T-011 and97 pinned hashes verified,26 local links valid. Main29c2758/phase2 unchanged and exact remote refs checked. Consumer31 baseline tests passed; feature is unimplemented. TST-002 records initial stdin gate, coordinator scope clarification and residual consistency correction; named-file feature completion now independent of future main stdin work. No incorporation/archive/implementation/merge/main-task resumption or hosted writes. Explicit-source loading only; no fabricated native transcript.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-008-baseline-tests.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-baseline-tree.json",
+    "/workspace/scratch/acceptance-out-008/A-008-check.py",
+    "/workspace/scratch/acceptance-out-008/A-008-clarification-commit.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-clarification-diff.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-clarification-push.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-clarified-document-checks.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-commit.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-document-checks.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-final-gating-review.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-final-state.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-final.md",
+    "/workspace/scratch/acceptance-out-008/A-008-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-008-initial-preparation.json",
+    "/workspace/scratch/acceptance-out-008/A-008-package",
+    "/workspace/scratch/acceptance-out-008/A-008-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-push.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-residual-correction.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-scope-clarification.txt",
+    "/workspace/scratch/acceptance-out-008/A-008-staged-checks.txt",
+    "/workspace/scratch/acceptance-out-008/A-008.md"
+  ]
+}

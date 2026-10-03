@@ -1,0 +1,8 @@
+test_help_omits_removed_option (tests.integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option) ... ok
+test_removed_option_name_is_a_literal_file_after_separator (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_name_is_a_literal_file_after_separator) ... ok
+test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.442s
+
+OK

@@ -1,0 +1,26 @@
+{
+  "source": {
+    "head": "af7cbe05c09f2e5bce391ef16d85a04abfec16da",
+    "branch": "revision/008_98a5562-runtime-acceptance",
+    "tracked_status": "M README.md\n M docs/dev/reviews/008_98a5562/REVIEW-REPORT.md\n M docs/dev/reviews/008_98a5562/REVISION-PLAN.md\n M docs/dev/reviews/008_98a5562/REVISION-REPORT.md\n M docs/dev/reviews/README.md",
+    "merge_pending": false
+  },
+  "live": {
+    "head": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+    "branch": "main",
+    "tracked_status": "",
+    "merge_pending": false
+  },
+  "evidence": {
+    "head": "ba87305e680a52393c1b09957d2ca6f85b447ac8",
+    "branch": "evaluation/008-runtime-acceptance",
+    "tracked_status": "",
+    "merge_pending": false
+  },
+  "A021": {
+    "head": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69",
+    "branch": "phase/2-output-and-input-extensions",
+    "tracked_status": "",
+    "merge_pending": false
+  }
+}

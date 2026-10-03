@@ -1,0 +1,331 @@
+[
+  {
+    "name": "empty",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "mixed",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=3 words=4\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unicode-separator",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "trailing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=2 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unterminated",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-empty",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-retained",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--keep-bom",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "double-bom",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "mixed-subset",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:3",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=2 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unicode-physical",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "beyond",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:3",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=0 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "trailing",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:4",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=0\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "unterminated",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:2",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=2\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-default",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "bom-kept",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:1",
+      "--keep-bom",
+      "-"
+    ],
+    "returncode": 0,
+    "stdout": "lines=1 words=1\n",
+    "stderr": "",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-7",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "0:1",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-8",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "2:1",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-9",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:0",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: endpoints must satisfy 1 <= START <= END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-10",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "-1:2",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected one argument\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-11",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "x:2",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-12",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  },
+  {
+    "name": "invalid-13",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "--lines",
+      "1:2:3",
+      "-"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\npython -m textstats: error: argument --lines: expected positive inclusive START:END\n",
+    "mismatches": []
+  },
+  {
+    "name": "stdin-utf8-error",
+    "argv": [
+      "python",
+      "-m",
+      "textstats",
+      "-"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "textstats: stdin: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+    "mismatches": []
+  }
+]

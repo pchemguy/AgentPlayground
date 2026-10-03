@@ -1,0 +1,27 @@
+{
+  "head": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "phase2_parent": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "main_unchanged": true,
+  "checked_ids": [
+    "T-001",
+    "T-002",
+    "T-003",
+    "T-004",
+    "T-005",
+    "T-006"
+  ],
+  "unchanged_product_modules": [
+    "textstats/__init__.py",
+    "textstats/__main__.py",
+    "textstats/counting.py",
+    "textstats/files.py"
+  ],
+  "pinned_files_verified": 97,
+  "changed_paths": [
+    "README.md",
+    "docs/dev/TASKS.md",
+    "tests/integration/test_cli.py",
+    "textstats/cli.py"
+  ],
+  "assessor_correction": "Initial one-off core.py blob check used a nonexistent assumed filename. Observed actual module paths and repeated correct blob inspection; no product/plugin change or failure."
+}

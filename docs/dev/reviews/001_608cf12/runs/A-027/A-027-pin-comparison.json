@@ -1,0 +1,681 @@
+[
+  {
+    "path": "plugin.json",
+    "expected": "63adf660a4d41ddfe16695f8c0259a06ad7466ebae3b355871a2b60150e7d2b2",
+    "live": "63adf660a4d41ddfe16695f8c0259a06ad7466ebae3b355871a2b60150e7d2b2",
+    "source": "63adf660a4d41ddfe16695f8c0259a06ad7466ebae3b355871a2b60150e7d2b2",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/SKILL.md",
+    "expected": "14cd10e5a773bf5d12a710cd31b9a7b76c971fa7452c48b75d34a568f1665c11",
+    "live": "14cd10e5a773bf5d12a710cd31b9a7b76c971fa7452c48b75d34a568f1665c11",
+    "source": "14cd10e5a773bf5d12a710cd31b9a7b76c971fa7452c48b75d34a568f1665c11",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/SKILL.md",
+    "expected": "561a9f9935357e3cb82e3110868571632f3b3a01ad4ddebc654232086d33f659",
+    "live": "561a9f9935357e3cb82e3110868571632f3b3a01ad4ddebc654232086d33f659",
+    "source": "561a9f9935357e3cb82e3110868571632f3b3a01ad4ddebc654232086d33f659",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/SKILL.md",
+    "expected": "f75c8a6b2492794cb9c9f2103892b7163e1465fd5c6940a1bd5032ed1fa90a68",
+    "live": "f75c8a6b2492794cb9c9f2103892b7163e1465fd5c6940a1bd5032ed1fa90a68",
+    "source": "f75c8a6b2492794cb9c9f2103892b7163e1465fd5c6940a1bd5032ed1fa90a68",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/SKILL.md",
+    "expected": "7e86c1270c025bc713a729a23b337492f5a88669d791b6d64737d7b663a806eb",
+    "live": "7e86c1270c025bc713a729a23b337492f5a88669d791b6d64737d7b663a806eb",
+    "source": "7e86c1270c025bc713a729a23b337492f5a88669d791b6d64737d7b663a806eb",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/SKILL.md",
+    "expected": "99c86e62b478ec96be6b987ec548360c928dff19e6df8afab018a9b4b05d7875",
+    "live": "99c86e62b478ec96be6b987ec548360c928dff19e6df8afab018a9b4b05d7875",
+    "source": "99c86e62b478ec96be6b987ec548360c928dff19e6df8afab018a9b4b05d7875",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/SKILL.md",
+    "expected": "da249a7c1f3da9fc285cf8b107bf7e00bd1bd754218333deac4a6b5a536375e1",
+    "live": "da249a7c1f3da9fc285cf8b107bf7e00bd1bd754218333deac4a6b5a536375e1",
+    "source": "da249a7c1f3da9fc285cf8b107bf7e00bd1bd754218333deac4a6b5a536375e1",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/SKILL.md",
+    "expected": "ee8066ec67d1eedd965a2d656758291fa24c30450b1c45317110995491b886fc",
+    "live": "ee8066ec67d1eedd965a2d656758291fa24c30450b1c45317110995491b886fc",
+    "source": "ee8066ec67d1eedd965a2d656758291fa24c30450b1c45317110995491b886fc",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-integrate-feature/SKILL.md",
+    "expected": "62bbe9725faada9934eea8ce29a6ab0bc40462747a1e49243c2d48331ca05bc9",
+    "live": "62bbe9725faada9934eea8ce29a6ab0bc40462747a1e49243c2d48331ca05bc9",
+    "source": "62bbe9725faada9934eea8ce29a6ab0bc40462747a1e49243c2d48331ca05bc9",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/SKILL.md",
+    "expected": "a92d33b109898c5c3916b68008fd9d3ad4129c54b151c4368b8a724a9f855e54",
+    "live": "a92d33b109898c5c3916b68008fd9d3ad4129c54b151c4368b8a724a9f855e54",
+    "source": "a92d33b109898c5c3916b68008fd9d3ad4129c54b151c4368b8a724a9f855e54",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tasks/SKILL.md",
+    "expected": "092bb519d88a2ae88d9e692e3478ebe685e43b075bf5f90b971d7e1e2ea29608",
+    "live": "092bb519d88a2ae88d9e692e3478ebe685e43b075bf5f90b971d7e1e2ea29608",
+    "source": "092bb519d88a2ae88d9e692e3478ebe685e43b075bf5f90b971d7e1e2ea29608",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-orient/SKILL.md",
+    "expected": "596acb0486004228a868f07add0c21801c874b0be3973d0633767fb8b4517c99",
+    "live": "596acb0486004228a868f07add0c21801c874b0be3973d0633767fb8b4517c99",
+    "source": "596acb0486004228a868f07add0c21801c874b0be3973d0633767fb8b4517c99",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/SKILL.md",
+    "expected": "b362760946c00135c17008afe3b12bd3e8108286d88a0116b17d00abae913650",
+    "live": "b362760946c00135c17008afe3b12bd3e8108286d88a0116b17d00abae913650",
+    "source": "b362760946c00135c17008afe3b12bd3e8108286d88a0116b17d00abae913650",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/SKILL.md",
+    "expected": "bacf686f53b4f2e1a759624ddd70ae34cd6b55ed51c3dd5e1a6624eb0ea028aa",
+    "live": "bacf686f53b4f2e1a759624ddd70ae34cd6b55ed51c3dd5e1a6624eb0ea028aa",
+    "source": "bacf686f53b4f2e1a759624ddd70ae34cd6b55ed51c3dd5e1a6624eb0ea028aa",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/LICENSE",
+    "expected": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "live": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "source": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/SKILL.md",
+    "expected": "adc0c2c0f7bc3cc7612dfc781ee8681289b1542aae8eba0bb6d99361a3a903ed",
+    "live": "adc0c2c0f7bc3cc7612dfc781ee8681289b1542aae8eba0bb6d99361a3a903ed",
+    "source": "adc0c2c0f7bc3cc7612dfc781ee8681289b1542aae8eba0bb6d99361a3a903ed",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/SKILL.md",
+    "expected": "e55287b0edecb6eb7a8709c4b531ecb3a27b62d89897cdf03a5b82e9a4f69e83",
+    "live": "e55287b0edecb6eb7a8709c4b531ecb3a27b62d89897cdf03a5b82e9a4f69e83",
+    "source": "e55287b0edecb6eb7a8709c4b531ecb3a27b62d89897cdf03a5b82e9a4f69e83",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/assets/icon.svg",
+    "expected": "60c4fbc478c5c5569c7db40ee7d2b90c061fb8e0b7a2274ec8757cbcadc6c837",
+    "live": "60c4fbc478c5c5569c7db40ee7d2b90c061fb8e0b7a2274ec8757cbcadc6c837",
+    "source": "60c4fbc478c5c5569c7db40ee7d2b90c061fb8e0b7a2274ec8757cbcadc6c837",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/agents/openai.yaml",
+    "expected": "deffa3efeb5eb9b1f97fb7ea69a59a19e153559185ee8dad2ae91d7f5982d4ca",
+    "live": "deffa3efeb5eb9b1f97fb7ea69a59a19e153559185ee8dad2ae91d7f5982d4ca",
+    "source": "deffa3efeb5eb9b1f97fb7ea69a59a19e153559185ee8dad2ae91d7f5982d4ca",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/references/execution-and-evidence.md",
+    "expected": "ad1dcdeca15cc67179f1923f74f044d4e6304dbf1195afff9f93dba885054a29",
+    "live": "ad1dcdeca15cc67179f1923f74f044d4e6304dbf1195afff9f93dba885054a29",
+    "source": "ad1dcdeca15cc67179f1923f74f044d4e6304dbf1195afff9f93dba885054a29",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/references/check-selection.md",
+    "expected": "15c19c57a974fb445c7276ce9e3c06b569d8bfab6f119bc2b0ba2329e4d47fe3",
+    "live": "15c19c57a974fb445c7276ce9e3c06b569d8bfab6f119bc2b0ba2329e4d47fe3",
+    "source": "15c19c57a974fb445c7276ce9e3c06b569d8bfab6f119bc2b0ba2329e4d47fe3",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-verify/references/failure-assessment.md",
+    "expected": "0d1297f0b6d03dfd429c9d8e0d912c841801b8207141651aca1f1a90fe9a12c6",
+    "live": "0d1297f0b6d03dfd429c9d8e0d912c841801b8207141651aca1f1a90fe9a12c6",
+    "source": "0d1297f0b6d03dfd429c9d8e0d912c841801b8207141651aca1f1a90fe9a12c6",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/assets/icon.svg",
+    "expected": "69e272ee97e9957387f8ca8b51bec3d3d176c33e6bf6b20d2bff5b3536f507e2",
+    "live": "69e272ee97e9957387f8ca8b51bec3d3d176c33e6bf6b20d2bff5b3536f507e2",
+    "source": "69e272ee97e9957387f8ca8b51bec3d3d176c33e6bf6b20d2bff5b3536f507e2",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/agents/openai.yaml",
+    "expected": "9715602c3bdcd14d41e6e99e24edb32389499e0ec96b0aad5cdf4b30b187de15",
+    "live": "9715602c3bdcd14d41e6e99e24edb32389499e0ec96b0aad5cdf4b30b187de15",
+    "source": "9715602c3bdcd14d41e6e99e24edb32389499e0ec96b0aad5cdf4b30b187de15",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/references/review-and-findings.md",
+    "expected": "2c678bfc1facfdb4ba0b470c96137454cd68fc3518c53227f9e9bd09a7bcb39a",
+    "live": "2c678bfc1facfdb4ba0b470c96137454cd68fc3518c53227f9e9bd09a7bcb39a",
+    "source": "2c678bfc1facfdb4ba0b470c96137454cd68fc3518c53227f9e9bd09a7bcb39a",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/references/standalone-documentation.md",
+    "expected": "82115d3d727ecde42593782cc161c8923299303fc1439eff3b4a14c8aab52cf4",
+    "live": "82115d3d727ecde42593782cc161c8923299303fc1439eff3b4a14c8aab52cf4",
+    "source": "82115d3d727ecde42593782cc161c8923299303fc1439eff3b4a14c8aab52cf4",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-docs/references/in-code-documentation.md",
+    "expected": "95312201830c2006a68661142cdbc2fcd313282f2b318a0bceee6ef854990d82",
+    "live": "95312201830c2006a68661142cdbc2fcd313282f2b318a0bceee6ef854990d82",
+    "source": "95312201830c2006a68661142cdbc2fcd313282f2b318a0bceee6ef854990d82",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/assets/icon.svg",
+    "expected": "d263da0cf62afe30dec52294f51c33a0d522b25c44049224a2274037e8ace44d",
+    "live": "d263da0cf62afe30dec52294f51c33a0d522b25c44049224a2274037e8ace44d",
+    "source": "d263da0cf62afe30dec52294f51c33a0d522b25c44049224a2274037e8ace44d",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/agents/openai.yaml",
+    "expected": "c3d318cf2a1074db8bc3c956109b12b1a3399c3835eded7bbac57f9ee7f5a778",
+    "live": "c3d318cf2a1074db8bc3c956109b12b1a3399c3835eded7bbac57f9ee7f5a778",
+    "source": "c3d318cf2a1074db8bc3c956109b12b1a3399c3835eded7bbac57f9ee7f5a778",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/workflows.md",
+    "expected": "14ec3f948d107bb4b0518d0495b161affc499caa5d6f45c913c5d09d88e0683a",
+    "live": "14ec3f948d107bb4b0518d0495b161affc499caa5d6f45c913c5d09d88e0683a",
+    "source": "14ec3f948d107bb4b0518d0495b161affc499caa5d6f45c913c5d09d88e0683a",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/git-workflows.md",
+    "expected": "3db94f8a62e6a3c5a56bd714e06df4d0e1689c67c8411f977e3ec304dbcceac3",
+    "live": "3db94f8a62e6a3c5a56bd714e06df4d0e1689c67c8411f977e3ec304dbcceac3",
+    "source": "3db94f8a62e6a3c5a56bd714e06df4d0e1689c67c8411f977e3ec304dbcceac3",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/coordination.md",
+    "expected": "1bd865a1dab6c2d2f790beae6d2c71bfe9dc32974e1a3229553fa3df50002702",
+    "live": "1bd865a1dab6c2d2f790beae6d2c71bfe9dc32974e1a3229553fa3df50002702",
+    "source": "1bd865a1dab6c2d2f790beae6d2c71bfe9dc32974e1a3229553fa3df50002702",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/branch-management.md",
+    "expected": "27c77c02c0cd1613d7fd09d345310ac406ff94e852c06475b6e1af284d761eab",
+    "live": "27c77c02c0cd1613d7fd09d345310ac406ff94e852c06475b6e1af284d761eab",
+    "source": "27c77c02c0cd1613d7fd09d345310ac406ff94e852c06475b6e1af284d761eab",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/credentials.md",
+    "expected": "5d33060db46a9ddb1f0581944da960813bf9e548169bf73625d3e3d6a4c3a795",
+    "live": "5d33060db46a9ddb1f0581944da960813bf9e548169bf73625d3e3d6a4c3a795",
+    "source": "5d33060db46a9ddb1f0581944da960813bf9e548169bf73625d3e3d6a4c3a795",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/review-and-revision.md",
+    "expected": "5f98087d2287ecff258b1513dc5b2a956b4551f9f9771dee81036b7c91b982e6",
+    "live": "5f98087d2287ecff258b1513dc5b2a956b4551f9f9771dee81036b7c91b982e6",
+    "source": "5f98087d2287ecff258b1513dc5b2a956b4551f9f9771dee81036b7c91b982e6",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-manage/references/examples.md",
+    "expected": "96eebdfe90f270cff46bdd4f69d596fd439acbb7d4ea8633e91772a74b1e5acd",
+    "live": "96eebdfe90f270cff46bdd4f69d596fd439acbb7d4ea8633e91772a74b1e5acd",
+    "source": "96eebdfe90f270cff46bdd4f69d596fd439acbb7d4ea8633e91772a74b1e5acd",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/assets/icon.svg",
+    "expected": "5702cda32d79bc28857dedfe0f9811d382d8b2e4c46d1ac571d8114aabd279a4",
+    "live": "5702cda32d79bc28857dedfe0f9811d382d8b2e4c46d1ac571d8114aabd279a4",
+    "source": "5702cda32d79bc28857dedfe0f9811d382d8b2e4c46d1ac571d8114aabd279a4",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/agents/openai.yaml",
+    "expected": "3afb66258ca9ee5f7e35b0986ac130e34a4a73c4d5c41b1c7de94e19133e4cea",
+    "live": "3afb66258ca9ee5f7e35b0986ac130e34a4a73c4d5c41b1c7de94e19133e4cea",
+    "source": "3afb66258ca9ee5f7e35b0986ac130e34a4a73c4d5c41b1c7de94e19133e4cea",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/review-campaigns.md",
+    "expected": "3922c29a9a99112622766497375ffe665716cc919f76e00fb0d1a4ac3e58a43b",
+    "live": "3922c29a9a99112622766497375ffe665716cc919f76e00fb0d1a4ac3e58a43b",
+    "source": "3922c29a9a99112622766497375ffe665716cc919f76e00fb0d1a4ac3e58a43b",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/design-heuristics.md",
+    "expected": "b4ded8adbaa45a74858cff4dbed277936d52d31a91534ab303b6af018262a448",
+    "live": "b4ded8adbaa45a74858cff4dbed277936d52d31a91534ab303b6af018262a448",
+    "source": "b4ded8adbaa45a74858cff4dbed277936d52d31a91534ab303b6af018262a448",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/workflow-identity.md",
+    "expected": "e158da8461ef02f7d210e53b4f5e1391ca38b70a312106e2bace22ea9b6366ce",
+    "live": "e158da8461ef02f7d210e53b4f5e1391ca38b70a312106e2bace22ea9b6366ce",
+    "source": "e158da8461ef02f7d210e53b4f5e1391ca38b70a312106e2bace22ea9b6366ce",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/hosting-tokens.md",
+    "expected": "54f2e5949ddeae7aafcb985092309676b42b358135d8fea29481fc8071336324",
+    "live": "54f2e5949ddeae7aafcb985092309676b42b358135d8fea29481fc8071336324",
+    "source": "54f2e5949ddeae7aafcb985092309676b42b358135d8fea29481fc8071336324",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/modularity.md",
+    "expected": "98d41ef9fb16f373ca2fddfe2c048775a40165823dd503d4df58c18654b11283",
+    "live": "98d41ef9fb16f373ca2fddfe2c048775a40165823dd503d4df58c18654b11283",
+    "source": "98d41ef9fb16f373ca2fddfe2c048775a40165823dd503d4df58c18654b11283",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-conventions/references/task-hierarchy.md",
+    "expected": "b5a1b97fcf49e29c70d0a386187cfaf96d2f638957346360d32b4326c6199355",
+    "live": "b5a1b97fcf49e29c70d0a386187cfaf96d2f638957346360d32b4326c6199355",
+    "source": "b5a1b97fcf49e29c70d0a386187cfaf96d2f638957346360d32b4326c6199355",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/assets/icon.svg",
+    "expected": "ebeaf7c64a2fb958088765c46c48e8269625f03ddccefec9dc7b76ff7379f2ad",
+    "live": "ebeaf7c64a2fb958088765c46c48e8269625f03ddccefec9dc7b76ff7379f2ad",
+    "source": "ebeaf7c64a2fb958088765c46c48e8269625f03ddccefec9dc7b76ff7379f2ad",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/agents/openai.yaml",
+    "expected": "c61e7eb38f097029d947314b441959b17aae2303440a52022cd386d78171e6b5",
+    "live": "c61e7eb38f097029d947314b441959b17aae2303440a52022cd386d78171e6b5",
+    "source": "c61e7eb38f097029d947314b441959b17aae2303440a52022cd386d78171e6b5",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/references/change-specification.md",
+    "expected": "ee77e10ecaedf2f8ccb972ee1832ee0324e869106fa293cdbb3ed7d3d4572301",
+    "live": "ee77e10ecaedf2f8ccb972ee1832ee0324e869106fa293cdbb3ed7d3d4572301",
+    "source": "ee77e10ecaedf2f8ccb972ee1832ee0324e869106fa293cdbb3ed7d3d4572301",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/references/system-specification.md",
+    "expected": "9dce951f36315e2a5cf7fcf2834283f2751d3419fcbe4115a91a63c7e07b85f5",
+    "live": "9dce951f36315e2a5cf7fcf2834283f2751d3419fcbe4115a91a63c7e07b85f5",
+    "source": "9dce951f36315e2a5cf7fcf2834283f2751d3419fcbe4115a91a63c7e07b85f5",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-specify/references/review.md",
+    "expected": "89a2a5e94ddc79eab43569961c51e9114cded2715ecc893ec32cdcba15c40911",
+    "live": "89a2a5e94ddc79eab43569961c51e9114cded2715ecc893ec32cdcba15c40911",
+    "source": "89a2a5e94ddc79eab43569961c51e9114cded2715ecc893ec32cdcba15c40911",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/assets/icon.svg",
+    "expected": "4fd314a8f182561a13fbf6fe062e4aee5fd0e0330dccd9943ec14aa5dab34c48",
+    "live": "4fd314a8f182561a13fbf6fe062e4aee5fd0e0330dccd9943ec14aa5dab34c48",
+    "source": "4fd314a8f182561a13fbf6fe062e4aee5fd0e0330dccd9943ec14aa5dab34c48",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/agents/openai.yaml",
+    "expected": "438f0f659f42428e943046f75e10eb5b21384802baf3ce8eb010b9598d00cb7b",
+    "live": "438f0f659f42428e943046f75e10eb5b21384802baf3ce8eb010b9598d00cb7b",
+    "source": "438f0f659f42428e943046f75e10eb5b21384802baf3ce8eb010b9598d00cb7b",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/references/task-execution.md",
+    "expected": "0da734c6682c8088af89fb5da78474b78e65e3d7cf35deca83b2e86aace720b5",
+    "live": "0da734c6682c8088af89fb5da78474b78e65e3d7cf35deca83b2e86aace720b5",
+    "source": "0da734c6682c8088af89fb5da78474b78e65e3d7cf35deca83b2e86aace720b5",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/references/completion-and-checkpoints.md",
+    "expected": "952f03ba4b272d3fb9e51dcd72daedc0dab8d46531dca0d67e814acced96bdef",
+    "live": "952f03ba4b272d3fb9e51dcd72daedc0dab8d46531dca0d67e814acced96bdef",
+    "source": "952f03ba4b272d3fb9e51dcd72daedc0dab8d46531dca0d67e814acced96bdef",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/references/range-selection.md",
+    "expected": "3999c2f4c7249aa3c71c8fd3de873775f8427b3dec0543a3d821fa355d21ceb2",
+    "live": "3999c2f4c7249aa3c71c8fd3de873775f8427b3dec0543a3d821fa355d21ceb2",
+    "source": "3999c2f4c7249aa3c71c8fd3de873775f8427b3dec0543a3d821fa355d21ceb2",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-implement/references/startup-and-continuation.md",
+    "expected": "55976d6a985c40860cd40c9f7ca765e0908a86d1b2bd7fc6081e13c0e1e9b66e",
+    "live": "55976d6a985c40860cd40c9f7ca765e0908a86d1b2bd7fc6081e13c0e1e9b66e",
+    "source": "55976d6a985c40860cd40c9f7ca765e0908a86d1b2bd7fc6081e13c0e1e9b66e",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/assets/icon.svg",
+    "expected": "44568c513e736771f4dde159c1903c6da19a774474ce65aeb8992dd694706659",
+    "live": "44568c513e736771f4dde159c1903c6da19a774474ce65aeb8992dd694706659",
+    "source": "44568c513e736771f4dde159c1903c6da19a774474ce65aeb8992dd694706659",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/agents/openai.yaml",
+    "expected": "8672b642e8c5ae2114cd839af1152435c7da485b4a25c3dd62d15c78d124ac98",
+    "live": "8672b642e8c5ae2114cd839af1152435c7da485b4a25c3dd62d15c78d124ac98",
+    "source": "8672b642e8c5ae2114cd839af1152435c7da485b4a25c3dd62d15c78d124ac98",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/references/physical-layout.md",
+    "expected": "993137500c3359d5ca344e4c299b023ff71740630141b7ffe18cc7460da13194",
+    "live": "993137500c3359d5ca344e4c299b023ff71740630141b7ffe18cc7460da13194",
+    "source": "993137500c3359d5ca344e4c299b023ff71740630141b7ffe18cc7460da13194",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/references/delivery-plan.md",
+    "expected": "d15620e6b78081c7960a3f98a3342427cfb20a480557f33b090a479aba4d085e",
+    "live": "d15620e6b78081c7960a3f98a3342427cfb20a480557f33b090a479aba4d085e",
+    "source": "d15620e6b78081c7960a3f98a3342427cfb20a480557f33b090a479aba4d085e",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-plan/references/review.md",
+    "expected": "e434c8774c2d1fa11b2e72d4f31adf9ad66662a57033b87992f698c62c9bd198",
+    "live": "e434c8774c2d1fa11b2e72d4f31adf9ad66662a57033b87992f698c62c9bd198",
+    "source": "e434c8774c2d1fa11b2e72d4f31adf9ad66662a57033b87992f698c62c9bd198",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-integrate-feature/assets/icon.svg",
+    "expected": "9b68ea07e6b5916efa646ad8f639cb1872523bb40630043a317cc862440dc006",
+    "live": "9b68ea07e6b5916efa646ad8f639cb1872523bb40630043a317cc862440dc006",
+    "source": "9b68ea07e6b5916efa646ad8f639cb1872523bb40630043a317cc862440dc006",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-integrate-feature/agents/openai.yaml",
+    "expected": "48018ed1de138598f6be61e916b701638234e2d0e570ed42d39760e0f4de8392",
+    "live": "48018ed1de138598f6be61e916b701638234e2d0e570ed42d39760e0f4de8392",
+    "source": "48018ed1de138598f6be61e916b701638234e2d0e570ed42d39760e0f4de8392",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-integrate-feature/references/feature-incorporation.md",
+    "expected": "78abe5e2e7c604be141beaa29a804eedb12de1f130deb5b448839af5d1498019",
+    "live": "78abe5e2e7c604be141beaa29a804eedb12de1f130deb5b448839af5d1498019",
+    "source": "78abe5e2e7c604be141beaa29a804eedb12de1f130deb5b448839af5d1498019",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/assets/icon.svg",
+    "expected": "b9d353ce223194b53f52a4853ed1cc9468718ed0ee57074b5988a309f54d14d1",
+    "live": "b9d353ce223194b53f52a4853ed1cc9468718ed0ee57074b5988a309f54d14d1",
+    "source": "b9d353ce223194b53f52a4853ed1cc9468718ed0ee57074b5988a309f54d14d1",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/agents/openai.yaml",
+    "expected": "421038f108a077de64e16c95011ed4f6bff87d47e16c53894bbcc0dc581cc4ae",
+    "live": "421038f108a077de64e16c95011ed4f6bff87d47e16c53894bbcc0dc581cc4ae",
+    "source": "421038f108a077de64e16c95011ed4f6bff87d47e16c53894bbcc0dc581cc4ae",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/references/objective-and-impact.md",
+    "expected": "032ba7e7ed09f67db0a1fedc53dcf07f1199d021aa468f3f5365972cc126b298",
+    "live": "032ba7e7ed09f67db0a1fedc53dcf07f1199d021aa468f3f5365972cc126b298",
+    "source": "032ba7e7ed09f67db0a1fedc53dcf07f1199d021aa468f3f5365972cc126b298",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/references/verification-and-stop.md",
+    "expected": "c26eefd37657c763d499644ef3ea7ef0b94a85a4db39d60ab9e8e7964a875c8d",
+    "live": "c26eefd37657c763d499644ef3ea7ef0b94a85a4db39d60ab9e8e7964a875c8d",
+    "source": "c26eefd37657c763d499644ef3ea7ef0b94a85a4db39d60ab9e8e7964a875c8d",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-steer/references/amendment-execution.md",
+    "expected": "7af1fb590e65b1c0a67c4e384e0bbc85cbade6802815ffd9d03f735092abda73",
+    "live": "7af1fb590e65b1c0a67c4e384e0bbc85cbade6802815ffd9d03f735092abda73",
+    "source": "7af1fb590e65b1c0a67c4e384e0bbc85cbade6802815ffd9d03f735092abda73",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tasks/assets/icon.svg",
+    "expected": "dad3203c0386ce1a697600ae82fc1e03f530111626192018df24dd7c5ac69eb0",
+    "live": "dad3203c0386ce1a697600ae82fc1e03f530111626192018df24dd7c5ac69eb0",
+    "source": "dad3203c0386ce1a697600ae82fc1e03f530111626192018df24dd7c5ac69eb0",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tasks/agents/openai.yaml",
+    "expected": "60b43614f445a40f3d52d21869962189bdfe0252461317a6712a55d176797aa2",
+    "live": "60b43614f445a40f3d52d21869962189bdfe0252461317a6712a55d176797aa2",
+    "source": "60b43614f445a40f3d52d21869962189bdfe0252461317a6712a55d176797aa2",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tasks/references/task-derivation.md",
+    "expected": "19d94c95e1b6861f3c03b7a3b19c9c077783b39776b7b689ee4180ae658acbc9",
+    "live": "19d94c95e1b6861f3c03b7a3b19c9c077783b39776b7b689ee4180ae658acbc9",
+    "source": "19d94c95e1b6861f3c03b7a3b19c9c077783b39776b7b689ee4180ae658acbc9",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tasks/references/progress-review.md",
+    "expected": "4ebad329ca9da74e72b5b18fc48e10bcf21e7b26fc9ac10613b180d1c800853a",
+    "live": "4ebad329ca9da74e72b5b18fc48e10bcf21e7b26fc9ac10613b180d1c800853a",
+    "source": "4ebad329ca9da74e72b5b18fc48e10bcf21e7b26fc9ac10613b180d1c800853a",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-orient/assets/icon.svg",
+    "expected": "ef235e59b6a56e0d21629b3b6c1b2ca9cc97cd678d02bcb31b0e2f7bc11bf1f2",
+    "live": "ef235e59b6a56e0d21629b3b6c1b2ca9cc97cd678d02bcb31b0e2f7bc11bf1f2",
+    "source": "ef235e59b6a56e0d21629b3b6c1b2ca9cc97cd678d02bcb31b0e2f7bc11bf1f2",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-orient/agents/openai.yaml",
+    "expected": "36dbb7990b7f504c1fa4b614651ad26431ab6af5a623be8250b780ce156667c9",
+    "live": "36dbb7990b7f504c1fa4b614651ad26431ab6af5a623be8250b780ce156667c9",
+    "source": "36dbb7990b7f504c1fa4b614651ad26431ab6af5a623be8250b780ce156667c9",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-orient/references/inspection-and-handoff.md",
+    "expected": "c395babc7741d90731bc443d2f98ac10170e4118ac6e3bcacf46b56f395ac106",
+    "live": "c395babc7741d90731bc443d2f98ac10170e4118ac6e3bcacf46b56f395ac106",
+    "source": "c395babc7741d90731bc443d2f98ac10170e4118ac6e3bcacf46b56f395ac106",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/assets/icon.svg",
+    "expected": "ca997d09da83d706126f43dc2ace19c00ee9036ae67dcce225e688a09d398d33",
+    "live": "ca997d09da83d706126f43dc2ace19c00ee9036ae67dcce225e688a09d398d33",
+    "source": "ca997d09da83d706126f43dc2ace19c00ee9036ae67dcce225e688a09d398d33",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/agents/openai.yaml",
+    "expected": "2e771812264ece1f124cafdceaf3b5d34ff319a9d5a464beaf2beddc8ef3d484",
+    "live": "2e771812264ece1f124cafdceaf3b5d34ff319a9d5a464beaf2beddc8ef3d484",
+    "source": "2e771812264ece1f124cafdceaf3b5d34ff319a9d5a464beaf2beddc8ef3d484",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/references/github-issue-lifecycle.md",
+    "expected": "faebde76a2833bc4879a51c426effbd3f0893dec38454e7910b63823e0ad2951",
+    "live": "faebde76a2833bc4879a51c426effbd3f0893dec38454e7910b63823e0ad2951",
+    "source": "faebde76a2833bc4879a51c426effbd3f0893dec38454e7910b63823e0ad2951",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/references/github-projection.md",
+    "expected": "5151ec211bd6d543dbce9ab6b2e71561f5bbf8e54780b08ad3664e238250ce02",
+    "live": "5151ec211bd6d543dbce9ab6b2e71561f5bbf8e54780b08ad3664e238250ce02",
+    "source": "5151ec211bd6d543dbce9ab6b2e71561f5bbf8e54780b08ad3664e238250ce02",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-forge/references/github.md",
+    "expected": "5ecd0c65f1c56e8ef2c259852fc9d7c6b404fa2215c528fdbad9da117286fb08",
+    "live": "5ecd0c65f1c56e8ef2c259852fc9d7c6b404fa2215c528fdbad9da117286fb08",
+    "source": "5ecd0c65f1c56e8ef2c259852fc9d7c6b404fa2215c528fdbad9da117286fb08",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/assets/icon.svg",
+    "expected": "98c55eb98b3e3702037698739b96fb550da2223bf733fb576650d0a4c5504864",
+    "live": "98c55eb98b3e3702037698739b96fb550da2223bf733fb576650d0a4c5504864",
+    "source": "98c55eb98b3e3702037698739b96fb550da2223bf733fb576650d0a4c5504864",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/agents/openai.yaml",
+    "expected": "102d11e8960f1f7af69bfcbacbe71defad289b9c368d11a610fb6b19e61dd3b6",
+    "live": "102d11e8960f1f7af69bfcbacbe71defad289b9c368d11a610fb6b19e61dd3b6",
+    "source": "102d11e8960f1f7af69bfcbacbe71defad289b9c368d11a610fb6b19e61dd3b6",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/references/exploration.md",
+    "expected": "54d5b0262975a3a4981deb5717ca7cb0e87817cd54b2a51e10d6d6fa7eb1d209",
+    "live": "54d5b0262975a3a4981deb5717ca7cb0e87817cd54b2a51e10d6d6fa7eb1d209",
+    "source": "54d5b0262975a3a4981deb5717ca7cb0e87817cd54b2a51e10d6d6fa7eb1d209",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/references/architecture.md",
+    "expected": "329327e9cadf2637289dcad8808faa0a31c7e386223accb91366b897ef64339b",
+    "live": "329327e9cadf2637289dcad8808faa0a31c7e386223accb91366b897ef64339b",
+    "source": "329327e9cadf2637289dcad8808faa0a31c7e386223accb91366b897ef64339b",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-design/references/decomposition.md",
+    "expected": "eac648372c44883068569a13a2715cb7d7b4d84e26f7c4de20478f93bb124abf",
+    "live": "eac648372c44883068569a13a2715cb7d7b4d84e26f7c4de20478f93bb124abf",
+    "source": "eac648372c44883068569a13a2715cb7d7b4d84e26f7c4de20478f93bb124abf",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/assets/icon.svg",
+    "expected": "37e86ed29c77f13846f9c315627c5e139d1348d7eed26eef2ff94354c334239f",
+    "live": "37e86ed29c77f13846f9c315627c5e139d1348d7eed26eef2ff94354c334239f",
+    "source": "37e86ed29c77f13846f9c315627c5e139d1348d7eed26eef2ff94354c334239f",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/agents/openai.yaml",
+    "expected": "f0049fe541cbffe331d4ccb9e903ed49bb96f1011cefecd1ced49fbd1bd19da4",
+    "live": "f0049fe541cbffe331d4ccb9e903ed49bb96f1011cefecd1ced49fbd1bd19da4",
+    "source": "f0049fe541cbffe331d4ccb9e903ed49bb96f1011cefecd1ced49fbd1bd19da4",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/references/testing-strategy.md",
+    "expected": "2ed2ba4a226e88a6dfd0dce41bc5f3f4f56942e28b7d032b5bb936c5ff268880",
+    "live": "2ed2ba4a226e88a6dfd0dce41bc5f3f4f56942e28b7d032b5bb936c5ff268880",
+    "source": "2ed2ba4a226e88a6dfd0dce41bc5f3f4f56942e28b7d032b5bb936c5ff268880",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/references/upstream-provenance.md",
+    "expected": "668d85251c25027ac1494c9bb89367fa3c1885c23424e3987d02f7fd0b02ca33",
+    "live": "668d85251c25027ac1494c9bb89367fa3c1885c23424e3987d02f7fd0b02ca33",
+    "source": "668d85251c25027ac1494c9bb89367fa3c1885c23424e3987d02f7fd0b02ca33",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/references/writing-good-tests.md",
+    "expected": "c5a555443dc5cf3b78312f9939bfbe53be7b04978f4f14f3350820ed5bc5b0d8",
+    "live": "c5a555443dc5cf3b78312f9939bfbe53be7b04978f4f14f3350820ed5bc5b0d8",
+    "source": "c5a555443dc5cf3b78312f9939bfbe53be7b04978f4f14f3350820ed5bc5b0d8",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-tdd/references/test-first-cycle.md",
+    "expected": "e8d797ba50e555d53500516e85f8b624f7ed11f5a7534e39220f2a74141e3d96",
+    "live": "e8d797ba50e555d53500516e85f8b624f7ed11f5a7534e39220f2a74141e3d96",
+    "source": "e8d797ba50e555d53500516e85f8b624f7ed11f5a7534e39220f2a74141e3d96",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/assets/icon.svg",
+    "expected": "aca30e96cbe5d44d759da47cc1db33c87dce1d04bf77142feac8475eecbab074",
+    "live": "aca30e96cbe5d44d759da47cc1db33c87dce1d04bf77142feac8475eecbab074",
+    "source": "aca30e96cbe5d44d759da47cc1db33c87dce1d04bf77142feac8475eecbab074",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/agents/openai.yaml",
+    "expected": "bfe1a84a61bf154a5cb846d41b10d73e88a596044d21e6d1f151d1dc78ae221c",
+    "live": "bfe1a84a61bf154a5cb846d41b10d73e88a596044d21e6d1f151d1dc78ae221c",
+    "source": "bfe1a84a61bf154a5cb846d41b10d73e88a596044d21e6d1f151d1dc78ae221c",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/references/object-drafts.md",
+    "expected": "02c59ec747d32200ec3d79681d41e1e10b24d240bb8ca605ec635322280f1cfd",
+    "live": "02c59ec747d32200ec3d79681d41e1e10b24d240bb8ca605ec635322280f1cfd",
+    "source": "02c59ec747d32200ec3d79681d41e1e10b24d240bb8ca605ec635322280f1cfd",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/references/completion-reports.md",
+    "expected": "5df4f79534c16667bb51a0f833053a69582660a2be2d1cf1331f2770df13c7a7",
+    "live": "5df4f79534c16667bb51a0f833053a69582660a2be2d1cf1331f2770df13c7a7",
+    "source": "5df4f79534c16667bb51a0f833053a69582660a2be2d1cf1331f2770df13c7a7",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/references/campaign-artifacts.md",
+    "expected": "04b3133f4c135e451157be8b51d996ef3da0dcad8e03634be4e8e172ff6628f5",
+    "live": "04b3133f4c135e451157be8b51d996ef3da0dcad8e03634be4e8e172ff6628f5",
+    "source": "04b3133f4c135e451157be8b51d996ef3da0dcad8e03634be4e8e172ff6628f5",
+    "source_exit": 0
+  },
+  {
+    "path": "skills/sdd-report/references/change-kinds.md",
+    "expected": "51ebff15a54a17b885cf7835474334da7e285823a0113e9c56ebd5bff4769597",
+    "live": "51ebff15a54a17b885cf7835474334da7e285823a0113e9c56ebd5bff4769597",
+    "source": "51ebff15a54a17b885cf7835474334da7e285823a0113e9c56ebd5bff4769597",
+    "source_exit": 0
+  }
+]

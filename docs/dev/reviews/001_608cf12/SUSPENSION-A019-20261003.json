@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-03T09:51:51.903831+00:00",
+  "state": "Controlled stop after A-019; no automatic continuation",
+  "completed_this_extension": [
+    "A-013",
+    "A-019"
+  ],
+  "case_counts": {
+    "Passed": 25,
+    "Pending": 2,
+    "Failed": 0,
+    "Blocked": 0,
+    "Suspended": 0,
+    "Running": 0
+  },
+  "pending_cases": [
+    "A-021",
+    "A-027"
+  ],
+  "next_case": "A-021",
+  "consumers": "All current consumers reported completed/stopped; confirmed by collaboration inventory",
+  "evidence_case_commit": "dd0866ba3e099ff46333952332eca7ce435e35c1",
+  "source_before_stop_record": "21a3c2fbeecc4f15b39b3151baa59db7c0db837e",
+  "live": {
+    "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+    "branch": "main",
+    "head": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+    "phase_tip": "c8da841a53befcc420aeb9e97435ca93f9c7051e",
+    "tracked_clean": true,
+    "pinned_hashes_verified": 97,
+    "unrelated_bytecode_hashes_preserved": 12,
+    "Phase2_complete": true
+  },
+  "isolated_A019": {
+    "repo": "/workspace/scratch/sdd008-A-019-boundary/repo",
+    "origin": "/workspace/scratch/sdd008-A-019-boundary/remote.git",
+    "head": "996855a20e010be0c50b7f3c19c60ed48b0dba0e",
+    "phase_tip": "157298c74ccaf622e9b7652e40e33edea205898d",
+    "clean_no_pending_merge": true,
+    "recovery_bundle": "runs/A-019/A-019-published/refs.bundle",
+    "live_hosted_or_credentials": false
+  },
+  "overall_revision_acceptance_complete": false,
+  "source_boundary_integration_complete": false,
+  "limits": [
+    "Explicit pinned source loading, no installed-client discovery claim",
+    "Python3.12.14 observed, no Python3.11 execution claim",
+    "Available factual journals/handoffs/logs, not native complete transcript",
+    "A013 final consumer poll rejected; read-only root observation confirms final hosted effects",
+    "TST004 provider-body record/display incident disclosed; published JSON artifacts sanitized",
+    "A019 actual controlled local conflict/prerequisite, not real hosted outage; assessor-only heading correction retained"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "mode": "partial",
+  "head": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+  "actual_dirty_transfer": true,
+  "T009_owner": "TASKS.md",
+  "T010_T011_owners": "FEATURE-TASKS.md",
+  "needed_sources_retained": true,
+  "no_commit_push_merge": true,
+  "task_owners": {
+    "T-010": {
+      "id": "T-010",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md",
+      "line": 13,
+      "status": "Checked"
+    },
+    "T-011": {
+      "id": "T-011",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/FEATURE-TASKS.md",
+      "line": 17,
+      "status": "Checked"
+    },
+    "T-001": {
+      "id": "T-001",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 13,
+      "status": "Checked"
+    },
+    "T-002": {
+      "id": "T-002",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 19,
+      "status": "Checked"
+    },
+    "T-003": {
+      "id": "T-003",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 23,
+      "status": "Checked"
+    },
+    "T-004": {
+      "id": "T-004",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 29,
+      "status": "Checked"
+    },
+    "T-005": {
+      "id": "T-005",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 33,
+      "status": "Checked"
+    },
+    "T-006": {
+      "id": "T-006",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 42,
+      "status": "Checked"
+    },
+    "T-007": {
+      "id": "T-007",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 48,
+      "status": "Unchecked"
+    },
+    "T-008": {
+      "id": "T-008",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 51,
+      "status": "Unchecked"
+    },
+    "T-009": {
+      "id": "T-009",
+      "document": "/workspace/scratch/sdd008-A-021-feature/repo/docs/dev/TASKS.md",
+      "line": 57,
+      "status": "Checked"
+    }
+  },
+  "pinned_hashes_verified": 97,
+  "live_hosted_or_credentials": false
+}

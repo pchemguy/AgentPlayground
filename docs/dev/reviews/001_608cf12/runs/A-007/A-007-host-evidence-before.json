@@ -1,0 +1,60 @@
+[
+  {
+    "task": "T-001",
+    "issue": 1,
+    "status": 200,
+    "comments": 1,
+    "matching_evidence_comments": 1,
+    "evidence_urls": [
+      "https://github.com/pchemguy/AgentPlayground/issues/1#issuecomment-5956520479"
+    ]
+  },
+  {
+    "task": "T-002",
+    "issue": 2,
+    "status": 200,
+    "comments": 1,
+    "matching_evidence_comments": 1,
+    "evidence_urls": [
+      "https://github.com/pchemguy/AgentPlayground/issues/2#issuecomment-5956905890"
+    ]
+  },
+  {
+    "task": "T-003",
+    "issue": 3,
+    "status": 200,
+    "comments": 1,
+    "matching_evidence_comments": 1,
+    "evidence_urls": [
+      "https://github.com/pchemguy/AgentPlayground/issues/3#issuecomment-5957048925"
+    ]
+  },
+  {
+    "task": "T-004",
+    "issue": 4,
+    "status": 200,
+    "comments": 1,
+    "matching_evidence_comments": 1,
+    "evidence_urls": [
+      "https://github.com/pchemguy/AgentPlayground/issues/4#issuecomment-5957328975"
+    ]
+  },
+  {
+    "task": "T-005",
+    "issue": 5,
+    "status": 200,
+    "comments": 1,
+    "matching_evidence_comments": 1,
+    "evidence_urls": [
+      "https://github.com/pchemguy/AgentPlayground/issues/5#issuecomment-5965081823"
+    ]
+  },
+  {
+    "task": "T-006",
+    "issue": 6,
+    "status": 200,
+    "comments": 0,
+    "matching_evidence_comments": 0,
+    "evidence_urls": []
+  }
+]

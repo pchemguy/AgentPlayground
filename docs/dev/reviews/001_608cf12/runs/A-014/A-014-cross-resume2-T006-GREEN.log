@@ -1,0 +1,8 @@
+test_json_named_file_boundaries_and_bom_modes (tests.integration.test_cli.JsonOutputCliTests.test_json_named_file_boundaries_and_bom_modes) ... ok
+test_json_read_failures_have_no_success_stdout (tests.integration.test_cli.JsonOutputCliTests.test_json_read_failures_have_no_success_stdout) ... ok
+test_json_usage_and_help_keep_baseline_contract (tests.integration.test_cli.JsonOutputCliTests.test_json_usage_and_help_keep_baseline_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.550s
+
+OK

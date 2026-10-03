@@ -1,0 +1,33 @@
+test_dash_prefixed_file_via_separator (tests.integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok
+test_directory_cannot_be_read_as_file (tests.integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok
+test_missing_and_invalid_utf8_inputs (tests.integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok
+test_permission_denial_translation_in_process (tests.integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok
+test_usage_and_help (tests.integration.test_cli.CliFailureTests.test_usage_and_help) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.LineRangeCliTests.test_bom_only_and_interior_bom) ... ok
+test_decode_failure_outside_selection_and_named_dash_paths (tests.integration.test_cli.LineRangeCliTests.test_decode_failure_outside_selection_and_named_dash_paths) ... ok
+test_invalid_ranges_precede_missing_input (tests.integration.test_cli.LineRangeCliTests.test_invalid_ranges_precede_missing_input) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.LineRangeCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_literal_dash_file_uses_explicit_relative_path (tests.integration.test_cli.LineRangeCliTests.test_literal_dash_file_uses_explicit_relative_path) ... ok
+test_literal_selected_cases_in_plain_output_and_bom_modes (tests.integration.test_cli.LineRangeCliTests.test_literal_selected_cases_in_plain_output_and_bom_modes) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.LineRangeCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.LineRangeCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_literal_dash_file_uses_explicit_relative_path (tests.integration.test_cli.NamedFileCliTests.test_literal_dash_file_uses_explicit_relative_path) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_help_omits_removed_option (tests.integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option) ... ok
+test_removed_option_name_is_a_literal_file_after_separator (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_name_is_a_literal_file_after_separator) ... ok
+test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... ok
+test_binary_whole_input_and_bom_modes (tests.integration.test_cli.StdinCliTests.test_binary_whole_input_and_bom_modes) ... ok
+test_caller_stream_survives_success_and_decode_failure (tests.integration.test_cli.StdinCliTests.test_caller_stream_survives_success_and_decode_failure) ... ok
+test_full_decode_errors_before_and_after_selection (tests.integration.test_cli.StdinCliTests.test_full_decode_errors_before_and_after_selection) ... ok
+test_selected_binary_input_matches_literal_contract (tests.integration.test_cli.StdinCliTests.test_selected_binary_input_matches_literal_contract) ... ok
+test_short_reads_reach_eof_and_late_read_failure_is_not_partial_success (tests.integration.test_cli.StdinCliTests.test_short_reads_reach_eof_and_late_read_failure_is_not_partial_success) ... ok
+test_usage_precedes_stdin_acquisition (tests.integration.test_cli.StdinCliTests.test_usage_precedes_stdin_acquisition) ... ok
+test_utf8_is_independent_of_process_text_encoding (tests.integration.test_cli.StdinCliTests.test_utf8_is_independent_of_process_text_encoding) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 4.277s
+
+OK

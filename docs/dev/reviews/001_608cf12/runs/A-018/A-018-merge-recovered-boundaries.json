@@ -1,0 +1,10 @@
+{
+  "retained_merge_published": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+  "same_head_and_parents": true,
+  "same_product_hashes": true,
+  "new_boundary_commits": 0,
+  "remote_main_exact": true,
+  "no_phase2": true,
+  "tracked_clean": true,
+  "independent_behavior_evidence": "Previously captured26 tests/12 CLI checks apply to identical retained commit/tree. Recovery consumer separately rechecked26 tests. No redundant root suite rerun."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "A-015",
+  "status": "Passed",
+  "repo": "/workspace/scratch/sdd008-A-015/repo",
+  "assessment": "Original actual pre-commit rejection preserved. Fresh consumer resumed checked/verified T-001, rechecked7 tests, committed35df4a0 and pushed isolated phase origin; stopped without T-002/merge. Independent hashes of all5 code/test files exactly match pre-resume, proving no reimplementation; main e750d1c unchanged, remote phase equals commit. Controlled hook release explicitly recorded.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-015-resume.md",
+    "/workspace/scratch/acceptance-out-008/A-015-resume-final.md",
+    "/workspace/scratch/acceptance-out-008/A-015-resume-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-015-resume-setup.json",
+    "/workspace/scratch/acceptance-out-008/A-015-resume-independent.json"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "A-001",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Independent inspection: 7 governing documents, SPEC exact contracts, early end-to-end PLAN with phase exits, 8 uniquely owned unchecked tasks. No product source/tests. Preparation e750d1c pushed, main remote equality observed; explicit-source mode only.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-001-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-001.md",
+    "/workspace/scratch/acceptance-out-008/A-001-final.md",
+    "/workspace/scratch/acceptance-out-008/A-001-independent.json"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "pinned_files_verified": 97,
+  "T005_existing_hashes_preserved": true,
+  "T005_commit_paths": [
+    "README.md",
+    "docs/dev/TASKS.md",
+    "tests/integration/test_distribution.py"
+  ],
+  "T005_commit": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+  "A014_pending_preserved": true,
+  "phase2_not_created": true
+}

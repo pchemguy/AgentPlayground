@@ -1,0 +1,1 @@
+Selection only: use pinned manage/orient/implement to resolve next task and full milestone1.1 in published main e750d1c; return IDs, dependencies, segment/stopping point. No tests/push/branches/mutations; no evaluation artifacts. Retain journal/final outside repository.

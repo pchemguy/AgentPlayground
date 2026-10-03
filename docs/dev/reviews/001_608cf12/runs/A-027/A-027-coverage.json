@@ -1,0 +1,590 @@
+{
+  "assessor": "independent A027",
+  "package_commit": "529e98d4d3cd7002e3a49e34394552a44bf0a8d0",
+  "pre_A027_registry_counts": {
+    "Passed": 26,
+    "Pending": 1
+  },
+  "cases": [
+    {
+      "id": "A-001",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Preparation commit contains seven governing documents and eight unchecked stable tasks; no implementation. Retained document inspection and published e750d1c establish the requested stop.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-001/A-001.md",
+        "docs/dev/reviews/001_608cf12/runs/A-001/A-001-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-001/A-001-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-001/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-001/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-002",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Selection resolves T001 and milestone1.1 T001\u2013T003. Actual read journal and unchanged snapshot support no tests, mutations, branch or push.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-002/A-002.md",
+        "docs/dev/reviews/001_608cf12/runs/A-002/A-002-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-002/A-002-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-002/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-002/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-003",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Actual first projection and second synchronization reuse eight issue identities, two phase labels and four milestones; foreign body/label seed preserved. Connector403 and authorized protected-token continuation are retained, not erased.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-resume1.md",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-resume2.md",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003.md",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-resume-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-resume2-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-first-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-003/A-003-second-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-003/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-003/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-004",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "T001 behavioral RED/GREEN and nine-test suite precede scoped3b201a3 and issue1 closure. Main unchanged and no CLI/next-task work at this checkpoint.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-004/A-004.md",
+        "docs/dev/reviews/001_608cf12/runs/A-004/A-004-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-004/A-004-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-004/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-004/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-005",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "T002/T003 delivery has17 tests/eight literal CLI cases, distinct published commits, incomplete phase and unchanged main. TST001 layout correction preserved original moved test bytes.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005.md",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-006-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-T002-green.log",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-T002-red.log",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-T003-green.log",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-T003-red.log",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-cli-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-state-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-005/A-005-suite-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-005/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-005/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-006",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "T005 publication resumed before boundary work; prospective/committed26-test checks and actual ordered merge29c2758 established complete Phase1, without Phase2 advancement. Earlier automatic-review denials remain recorded.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume3.md",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume4.md",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006.md",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume4-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume3-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume4-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-006/A-006-resume4-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-006/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-006/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-007",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Phase2 starts from published29c2758; actual JSON RED/GREEN,31 tests/20 literals, published8a53078 and issue6 evidence. Main remains Phase1 at pause.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007.md",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-GREEN.log",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-T006-RED.log",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-host-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-007/A-007-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-007/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-007/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-008",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Five active feature documents at62b5408 preserve prior blobs and unchecked T009\u2013T011. TST002 input clarification and residual review correction are necessary qualifications of the preparation pass.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-package/docs/dev/FEATURE-PLAN.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-package/docs/dev/FEATURE-SPEC.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-package/docs/dev/FEATURE-TASKS.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-package/docs/dev/FEATURE_DECOMPOSITION.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-package/docs/dev/features/002_8a53078/README.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008.md",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-008/A-008-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-008/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-008/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-009",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Actual e6fe4c4 changes SPEC alone; accepted range contracts and outside-scope impacts retained. FEATURE-TASKS remains sole executable owner with needed active sources; no archive or feature implementation.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-009/A-009-SPEC.md",
+        "docs/dev/reviews/001_608cf12/runs/A-009/A-009.md",
+        "docs/dev/reviews/001_608cf12/runs/A-009/A-009-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-009/A-009-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-009/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-009/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-010",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "T009\u2013T011 implementation commits and41 tests/83 literals precede799e5c7 incorporation/archive and actual two-parent d0eeeff target merge. Sole task ownership, historical sources and paused stdin/Phase2 boundaries verified.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010.md",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-T009-GREEN.log",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-T009-RED.log",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-T010-GREEN.log",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-T010-RED.log",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-boundaries.py",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-host-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-010/A-010-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-010/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-010/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-011",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Assessment-only JSON-removal impacts match the following amendment scope. Read journal and preserved refs/tree/index/worktree/metadata support no execution or hosted write by that consumer.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-011/A-011.md",
+        "docs/dev/reviews/001_608cf12/runs/A-011/A-011-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-011/A-011-host-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-011/A-011-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-011/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-011/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-012",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "Focused6561e28 directly removes JSON and incorporates into paused Phase2 via1d11ae3.39 tests/62 literals verify retained output. TST003 coordinator review corrected obsolete executable JSON rows; not an unassisted initial pass.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012.md",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-boundaries.py",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-green.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-host-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-initial-retired-scope.json",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-red.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-012/A-012-retired-scope-review.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-012/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-012/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-013",
+      "disposition": "Passed",
+      "mode": "live composed workflow",
+      "audit_conclusion": "T007/T008 actual stdin delivery, retained RED and corrected literal-dash invocation precede46 tests/122 literal cases and ordered main merge05c3553. Current fresh live suite and oracles independently reconfirm final behavior. TST004 record handling and rejected final consumer poll remain disclosed.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013.md",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-GREEN-final.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-GREEN.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-T007-RED.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-boundaries.py",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-host-independent-final.json",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-host-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-host-parents-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-013/A-013-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-013/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-013/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/AgentPlayground-sdd-008",
+      "limitations": []
+    },
+    {
+      "id": "A-014",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Out-of-range T002 prerequisite subcase stops without implementing it. Cross-phase continuation publishes complete Phase1 mergecca9072 before Phase2 T006 atd24222f; current exact local-origin publication agrees. Earlier Phase1 RED/GREEN excerpts are partial retained output, not full logs.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2.md",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross.md",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-prerequisite.md",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-prerequisite-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-T004-red-repaired-fixture.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-T004-red.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-T004-RED-excerpt.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-T006-GREEN.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-T006-RED.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-cross-resume2-phase1-GREEN-excerpt.log",
+        "docs/dev/reviews/001_608cf12/runs/A-014/A-014-prerequisite-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-014/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-014/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-014-cross/repo",
+      "limitations": [
+        "A014 retained Phase1 RED/GREEN excerpts have missing-full-log limits. A008/A012 passes include disclosed clarification/review assistance."
+      ]
+    },
+    {
+      "id": "A-015",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Actual pre-commit interrupted state remains exported. Fresh continuation35df4a0 preserves five implementation/test hashes, publishes checked T001 and stops before T002; owner hook release separately documented.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-resume.md",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015.md",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-resume-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-green.log",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-red.log",
+        "docs/dev/reviews/001_608cf12/runs/A-015/A-015-resume-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-015/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-015/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-015/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-016",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Fresh journal orders publication of retained57234b3 before selection/testing; current exact remote and no new commit corroborate clean unpublished recovery without credential discovery.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-016/A-016.md",
+        "docs/dev/reviews/001_608cf12/runs/A-016/A-016-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-016/A-016-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-016/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-016/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-016/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-017",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Injected lone-CR acceptance failure is actually observed (seven tests/three failures), scoped repair8a204f9 passes and publishes. Dependent work/main integration absent. Assessor local-main assumption was corrected against actual origin/main.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-017/A-017.md",
+        "docs/dev/reviews/001_608cf12/runs/A-017/A-017-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-017/A-017-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-017/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-017/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-017/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-018",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Actual task and target push-hook rejection retain task7c29721 and boundary7f845c7; owner restores only synthetic hook. Fresh recovery publishes the identical merge with no duplicate boundary, no Phase2. Current exact refs and retained rejection/recovery bundles agree.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-recovery.md",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge.md",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-retry.md",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-task.md",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-recovery-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-retry-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-task-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-recovered-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-recovered-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-rejected-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-merge-rejected-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-retry-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/A-018-task-rejection-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-018/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-018/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-018-merge/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-019",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Actual three-stage README conflict and then failed required prospective check prevent commit/publication. Separately documented owner readiness restoration preserves staged tree; successful check precedes actual996855a merge. Fresh object parents and bundles agree. Incorrect assessor heading assumption corrected without product changes.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-check.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README-stage-1.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README-stage-2.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README-stage-3.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflicted/README.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/README-stage-0.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-failed-check/README.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-published/README-stage-0.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-published/README.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-recovery.md",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-check-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-recovery-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-boundaries-initial.py",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-boundaries.py",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-check-commands.log",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-conflict-commands.log",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-fixture-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-019/A-019-recovery-commands.log",
+        "docs/dev/reviews/001_608cf12/runs/A-019/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-019/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-019-boundary/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-020",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Owned57234b3 excludes unrelated staged file and unstaged README; actual current status preserves both staged and unstaged intent. Retained contents/index inspection and bundle support scope preservation.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-020/A-020.md",
+        "docs/dev/reviews/001_608cf12/runs/A-020/A-020-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-020/A-020-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-020/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-020/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-020/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-021",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Export proves real nine-document dirty partial transfer: exact T009 moves once to main, T010/T011 stay exact in active source; all four needed sources remain. Fresh continuation preserves all three blocks, archives historical sources, publishesb74570a and ordered5f2be6b target merge. Fresh57 links/ownership/object/remote checks reconfirm; no source/test/vendor change or stdin/main completion.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/DECOMPOSITION.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/FEATURE-PLAN.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/FEATURE-SPEC.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/FEATURE-TASKS.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/FEATURE_DECOMPOSITION.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/PLAN.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/PROJECT.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/TASKS.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-state/owned/docs/dev/features/002_8a53078/README.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume.md",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-boundaries-before-history-correction.py",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-boundaries-initial.py",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-boundaries.py",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-final-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-fixture-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-boundaries.json",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-partial-commands.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-021/A-021-resume-transferred-blocks.json",
+        "docs/dev/reviews/001_608cf12/runs/A-021/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-021/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-021-feature/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-022",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Actual selected incorporation retains checked historical T001 and durable reassessment note; selection includes it without mutation. Scoped332f2a4 adds missing retained-result regression, passesseven tests, resolves note with behavior AST unchanged; parents remain incomplete.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-incorporate.md",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-reassess.md",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-selection.md",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-reassess-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-selection-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-incorporate-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-reassess-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-022/A-022-selection-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-022/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-022/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-022/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-023",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Controlled adapter journal and request sequence show offline503, then one applied-but-uncertain POST503 followed by lookup proving effect, and one closurePATCH; exactly one comment. Synthetic issue901 is fixture state, not a real hosted issue claim. Older completed local work reconciled without development.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-offline.md",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored.md",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-offline-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-offline-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored-final.md",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-023/A-023-restored.md",
+        "docs/dev/reviews/001_608cf12/runs/A-023/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-023/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-023/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-024",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Controlled access403 and missing API-session401 each recover through ignored synthetic stdin credential and one retry; quota403 causes zero auth/retry. No real hosted outage or lost Git-shell-session execution is established.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-024/A-024.md",
+        "docs/dev/reviews/001_608cf12/runs/A-024/A-024-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-024/A-024-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-024/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-024/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-024/repo",
+      "limitations": []
+    },
+    {
+      "id": "A-025",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Fixture has tracked synthetic gh.tkn and effective-ignore negation. Actual consumer denies reuse and stops without reading values/mutation/retry. This proves unsafe tracked-token handling; it is not separate proof of an uncommitted staged-secret rejection at commit time.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-025/A-025.md",
+        "docs/dev/reviews/001_608cf12/runs/A-025/A-025-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-025/A-025-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-025/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-025/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-025/repo",
+      "limitations": [
+        "A025 exercises tracked synthetic-token/ignore-negation blocking; no separate uncommitted staged-secret commit rejection is established."
+      ]
+    },
+    {
+      "id": "A-026",
+      "disposition": "Passed",
+      "mode": "isolated or controlled runtime workflow",
+      "audit_conclusion": "Actual verify records one pre-existing test failure and zero-selected-test exit5, while preserving fixture and selected document. Neither empty collection nor baseline failure is reported as acceptance success.",
+      "evidence": [
+        "docs/dev/reviews/001_608cf12/runs/A-026/A-026.md",
+        "docs/dev/reviews/001_608cf12/runs/A-026/A-026-prompt.txt",
+        "docs/dev/reviews/001_608cf12/runs/A-026/A-026-independent.json",
+        "docs/dev/reviews/001_608cf12/runs/A-026/git-snapshot.json"
+      ],
+      "assessment_path": "docs/dev/reviews/001_608cf12/runs/A-026/assessment.json",
+      "evidence_inventory_path": "A-027-evidence-inventory.json",
+      "current_repo": "/workspace/scratch/sdd008-A-026/repo",
+      "limitations": []
+    }
+  ],
+  "overall_audit_disposition": "Passed for the completed available explicit-source runtime campaign; installed-client coverage remains Not run; source V007 remains pending",
+  "A027_criteria_met": true,
+  "supported_post_assessment_counts": {
+    "Passed": 27,
+    "Pending": 0
+  },
+  "root_registry_mutated_by_assessor": false,
+  "new_blocking_defects": [],
+  "limitations": [
+    "Explicit pinned-source loading in fresh consumers establishes available runtime mode only. Installed-client discovery/routing/activation/display are Not run; R001 is not fully closed for installed-client coverage.",
+    "Python3.12.14 observed; Python3.11 was not executed.",
+    "Available actual action journals, command logs, handoffs and exports are not complete native transcripts; no continuous enforcement or unobserved command history is claimed.",
+    "Controlled local Git hooks, prerequisite readiness and API adapters are injected fixtures, not real hosted outages or lost Git-shell sessions. Fixture setup/checker actions are not consumer execution.",
+    "A014 retained Phase1 RED/GREEN excerpts have missing-full-log limits. A008/A012 passes include disclosed clarification/review assistance.",
+    "A025 exercises tracked synthetic-token/ignore-negation blocking; no separate uncommitted staged-secret commit rejection is established.",
+    "TST004 provider-body display/retention mistake and sanitation before publication remain a historical handling defect; sanitation does not undo display. No token exposure was observed.",
+    "Source documentation contains root-owned pending status edits; V007 integration and subsequent publication remain pending and outside this audit. A027 reports are not yet published by the root.",
+    "A027 was interrupted before final reports; user-authorized resumption used completed retained fresh checks without setup replay."
+  ],
+  "fresh_evidence": [
+    "A-027-fresh-checks.json",
+    "A-027-reconciliation.json",
+    "A-027-source-check.json",
+    "A-027-hosted.json",
+    "A-027-host-parents.json"
+  ],
+  "fresh_test_counts": {
+    "live_full_suite": 46,
+    "evidence_self_tests": 17,
+    "literal_cli_oracles": 122,
+    "help_and_literal_filename_checks": 3
+  }
+}

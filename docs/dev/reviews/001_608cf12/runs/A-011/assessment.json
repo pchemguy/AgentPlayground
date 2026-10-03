@@ -1,0 +1,17 @@
+{
+  "id": "A-011",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Assessment-only JSON-removal scope and retained contracts reported at d0eeeff on paused phase2. Covers current docs/code/tests/README, T-006/2.1 retired-scope disposition, T-010/T-011/2.3 reassessment, future plain stdin and warranted hosted reconciliation. --json becomes unknown-option usage2; API/counting/BOM/range/UTF-8/errors/resources preserved. Independent HEAD/branch/all refs/tree/index/worktree unchanged, no new untracked repo files,12 bytecode hashes and selected metadata for11 hosted tasks unchanged. No branch/campaign reservation, repository mutation, tests, hosted actions, task continuation or merge by consumer. Live hosting was not read by consumer; parent GET observation is separately labeled. Actual inspection/journal/full assessment retained; native transcript unavailable.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-011-baseline.json",
+    "/workspace/scratch/acceptance-out-008/A-011-check.py",
+    "/workspace/scratch/acceptance-out-008/A-011-final.md",
+    "/workspace/scratch/acceptance-out-008/A-011-host-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-011-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-011-inspected-sources.txt",
+    "/workspace/scratch/acceptance-out-008/A-011-inspection.txt",
+    "/workspace/scratch/acceptance-out-008/A-011-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-011.md"
+  ]
+}

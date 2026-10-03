@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "branch": "main",
+  "head": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+  "parents": [
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "c5028a275cea660bc92db275ed5ee12507d811d0",
+    "refs/heads/main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "refs/heads/phase/1-named-file-baseline": "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
+  },
+  "changed_paths": [
+    "AGENTS.md",
+    "README.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md",
+    "tests/__init__.py",
+    "tests/integration/__init__.py",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "tests/unit/__init__.py",
+    "tests/unit/test_api.py",
+    "tests/unit/test_counting.py",
+    "tests/unit/test_files.py",
+    "textstats/__init__.py",
+    "textstats/__main__.py",
+    "textstats/cli.py",
+    "textstats/counting.py",
+    "textstats/files.py"
+  ],
+  "tracked_status": [],
+  "main": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+  "log": [
+    "7f845c755464890e72a5e0cbd1fd6a8d41addac4 d769b55aa63f92d5ccbd8022cb9e87f07e541fae 841a3311a8d526597b9637cb2bfc957c6ac0eba8 Merge phase 1 named-file baseline (T-001\u2013T-005)",
+    "841a3311a8d526597b9637cb2bfc957c6ac0eba8 964e72bd5b7cab1393def96cb7a192938ca586ab Isolate verified-phase publication experiment from hosted tracking",
+    "c5028a275cea660bc92db275ed5ee12507d811d0 70144562e3b8501012b9a1c9b5297be68f0898d9 Record A-014 consumer acceptance assessment",
+    "70144562e3b8501012b9a1c9b5297be68f0898d9 37eb5ba236ff323db59cbda8803c69a7626040e6 Record A-006 consumer acceptance assessment",
+    "37eb5ba236ff323db59cbda8803c69a7626040e6 2064474c81dd9e265b5e28b7382ae4bea88887b7 Retain verified task continuation and approval-blocked safe resume state",
+    "964e72bd5b7cab1393def96cb7a192938ca586ab b9fabb0aab69bf891386f9bf47c503b78be6cf15 Verify baseline documentation and source distribution (T-005)",
+    "2064474c81dd9e265b5e28b7382ae4bea88887b7 9c714981b61564a80768154745450b892fd9ff7d Retain read-only continuation observer for six-case acceptance run",
+    "9c714981b61564a80768154745450b892fd9ff7d 6f51f1dee0c16bdf6d28a7de7853f6d78737a4a9 Record A-018 consumer acceptance assessment",
+    "6f51f1dee0c16bdf6d28a7de7853f6d78737a4a9 f550240e1bd06f170e9c75c703463abe1b03b651 Record A-014 consumer acceptance assessment",
+    "f550240e1bd06f170e9c75c703463abe1b03b651 876c488c95587794ea5f6a6e4a5f944b753eac76 Record A-006 consumer acceptance assessment",
+    "876c488c95587794ea5f6a6e4a5f944b753eac76 01a9d334ce7be458dc6dbba33fb6b65bef910fc7 Record A-018 consumer acceptance assessment",
+    "01a9d334ce7be458dc6dbba33fb6b65bef910fc7 8b117f48f8b9d4f5499f0d39faefb324fcd1edd1 Record A-014 consumer acceptance assessment"
+  ],
+  "product_hashes": {
+    "textstats/__init__.py": "b344c61963b78e90b5d3c6239c434469ae8109b697ff12b9d2c006000c2145ce",
+    "textstats/__main__.py": "620e8a2f5e4c657c8d82439d61f5e540efcbb9f4e2ccee55116e1fa472b8dd3c",
+    "textstats/cli.py": "304c88ef33e98424d2c2ca10bcb0e5a1387ad63e35959674248f600882f69833",
+    "textstats/counting.py": "78dcae43e8f6e1ff217c9b59a6a75be9467bfde75ed178be44af2d35324cebfb",
+    "textstats/files.py": "858a5740bf4a6fce5a5212f98d3f8b4ee383775632e53e8833e45235c48c1d2d"
+  },
+  "task_check": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "tests.workflows.task_ownership",
+      "/workspace/scratch/sdd008-A-018-merge/repo/docs"
+    ],
+    "cwd": "/workspace/scratch/AgentPlayground-evidence-008",
+    "returncode": 0,
+    "stdout": "{\n  \"documents\": [\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/PROJECT.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/ARCHITECTURE.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/DECOMPOSITION.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/SPEC.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/PLAN.md\",\n    \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/layout.md\"\n  ],\n  \"owners\": {\n    \"T-001\": {\n      \"id\": \"T-001\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 13,\n      \"status\": \"Checked\"\n    },\n    \"T-002\": {\n      \"id\": \"T-002\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 19,\n      \"status\": \"Checked\"\n    },\n    \"T-003\": {\n      \"id\": \"T-003\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 23,\n      \"status\": \"Checked\"\n    },\n    \"T-004\": {\n      \"id\": \"T-004\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 29,\n      \"status\": \"Checked\"\n    },\n    \"T-005\": {\n      \"id\": \"T-005\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 33,\n      \"status\": \"Checked\"\n    },\n    \"T-006\": {\n      \"id\": \"T-006\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 42,\n      \"status\": \"Unchecked\"\n    },\n    \"T-007\": {\n      \"id\": \"T-007\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 46,\n      \"status\": \"Unchecked\"\n    },\n    \"T-008\": {\n      \"id\": \"T-008\",\n      \"document\": \"/workspace/scratch/sdd008-A-018-merge/repo/docs/dev/TASKS.md\",\n      \"line\": 49,\n      \"status\": \"Unchecked\"\n    }\n  }\n}\n",
+    "stderr": ""
+  },
+  "suites": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/sdd008-A-018-merge/repo",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_dash_prefixed_file_via_separator (integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok\ntest_directory_cannot_be_read_as_file (integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok\ntest_missing_and_invalid_utf8_inputs (integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok\ntest_permission_denial_translation_in_process (integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok\ntest_usage_and_help (integration.test_cli.CliFailureTests.test_usage_and_help) ... ok\ntest_bom_only_and_interior_bom (integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok\ntest_dash_is_a_named_file_before_stdin_delivery (integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok\ntest_keep_bom_composes_with_named_input (integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok\ntest_named_file_success_boundaries (integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok\ntest_named_input_with_spaces_is_not_modified (integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok\ntest_documented_archive_deploys_only_product_sources (integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok\ntest_public_calls_return_independent_values_without_output (unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok\ntest_public_result_has_integer_counts (unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok\ntest_result_is_immutable (unit.test_api.PublicApiTests.test_result_is_immutable) ... ok\ntest_cr_lf_crlf_and_trailing_segments (unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok\ntest_default_removes_one_leading_bom (unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok\ntest_interior_bom_is_preserved_in_both_modes (unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok\ntest_keep_bom_treats_bom_as_non_whitespace (unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok\ntest_spec_counting_table (unit.test_counting.CountingTests.test_spec_counting_table) ... ok\ntest_unicode_whitespace_does_not_create_lines (unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok\ntest_bom_modes_are_applied_to_decoded_file (unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok\ntest_real_files_match_fixed_expected_counts (unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok\ntest_success_closes_real_owned_handle_without_output (unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok\ntest_decode_failure_closes_real_handle_and_preserves_bytes (unit.test_files.FileFailureTests.test_decode_failure_closes_real_handle_and_preserves_bytes) ... ok\ntest_missing_file_preserves_oserror_without_output (unit.test_files.FileFailureTests.test_missing_file_preserves_oserror_without_output) ... ok\ntest_read_denial_closes_acquired_handle_and_preserves_exception (unit.test_files.FileFailureTests.test_read_denial_closes_acquired_handle_and_preserves_exception) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 1.242s\n\nOK\n"
+    }
+  ],
+  "oracles": {
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-success.json": [
+      {
+        "name": "empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "mixed",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/mixed.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=3 words=4\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unicode-separator",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/unicode-separator.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "trailing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/trailing.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unterminated",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/unterminated.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/bom-empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-retained",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--keep-bom",
+          "/tmp/textstats-assessor-lcyqous5/bom-retained.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "double-bom",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-lcyqous5/double-bom.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-errors.json": [
+      {
+        "name": "missing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-llzkf71r/missing.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-llzkf71r/missing.txt: [Errno 2] No such file or directory: '/tmp/textstats-assessor-llzkf71r/missing.txt'\n",
+        "mismatches": []
+      },
+      {
+        "name": "bad-utf8",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-llzkf71r/bad-utf8.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-llzkf71r/bad-utf8.txt: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+        "mismatches": []
+      },
+      {
+        "name": "no-input",
+        "argv": [
+          "python",
+          "-m",
+          "textstats"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] INPUT\npython -m textstats: error: the following arguments are required: INPUT\n",
+        "mismatches": []
+      },
+      {
+        "name": "unknown-option",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--nonexistent",
+          "x"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] INPUT\npython -m textstats: error: unrecognized arguments: --nonexistent\n",
+        "mismatches": []
+      }
+    ]
+  },
+  "limits": "Read-only observation is not a consumer action or autonomous pass decision. Tests create ordinary bytecode; credentials/raw provider bodies are excluded."
+}

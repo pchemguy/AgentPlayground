@@ -1,0 +1,79 @@
+test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok
+test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok
+test_success_closes_real_owned_handle_without_output (tests.unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok
+test_invalid_utf8_preserves_decode_error_and_closes_real_handle (tests.unit.test_files.FileFailureTests.test_invalid_utf8_preserves_decode_error_and_closes_real_handle) ... ok
+test_missing_file_preserves_os_error_without_output (tests.unit.test_files.FileFailureTests.test_missing_file_preserves_os_error_without_output) ... ok
+test_open_permission_error_retains_exception_identity (tests.unit.test_files.FileFailureTests.test_open_permission_error_retains_exception_identity) ... ok
+test_read_failure_closes_real_handle_and_retains_os_error (tests.unit.test_files.FileFailureTests.test_read_failure_closes_real_handle_and_retains_os_error) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.BaselineFailureCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.BaselineFailureCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_double_dash_supports_dash_prefixed_filename (tests.integration.test_cli.BaselineFailureCliTests.test_double_dash_supports_dash_prefixed_filename) ... ok
+test_help_succeeds_without_stderr (tests.integration.test_cli.BaselineFailureCliTests.test_help_succeeds_without_stderr) ... ok
+test_invalid_invocations_use_usage_status_and_channels (tests.integration.test_cli.BaselineFailureCliTests.test_invalid_invocations_use_usage_status_and_channels) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.BaselineFailureCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) ... 
+  test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5/missing.txt')) ... FAIL
+  test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5/invalid.txt')) ... FAIL
+  test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5')) ... FAIL
+test_named_file_success_boundaries (tests.integration.test_cli.BaselineFailureCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.BaselineFailureCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_real_permission_denial_for_cli_and_public_api (tests.integration.test_cli.BaselineFailureCliTests.test_real_permission_denial_for_cli_and_public_api) ... ERROR
+test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+
+======================================================================
+ERROR: test_real_permission_denial_for_cli_and_public_api (tests.integration.test_cli.BaselineFailureCliTests.test_real_permission_denial_for_cli_and_public_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 145, in test_real_permission_denial_for_cli_and_public_api
+    result = self.run_command([str(path)], preexec_fn=unprivileged_child)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 25, in run_command
+    return subprocess.run(
+           ^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1958, in _execute_child
+    raise child_exception_type(err_msg)
+subprocess.SubprocessError: Exception occurred in preexec_fn.
+
+======================================================================
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5/missing.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 106, in test_missing_malformed_and_directory_inputs
+    self.assert_read_failure(self.run_cli(path), path, cause)
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 96, in assert_read_failure
+    self.assertNotIn("Traceback", result.stderr)
+AssertionError: 'Traceback' unexpectedly found in 'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/__main__.py", line 6, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/cli.py", line 39, in main\n    result = count_file(arguments.input, strip_bom=not arguments.keep_bom)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/files.py", line 30, in count_file\n    with open(path, "r", encoding="utf-8", newline="") as handle:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: \'/tmp/tmpt6ouoqb5/missing.txt\'\n'
+
+======================================================================
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5/invalid.txt'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 106, in test_missing_malformed_and_directory_inputs
+    self.assert_read_failure(self.run_cli(path), path, cause)
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 94, in assert_read_failure
+    self.assertIn(str(input_name), result.stderr)
+AssertionError: '/tmp/tmpt6ouoqb5/invalid.txt' not found in 'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/__main__.py", line 6, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/cli.py", line 39, in main\n    result = count_file(arguments.input, strip_bom=not arguments.keep_bom)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/files.py", line 31, in count_file\n    text = handle.read()\n           ^^^^^^^^^^^^^\n  File "<frozen codecs>", line 322, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0xff in position 6: invalid start byte\n'
+
+======================================================================
+FAIL: test_missing_malformed_and_directory_inputs (tests.integration.test_cli.BaselineFailureCliTests.test_missing_malformed_and_directory_inputs) (path=PosixPath('/tmp/tmpt6ouoqb5'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 106, in test_missing_malformed_and_directory_inputs
+    self.assert_read_failure(self.run_cli(path), path, cause)
+  File "/workspace/scratch/sdd008-A-014-cross/repo/tests/integration/test_cli.py", line 96, in assert_read_failure
+    self.assertNotIn("Traceback", result.stderr)
+AssertionError: 'Traceback' unexpectedly found in 'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/__main__.py", line 6, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/cli.py", line 39, in main\n    result = count_file(arguments.input, strip_bom=not arguments.keep_bom)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/workspace/scratch/sdd008-A-014-cross/repo/textstats/files.py", line 30, in count_file\n    with open(path, "r", encoding="utf-8", newline="") as handle:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIsADirectoryError: [Errno 21] Is a directory: \'/tmp/tmpt6ouoqb5\'\n'
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.144s
+
+FAILED (failures=3, errors=1)

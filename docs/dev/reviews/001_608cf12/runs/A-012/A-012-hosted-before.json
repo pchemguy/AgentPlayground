@@ -1,0 +1,256 @@
+{
+  "issues": [
+    {
+      "number": 11,
+      "title": "[T-011] Verify named-file line-range delivery and milestone exits",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/11",
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "4a3e23d911496e23d969ebd52cad07c746482dc763e56a6ffd8c97424204c4ca",
+      "managed_ids": [
+        "T-011"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "[T-010] Deliver named-file line-range CLI counting",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/10",
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "ccfa15f4ba796eaaebc5d0b7a376e28d04a2452ffa14806915a335e42123ee46",
+      "managed_ids": [
+        "T-010"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "[T-009] Add pure selected-counting and file-adapter collaboration",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/9",
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "cf001eb400d6f9f3b7caac865e7a25af311a8772da1f45cdf40b4f9f972bbb91",
+      "managed_ids": [
+        "T-009"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "[T-008] Verify complete stdin delivery and phase exits",
+      "state": "open",
+      "state_reason": null,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "308f1ae0df1f1de4fa6cb8676f7112d7cdefd4b09d1cb5157b2816bf9097b94d",
+      "managed_ids": [
+        "T-008"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "[T-007] Support stdin through the dash input",
+      "state": "open",
+      "state_reason": null,
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "00febfbecc3b88a5ac60d97f0185f330541c2a7d67014a6f25e732fabac43496",
+      "managed_ids": [
+        "T-007"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "[T-006] Add and verify JSON output",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+      "milestone": 3,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "body_sha256": "f040628122134183c0d62d178c7c268d883f3e20c2f92fd724e7f6566f569f0a",
+      "managed_ids": [
+        "T-006"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "[T-005] Verify baseline documentation and source distribution",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "body_sha256": "fd076682871ec2ef1a24aa9bd4eea839c913ebfb77d23f9e891a0f07c62efaaf",
+      "managed_ids": [
+        "T-005"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "[T-004] Complete baseline failure and usage handling",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "body_sha256": "124546d4cf679a4cdcd43eff16eadc2c7f23fd97b5385cc41fb3551f26b99380",
+      "managed_ids": [
+        "T-004"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "[T-003] Deliver the usable named-file module CLI",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "body_sha256": "07ef88bf0893070b7fa15dca47a3f3673129b4e6c0747f6a9726f924dfa07d1a",
+      "managed_ids": [
+        "T-003"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "[T-002] Expose UTF-8 named-file counting",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "body_sha256": "b26a5bba237fffcafa1a94fbcda8e64272864759aa140463876cc06fad2baa19",
+      "managed_ids": [
+        "T-002"
+      ]
+    },
+    {
+      "number": 1,
+      "title": "[T-001] Implement the public counting core",
+      "state": "closed",
+      "state_reason": "completed",
+      "url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline",
+        "acceptance-note"
+      ],
+      "body_sha256": "9ba22703cd5d128a4f1a7dd62fa434ddbb4c5593311c767c007b8004c6a87a56",
+      "managed_ids": [
+        "T-001"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+      "state": "open",
+      "description_sha256": "82ce1108aa566dfc7c071619b3d398ae8b98ae38b253c04f180f1fa9c3c8bd40"
+    },
+    {
+      "number": 2,
+      "title": "sdd-1.2-Reliable-baseline-and-distribution",
+      "state": "open",
+      "description_sha256": "2480be8412039d73d0234dc66b846e37d2b094bb39ba0ba3128c49a7da3d648f"
+    },
+    {
+      "number": 3,
+      "title": "sdd-2.1-JSON-output",
+      "state": "open",
+      "description_sha256": "36f051643a535dd0781f76f4c1388ebe8380d3a7398198d0617c4c8ed5839c55"
+    },
+    {
+      "number": 4,
+      "title": "sdd-2.2-UTF-8-stdin",
+      "state": "open",
+      "description_sha256": "2539969e29bbc6bf324a49fad642bf7965c4412c23555f88d1a24f9216c0b342"
+    },
+    {
+      "number": 5,
+      "title": "sdd-2.3-Line-range-counting",
+      "state": "open",
+      "description_sha256": "be25127a8ea5e71f1e5cdef7d35caa957d775d6e66f5d945cf1183080dd2233d"
+    }
+  ],
+  "labels": [
+    {
+      "name": "acceptance-note",
+      "description": "Human acceptance note; independent of managed hierarchy."
+    },
+    {
+      "name": "accessibility",
+      "description": "Barrier affecting people with disabilities"
+    },
+    {
+      "name": "bug",
+      "description": "Something isn't working"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested"
+    },
+    {
+      "name": "sdd-phase-1-Named-file-baseline",
+      "description": "Named-file baseline delivery phase."
+    },
+    {
+      "name": "sdd-phase-2-Output-and-input-extensions",
+      "description": "Output and input extensions delivery phase."
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on"
+    }
+  ]
+}

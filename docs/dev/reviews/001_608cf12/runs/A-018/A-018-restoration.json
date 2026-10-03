@@ -1,0 +1,5 @@
+{
+  "intervention": "Root fixture owner disabled controlled server hook after rejection evidence was committed/pushed/remote-verified at8eacb48. No product commit or remote ref altered.",
+  "retained_commit": "7c29721c438ca31d681d26178f38dc471f822df4",
+  "disabled_hook_sha256": "ed86c0dfd906e6620d4d0894b63ffd7a97b800ae4571b8721be39eae860669dc"
+}

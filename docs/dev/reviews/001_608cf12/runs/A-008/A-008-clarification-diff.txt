@@ -1,0 +1,74 @@
+$ git diff --check
+Exit status: 0
+
+$ git diff
+diff --git a/docs/dev/FEATURE-PLAN.md b/docs/dev/FEATURE-PLAN.md
+index 01e7655..80559ab 100644
+--- a/docs/dev/FEATURE-PLAN.md
++++ b/docs/dev/FEATURE-PLAN.md
+@@ -8,13 +8,13 @@ Preserve the usable published named-file/JSON checkpoint. First establish pure s
+ 
+ Named-file delivery depends on completed main T-006; pure selection builds on T-001/T-002. Demonstrate a singleton, an inclusive middle/end range, an EOF-truncated range and an empty selection with exact outputs, plus malformed-range diagnostics. This provides practical feedback for the human to continue, amend, simplify or stop at an authorized checkpoint; preparation alone does not authorize that demonstration or implementation.
+ 
+-Finish composition with planned strict UTF-8 stdin after separately implemented main T-007. Verify both formats and BOM modes on both sources, locale independence, complete-input decode/read failures, process-owned stdin lifetime, regression preservation, accurate user/module documentation and extracted-source use. Main T-008 remains independently owned and unstarted; its phase-exit/distribution work overlaps the feature's final checks and needs explicit reconciliation during later incorporation. Do not duplicate or mark main tasks complete from feature evidence.
++Finish the feature against the currently implemented named-file capability: verify both formats and BOM modes, complete-input decode/read failures, regression preservation, accurate user/module documentation and extracted-source named-file use. Planned stdin compatibility is an interface constraint on source-independent core selection; actual stdin implementation/composition/lifetime/locale verification stays with separately owned main T-007/T-008 and does not gate this feature exit. Those tasks remain unstarted. Later incorporation must reconcile their phase-exit implications without duplicating or marking main tasks complete from feature evidence.
+ 
+-Exit: all FEATURE-SPEC acceptance and unchanged baseline regressions pass, meaningful full unittest discovery and selected source-distribution examples succeed, documentation matches supported options, and the demonstration/limitations are reported. Milestone 2.3 completion measures this feature only; Phase 2 cannot exit while 2.2/T-007/T-008 remain incomplete.
++Exit: all named-file FEATURE-SPEC acceptance and unchanged baseline regressions pass, meaningful full unittest discovery and selected named-file source-distribution examples succeed, documentation matches supported options, and the demonstration/limitations are reported. Milestone 2.3 completion measures this feature only; Phase 2 cannot exit while 2.2/T-007/T-008 remain incomplete.
+ 
+ ## Sequencing and integration gates
+ 
+-The feature targets the paused `phase/2-output-and-input-extensions` checkpoint. T-007 is a hard prerequisite to complete stdin-specific feature verification, not permission to resume it on this branch. If implementation is later authorized before stdin exists, pause after the named-file capability and leave the stdin-dependent exit unchecked. No unrelated future capability is required.
++The feature targets the paused `phase/2-output-and-input-extensions` checkpoint. The complete feature delivery is named-file line-range counting with text/JSON output. T-007/T-008 are not prerequisites to feature completion; preserve the source-independent selection interface for their later stdin delivery. No main task resumption or unrelated future capability is required.
+ 
+ Preparation persists active FEATURE documents on the feature branch and stops. Later explicit scope must decide incorporation into PROJECT, DECOMPOSITION, SPEC, PLAN and both task owners; existing ARCHITECTURE/layout can be reused if unchanged. Keep active feature sources until incorporation/task/evidence disposition qualifies them for archival. Full feature integration requires coherent implementation, applicable incorporation, verified explicit two-parent merge into the phase target and target publication. It does not complete or merge Phase 2 into main, nor authorize continuation of main tasks.
+ 
+diff --git a/docs/dev/FEATURE-SPEC.md b/docs/dev/FEATURE-SPEC.md
+index 23b5c2d..d0c9e0b 100644
+--- a/docs/dev/FEATURE-SPEC.md
++++ b/docs/dev/FEATURE-SPEC.md
+@@ -44,4 +44,4 @@ The following are literal expected counts, with default BOM removal unless state
+ | `a\n` + U+FEFF + ` b` | `2:2` | 1 | 2 |
+ | two leading U+FEFF characters | `1:1` | 1 | 1 |
+ 
+-Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject representative syntax `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Real invalid UTF-8 after END still fails. Existing no-range core/API/CLI/failure/JSON/distribution checks remain green. After T-007, exercise empty/BOM/mixed-newline stdin in both formats with locale-independent UTF-8 and source lifetime/read/decode failures. Extracted-source invocation and documented examples must show selected named-file and stdin use at the feature exit. No unresolved material specification decisions remain.
++Also accept `01:02` as decimal (1,2), a singleton range on an unterminated final line, all-lines ranges equivalent to no range, and LF/CR/CRLF blank-line boundaries. Reject representative syntax `0:1`, `2:1`, `-1:2`, `1:`, `:2`, `1:2:3`, `1.0:2`, `+1:2`, whitespace and Unicode digits, missing values, and repeated options with status/channel assertions. Real invalid UTF-8 after END still fails. Existing no-range core/API/CLI/failure/JSON/distribution checks remain green. Feature exit requires extracted-source invocation and documented examples for selected named-file use in both formats, together with review that the pure selection interface remains compatible with planned stdin. Future actual stdin acceptance belongs to separately owned main T-007/T-008: exercise empty/BOM/mixed-newline stdin in both formats with locale-independent UTF-8 and source lifetime/read/decode failures after stdin delivery. Those future checks do not gate this named-file feature completion. No unresolved material specification decisions remain.
+diff --git a/docs/dev/FEATURE-TASKS.md b/docs/dev/FEATURE-TASKS.md
+index 097be54..f074154 100644
+--- a/docs/dev/FEATURE-TASKS.md
++++ b/docs/dev/FEATURE-TASKS.md
+@@ -14,8 +14,8 @@ Affected main requirements: CLI invocation, selected-counting acceptance and the
+         - [ ] T-010 — Deliver named-file line-range CLI counting
+             Scope: cli.py parser and named-file collaboration, tests/integration/test_cli.py, README and affected docstrings. Depends on: T-006, T-009.
+             Outcome: --lines accepts one validated positive inclusive ASCII-decimal range before input acquisition; default/JSON/BOM options compose without new fields; syntax/repetition failures preserve usage channels/status 2. Evidence: real module subprocesses with independent fixed counts and parsed JSON, EOF/blank/Unicode/BOM boundaries, invalid-range versus missing-file precedence, complete-input decoding failures and unchanged-input/no-range regressions; execute documented named-file examples. Gather FEATURE-PLAN earliest changed-path demonstration. Pause here if stdin prerequisite is unavailable; do not start T-007.
+-        - [ ] T-011 — Verify stdin composition and line-range milestone exits
+-            Scope: cli.py collaboration only as needed for the established stdin source, tests/integration/test_cli.py and test_distribution.py, README/docstrings and milestone evidence. Depends on: T-010 and separately completed main T-007.
+-            Outcome: selected stdin shares core semantics, strict locale-independent UTF-8 and process stream ownership; packaged named-file/stdin examples and baseline regressions satisfy all FEATURE-PLAN 2.3 exits. Evidence: binary subprocess inputs in both formats/BOM modes, empty/mixed/newline/BOM/EOF cases, read/decode failures including invalid bytes outside range, stream lifetime checks, extracted-source examples and `python -m unittest discover -s tests -v` with nonzero tests. Record actual demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
++        - [ ] T-011 — Verify named-file line-range delivery and milestone exits
++            Scope: tests/integration/test_cli.py and test_distribution.py, README/docstrings and milestone evidence; source-independent interface review against planned stdin contracts. Depends on: T-010.
++            Outcome: packaged named-file line-range examples in both formats and BOM modes plus baseline regressions satisfy all FEATURE-PLAN 2.3 exits. Selection remains reusable for future decoded stdin without introducing CLI/IO dependencies into the core. Evidence: real named-file subprocess and extracted-source singleton/middle/EOF/empty/BOM/mixed-newline cases, strict whole-input failure/resource checks, public API/no-range regressions, executed documentation examples and `python -m unittest discover -s tests -v` with nonzero tests. Inspect the pure selection/private collaboration interface for compatibility with later main T-007/T-008; actual stdin implementation and integration verification remain with those main tasks and do not gate this feature. Record actual named-file demonstration/results/limitations. This task does not implement T-007, complete T-008, incorporate main documents or authorize either feature or phase merge.
+ 
+ Parent checkboxes here measure only the listed feature work. Feature preparation selects no executable task. Before later implementation, re-orient branch/target changes and task dependencies; before accepted incorporation, reconcile main TASKS and this list together without duplicate IDs or changed historical completion claims.
+diff --git a/docs/dev/FEATURE_DECOMPOSITION.md b/docs/dev/FEATURE_DECOMPOSITION.md
+index f36bcd4..375aa6f 100644
+--- a/docs/dev/FEATURE_DECOMPOSITION.md
++++ b/docs/dev/FEATURE_DECOMPOSITION.md
+@@ -12,6 +12,6 @@ The CLI owns endpoint syntax/validation, source selection and success/failure pr
+ 
+ ## Verification and compatibility seams
+ 
+-Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. Stdin checks become executable only after main task T-007 provides that source. Existing public import/API tests protect the unchanged facade.
++Pure private-core checks use independent literal expected counts for range boundaries, logical empty lines, mixed terminators, Unicode separators and BOM ordering. Real temporary files protect strict decoding and handle lifecycle. Module subprocesses verify range syntax, output formats, channels, unchanged input and composition. The feature verifies source-independent selection through decoded strings and named files. Actual stdin integration checks remain owned by main T-007/T-008 after that source exists and are not feature-completion prerequisites. Existing public import/API tests protect the unchanged facade.
+ 
+ The existing [layout](layout.md) already allocates these responsibilities to counting.py, files.py, cli.py and their unit/integration tests. No layout mutation is required during preparation. [FEATURE-SPEC](FEATURE-SPEC.md) owns exact behavior; [FEATURE-PLAN](FEATURE-PLAN.md) owns delivery gates.
+diff --git a/docs/dev/features/002_8a53078/README.md b/docs/dev/features/002_8a53078/README.md
+index 1473b58..c9ae92d 100644
+--- a/docs/dev/features/002_8a53078/README.md
++++ b/docs/dev/features/002_8a53078/README.md
+@@ -17,4 +17,4 @@ Target: paused `phase/2-output-and-input-extensions`, baseline `8a53078d0f734165
+ 
+ All proposed functionality is unimplemented. Prepare and persist documents only; stop before feature implementation, incorporation into main owners, any feature/phase merge, or resumption of main tasks. Existing PROJECT/SPEC line-selection exclusions remain the accepted baseline pending explicit incorporation. No unrelated active feature package was present; unrelated bytecode caches are preserved. Pinned vendor is unchanged.
+ 
+-No feature sources are archived: these root files remain active proposed deltas. Later explicit integration must address PROJECT, DECOMPOSITION, SPEC, PLAN and both task lists as applicable, retain historical completion evidence, reconcile phase-exit implications for T-008 and wait for separately delivered T-007 before stdin exit. Existing architecture/layout require no delta unless implementation exposes a material change. Hosted feature associations are pending; no issue creation or closure is claimed.
++No feature sources are archived: these root files remain active proposed deltas. Later explicit integration must address PROJECT, DECOMPOSITION, SPEC, PLAN and both task lists as applicable, retain historical completion evidence, reconcile phase-exit implications for T-008 while keeping actual stdin delivery/integration checks with separately owned T-007/T-008. This feature exits on complete named-file text/JSON delivery; planned stdin compatibility is an interface constraint, not a completion gate. Existing architecture/layout require no delta unless implementation exposes a material change. Hosted feature associations are pending; no issue creation or closure is claimed.
+Exit status: 0

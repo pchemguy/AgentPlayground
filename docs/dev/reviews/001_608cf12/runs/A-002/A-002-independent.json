@@ -1,0 +1,22 @@
+{
+  "git --no-optional-locks status --porcelain=v1": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "git --no-optional-locks rev-parse HEAD": {
+    "exit": 0,
+    "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks branch --show-current": {
+    "exit": 0,
+    "stdout": "main\n",
+    "stderr": ""
+  },
+  "git --no-optional-locks diff --stat": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

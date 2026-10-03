@@ -1,0 +1,18 @@
+{
+  "actual_command_records": 49,
+  "commit_record_index": 22,
+  "controlled_checks": [
+    [
+      16,
+      0,
+      "Controlled prospective merged-state prerequisite restored\n"
+    ],
+    [
+      37,
+      0,
+      "No prospective merge: controlled prerequisite not applicable\n"
+    ]
+  ],
+  "all_recorded_exit_codes_zero": true,
+  "required_prospective_success_precedes_commit": true
+}

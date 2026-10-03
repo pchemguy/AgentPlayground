@@ -1,0 +1,52 @@
+[
+  {
+    "name": "empty",
+    "input": "",
+    "flags": [],
+    "stdout": "lines=0 words=0\n"
+  },
+  {
+    "name": "mixed",
+    "input": "alpha beta\r\ngamma\rdelta\n",
+    "flags": [],
+    "stdout": "lines=3 words=4\n"
+  },
+  {
+    "name": "unicode-separator",
+    "input": "alpha\u2028beta\n",
+    "flags": [],
+    "stdout": "lines=1 words=2\n"
+  },
+  {
+    "name": "trailing",
+    "input": "alpha\n\n",
+    "flags": [],
+    "stdout": "lines=2 words=1\n"
+  },
+  {
+    "name": "unterminated",
+    "input": "alpha beta",
+    "flags": [],
+    "stdout": "lines=1 words=2\n"
+  },
+  {
+    "name": "bom-empty",
+    "input": "\ufeff",
+    "flags": [],
+    "stdout": "lines=0 words=0\n"
+  },
+  {
+    "name": "bom-retained",
+    "input": "\ufeff",
+    "flags": [
+      "--keep-bom"
+    ],
+    "stdout": "lines=1 words=1\n"
+  },
+  {
+    "name": "double-bom",
+    "input": "\ufeff\ufeff",
+    "flags": [],
+    "stdout": "lines=1 words=1\n"
+  }
+]

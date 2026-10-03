@@ -1,0 +1,30 @@
+{
+  "head": "8836c497ec94946580948f68c4ffe79713936a8a",
+  "remote_phase_equal": true,
+  "main_unchanged": true,
+  "checked_tasks": [
+    "T-001",
+    "T-002",
+    "T-003"
+  ],
+  "only_milestone1_1_complete": true,
+  "status": "?? tests/integration/__pycache__/\n?? tests/unit/__pycache__/\n?? textstats/__pycache__/",
+  "moved_core_API_contents_unchanged_at_layout_commit": true,
+  "independent_literal_cli_cases": 8,
+  "independent_suite_tests": 17,
+  "host_status": 200,
+  "host_closed_completed": [
+    1,
+    2,
+    3
+  ],
+  "host_still_open": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "foreign_issue_material_preserved": true,
+  "raw_hosted_payloads_not_retained": true
+}

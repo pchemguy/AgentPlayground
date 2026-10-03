@@ -1,0 +1,7 @@
+PASS final links/heading spacing: docs/dev/FEATURE_DECOMPOSITION.md
+PASS final links/heading spacing: docs/dev/FEATURE-TASKS.md
+PASS final links/heading spacing: docs/dev/FEATURE-SPEC.md
+PASS final links/heading spacing: docs/dev/FEATURE-PLAN.md
+PASS final links/heading spacing: docs/dev/features/002_8a53078/README.md
+PASS clarified named-file exit; T-011 depends only on T-010, no stdin task completion dependency; main tasks unchanged
+PASS unchanged protected baseline paths; prior 31-test regression result remains applicable (docs-only clarification)

@@ -1,0 +1,19 @@
+ README.md                                          | 26 +++++++
+ docs/dev/DECOMPOSITION.md                          | 10 ++-
+ docs/dev/PLAN.md                                   | 10 ++-
+ docs/dev/PROJECT.md                                |  4 +-
+ docs/dev/SPEC.md                                   | 58 ++++++++++++--
+ docs/dev/TASKS.md                                  | 22 +++++-
+ docs/dev/features/002_8a53078/FEATURE-PLAN.md      | 23 ++++++
+ docs/dev/features/002_8a53078/FEATURE-SPEC.md      | 49 ++++++++++++
+ docs/dev/features/002_8a53078/FEATURE-TASKS.md     | 26 +++++++
+ .../features/002_8a53078/FEATURE_DECOMPOSITION.md  | 19 +++++
+ docs/dev/features/002_8a53078/README.md            | 20 +++++
+ tests/integration/test_cli.py                      | 88 ++++++++++++++++++++++
+ tests/integration/test_distribution.py             | 44 +++++++++++
+ tests/unit/test_counting.py                        | 34 +++++++++
+ tests/unit/test_files.py                           | 35 +++++++++
+ textstats/cli.py                                   | 43 ++++++++++-
+ textstats/counting.py                              | 20 +++++
+ textstats/files.py                                 | 16 +++-
+ 18 files changed, 525 insertions(+), 22 deletions(-)

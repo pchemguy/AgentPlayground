@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "branch": "main",
+  "head": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+  "parents": [
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+    "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "c5028a275cea660bc92db275ed5ee12507d811d0",
+    "refs/heads/main": "7f845c755464890e72a5e0cbd1fd6a8d41addac4",
+    "refs/heads/phase/1-named-file-baseline": "841a3311a8d526597b9637cb2bfc957c6ac0eba8"
+  },
+  "changed_paths": [
+    "AGENTS.md",
+    "README.md",
+    "docs/dev/TASKS.md",
+    "docs/dev/layout.md",
+    "tests/__init__.py",
+    "tests/integration/__init__.py",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "tests/unit/__init__.py",
+    "tests/unit/test_api.py",
+    "tests/unit/test_counting.py",
+    "tests/unit/test_files.py",
+    "textstats/__init__.py",
+    "textstats/__main__.py",
+    "textstats/cli.py",
+    "textstats/counting.py",
+    "textstats/files.py"
+  ]
+}

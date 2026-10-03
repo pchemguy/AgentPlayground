@@ -1,0 +1,5 @@
+$ git switch -c main --track origin/main
+Switched to a new branch 'main'
+branch 'main' set up to track 'origin/main'.
+
+Exit status: 0

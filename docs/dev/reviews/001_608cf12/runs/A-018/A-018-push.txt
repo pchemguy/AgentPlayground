@@ -1,0 +1,7 @@
+$ git push origin main:main
+remote: controlled target-publication rejection: retain verified merge and stop        
+To /workspace/scratch/sdd008-A-018-merge/remote.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to '/workspace/scratch/sdd008-A-018-merge/remote.git'
+
+Exit status: 1

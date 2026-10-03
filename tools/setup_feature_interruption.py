@@ -1,0 +1,13 @@
+"""Prepare A-021 from a verified completed feature, without incorporation edits."""
+import json,sys
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from tests.workflows.fork_setup import setup,git
+source=Path('/workspace/scratch/AgentPlayground-sdd-008');dest=Path('/workspace/scratch/sdd008-A-021-feature');out=Path('/workspace/scratch/acceptance-out-008')
+working='feature/002_8a53078-line-ranges';feature='f391de5c9047726d55687a1d0f71b3dc1e08e20e';main='29c27580db73cf128c42ddb9535e6d8f5c38ed39';target='phase/2-output-and-input-extensions';targettip='8a53078d0f734165075691dae0dbfa224a63446f'
+repo=setup(source,dest,working,feature,main)
+git(dest/'remote.git','update-ref','refs/heads/'+target,targettip);git(repo,'fetch','origin',target)
+p=repo/'AGENTS.md';p.write_text(p.read_text()+"\n## Isolated feature incorporation interruption\n\nHosting is disabled for this local bare-origin experiment. Historical live issue associations are provenance only; no live GitHub operations or credential use. The existing feature campaign is 002_8a53078 on feature/002_8a53078-line-ranges, targeting paused phase/2-output-and-input-extensions at 8a53078d0f734165075691dae0dbfa224a63446f. Preserve the declared source/target and full baseline identity. This fixture contains historically verified text/JSON named-file ranges and unstarted stdin; it does not amend the live project's later plain-output scope. Preserve product/test/vendor code and all task IDs/evidence. Resume incorporation only within the explicitly selected document set and preserve actual partial edits. No reset/rollback, source deletion, force-push, task implementation or Phase2/main completion. Scoped commits/local-origin pushes and explicit two-parent verified feature integration are authorized only when the requested coherent boundary is reached.\n")
+git(repo,'add','AGENTS.md');git(repo,'commit','-m','Declare isolated feature incorporation continuation scope');git(repo,'push','origin',working)
+record={'repo':str(repo),'origin':str(dest/'remote.git'),'working_branch':working,'feature_completed_tip':feature,'working_before':git(repo,'rev-parse','HEAD'),'main_before':main,'target_branch':target,'target_before':targettip,'campaign':'002_8a53078','full_feature_baseline':targettip,'fixture_only':True,'hosting_enabled':False,'credentials_copied':False,'initial_active_sources':['FEATURE-SPEC.md','FEATURE-PLAN.md','FEATURE_DECOMPOSITION.md','FEATURE-TASKS.md'],'injection':'Only isolated operating instructions/ref checkpoints; no caller task transfer/archive edits.'}
+(out/'A-021-fixture.json').write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record,indent=2))

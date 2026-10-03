@@ -1,0 +1,1 @@
+Use pinned sdd-verify to assess selected change.md in isolated /workspace/scratch/sdd008-A-026/repo. Run normal unittest discovery plus discovery -s empty -v. Independently observed pre-change baseline-results.txt available. Verify only; do not edit tests/source/checklist. Retain actual counts/results, journal/final; no parent/evaluation access.

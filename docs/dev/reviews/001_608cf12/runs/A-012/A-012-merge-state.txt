@@ -1,0 +1,15 @@
+M  README.md
+M  docs/dev/ARCHITECTURE.md
+M  docs/dev/DECOMPOSITION.md
+M  docs/dev/PLAN.md
+M  docs/dev/PROJECT.md
+M  docs/dev/SPEC.md
+M  docs/dev/TASKS.md
+M  docs/dev/layout.md
+A  docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md
+M  tests/integration/test_cli.py
+M  tests/integration/test_distribution.py
+M  textstats/cli.py
+?? tests/integration/__pycache__/
+?? tests/unit/__pycache__/
+?? textstats/__pycache__/

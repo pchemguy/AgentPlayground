@@ -1,0 +1,29 @@
+{
+  "args": {
+    "repository_full_name": "pchemguy/AgentPlayground",
+    "title": "[T-001] Implement the public counting core",
+    "body": "## Task brief <!-- sdd-forge:task-id=T-001 -->\n\n**Outcome:** immutable public result and `count_text` with SPEC counting/BOM semantics; independent expected values cover empty, whitespace, Unicode, CR/LF/CRLF and trailing terminators.\n\n**Context:** Deliver TextStats according to the authoritative task hierarchy: Phase 1, Milestone 1.1. This is planned work; implementation and verification have not been performed.\n\n**Scope and dependencies:** `textstats/counting.py`, public facade, discoverable test package, counting/API tests and professional docstrings. Depends on: none.\n\n**Acceptance and verification:** focused unittest checks and package-level import, including BOM-only/preserved interior BOM cases. No IO or CLI behavior belongs here.\n\n**Result:** Intended outcome is the accepted task behavior and evidence described above; issue creation does not establish completion.\n\n**Sources:** [TASKS](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/TASKS.md), [PLAN](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/PLAN.md), [SPEC](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/SPEC.md), [layout](https://github.com/pchemguy/AgentPlayground/blob/main/docs/dev/layout.md).\n\n<!-- /sdd-forge:task-id=T-001 -->",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": 1
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "GitHub API error 403: {\"message\":\"Resource not accessible by integration\",\"documentation_url\":\"https://docs.github.com/rest/issues/issues#create-an-issue\",\"status\":\"403\"}"
+      }
+    ],
+    "structuredContent": {
+      "error": "GitHub API error 403: {\"message\":\"Resource not accessible by integration\",\"documentation_url\":\"https://docs.github.com/rest/issues/issues#create-an-issue\",\"status\":\"403\"}",
+      "error_code": "FORBIDDEN",
+      "error_data": {
+        "message": "Resource not accessible by integration",
+        "documentation_url": "https://docs.github.com/rest/issues/issues#create-an-issue",
+        "status": "403"
+      }
+    },
+    "isError": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "A-003",
+  "status": "Passed",
+  "repo": "/workspace/scratch/AgentPlayground-sdd-008",
+  "assessment": "Actual first and second agent synchronizations independently verified. 8 unique exact task issues #1..8,2 phase labels,4 native milestones, correct initial parents/open states. Second sync reused all IDs with no duplicates/changes; seeded foreign T-001 body and label preserved. Original connector403 and protected PAT recovery/creation evidence retained. Live main clean d769b55; no implementation.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-final.md",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2-before.json",
+    "/workspace/scratch/acceptance-out-008/A-003-resume2.md",
+    "/workspace/scratch/acceptance-out-008/A-003-second-independent.json"
+  ]
+}

@@ -110,3 +110,10 @@ python -m unittest discover -s tests -v
 ```
 
 Core/API/file tests live in `tests/unit/`; module subprocess and distribution tests live in `tests/integration/`. See [delivery plan](docs/dev/PLAN.md) and [tasks](docs/dev/TASKS.md) for the intended increments and current evidence.
+
+
+## Workflow acceptance records
+
+The completed [acceptance campaign](docs/dev/reviews/001_608cf12/README.md) and [independent final assessment](docs/dev/reviews/001_608cf12/runs/A-027/A-027-final.md) record 27 passing cases in explicit skill-source mode. Installed-client discovery, routing and activation remain untested. Historical case snapshots and oracles are assessment records; current product contracts and task ownership remain in docs/dev/. The original evidence branch is retained.
+
+Independent harness checks live in tests/workflows/ and run with the full development suite above. The source-distribution recipe still includes only the TextStats package and this README.

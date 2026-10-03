@@ -1,0 +1,17 @@
+Module docstring: textstats/__init__.py
+Module docstring: textstats/__main__.py
+Module docstring: textstats/cli.py
+Module docstring: textstats/counting.py
+Module docstring: textstats/files.py
+Markdown spacing and local links: README.md
+Markdown spacing and local links: docs/dev/SPEC.md
+Markdown spacing and local links: docs/dev/ARCHITECTURE.md
+Markdown spacing and local links: docs/dev/PROJECT.md
+Markdown spacing and local links: docs/dev/TASKS.md
+Markdown spacing and local links: docs/dev/layout.md
+Markdown spacing and local links: docs/dev/DECOMPOSITION.md
+Markdown spacing and local links: docs/dev/PLAN.md
+Named-file quick start status= 0 stdout= 'lines=1 words=2\n' stderr= ''
+UTF-8 stdin status= 0 stdout= 'lines=3 words=5\nlines=2 words=3\nlines=0 words=0\nlines=2 words=3\n' stderr= ''
+Selected named-file lines status= 0 stdout= 'lines=1 words=2\nlines=2 words=3\nlines=2 words=3\nlines=0 words=0\n' stderr= ''
+Public whole-input API examples/import location also executed by distribution test.

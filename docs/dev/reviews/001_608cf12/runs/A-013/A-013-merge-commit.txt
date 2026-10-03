@@ -1,0 +1,12 @@
+[main 05c3553] Merge verified Phase 2 input extensions into main (T-007–T-011)
+commit 05c35532ce836c1e9681f6dd6c21e1801293236f
+Merge: 29c2758 c8da841
+Author:     Codex <codex@openai.com>
+AuthorDate: Sat Oct 3 17:28:59 2026 +0800
+Commit:     Codex <codex@openai.com>
+CommitDate: Sat Oct 3 17:28:59 2026 +0800
+
+    Merge verified Phase 2 input extensions into main (T-007–T-011)
+    
+    Integrate accepted plain-output scope, named-file ranges and strict binary UTF-8 stdin. Phase 2 milestones 2.2/2.3 and all retained exits pass; prospective merged-state unittest discovery passed 46 tests. Explicit parents: main 29c27580db73cf128c42ddb9535e6d8f5c38ed39 and phase c8da841a53befcc420aeb9e97435ca93f9c7051e. Retired T-006/2.1 history is preserved.
+05c35532ce836c1e9681f6dd6c21e1801293236f 29c27580db73cf128c42ddb9535e6d8f5c38ed39 c8da841a53befcc420aeb9e97435ca93f9c7051e

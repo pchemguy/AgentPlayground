@@ -1,0 +1,150 @@
+{
+  "rows": [
+    {
+      "task": "T-011",
+      "number": 11,
+      "state": "open",
+      "state_reason": null,
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 0,
+      "foreign_body_sha256": "430d9b14e14bb9a8b6daba1beee7b38b6a5d9fef7022d7c19ce6bd3a34a7b2ee",
+      "comment_ids": [],
+      "comment_commits": []
+    },
+    {
+      "task": "T-010",
+      "number": 10,
+      "state": "open",
+      "state_reason": null,
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 0,
+      "foreign_body_sha256": "430d9b14e14bb9a8b6daba1beee7b38b6a5d9fef7022d7c19ce6bd3a34a7b2ee",
+      "comment_ids": [],
+      "comment_commits": []
+    },
+    {
+      "task": "T-009",
+      "number": 9,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 5,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "430d9b14e14bb9a8b6daba1beee7b38b6a5d9fef7022d7c19ce6bd3a34a7b2ee",
+      "comment_ids": [
+        5967285141
+      ],
+      "comment_commits": [
+        [
+          "dc25a834ef0b3dc9250372f3f61ceab70d2c660d"
+        ]
+      ]
+    },
+    {
+      "task": "T-008",
+      "number": 8,
+      "state": "open",
+      "state_reason": null,
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 0,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-007",
+      "number": 7,
+      "state": "open",
+      "state_reason": null,
+      "milestone": 4,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 0,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-006",
+      "number": 6,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 3,
+      "labels": [
+        "sdd-phase-2-Output-and-input-extensions"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-005",
+      "number": 5,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-004",
+      "number": 4,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 2,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-003",
+      "number": 3,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-002",
+      "number": 2,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "196b7603256d4ef01871f8ebc940f33f21840e6b3999bb8f132eb0857eac6d29"
+    },
+    {
+      "task": "T-001",
+      "number": 1,
+      "state": "closed",
+      "state_reason": "completed",
+      "milestone": 1,
+      "labels": [
+        "sdd-phase-1-Named-file-baseline",
+        "acceptance-note"
+      ],
+      "comments_count": 1,
+      "foreign_body_sha256": "3f418187c938b1575b60e311ed3c02391b8c98de68b705ee1354b0a3a85b7979"
+    }
+  ],
+  "limits": "GET observations only; provider bodies and credentials excluded."
+}

@@ -1,0 +1,17 @@
+Baseline: ad7d3bce1a615e93262ab99f6501a26819895c57
+Command: python -m unittest discover -s tests -v
+Exit: 1
+test_established_failure (test_existing.ExistingFailure.test_established_failure) ... FAIL
+
+======================================================================
+FAIL: test_established_failure (test_existing.ExistingFailure.test_established_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/sdd008-A-026/repo/tests/test_existing.py", line 5, in test_established_failure
+    self.assertEqual(2,3,"controlled pre-existing failure")
+AssertionError: 2 != 3 : controlled pre-existing failure
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

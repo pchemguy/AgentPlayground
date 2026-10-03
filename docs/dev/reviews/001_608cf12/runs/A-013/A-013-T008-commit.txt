@@ -1,0 +1,14 @@
+commit c8da841a53befcc420aeb9e97435ca93f9c7051e
+Author:     Codex <codex@openai.com>
+AuthorDate: Sat Oct 3 17:26:54 2026 +0800
+Commit:     Codex <codex@openai.com>
+CommitDate: Sat Oct 3 17:26:54 2026 +0800
+
+    Verify stdin distribution, documentation and Phase 2 exits (T-008)
+    
+    Extracted-source binary stdin and source-independent selections pass with global BOM/full-decode semantics; current README examples execute verbatim. Full unittest discovery: 46 tests passed. Milestones 2.2/2.3 and Phase 2 exits verified; main integration follows separately. Closes #8.
+
+ README.md                              | 25 ++++++++++++++++++---
+ docs/dev/TASKS.md                      |  8 ++++---
+ tests/integration/test_distribution.py | 41 ++++++++++++++++++++++++++++++++++
+ 3 files changed, 68 insertions(+), 6 deletions(-)

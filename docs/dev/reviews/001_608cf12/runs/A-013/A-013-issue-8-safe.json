@@ -1,0 +1,59 @@
+{
+  "number": 8,
+  "title": "[T-008] Verify complete stdin delivery and phase exits",
+  "state": "closed",
+  "state_reason": "completed",
+  "html_url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+  "milestone": {
+    "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4",
+    "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/4",
+    "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4/labels",
+    "id": 18260585,
+    "node_id": "MI_kwDOU4wOOM4BFqJp",
+    "number": 4,
+    "title": "sdd-2.2-UTF-8-stdin",
+    "creator": {
+      "login": "pchemguy",
+      "id": 39730837,
+      "node_id": "MDQ6VXNlcjM5NzMwODM3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pchemguy",
+      "html_url": "https://github.com/pchemguy",
+      "followers_url": "https://api.github.com/users/pchemguy/followers",
+      "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+      "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+      "repos_url": "https://api.github.com/users/pchemguy/repos",
+      "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "open_issues": 2,
+    "closed_issues": 0,
+    "state": "open",
+    "created_at": "2026-10-02T13:29:35Z",
+    "updated_at": "2026-10-03T09:08:44Z",
+    "due_on": null,
+    "closed_at": null,
+    "description_sha256": "e462b7f2ed837de407d3fa9274fc48acba34f9f5fce274b3efbcde3db9cbe8f4"
+  },
+  "labels": [
+    {
+      "id": 12511310119,
+      "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+      "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+      "name": "sdd-phase-2-Output-and-input-extensions",
+      "color": "5319e7",
+      "default": false,
+      "archived_at": null,
+      "archived_by": null,
+      "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+    }
+  ],
+  "body_sha256": "f549c0c6423f54f8ab58ee6a1534e66a77aa7329766eb108c9cd80f2b8a2bb01"
+}

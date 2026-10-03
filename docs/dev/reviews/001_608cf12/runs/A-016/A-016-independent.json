@@ -1,0 +1,17 @@
+{
+  "git rev-parse HEAD": {
+    "stdout": "57234b333e533d6bd606d3c5dda7275cf74ddacf\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "git status --porcelain=v1": {
+    "stdout": "",
+    "stderr": "",
+    "exit": 0
+  },
+  "git ls-remote origin refs/heads/main refs/heads/phase/1-named-file-baseline": {
+    "stdout": "e750d1c6f07a9e6cda49a7cf0924d2c605c82c0d\trefs/heads/main\n57234b333e533d6bd606d3c5dda7275cf74ddacf\trefs/heads/phase/1-named-file-baseline\n",
+    "stderr": "",
+    "exit": 0
+  }
+}

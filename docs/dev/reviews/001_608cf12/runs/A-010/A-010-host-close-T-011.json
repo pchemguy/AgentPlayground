@@ -1,0 +1,168 @@
+[
+  {
+    "number": 11,
+    "title": "[T-011] Verify named-file line-range delivery and milestone exits",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/11",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.3-Line-range-counting",
+    "identity": [
+      "T-011",
+      "T-011"
+    ]
+  },
+  {
+    "number": 10,
+    "title": "[T-010] Deliver named-file line-range CLI counting",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/10",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.3-Line-range-counting",
+    "identity": [
+      "T-010",
+      "T-010"
+    ]
+  },
+  {
+    "number": 9,
+    "title": "[T-009] Add pure selected-counting and file-adapter collaboration",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/9",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.3-Line-range-counting",
+    "identity": [
+      "T-009",
+      "T-009"
+    ]
+  },
+  {
+    "number": 8,
+    "title": "[T-008] Verify complete stdin delivery and phase exits",
+    "state": "open",
+    "state_reason": null,
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.2-UTF-8-stdin",
+    "identity": [
+      "T-008",
+      "T-008"
+    ]
+  },
+  {
+    "number": 7,
+    "title": "[T-007] Support stdin through the dash input",
+    "state": "open",
+    "state_reason": null,
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.2-UTF-8-stdin",
+    "identity": [
+      "T-007",
+      "T-007"
+    ]
+  },
+  {
+    "number": 6,
+    "title": "[T-006] Add and verify JSON output",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+    "labels": [
+      "sdd-phase-2-Output-and-input-extensions"
+    ],
+    "milestone": "sdd-2.1-JSON-output",
+    "identity": [
+      "T-006",
+      "T-006"
+    ]
+  },
+  {
+    "number": 5,
+    "title": "[T-005] Verify baseline documentation and source distribution",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": "sdd-1.2-Reliable-baseline-and-distribution",
+    "identity": [
+      "T-005",
+      "T-005"
+    ]
+  },
+  {
+    "number": 4,
+    "title": "[T-004] Complete baseline failure and usage handling",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": "sdd-1.2-Reliable-baseline-and-distribution",
+    "identity": [
+      "T-004",
+      "T-004"
+    ]
+  },
+  {
+    "number": 3,
+    "title": "[T-003] Deliver the usable named-file module CLI",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": "sdd-1.1-Usable-named-file-API-and-CLI",
+    "identity": [
+      "T-003",
+      "T-003"
+    ]
+  },
+  {
+    "number": 2,
+    "title": "[T-002] Expose UTF-8 named-file counting",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline"
+    ],
+    "milestone": "sdd-1.1-Usable-named-file-API-and-CLI",
+    "identity": [
+      "T-002",
+      "T-002"
+    ]
+  },
+  {
+    "number": 1,
+    "title": "[T-001] Implement the public counting core",
+    "state": "closed",
+    "state_reason": "completed",
+    "url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+    "labels": [
+      "sdd-phase-1-Named-file-baseline",
+      "acceptance-note"
+    ],
+    "milestone": "sdd-1.1-Usable-named-file-API-and-CLI",
+    "identity": [
+      "T-001",
+      "T-001"
+    ]
+  }
+]

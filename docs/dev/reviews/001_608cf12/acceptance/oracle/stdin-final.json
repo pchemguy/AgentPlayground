@@ -1,0 +1,215 @@
+[
+  {
+    "name": "empty",
+    "input": "",
+    "flags": [],
+    "stdout": "lines=0 words=0\n",
+    "source": "stdin"
+  },
+  {
+    "name": "mixed",
+    "input": "alpha beta\r\ngamma\rdelta\n",
+    "flags": [],
+    "stdout": "lines=3 words=4\n",
+    "source": "stdin"
+  },
+  {
+    "name": "unicode-separator",
+    "input": "alpha\u2028beta\n",
+    "flags": [],
+    "stdout": "lines=1 words=2\n",
+    "source": "stdin"
+  },
+  {
+    "name": "trailing",
+    "input": "alpha\n\n",
+    "flags": [],
+    "stdout": "lines=2 words=1\n",
+    "source": "stdin"
+  },
+  {
+    "name": "unterminated",
+    "input": "alpha beta",
+    "flags": [],
+    "stdout": "lines=1 words=2\n",
+    "source": "stdin"
+  },
+  {
+    "name": "bom-empty",
+    "input": "\ufeff",
+    "flags": [],
+    "stdout": "lines=0 words=0\n",
+    "source": "stdin"
+  },
+  {
+    "name": "bom-retained",
+    "input": "\ufeff",
+    "flags": [
+      "--keep-bom"
+    ],
+    "stdout": "lines=1 words=1\n",
+    "source": "stdin"
+  },
+  {
+    "name": "double-bom",
+    "input": "\ufeff\ufeff",
+    "flags": [],
+    "stdout": "lines=1 words=1\n",
+    "source": "stdin"
+  },
+  {
+    "name": "mixed-subset",
+    "input": "alpha beta\r\ngamma\rdelta\nlast",
+    "flags": [
+      "--lines",
+      "2:3"
+    ],
+    "stdout": "lines=2 words=2\n",
+    "source": "stdin"
+  },
+  {
+    "name": "unicode-physical",
+    "input": "alpha\u2028beta\r\ngamma\n",
+    "flags": [
+      "--lines",
+      "1:1"
+    ],
+    "stdout": "lines=1 words=2\n",
+    "source": "stdin"
+  },
+  {
+    "name": "beyond",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "2:3"
+    ],
+    "stdout": "lines=0 words=0\n",
+    "source": "stdin"
+  },
+  {
+    "name": "trailing",
+    "input": "alpha\n\n",
+    "flags": [
+      "--lines",
+      "2:4"
+    ],
+    "stdout": "lines=1 words=0\n",
+    "source": "stdin"
+  },
+  {
+    "name": "unterminated",
+    "input": "alpha\nbeta gamma",
+    "flags": [
+      "--lines",
+      "2:2"
+    ],
+    "stdout": "lines=1 words=2\n",
+    "source": "stdin"
+  },
+  {
+    "name": "bom-default",
+    "input": "\ufeffalpha\nbeta",
+    "flags": [
+      "--lines",
+      "1:1"
+    ],
+    "stdout": "lines=1 words=1\n",
+    "source": "stdin"
+  },
+  {
+    "name": "bom-kept",
+    "input": "\ufeff\nalpha",
+    "flags": [
+      "--lines",
+      "1:1",
+      "--keep-bom"
+    ],
+    "stdout": "lines=1 words=1\n",
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-7",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "0:1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-8",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "2:1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-9",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1:0"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-10",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "-1:2"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-11",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "x:2"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-12",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "invalid-13",
+    "input": "alpha\n",
+    "flags": [
+      "--lines",
+      "1:2:3"
+    ],
+    "returncode": 2,
+    "stderr_nonempty": true,
+    "source": "stdin"
+  },
+  {
+    "name": "stdin-utf8-error",
+    "source": "stdin",
+    "input_hex": "ff",
+    "returncode": 1,
+    "stderr_nonempty": true
+  }
+]

@@ -1,0 +1,44 @@
+test_cr_lf_crlf_and_trailing_segments (tests.unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok
+test_default_removes_one_leading_bom (tests.unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok
+test_interior_bom_is_preserved_in_both_modes (tests.unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok
+test_keep_bom_treats_bom_as_non_whitespace (tests.unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok
+test_spec_counting_table (tests.unit.test_counting.CountingTests.test_spec_counting_table) ... ok
+test_unicode_whitespace_does_not_create_lines (tests.unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok
+test_selected_logical_segments_and_original_bom_policy (tests.unit.test_counting.SelectedCountingTests.test_selected_logical_segments_and_original_bom_policy) ... ok
+test_public_calls_return_independent_values_without_output (tests.unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok
+test_public_result_has_integer_counts (tests.unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok
+test_result_is_immutable (tests.unit.test_api.PublicApiTests.test_result_is_immutable) ... ok
+test_bom_modes_are_applied_to_decoded_file (tests.unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok
+test_real_files_match_fixed_expected_counts (tests.unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok
+test_success_closes_real_owned_handle_without_output (tests.unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok
+test_decode_failure_closes_real_handle_and_preserves_bytes (tests.unit.test_files.FileFailureTests.test_decode_failure_closes_real_handle_and_preserves_bytes) ... ok
+test_missing_file_preserves_oserror_without_output (tests.unit.test_files.FileFailureTests.test_missing_file_preserves_oserror_without_output) ... ok
+test_read_denial_closes_acquired_handle_and_preserves_exception (tests.unit.test_files.FileFailureTests.test_read_denial_closes_acquired_handle_and_preserves_exception) ... ok
+test_real_selected_files_and_decode_failure_close_handles (tests.unit.test_files.SelectedFileTests.test_real_selected_files_and_decode_failure_close_handles) ... ok
+test_dash_prefixed_file_via_separator (tests.integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok
+test_directory_cannot_be_read_as_file (tests.integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok
+test_missing_and_invalid_utf8_inputs (tests.integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok
+test_permission_denial_translation_in_process (tests.integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok
+test_usage_and_help (tests.integration.test_cli.CliFailureTests.test_usage_and_help) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.LineRangeCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.LineRangeCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_decode_failure_outside_selection_and_named_dash_paths (tests.integration.test_cli.LineRangeCliTests.test_decode_failure_outside_selection_and_named_dash_paths) ... ok
+test_invalid_ranges_precede_missing_input (tests.integration.test_cli.LineRangeCliTests.test_invalid_ranges_precede_missing_input) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.LineRangeCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_literal_selected_cases_in_plain_output_and_bom_modes (tests.integration.test_cli.LineRangeCliTests.test_literal_selected_cases_in_plain_output_and_bom_modes) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.LineRangeCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.LineRangeCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_bom_only_and_interior_bom (tests.integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_dash_is_a_named_file_before_stdin_delivery (tests.integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok
+test_keep_bom_composes_with_named_input (tests.integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_named_file_success_boundaries (tests.integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (tests.integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_help_omits_removed_option (tests.integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option) ... ok
+test_removed_option_name_is_a_literal_file_after_separator (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_name_is_a_literal_file_after_separator) ... ok
+test_removed_option_precedes_source_acquisition (tests.integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... ok
+test_documented_archive_deploys_only_product_sources (tests.integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 3.499s
+
+OK

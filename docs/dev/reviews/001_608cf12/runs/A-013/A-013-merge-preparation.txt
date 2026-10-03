@@ -1,0 +1,43 @@
+From https://github.com/pchemguy/AgentPlayground
+ * branch            main       -> FETCH_HEAD
+?? tests/integration/__pycache__/
+?? tests/unit/__pycache__/
+?? textstats/__pycache__/
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+c8da841a53befcc420aeb9e97435ca93f9c7051e
+M	README.md
+M	docs/dev/ARCHITECTURE.md
+M	docs/dev/DECOMPOSITION.md
+M	docs/dev/PLAN.md
+M	docs/dev/PROJECT.md
+M	docs/dev/SPEC.md
+M	docs/dev/TASKS.md
+A	docs/dev/features/002_8a53078/FEATURE-PLAN.md
+A	docs/dev/features/002_8a53078/FEATURE-SPEC.md
+A	docs/dev/features/002_8a53078/FEATURE-TASKS.md
+A	docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md
+A	docs/dev/features/002_8a53078/README.md
+M	docs/dev/layout.md
+A	docs/dev/reviews/003_d0eeeff/REVISION-REPORT.md
+M	tests/integration/test_cli.py
+M	tests/integration/test_distribution.py
+M	tests/unit/test_counting.py
+M	tests/unit/test_files.py
+M	textstats/cli.py
+M	textstats/counting.py
+M	textstats/files.py
+c8da841 Verify stdin distribution, documentation and Phase 2 exits (T-008)
+917f3d9 Support strict binary UTF-8 stdin through EOF (T-007)
+1d11ae3 Merge verified plain-output amendment into paused Phase 2
+6561e28 Remove CLI JSON at paused checkpoint (T-006, T-010, T-011)
+d0eeeff Merge verified named-file line ranges into paused Phase 2 (T-009–T-011)
+799e5c7 Incorporate completed line-range feature owners and archive sources
+f391de5 Verify named-file range delivery and feature exits (T-011)
+26dd59c Deliver named-file inclusive line ranges (T-010)
+dc25a83 Add source-independent selected counting (T-009)
+e6fe4c4 Incorporate accepted line-range behavior into SPEC
+62b5408 Remove residual stdin pause from named-file feature task
+e0e85b2 Clarify named-file line-range feature completion boundary
+37ff9bc Prepare line-range counting feature package
+8a53078 Add and verify named-file JSON output (T-006)

@@ -1,0 +1,7 @@
+{
+  "SPEC_sha256": "54a074f8d6f337f78c3d05f44ba842307c7e0574fcdbf098a226dad17dab02f5",
+  "accepted_literal_rows_preserved": 13,
+  "whole_input_API_preserved": true,
+  "superseded_line_selection_exclusion_removed": true,
+  "semantic_review": "Full intended SPEC retains immutable result/API, whole-input BOM/newline/word rules, strict UTF-8/file ownership, exact text/JSON outputs, CLI channels/status and stdin obligations. Accepted syntax, usage-before-acquisition precedence, complete decoding outside range, BOM-before-selection/interior BOM preservation, inclusive positive bounds and EOF subset are coherent. No public range API or extra fields added. Named-file exits independent of future stdin integration; objective range and whole-input acceptance retained. Design/PROJECT/PLAN/tasks contradictions are outside selected SPEC scope and must be reported, not silently repaired. This is document acceptance only, not implemented range or stdin acceptance."
+}

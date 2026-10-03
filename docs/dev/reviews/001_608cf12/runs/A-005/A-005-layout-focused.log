@@ -1,0 +1,14 @@
+test_cr_lf_crlf_and_trailing_segments (tests.unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok
+test_default_removes_one_leading_bom (tests.unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok
+test_interior_bom_is_preserved_in_both_modes (tests.unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok
+test_keep_bom_treats_bom_as_non_whitespace (tests.unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok
+test_spec_counting_table (tests.unit.test_counting.CountingTests.test_spec_counting_table) ... ok
+test_unicode_whitespace_does_not_create_lines (tests.unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok
+test_public_calls_return_independent_values_without_output (tests.unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok
+test_public_result_has_integer_counts (tests.unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok
+test_result_is_immutable (tests.unit.test_api.PublicApiTests.test_result_is_immutable) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

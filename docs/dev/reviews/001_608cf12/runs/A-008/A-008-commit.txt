@@ -1,0 +1,9 @@
+$ git commit (scoped staged feature documents; message retained in commit)
+[feature/002_8a53078-line-ranges 37ff9bc] Prepare line-range counting feature package
+ 5 files changed, 126 insertions(+)
+ create mode 100644 docs/dev/FEATURE-PLAN.md
+ create mode 100644 docs/dev/FEATURE-SPEC.md
+ create mode 100644 docs/dev/FEATURE-TASKS.md
+ create mode 100644 docs/dev/FEATURE_DECOMPOSITION.md
+ create mode 100644 docs/dev/features/002_8a53078/README.md
+Exit status: 0

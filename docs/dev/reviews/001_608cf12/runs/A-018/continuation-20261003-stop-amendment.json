@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-03T03:36:19.915393+00:00",
+  "instruction": "Suspend after A-018",
+  "ordered_remaining": [
+    "A-014",
+    "A-018"
+  ],
+  "deferred": [
+    "A-007",
+    "A-008",
+    "A-009"
+  ],
+  "scope": "Earlier six-case stop is superseded by this smaller boundary; publish completed records and precise resume state, leave later positive cases unstarted."
+}

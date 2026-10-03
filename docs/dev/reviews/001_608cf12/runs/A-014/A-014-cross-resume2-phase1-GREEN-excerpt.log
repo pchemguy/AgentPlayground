@@ -1,0 +1,17 @@
+Observed-output excerpts copied from original runs, not reruns or reconstructed native transcripts.
+
+T-004 post-change command: python -m unittest tests.unit.test_files tests.integration.test_cli -v
+Ran 17 tests in 0.888s
+OK
+
+T-004 full suite: python -m unittest discover -s tests -v
+Ran 26 tests in 0.903s
+OK
+
+T-005 full suite: python -m unittest discover -s tests -v
+Ran 27 tests in 0.979s
+OK
+
+Phase1 prospective merged-state command: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+Ran 27 tests in 1.076s
+OK

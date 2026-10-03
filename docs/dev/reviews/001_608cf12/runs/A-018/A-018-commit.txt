@@ -1,0 +1,4 @@
+$ git commit -F /workspace/scratch/acceptance-out-008/A-018-merge-message.txt
+[main 7f845c7] Merge phase 1 named-file baseline (T-001–T-005)
+
+Exit status: 0
