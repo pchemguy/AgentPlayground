@@ -1,0 +1,22 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-021-feature/repo",
+  "origin": "/workspace/scratch/sdd008-A-021-feature/remote.git",
+  "working_branch": "feature/002_8a53078-line-ranges",
+  "feature_completed_tip": "f391de5c9047726d55687a1d0f71b3dc1e08e20e",
+  "working_before": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+  "main_before": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "target_branch": "phase/2-output-and-input-extensions",
+  "target_before": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "campaign": "002_8a53078",
+  "full_feature_baseline": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "fixture_only": true,
+  "hosting_enabled": false,
+  "credentials_copied": false,
+  "initial_active_sources": [
+    "FEATURE-SPEC.md",
+    "FEATURE-PLAN.md",
+    "FEATURE_DECOMPOSITION.md",
+    "FEATURE-TASKS.md"
+  ],
+  "injection": "Only isolated operating instructions/ref checkpoints; no caller task transfer/archive edits."
+}

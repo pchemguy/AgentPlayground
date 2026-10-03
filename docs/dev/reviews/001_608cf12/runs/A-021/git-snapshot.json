@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "branch": "feature/002_8a53078-line-ranges",
+  "head": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+  "parents": [
+    "f391de5c9047726d55687a1d0f71b3dc1e08e20e"
+  ],
+  "status": [
+    "M docs/dev/DECOMPOSITION.md",
+    " M docs/dev/FEATURE-PLAN.md",
+    " M docs/dev/FEATURE-SPEC.md",
+    " M docs/dev/FEATURE-TASKS.md",
+    " M docs/dev/FEATURE_DECOMPOSITION.md",
+    " M docs/dev/PLAN.md",
+    " M docs/dev/PROJECT.md",
+    " M docs/dev/TASKS.md",
+    " M docs/dev/features/002_8a53078/README.md"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "002296125640ece3c849a1e25f1de9dfea96da62",
+    "refs/heads/feature/002_8a53078-line-ranges": "64cee9bc48346d710c74f5ae4a0cc5c3359557f9",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/1-named-file-baseline": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+    "refs/heads/phase/2-output-and-input-extensions": "8a53078d0f734165075691dae0dbfa224a63446f",
+    "refs/heads/revision/003_d0eeeff-remove-json": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  },
+  "changed_paths": [
+    "AGENTS.md"
+  ]
+}

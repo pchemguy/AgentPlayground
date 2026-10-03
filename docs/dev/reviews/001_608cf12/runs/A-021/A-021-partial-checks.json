@@ -1,0 +1,28 @@
+{
+  "preserved_files_checked": 114,
+  "preservation_failures": [],
+  "owning_rows_main_feature": {
+    "T-009": [
+      1,
+      0
+    ],
+    "T-010": [
+      0,
+      1
+    ],
+    "T-011": [
+      0,
+      1
+    ]
+  },
+  "t009_existing_block_exact": true,
+  "t010_t011_existing_blocks_exact": true,
+  "missing_changed_document_links": [],
+  "heading_spacing_findings": [],
+  "retained_active_sources": [
+    "docs/dev/FEATURE_DECOMPOSITION.md",
+    "docs/dev/FEATURE-SPEC.md",
+    "docs/dev/FEATURE-PLAN.md",
+    "docs/dev/FEATURE-TASKS.md"
+  ]
+}
