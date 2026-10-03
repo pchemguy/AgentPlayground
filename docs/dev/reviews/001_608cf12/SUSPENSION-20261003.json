@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-03T03:56:25.664069+00:00",
+  "instruction": "Suspend after A-018",
+  "counts": {
+    "Passed": 17,
+    "Failed": 0,
+    "Blocked": 0,
+    "Suspended": 0,
+    "Running": 0,
+    "Pending": 10
+  },
+  "completed_this_continuation": [
+    "A-006",
+    "A-014",
+    "A-018"
+  ],
+  "next_positive_case": "A-007",
+  "live_main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "live_phase1": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+  "live_phase2_absent": true,
+  "feature_package_absent": true,
+  "pinned_files_verified": 97,
+  "bundles_verified": 3,
+  "consumer_workers": "All four replacement consumers completed; no active consumer or pending tool."
+}

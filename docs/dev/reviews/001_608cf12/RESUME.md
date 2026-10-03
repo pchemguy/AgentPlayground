@@ -1,3 +1,23 @@
+# Controlled stop after A-018
+
+The latest user instruction is **Suspend after A-018**. A-006, A-014 and A-018 are independently Passed; completed case evidence is published through `b1377fd`. All replacement consumer workers stopped. Counts: **17 Passed, 10 Pending; 0 Failed, Blocked, Suspended or Running**. The campaign is deliberately paused, not complete. A-007–A-009 remain unstarted; no automatic resumption is scheduled here.
+
+## Resume next positive case
+
+1. Only after a new resumption instruction, orient live `/workspace/scratch/AgentPlayground-sdd-008`: main and origin/main `29c27580db73cf128c42ddb9535e6d8f5c38ed39`; retained phase1 `964e72bd5b7cab1393def96cb7a192938ca586ab`. Phase1 is fully integrated/published, issues1–5 closed, issue5 sole comment5965081823; preserve original issue4 comment5957328975. No pending owned work, only preserved unrelated bytecode. Do not replay phase merge/issue creation/closure or old staged patches.
+2. A-007 is next: use fresh isolated consumers and pinned explicit-source package `529e98d`; implement JSON milestone2.1 on the convention phase2 branch from the published main checkpoint, maintain hosted tracking, verify/commit/push and pause. Keep evaluator/oracles out of consumer context. A-008–A-009 then require their own authorized scope and independent publication gates; no permission to continue merely follows from this stopped run.
+3. Live phase2/feature branches or feature packages were not created. The isolated A-014 phase2 checkpoint is experiment evidence, not the live product or A-007 completion: `/workspace/scratch/sdd008-A-014-cross/repo` main `cca907244af07071d6d21bff243d72150d19068e`, phase2 `d24222f5911c350ee269ceae00a1dde7edabaa10`; T-007/T-008 unchecked and phase2 unmerged. Local bare refs match; completed-history bundle retained under runs/A-014.
+4. A-018 is complete, not a pending failure: `/workspace/scratch/sdd008-A-018-merge/repo` main/origin main `7f845c755464890e72a5e0cbd1fd6a8d41addac4`, phase1 `841a3311a8d526597b9637cb2bfc957c6ac0eba8`. The sole controlled receive hook was removed by its evaluator owner, then a fresh consumer published the same retained merge without another boundary. No Phase2. Both task and merge histories are bundled under runs/A-018; do not replay rejection setup into existing worktrees. Synthetic experiments never used GitHub or credentials.
+5. Remaining cases: A-007–A-013, A-019, A-021 and A-027. Preserve their prerequisites and accepted plan; run final assessment/source boundary integration only when justified by actual completed evidence. Source revision remains `revision/008_98a5562-runtime-acceptance`, targeting `feature/architecture-revision`; overall revision merge is still pending.
+
+## Durable evidence and limits
+
+Registry/assessments, exact retained prompts, complete available new journals/handoffs, named test/push outputs, independent CLI/Git/task/pin checks, owner intervention and verified bundles are committed. Some earlier T-004/Phase1 outputs are accurately labeled excerpts; never reconstruct them as native full logs. Source loading is tested; installed-client discovery and complete native tool-message export remain unavailable. Python3.12.14 used, not3.11 execution. Automatic approval blockage is resolved by the user’s explicit named-destination authorization; it does not remain a continuation blocker. Tokens are ignored and excluded from evidence/bundles.
+
+See SUSPENSION-20261003.json for final counts and preservation observations. The records below are historical snapshots, including former unavailable-worker and publication blockers; this section supersedes their continuation instructions.
+
+## Historical checkpoint records
+
 # Current stop: publication approval required
 
 On 2026-10-03 UTC+3 the user authorized replacement isolated consumers. A-006 resumed without exposing evaluator material: T-005 preserved and committed as `964e72bd5b7cab1393def96cb7a192938ca586ab`; exact three owned paths, original staged bytes and 97 pinned files independently checked. Full discovery26 and literal CLI12 passed. Issue4 closure completed using the existing single evidence comment; issue5 is still pending.
