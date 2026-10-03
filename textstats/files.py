@@ -6,7 +6,7 @@ standard-library read and decoding exceptions into process outcomes.
 
 import os
 
-from .counting import TextStats, count_text
+from .counting import TextStats, _count_selected
 
 
 def count_file(path: str | os.PathLike[str], *, strip_bom: bool = True) -> TextStats:
@@ -27,6 +27,18 @@ def count_file(path: str | os.PathLike[str], *, strip_bom: bool = True) -> TextS
     The adapter opens and closes its own handle, including on failure. It
     leaves the file unchanged and produces no stdout or stderr output.
     """
+    return _count_file_selected(path, None, strip_bom=strip_bom)
+
+
+def _count_file_selected(
+    path: str | os.PathLike[str], line_range: tuple[int, int] | None,
+    *, strip_bom: bool = True,
+) -> TextStats:
+    """Strictly decode the entire owned file before private core selection.
+
+    Owned handles close on success and all read/decode failures. Selection
+    never skips validation of bytes outside its requested endpoints.
+    """
     with open(path, "r", encoding="utf-8", newline="") as handle:
         text = handle.read()
-    return count_text(text, strip_bom=strip_bom)
+    return _count_selected(text, line_range, strip_bom=strip_bom)

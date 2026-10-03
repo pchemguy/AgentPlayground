@@ -59,3 +59,37 @@ class CountingTests(unittest.TestCase):
             with self.subTest(strip_bom=strip_bom):
                 self.assert_counts("alpha \ufeff beta", 1, 3, strip_bom=strip_bom)
                 self.assert_counts(" \ufeff", 1, 1, strip_bom=strip_bom)
+
+
+class SelectedCountingTests(unittest.TestCase):
+    """Verify private source-independent selection with literal expectations."""
+
+    def test_selected_logical_segments_and_original_bom_policy(self):
+        from textstats import counting
+        cases = [
+            ("alpha beta\nbeta\nlast two", (2, 3), True, (2, 3)),
+            ("alpha beta\nbeta\nlast two", (1, 1), True, (1, 2)),
+            ("alpha beta\nbeta\nlast two", (2, 99), True, (2, 3)),
+            ("alpha beta\nbeta\nlast two", (4, 99), True, (0, 0)),
+            ("", (1, 3), True, (0, 0)),
+            ("a\n\n", (2, 9), True, (1, 0)),
+            ("a\r\nb c\rd\n", (2, 3), True, (2, 3)),
+            ("a\u2028b\nc", (1, 1), True, (1, 2)),
+            ("\ufeff", (1, 1), True, (0, 0)),
+            ("\ufeff", (1, 1), False, (1, 1)),
+            ("\ufeff a\nb", (2, 2), True, (1, 1)),
+            ("\ufeff a\nb", (2, 2), False, (1, 1)),
+            ("a\n\ufeff b", (2, 2), True, (1, 2)),
+            ("\ufeff\ufeff", (1, 1), True, (1, 1)),
+            ("a\r\r", (2, 9), True, (1, 0)),
+            ("a\r\n\r\n", (2, 9), True, (1, 0)),
+            ("a\nb", (2, 2), True, (1, 1)),
+        ]
+        for text, span, strip, expected in cases:
+            with self.subTest(text=text, span=span, strip=strip):
+                result = counting._count_selected(text, span, strip_bom=strip)
+                self.assertEqual((result.lines, result.words), expected)
+        for text in ["", "a\r\nb\n", "\ufeff\ufeff a", "a\n\ufeff b"]:
+            for strip in [False, True]:
+                self.assertEqual(counting._count_selected(text, (1, 999), strip_bom=strip),
+                                 counting.count_text(text, strip_bom=strip))
