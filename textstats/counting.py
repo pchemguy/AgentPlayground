@@ -47,7 +47,7 @@ def _count_selected(
     """Count a decoded source after global BOM handling and optional selection.
 
     Endpoints are validated positive inclusive positions supplied by the CLI.
-    This private source-independent seam can also accept future decoded stdin.
+    This private source-independent seam accepts decoded files and stdin.
     Selected segments retain terminators; their exposed BOM is never stripped.
     """
     if strip_bom and text.startswith("\ufeff"):

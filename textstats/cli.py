@@ -1,7 +1,7 @@
-"""Present named-file TextStats results through the module CLI.
+"""Present named-file and binary-stdin TextStats results through the module CLI.
 
-Argument parsing and output belong here; the file adapter owns UTF-8 input
-and the counting core owns newline, word and BOM semantics.
+Argument parsing, stdin acquisition and output belong here; the file adapter
+owns named UTF-8 input and the core owns newline, word and BOM semantics.
 """
 
 import argparse
@@ -10,6 +10,7 @@ import sys
 from collections.abc import Sequence
 
 from .files import count_file, _count_file_selected
+from .counting import _count_selected
 
 
 
@@ -40,11 +41,12 @@ class _SingleRange(argparse.Action):
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Count one named UTF-8 file and write exact plain success output.
+    """Count one UTF-8 file or binary stdin and write exact plain output.
 
     Args:
         argv: Command-line arguments without the program name. None selects
-            process arguments. --keep-bom retains the leading decoded BOM;
+            process arguments. Input - selects stdin. --keep-bom retains the
+            leading decoded BOM;
             --lines START:END selects existing one-based inclusive lines.
 
     Returns:
@@ -56,27 +58,36 @@ def main(argv: Sequence[str] | None = None) -> int:
         SystemExit: argparse handles help or invalid command-line arguments.
 
     The file adapter owns its handles. API read/decode exceptions are translated
-    here without a traceback. Stdin remains planned for milestone 2.2;
-    at this checkpoint '-' is a literal named file.
+    here without a traceback. Stdin is read completely as binary, strictly
+    decoded as UTF-8 independent of locale, and never closed by this function.
+    Selection follows decoding and global BOM handling, including failures
+    outside the selected lines.
     """
     parser = argparse.ArgumentParser(
-        prog="python -m textstats", description="Count lines and words in one UTF-8 file."
+        prog="python -m textstats", description="Count lines and words in a UTF-8 file or stdin."
     )
     parser.add_argument("--keep-bom", action="store_true", help="retain the leading UTF-8 BOM")
     parser.add_argument("--lines", type=_parse_range, action=_SingleRange,
                         metavar="START:END",
                         help="select one-based inclusive lines; count the available subset at EOF")
-    parser.add_argument("input", metavar="INPUT", help="named UTF-8 file")
+    parser.add_argument("input", metavar="INPUT", help="named UTF-8 file, or - for binary UTF-8 stdin")
     arguments = parser.parse_args(argv)
+    source = "stdin" if arguments.input == "-" else arguments.input
     try:
-        if arguments.lines is None:
+        if arguments.input == "-":
+            chunks = []
+            while chunk := sys.stdin.buffer.read(65536):
+                chunks.append(chunk)
+            text = b"".join(chunks).decode("utf-8", errors="strict")
+            result = _count_selected(text, arguments.lines, strip_bom=not arguments.keep_bom)
+        elif arguments.lines is None:
             result = count_file(arguments.input, strip_bom=not arguments.keep_bom)
         else:
             result = _count_file_selected(
                 arguments.input, arguments.lines, strip_bom=not arguments.keep_bom
             )
     except (OSError, UnicodeDecodeError) as error:
-        print(f"textstats: {arguments.input}: {error}", file=sys.stderr)
+        print(f"textstats: {source}: {error}", file=sys.stderr)
         return 1
     print(f"lines={result.lines} words={result.words}")
     return 0

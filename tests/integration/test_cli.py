@@ -1,6 +1,9 @@
-"""Verify the public module CLI through real named-file subprocesses."""
+"""Verify binary stdin and named files through the public module CLI."""
 
 import os
+import io
+from types import SimpleNamespace
+from unittest.mock import patch
 from pathlib import Path
 import subprocess
 import sys
@@ -74,10 +77,10 @@ class NamedFileCliTests(unittest.TestCase):
             self.assert_success(self.run_cli(path), "lines=1 words=2\n")
             self.assertEqual(path.read_bytes(), data)
 
-    def test_dash_is_a_named_file_before_stdin_delivery(self):
+    def test_literal_dash_file_uses_explicit_relative_path(self):
         with tempfile.TemporaryDirectory() as directory:
             (Path(directory) / "-").write_bytes(b"named input\n")
-            self.assert_success(self.run_cli("-", cwd=directory), "lines=1 words=2\n")
+            self.assert_success(self.run_cli("./-", cwd=directory), "lines=1 words=2\n")
 
 
 class CliFailureTests(unittest.TestCase):
@@ -252,9 +255,154 @@ class LineRangeCliTests(NamedFileCliTests):
                     self.assertEqual(path.read_bytes(), data)
             for name in ["-", "-range.txt"]:
                 (Path(directory) / name).write_bytes(b"a\nb c")
-                self.assert_success(self.run_cli(name, "--lines=2:2", "--", cwd=directory),
+                self.assert_success(self.run_cli("./-" if name == "-" else name, "--lines=2:2", "--", cwd=directory),
                                     "lines=1 words=2\n")
             help_result = self.run_cli(path, "--help")
             self.assertEqual((help_result.returncode, help_result.stderr), (0, ""))
             self.assertIn("inclusive", help_result.stdout)
             self.assertIn("one-based", help_result.stdout)
+
+
+class StdinCliTests(unittest.TestCase):
+    """Protect source-independent counts, strict binary input and ownership."""
+
+    def run_binary(self, data, *options, environment=None):
+        env = os.environ.copy()
+        env["PYTHONDONTWRITEBYTECODE"] = "1"
+        if environment:
+            env.update(environment)
+        return subprocess.run([sys.executable, "-m", "textstats", *options, "-"],
+            cwd=PROJECT_ROOT, input=data, capture_output=True, env=env, timeout=10)
+
+    def test_binary_whole_input_and_bom_modes(self):
+        cases = [
+            (b"", (), b"lines=0 words=0\n"),
+            (b"alpha beta", (), b"lines=1 words=2\n"),
+            (b"a\r\nb c\rd\n", (), b"lines=3 words=4\n"),
+            ("café\u00a0猫\u2028dog\n".encode(), (), b"lines=1 words=3\n"),
+            ("\ufeff".encode(), (), b"lines=0 words=0\n"),
+            ("\ufeff".encode(), ("--keep-bom",), b"lines=1 words=1\n"),
+            ("\ufeff a\nb".encode(), (), b"lines=2 words=2\n"),
+            ("\ufeff a\nb".encode(), ("--keep-bom",), b"lines=2 words=3\n"),
+        ]
+        for data, options, output in cases:
+            with self.subTest(data=data, options=options):
+                result = self.run_binary(data, *options)
+                self.assertEqual((result.returncode, result.stdout, result.stderr), (0, output, b""))
+
+    def test_selected_binary_input_matches_literal_contract(self):
+        cases = [
+            ("alpha beta\nbeta\nlast two", "1:1", (1, 2)),
+            ("alpha beta\nbeta\nlast two", "2:3", (2, 3)),
+            ("alpha beta\nbeta\nlast two", "2:99", (2, 3)),
+            ("alpha beta\nbeta\nlast two", "4:99", (0, 0)),
+            ("", "1:3", (0, 0)), ("a\n\n", "2:9", (1, 0)),
+            ("a\r\nb c\rd\n", "2:3", (2, 3)),
+            ("a\u2028b\nc", "1:1", (1, 2)),
+            ("a\n\ufeff b", "2:2", (1, 2)),
+            ("\ufeff a\nb", "2:2", (1, 1)),
+            ("\ufeff\ufeff", "1:1", (1, 1)),
+        ]
+        for text, span, counts in cases:
+            for options in [("--lines", span), ("--keep-bom", "--lines=" + span),
+                            ("--lines", span, "--keep-bom")]:
+                with self.subTest(text=text, options=options):
+                    result = self.run_binary(text.encode(), *options)
+                    self.assertEqual((result.returncode, result.stdout, result.stderr),
+                        (0, ("lines=%d words=%d\n" % counts).encode(), b""))
+        for options, output in [((), b"lines=0 words=0\n"),
+                                (("--keep-bom",), b"lines=1 words=1\n")]:
+            result = self.run_binary("\ufeff".encode(), "--lines", "1:1", *options)
+            self.assertEqual((result.returncode, result.stdout, result.stderr), (0, output, b""))
+
+    def test_utf8_is_independent_of_process_text_encoding(self):
+        env = {"LC_ALL": "C", "PYTHONUTF8": "0", "PYTHONCOERCECLOCALE": "0",
+               "PYTHONIOENCODING": "ascii:strict"}
+        result = self.run_binary("café 猫\n".encode(), environment=env)
+        self.assertEqual((result.returncode, result.stdout, result.stderr),
+                         (0, b"lines=1 words=2\n", b""))
+
+    def test_full_decode_errors_before_and_after_selection(self):
+        for data in [b"\xff\nvalid", b"valid\n\xff", b"valid\n\xc3"]:
+            for options in [(), ("--lines", "1:1"), ("--lines", "99:100", "--keep-bom")]:
+                with self.subTest(data=data, options=options):
+                    result = self.run_binary(data, *options)
+                    self.assertEqual((result.returncode, result.stdout), (1, b""))
+                    self.assertIn(b"stdin", result.stderr)
+                    self.assertIn(b"utf-8", result.stderr)
+                    self.assertNotIn(b"Traceback", result.stderr)
+
+    def test_caller_stream_survives_success_and_decode_failure(self):
+        from textstats.cli import main
+        for data, status, output in [(b"a\nb c", 0, "lines=1 words=1\n"),
+                                     (b"a\n\xff", 1, "")]:
+            stream = io.BytesIO(data)
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with patch("sys.stdin", SimpleNamespace(buffer=stream)), \
+                 patch("sys.stdout", stdout), patch("sys.stderr", stderr):
+                self.assertEqual(main(["--lines", "1:1", "-"]), status)
+            self.assertFalse(stream.closed)
+            self.assertEqual(stream.tell(), len(data))
+            self.assertEqual(stdout.getvalue(), output)
+            if status:
+                self.assertIn("stdin", stderr.getvalue())
+            else:
+                self.assertEqual(stderr.getvalue(), "")
+            stream.seek(0)
+            self.assertEqual(stream.read(), data)
+            stream.close()
+
+    def test_short_reads_reach_eof_and_late_read_failure_is_not_partial_success(self):
+        from textstats.cli import main
+
+        class ChunkedStream(io.BytesIO):
+            """Return short binary chunks and optionally fail after good input."""
+
+            def __init__(self, fail=False):
+                super().__init__(b"a\nb c")
+                self.fail = fail
+                self.eof_seen = False
+
+            def read(self, size=-1):
+                if self.tell() >= 2 and self.fail:
+                    raise OSError("controlled stdin read failure")
+                chunk = super().read(2)
+                self.eof_seen |= not chunk
+                return chunk
+
+        for fail in [False, True]:
+            stream = ChunkedStream(fail)
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with patch("sys.stdin", SimpleNamespace(buffer=stream)), \
+                 patch("sys.stdout", stdout), patch("sys.stderr", stderr):
+                status = main(["--lines", "1:1", "-"])
+            self.assertFalse(stream.closed)
+            self.assertEqual(status, 1 if fail else 0)
+            self.assertEqual(stdout.getvalue(), "" if fail else "lines=1 words=1\n")
+            if fail:
+                self.assertIn("stdin", stderr.getvalue())
+                self.assertIn("controlled stdin read failure", stderr.getvalue())
+                self.assertNotIn("Traceback", stderr.getvalue())
+            else:
+                self.assertTrue(stream.eof_seen)
+                self.assertEqual(stream.tell(), 5)
+                self.assertEqual(stderr.getvalue(), "")
+            stream.close()
+
+    def test_usage_precedes_stdin_acquisition(self):
+        from textstats.cli import main
+
+        class ForbiddenStream:
+            """Fail if usage processing attempts input acquisition."""
+
+            def read(self, size=-1):
+                raise AssertionError("stdin acquired before validation")
+
+        for options in [["--lines", "0:1", "-"], ["--lines", "1:1", "--lines", "2:2", "-"],
+                        ["--json", "-"], ["--help"]]:
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with patch("sys.stdin", SimpleNamespace(buffer=ForbiddenStream())), \
+                 patch("sys.stdout", stdout), patch("sys.stderr", stderr):
+                with self.assertRaises(SystemExit) as raised:
+                    main(options)
+            self.assertEqual(raised.exception.code, 0 if options == ["--help"] else 2)
