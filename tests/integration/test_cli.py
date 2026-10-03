@@ -1,5 +1,6 @@
 """Verify the public module CLI through real named-file subprocesses."""
 
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -111,7 +112,7 @@ class CliFailureTests(unittest.TestCase):
     def test_usage_and_help(self):
         environment = os.environ.copy()
         environment["PYTHONDONTWRITEBYTECODE"] = "1"
-        for arguments in ([], ["a", "b"], ["--unknown"], ["--json", "a"]):
+        for arguments in ([], ["a", "b"], ["--unknown"], ["--json"]):
             with self.subTest(arguments=arguments):
                 result = subprocess.run([sys.executable, "-m", "textstats", *arguments],
                     cwd=PROJECT_ROOT, env=environment, capture_output=True, text=True, timeout=10)
@@ -136,6 +137,89 @@ class CliFailureTests(unittest.TestCase):
         with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
             with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
                 status = main(["denied.txt"])
+        self.assertEqual(status, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("denied.txt", stderr.getvalue())
+        self.assertIn("Permission denied", stderr.getvalue())
+
+
+class JsonCliTests(unittest.TestCase):
+    """Verify JSON serialization and its composition with existing CLI policy."""
+
+    run_cli = NamedFileCliTests.run_cli
+    assert_failure = CliFailureTests.assert_failure
+
+    def assert_json_success(self, result, lines, words):
+        """Require one object, exact keys, true integers and success channels."""
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertTrue(result.stdout.endswith("\n"))
+        self.assertEqual(result.stdout.count("\n"), 1)
+        value = json.loads(result.stdout)
+        self.assertEqual(value, {"lines": lines, "words": words})
+        self.assertEqual(set(value), {"lines", "words"})
+        self.assertIs(type(value["lines"]), int)
+        self.assertIs(type(value["words"]), int)
+
+    def test_json_named_file_boundaries(self):
+        cases = [
+            ("", 0, 0),
+            (" \t", 1, 0),
+            ("alpha beta", 1, 2),
+            ("alpha\r\nbeta\rgamma\n", 3, 3),
+            ("café\u00a0猫\u2028dog\n", 1, 3),
+            ("alpha\n\n", 2, 1),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "file with spaces.txt"
+            for text, lines, words in cases:
+                with self.subTest(text=text):
+                    data = text.encode("utf-8")
+                    path.write_bytes(data)
+                    self.assert_json_success(self.run_cli(path, "--json"), lines, words)
+                    self.assertEqual(path.read_bytes(), data)
+
+    def test_json_bom_policy_and_option_order(self):
+        cases = [
+            ("\ufeff alpha\r\nbeta\n", (), 2, 2),
+            ("\ufeff alpha\r\nbeta\n", ("--keep-bom",), 2, 3),
+            ("\ufeff", (), 0, 0),
+            ("\ufeff", ("--keep-bom",), 1, 1),
+            ("alpha \ufeff beta", (), 1, 3),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.txt"
+            for text, options, lines, words in cases:
+                with self.subTest(text=text, options=options):
+                    path.write_bytes(text.encode("utf-8"))
+                    self.assert_json_success(self.run_cli(path, "--json", *options), lines, words)
+                    if options:
+                        self.assert_json_success(self.run_cli(path, *options, "--json"), lines, words)
+
+    def test_json_read_and_decode_failure_channels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.txt"
+            bad = Path(directory) / "bad.txt"
+            bad.write_bytes(b"alpha\n\xff")
+            for path in (missing, bad, Path(directory)):
+                with self.subTest(path=path):
+                    self.assert_failure(self.run_cli(path, "--json"), 1, path.name)
+            self.assertEqual(bad.read_bytes(), b"alpha\n\xff")
+
+    def test_json_dash_prefixed_named_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "-sample.txt").write_bytes(b"alpha beta\n")
+            self.assert_json_success(self.run_cli("-sample.txt", "--json", "--", cwd=directory), 1, 2)
+
+    def test_json_permission_denial_translation(self):
+        from unittest.mock import patch
+        import contextlib
+        import io
+        from textstats.cli import main
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch("textstats.cli.count_file", side_effect=PermissionError("Permission denied")):
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                status = main(["--json", "denied.txt"])
         self.assertEqual(status, 1)
         self.assertEqual(stdout.getvalue(), "")
         self.assertIn("denied.txt", stderr.getvalue())

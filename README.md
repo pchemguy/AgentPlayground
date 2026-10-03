@@ -32,7 +32,23 @@ Results are immutable. The file API reads strict UTF-8, leaves files unchanged a
 
 The API preserves `OSError` (including missing/unreadable input) and `UnicodeDecodeError` for invalid UTF-8, without printing or returning partial counts. The CLI returns status 1 with a useful input/cause diagnostic on stderr and no stdout or traceback. Invalid usage returns status 2; `--help` returns status 0. Use `--` before dash-prefixed filenames.
 
-JSON and stdin are planned for phase 2. Input `-` currently names a file; `--json` is not supported yet.
+## JSON output
+
+Use `--json` for machine-readable counts from the same named UTF-8 files:
+
+```sh
+python -m textstats --json sample.txt
+```
+
+Output:
+
+```json
+{"lines": 1, "words": 2}
+```
+
+The output is one object with exactly `lines` and `words` integer fields, followed by a newline. JSON whitespace and key order may vary. It succeeds with status 0 and empty stderr; read/decode failures keep status 1, diagnostics on stderr and no stdout. `--json --keep-bom` composes with the same BOM policy. Without `--json`, the default text output stays the same.
+
+Stdin is planned for milestone 2.2. Input `-` currently names a file.
 
 ## Source distribution
 

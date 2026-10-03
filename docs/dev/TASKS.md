@@ -38,10 +38,12 @@ Preparation baseline: `61f9670736c58b841519f9484239ee05eff58e63`; working/integr
 ## Phase 2 — Output and input extensions
 
 - [ ] Phase 2 — Output and input extensions
-    - [ ] Milestone 2.1 — JSON output
-        - [ ] T-006 — Add and verify JSON output
+    - [x] Milestone 2.1 — JSON output
+        - [x] T-006 — Add and verify JSON output
             Scope: CLI formatter/parser, CLI tests, README/docstrings and milestone 2.1 evidence. Depends on: T-005 and verified/published phase 1 integration.
             Outcome: `--json` emits the SPEC object/newline and composes with BOM policy, retaining default text and failure behavior. Evidence: stdlib parsed JSON keys/value types and fixed counts, default-output/channel regressions, documented demonstration and full discovery. Record the milestone decision evidence; pause on the phase branch if only 2.1 is requested.
+            Checkpoint: milestone 2.1 / T-006 only on `phase/2-output-and-input-extensions`, from actual verified/published main `29c27580db73cf128c42ddb9535e6d8f5c38ed39`; target `main`, remote `origin`. Hosted association: [T-006 issue #6](https://github.com/pchemguy/AgentPlayground/issues/6). Phase 2 remains incomplete; T-007/T-008 are unstarted and excluded, with no phase merge at this boundary.
+            Verified T-006 / milestone 2.1 (Python 3.12.14): `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli.JsonCliTests -v` observed RED with 5 tests, 15 failures and one argparse SystemExit scenario error because `--json` was unsupported. After the parser/formatter change, `PYTHONDONTWRITEBYTECODE=1 python -m unittest tests.integration.test_cli -v` passed all 15 CLI tests; `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` passed all 31 tests without skips/warnings. Real named-file subprocesses and stdlib parsing verify one object/newline, exactly lines/words integer keys, fixed empty/whitespace/Unicode/mixed/trailing-newline counts, BOM modes/option order, unchanged files, dash-prefixed paths, default text regressions and read/decode/usage channels. Permission denial is simulated narrowly at the CLI adapter under this privileged runner; real missing/directory/malformed-byte fixtures supplement it. Affected module/API docstrings, README links and heading spacing reviewed. README quick-start/JSON examples executed in a temporary directory: text `lines=1 words=2`, JSON (1,2), BOM stripped (2,2), BOM kept (2,3), all status 0 with empty stderr. This demonstration meets PLAN 2.1 and informs the next human continuation/amendment/stop decision; no further decision or usability feedback is inferred. Pause on the published phase branch before milestone 2.2; stdin still treats `-` as a filename.
     - [ ] Milestone 2.2 — UTF-8 stdin
         - [ ] T-007 — Support stdin through the dash input
             Scope: CLI source acquisition, CLI tests and relevant docstrings. Depends on: T-006.
