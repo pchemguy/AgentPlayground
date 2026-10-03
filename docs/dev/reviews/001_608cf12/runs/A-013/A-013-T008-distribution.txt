@@ -1,0 +1,6 @@
+test_documented_archive_deploys_only_product_sources (tests.integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.375s
+
+OK

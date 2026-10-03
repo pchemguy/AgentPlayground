@@ -1,0 +1,15 @@
+?? tests/integration/__pycache__/__init__.cpython-312.pyc
+?? tests/integration/__pycache__/test_cli.cpython-312.pyc
+?? tests/integration/__pycache__/test_distribution.cpython-312.pyc
+?? tests/unit/__pycache__/__init__.cpython-312.pyc
+?? tests/unit/__pycache__/test_api.cpython-312.pyc
+?? tests/unit/__pycache__/test_counting.cpython-312.pyc
+?? tests/unit/__pycache__/test_files.cpython-312.pyc
+?? textstats/__pycache__/__init__.cpython-312.pyc
+?? textstats/__pycache__/__main__.cpython-312.pyc
+?? textstats/__pycache__/cli.cpython-312.pyc
+?? textstats/__pycache__/counting.cpython-312.pyc
+?? textstats/__pycache__/files.cpython-312.pyc
+main
+05c35532ce836c1e9681f6dd6c21e1801293236f 29c27580db73cf128c42ddb9535e6d8f5c38ed39 c8da841a53befcc420aeb9e97435ca93f9c7051e
+gh.tkn

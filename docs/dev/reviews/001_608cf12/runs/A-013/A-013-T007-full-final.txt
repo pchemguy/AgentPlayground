@@ -1,0 +1,51 @@
+test_dash_prefixed_file_via_separator (integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok
+test_directory_cannot_be_read_as_file (integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok
+test_missing_and_invalid_utf8_inputs (integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok
+test_permission_denial_translation_in_process (integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok
+test_usage_and_help (integration.test_cli.CliFailureTests.test_usage_and_help) ... ok
+test_bom_only_and_interior_bom (integration.test_cli.LineRangeCliTests.test_bom_only_and_interior_bom) ... ok
+test_decode_failure_outside_selection_and_named_dash_paths (integration.test_cli.LineRangeCliTests.test_decode_failure_outside_selection_and_named_dash_paths) ... ok
+test_invalid_ranges_precede_missing_input (integration.test_cli.LineRangeCliTests.test_invalid_ranges_precede_missing_input) ... ok
+test_keep_bom_composes_with_named_input (integration.test_cli.LineRangeCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_literal_dash_file_uses_explicit_relative_path (integration.test_cli.LineRangeCliTests.test_literal_dash_file_uses_explicit_relative_path) ... ok
+test_literal_selected_cases_in_plain_output_and_bom_modes (integration.test_cli.LineRangeCliTests.test_literal_selected_cases_in_plain_output_and_bom_modes) ... ok
+test_named_file_success_boundaries (integration.test_cli.LineRangeCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (integration.test_cli.LineRangeCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_bom_only_and_interior_bom (integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok
+test_keep_bom_composes_with_named_input (integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok
+test_literal_dash_file_uses_explicit_relative_path (integration.test_cli.NamedFileCliTests.test_literal_dash_file_uses_explicit_relative_path) ... ok
+test_named_file_success_boundaries (integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok
+test_named_input_with_spaces_is_not_modified (integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok
+test_help_omits_removed_option (integration.test_cli.RemovedJsonCliTests.test_help_omits_removed_option) ... ok
+test_removed_option_name_is_a_literal_file_after_separator (integration.test_cli.RemovedJsonCliTests.test_removed_option_name_is_a_literal_file_after_separator) ... ok
+test_removed_option_precedes_source_acquisition (integration.test_cli.RemovedJsonCliTests.test_removed_option_precedes_source_acquisition) ... ok
+test_binary_whole_input_and_bom_modes (integration.test_cli.StdinCliTests.test_binary_whole_input_and_bom_modes) ... ok
+test_caller_stream_survives_success_and_decode_failure (integration.test_cli.StdinCliTests.test_caller_stream_survives_success_and_decode_failure) ... ok
+test_full_decode_errors_before_and_after_selection (integration.test_cli.StdinCliTests.test_full_decode_errors_before_and_after_selection) ... ok
+test_selected_binary_input_matches_literal_contract (integration.test_cli.StdinCliTests.test_selected_binary_input_matches_literal_contract) ... ok
+test_short_reads_reach_eof_and_late_read_failure_is_not_partial_success (integration.test_cli.StdinCliTests.test_short_reads_reach_eof_and_late_read_failure_is_not_partial_success) ... ok
+test_usage_precedes_stdin_acquisition (integration.test_cli.StdinCliTests.test_usage_precedes_stdin_acquisition) ... ok
+test_utf8_is_independent_of_process_text_encoding (integration.test_cli.StdinCliTests.test_utf8_is_independent_of_process_text_encoding) ... ok
+test_documented_archive_deploys_only_product_sources (integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok
+test_public_calls_return_independent_values_without_output (unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok
+test_public_result_has_integer_counts (unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok
+test_result_is_immutable (unit.test_api.PublicApiTests.test_result_is_immutable) ... ok
+test_cr_lf_crlf_and_trailing_segments (unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok
+test_default_removes_one_leading_bom (unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok
+test_interior_bom_is_preserved_in_both_modes (unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok
+test_keep_bom_treats_bom_as_non_whitespace (unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok
+test_spec_counting_table (unit.test_counting.CountingTests.test_spec_counting_table) ... ok
+test_unicode_whitespace_does_not_create_lines (unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok
+test_selected_logical_segments_and_original_bom_policy (unit.test_counting.SelectedCountingTests.test_selected_logical_segments_and_original_bom_policy) ... ok
+test_bom_modes_are_applied_to_decoded_file (unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok
+test_real_files_match_fixed_expected_counts (unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok
+test_success_closes_real_owned_handle_without_output (unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok
+test_decode_failure_closes_real_handle_and_preserves_bytes (unit.test_files.FileFailureTests.test_decode_failure_closes_real_handle_and_preserves_bytes) ... ok
+test_missing_file_preserves_oserror_without_output (unit.test_files.FileFailureTests.test_missing_file_preserves_oserror_without_output) ... ok
+test_read_denial_closes_acquired_handle_and_preserves_exception (unit.test_files.FileFailureTests.test_read_denial_closes_acquired_handle_and_preserves_exception) ... ok
+test_real_selected_files_and_decode_failure_close_handles (unit.test_files.SelectedFileTests.test_real_selected_files_and_decode_failure_close_handles) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 5.051s
+
+OK

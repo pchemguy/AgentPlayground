@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "case": "help",
+      "status": 0,
+      "stdout": "usage: python -m textstats [-h] [--keep-bom] [--lines START:END] INPUT\n\nCount lines and words in a UTF-8 file or stdin.\n\npositional arguments:\n  INPUT              named UTF-8 file, or - for binary UTF-8 stdin\n\noptions:\n  -h, --help         show this help message and exit\n  --keep-bom         retain the leading UTF-8 BOM\n  --lines START:END  select one-based inclusive lines; count the available\n                     subset at EOF\n",
+      "stderr": ""
+    },
+    {
+      "case": "literal-filename",
+      "flags": [
+        "--",
+        "--json"
+      ],
+      "status": 0,
+      "stdout": "lines=2 words=3\n",
+      "stderr": "",
+      "input_unchanged": true
+    },
+    {
+      "case": "literal-filename",
+      "flags": [
+        "--lines",
+        "2:2",
+        "--",
+        "--json"
+      ],
+      "status": 0,
+      "stdout": "lines=1 words=1\n",
+      "stderr": "",
+      "input_unchanged": true
+    }
+  ],
+  "limits": "Real temporary literal filename; explicit PYTHONPATH resolves current checkout. Distribution isolation is separately verified by consumer suite."
+}

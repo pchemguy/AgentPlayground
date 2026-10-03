@@ -1,0 +1,10 @@
+{
+  "changed_artifacts": [
+    "A-013-issue-8-safe.json",
+    "A-013-hosted-before.json",
+    "A-013-issue-7-safe.json"
+  ],
+  "method": "Provider body/description fields replaced recursively by SHA256; no raw provider bodies retained in published JSON records.",
+  "incident": "Root inspection printed bodies from an unsanitized consumer metadata artifact; acknowledged and corrected before evidence publication.",
+  "scope": "Record retention only; no product or hosted mutations."
+}

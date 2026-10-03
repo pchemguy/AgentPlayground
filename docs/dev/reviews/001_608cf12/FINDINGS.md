@@ -30,3 +30,10 @@ Resolution: final preparation `62b5408e80adc2ac12464e5f9163b3afd47a58ba` publish
 - State: correction and objective final recheck pending. Assessment must disclose review assistance and original draft; do not claim unassisted first-pass compliance.
 
 Resolution: amendment `6561e287e59c8b4e86c7a3cdeaaa48a60df82154` and target merge `1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6` are published with exact remote equality. Independent checks establish ten unique current task owners excluding retired T-006, preserved original checked T-006 history in the minimal revision report, no former-scope PLAN paragraph, unchanged public core/file/API modules, 39 passing tests and 62 literal CLI cases plus help/literal-filename checks. T-007/T-008 and phase2 remain incomplete. Review assistance remains disclosed.
+
+## TST-004 — Provider body retention and inspection
+
+- Type: campaign record handling defect, not a pinned-plugin source defect; priorityP3.
+- Observed: three A-013 consumer metadata artifacts retained provider body/description fields; root inspection mistakenly displayed task bodies. No token exposure was observed.
+- Correction: recursively replace body/description fields with SHA256 before publication, retain affected filenames/method/incident in A-013-record-sanitization.json, and use purpose-built metadata-only read observers thereafter. Product and provider state are unchanged by record sanitization. The display cannot be undone; it is explicitly disclosed rather than described as compliant raw-body handling.
+- State: corrected before A-013 record publication; assessment discloses the record-handling intervention.

@@ -1,0 +1,87 @@
+{
+  "head": "05c35532ce836c1e9681f6dd6c21e1801293236f",
+  "parents": [
+    "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "c8da841a53befcc420aeb9e97435ca93f9c7051e"
+  ],
+  "phase_tip": "c8da841a53befcc420aeb9e97435ca93f9c7051e",
+  "exact_remote_refs_verified": true,
+  "tracked_clean": true,
+  "changed_paths": [
+    "README.md",
+    "docs/dev/TASKS.md",
+    "tests/integration/test_cli.py",
+    "tests/integration/test_distribution.py",
+    "textstats/cli.py",
+    "textstats/counting.py"
+  ],
+  "historical_feature_sources_preserved": true,
+  "public_API_file_modules_and_core_behavior_unchanged": true,
+  "task_owners": {
+    "T-001": {
+      "id": "T-001",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 13,
+      "status": "Checked"
+    },
+    "T-002": {
+      "id": "T-002",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 19,
+      "status": "Checked"
+    },
+    "T-003": {
+      "id": "T-003",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 23,
+      "status": "Checked"
+    },
+    "T-004": {
+      "id": "T-004",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 29,
+      "status": "Checked"
+    },
+    "T-005": {
+      "id": "T-005",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 33,
+      "status": "Checked"
+    },
+    "T-007": {
+      "id": "T-007",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 42,
+      "status": "Checked"
+    },
+    "T-008": {
+      "id": "T-008",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 46,
+      "status": "Checked"
+    },
+    "T-009": {
+      "id": "T-009",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 53,
+      "status": "Checked"
+    },
+    "T-010": {
+      "id": "T-010",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 57,
+      "status": "Checked"
+    },
+    "T-011": {
+      "id": "T-011",
+      "document": "/workspace/scratch/AgentPlayground-sdd-008/docs/dev/TASKS.md",
+      "line": 62,
+      "status": "Checked"
+    }
+  },
+  "Phase2_complete_no_Phase3": true,
+  "pinned_hashes_verified": 97,
+  "bytecode_hashes_preserved": 12,
+  "hosted_IDs_foreign_bodies_history_preserved": true,
+  "limits": "Behavior is separately checked by full suite and independent retained named-file/stdin/plain/range/JSON-rejection oracles. No complete native transcript."
+}

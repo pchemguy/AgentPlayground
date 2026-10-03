@@ -1,3 +1,13 @@
+# Active continuation through A-013 and A-019
+
+The latest user instruction extends the current continuation through the next two cases after A-012, without suspension there. A-010/A-011/A-012 are independently Passed and published through `a6e0d7c6333d64d75552f02d575ea2832950d1c9`; counts23 Passed/4 Pending. A-013 is active on the actual amended paused phase2, followed by isolated A-019. Stop before A-021 only after both case assessments and source records are published. This section supersedes historical stop instructions below.
+
+A-012 paused target is `1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6`, main `29c27580db73cf128c42ddb9535e6d8f5c38ed39`, amendment `6561e287e59c8b4e86c7a3cdeaaa48a60df82154`. Ten current task owners exclude retired T006; only T007/T008 remain unchecked. Keep current plain-output accepted scope, full-input strict UTF-8, global BOM and ranges; do not restore JSON or replay delivered feature tasks. Preserve credentials,12 bytecodes,97 pinned hashes, hosted IDs/history and actual pending merge/index work. A-013 completion requires observed stdin/full-phase exits, explicit two-parent main integration and verification/publication. A-019 uses a separate local origin, controlled real conflict/failed-check states and fresh bounded continuations. Fixture setup/checker self-tests alone are not case passes.
+
+Remaining A-021 and A-027 need later authorization and actual prerequisites. Overall R-001/source boundary integration remain incomplete. Explicit pinned source/Python3.12.14/available-journal limits persist.
+
+## Historical checkpoints
+
 # Controlled stop after A-009
 
 “Next one case - go” executed A-009 only. It is independently **Passed**, published through `7b85221cb02e7f2006e79b77fd54b9df6f2e20b2`. All consumers stopped. Counts: **20 Passed, 7 Pending; 0 Failed, Blocked, Suspended or Running**. Stop before A-010; no automatic continuation is scheduled. This section supersedes historical checkpoints below.

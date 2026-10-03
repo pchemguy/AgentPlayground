@@ -1,0 +1,44 @@
+{
+  "milestones": [
+    {
+      "number": 1,
+      "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+      "state": "open",
+      "description_sha256": "712822a61f51cb15e6cf044718c841cdd16ed99146bf8b539b44409f3a7d6aba"
+    },
+    {
+      "number": 2,
+      "title": "sdd-1.2-Reliable-baseline-and-distribution",
+      "state": "open",
+      "description_sha256": "2480be8412039d73d0234dc66b846e37d2b094bb39ba0ba3128c49a7da3d648f"
+    },
+    {
+      "number": 3,
+      "title": "sdd-2.1-Retired-JSON-output-scope",
+      "state": "open",
+      "description_sha256": "cef5c74ef06fe676c7270142effaa257b151d43f17002d24dcf8809ffc408892"
+    },
+    {
+      "number": 4,
+      "title": "sdd-2.2-UTF-8-stdin",
+      "state": "closed",
+      "description_sha256": "1024dd22d3bd32bd64bb2c9d408191ac0ff018d25b8c48cef942f408c03d2a68"
+    },
+    {
+      "number": 5,
+      "title": "sdd-2.3-Line-range-counting",
+      "state": "closed",
+      "description_sha256": "fdc98b40401f813670934ecc2f8c1525a62d46fb92fae0053d1219f40164d89e"
+    }
+  ],
+  "phase_labels": [
+    {
+      "name": "sdd-phase-2-Output-and-input-extensions",
+      "description_sha256": "9481a8a49e461dad8039a6bc3df0214c61ab06beda35b7f05a197e8b2d924fb3",
+      "description_claims_incomplete": false,
+      "description_claims_planned": false
+    }
+  ],
+  "read_only": true,
+  "raw_bodies_excluded": true
+}

@@ -1,0 +1,780 @@
+[
+  {
+    "endpoint": "issues?state=all&per_page=100",
+    "status": 200,
+    "objects": [
+      {
+        "number": 11,
+        "title": "[T-011] Verify named-file line-range delivery and milestone exits",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/5",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5/labels",
+          "id": 18279534,
+          "node_id": "MI_kwDOU4wOOM4BFuxu",
+          "number": 5,
+          "title": "sdd-2.3-Line-range-counting",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-03T08:41:48Z",
+          "updated_at": "2026-10-03T09:08:51Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "7cbb05a626caee8cf4a4265c204d299f43cd1d521f352d4482a5503c26449657"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/11",
+        "body_sha256": "29d9887b00b663bf49c2ca54a62af6b54d47252ddc5de6f1aa3af64a91ffdae5"
+      },
+      {
+        "number": 10,
+        "title": "[T-010] Deliver named-file line-range CLI counting",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/5",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5/labels",
+          "id": 18279534,
+          "node_id": "MI_kwDOU4wOOM4BFuxu",
+          "number": 5,
+          "title": "sdd-2.3-Line-range-counting",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-03T08:41:48Z",
+          "updated_at": "2026-10-03T09:08:51Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "7cbb05a626caee8cf4a4265c204d299f43cd1d521f352d4482a5503c26449657"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/10",
+        "body_sha256": "f39ae1d018d5551d7a10bc62a45b62c8e2722a1a412c0f3e285d7ea189af115f"
+      },
+      {
+        "number": 9,
+        "title": "[T-009] Add pure selected-counting and file-adapter collaboration",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/5",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/5/labels",
+          "id": 18279534,
+          "node_id": "MI_kwDOU4wOOM4BFuxu",
+          "number": 5,
+          "title": "sdd-2.3-Line-range-counting",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-03T08:41:48Z",
+          "updated_at": "2026-10-03T09:08:51Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "7cbb05a626caee8cf4a4265c204d299f43cd1d521f352d4482a5503c26449657"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/9",
+        "body_sha256": "cf001eb400d6f9f3b7caac865e7a25af311a8772da1f45cdf40b4f9f972bbb91"
+      },
+      {
+        "number": 8,
+        "title": "[T-008] Verify complete stdin delivery and phase exits",
+        "state": "open",
+        "state_reason": null,
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/4",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4/labels",
+          "id": 18260585,
+          "node_id": "MI_kwDOU4wOOM4BFqJp",
+          "number": 4,
+          "title": "sdd-2.2-UTF-8-stdin",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 2,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:35Z",
+          "updated_at": "2026-10-03T09:08:44Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "e462b7f2ed837de407d3fa9274fc48acba34f9f5fce274b3efbcde3db9cbe8f4"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/8",
+        "body_sha256": "8030348c1b15195b473b8fa113fe036295391de40c54dff34b2966e3b44387dd"
+      },
+      {
+        "number": 7,
+        "title": "[T-007] Support stdin through the dash input",
+        "state": "open",
+        "state_reason": null,
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/4",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/4/labels",
+          "id": 18260585,
+          "node_id": "MI_kwDOU4wOOM4BFqJp",
+          "number": 4,
+          "title": "sdd-2.2-UTF-8-stdin",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 2,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:35Z",
+          "updated_at": "2026-10-03T09:08:44Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "e462b7f2ed837de407d3fa9274fc48acba34f9f5fce274b3efbcde3db9cbe8f4"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/7",
+        "body_sha256": "6733cb1e5d842dd8e747ace3b97d035cd021f5da23ccc60639c526e79466a61d"
+      },
+      {
+        "number": 6,
+        "title": "[T-006] Retired JSON output scope",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511310119,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btxJw",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-2-Output-and-input-extensions",
+            "name": "sdd-phase-2-Output-and-input-extensions",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/3",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/3",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/3/labels",
+          "id": 18260584,
+          "node_id": "MI_kwDOU4wOOM4BFqJo",
+          "number": 3,
+          "title": "sdd-2.1-Retired-JSON-output-scope",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 1,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:30Z",
+          "updated_at": "2026-10-03T09:08:39Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "cef5c74ef06fe676c7270142effaa257b151d43f17002d24dcf8809ffc408892"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/6",
+        "body_sha256": "31d79cfc9898879ec093b792f8027ff7d55e497cf6cdcba823af55e2a956657b"
+      },
+      {
+        "number": 5,
+        "title": "[T-005] Verify baseline documentation and source distribution",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511308528,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btq8A",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-1-Named-file-baseline",
+            "name": "sdd-phase-1-Named-file-baseline",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/2",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/2",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/2/labels",
+          "id": 18260582,
+          "node_id": "MI_kwDOU4wOOM4BFqJm",
+          "number": 2,
+          "title": "sdd-1.2-Reliable-baseline-and-distribution",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 2,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:25Z",
+          "updated_at": "2026-10-03T03:30:31Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "2480be8412039d73d0234dc66b846e37d2b094bb39ba0ba3128c49a7da3d648f"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/5",
+        "body_sha256": "fd076682871ec2ef1a24aa9bd4eea839c913ebfb77d23f9e891a0f07c62efaaf"
+      },
+      {
+        "number": 4,
+        "title": "[T-004] Complete baseline failure and usage handling",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511308528,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btq8A",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-1-Named-file-baseline",
+            "name": "sdd-phase-1-Named-file-baseline",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/2",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/2",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/2/labels",
+          "id": 18260582,
+          "node_id": "MI_kwDOU4wOOM4BFqJm",
+          "number": 2,
+          "title": "sdd-1.2-Reliable-baseline-and-distribution",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 2,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:25Z",
+          "updated_at": "2026-10-03T03:30:31Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "2480be8412039d73d0234dc66b846e37d2b094bb39ba0ba3128c49a7da3d648f"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/4",
+        "body_sha256": "124546d4cf679a4cdcd43eff16eadc2c7f23fd97b5385cc41fb3551f26b99380"
+      },
+      {
+        "number": 3,
+        "title": "[T-003] Deliver the usable named-file module CLI",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511308528,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btq8A",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-1-Named-file-baseline",
+            "name": "sdd-phase-1-Named-file-baseline",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/1",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1/labels",
+          "id": 18260578,
+          "node_id": "MI_kwDOU4wOOM4BFqJi",
+          "number": 1,
+          "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:20Z",
+          "updated_at": "2026-10-03T09:08:33Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "712822a61f51cb15e6cf044718c841cdd16ed99146bf8b539b44409f3a7d6aba"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/3",
+        "body_sha256": "07ef88bf0893070b7fa15dca47a3f3673129b4e6c0747f6a9726f924dfa07d1a"
+      },
+      {
+        "number": 2,
+        "title": "[T-002] Expose UTF-8 named-file counting",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511308528,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btq8A",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-1-Named-file-baseline",
+            "name": "sdd-phase-1-Named-file-baseline",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/1",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1/labels",
+          "id": 18260578,
+          "node_id": "MI_kwDOU4wOOM4BFqJi",
+          "number": 1,
+          "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:20Z",
+          "updated_at": "2026-10-03T09:08:33Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "712822a61f51cb15e6cf044718c841cdd16ed99146bf8b539b44409f3a7d6aba"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/2",
+        "body_sha256": "b26a5bba237fffcafa1a94fbcda8e64272864759aa140463876cc06fad2baa19"
+      },
+      {
+        "number": 1,
+        "title": "[T-001] Implement the public counting core",
+        "state": "closed",
+        "state_reason": "completed",
+        "labels": [
+          {
+            "id": 12511308528,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6btq8A",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/sdd-phase-1-Named-file-baseline",
+            "name": "sdd-phase-1-Named-file-baseline",
+            "color": "5319e7",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+          },
+          {
+            "id": 12513846369,
+            "node_id": "LA_kwDOU4wOOM8AAAAC6eIkYQ",
+            "url": "https://api.github.com/repos/pchemguy/AgentPlayground/labels/acceptance-note",
+            "name": "acceptance-note",
+            "color": "cccccc",
+            "default": false,
+            "archived_at": null,
+            "archived_by": null,
+            "description_sha256": "42473a6971f15328a4bb8f832323f9723997440172584d315e27823bd68cfb05"
+          }
+        ],
+        "milestone": {
+          "url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1",
+          "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/1",
+          "labels_url": "https://api.github.com/repos/pchemguy/AgentPlayground/milestones/1/labels",
+          "id": 18260578,
+          "node_id": "MI_kwDOU4wOOM4BFqJi",
+          "number": 1,
+          "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+          "creator": {
+            "login": "pchemguy",
+            "id": 39730837,
+            "node_id": "MDQ6VXNlcjM5NzMwODM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/39730837?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pchemguy",
+            "html_url": "https://github.com/pchemguy",
+            "followers_url": "https://api.github.com/users/pchemguy/followers",
+            "following_url": "https://api.github.com/users/pchemguy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pchemguy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pchemguy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pchemguy/subscriptions",
+            "organizations_url": "https://api.github.com/users/pchemguy/orgs",
+            "repos_url": "https://api.github.com/users/pchemguy/repos",
+            "events_url": "https://api.github.com/users/pchemguy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pchemguy/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 0,
+          "closed_issues": 3,
+          "state": "open",
+          "created_at": "2026-10-02T13:29:20Z",
+          "updated_at": "2026-10-03T09:08:33Z",
+          "due_on": null,
+          "closed_at": null,
+          "description_sha256": "712822a61f51cb15e6cf044718c841cdd16ed99146bf8b539b44409f3a7d6aba"
+        },
+        "html_url": "https://github.com/pchemguy/AgentPlayground/issues/1",
+        "body_sha256": "9ba22703cd5d128a4f1a7dd62fa434ddbb4c5593311c767c007b8004c6a87a56"
+      }
+    ]
+  },
+  {
+    "endpoint": "milestones?state=all&per_page=100",
+    "status": 200,
+    "objects": [
+      {
+        "number": 1,
+        "title": "sdd-1.1-Usable-named-file-API-and-CLI",
+        "state": "open",
+        "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/1",
+        "description_sha256": "712822a61f51cb15e6cf044718c841cdd16ed99146bf8b539b44409f3a7d6aba"
+      },
+      {
+        "number": 2,
+        "title": "sdd-1.2-Reliable-baseline-and-distribution",
+        "state": "open",
+        "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/2",
+        "description_sha256": "2480be8412039d73d0234dc66b846e37d2b094bb39ba0ba3128c49a7da3d648f"
+      },
+      {
+        "number": 3,
+        "title": "sdd-2.1-Retired-JSON-output-scope",
+        "state": "open",
+        "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/3",
+        "description_sha256": "cef5c74ef06fe676c7270142effaa257b151d43f17002d24dcf8809ffc408892"
+      },
+      {
+        "number": 4,
+        "title": "sdd-2.2-UTF-8-stdin",
+        "state": "open",
+        "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/4",
+        "description_sha256": "e462b7f2ed837de407d3fa9274fc48acba34f9f5fce274b3efbcde3db9cbe8f4"
+      },
+      {
+        "number": 5,
+        "title": "sdd-2.3-Line-range-counting",
+        "state": "open",
+        "html_url": "https://github.com/pchemguy/AgentPlayground/milestone/5",
+        "description_sha256": "7cbb05a626caee8cf4a4265c204d299f43cd1d521f352d4482a5503c26449657"
+      }
+    ]
+  },
+  {
+    "endpoint": "labels?per_page=100",
+    "status": 200,
+    "objects": [
+      {
+        "name": "acceptance-note",
+        "color": "cccccc",
+        "description_sha256": "42473a6971f15328a4bb8f832323f9723997440172584d315e27823bd68cfb05"
+      },
+      {
+        "name": "accessibility",
+        "color": "f143ab",
+        "description_sha256": "a0e29a556c55309dcf78098b04d2c5c8e6c082d4df0e108596880faec3273e4e"
+      },
+      {
+        "name": "bug",
+        "color": "d73a4a",
+        "description_sha256": "ba26e412cc494b92f18f01c968c2b3241803b752eb09f1577844190076120a92"
+      },
+      {
+        "name": "documentation",
+        "color": "0075ca",
+        "description_sha256": "d1aadc4e1b60c7b31dfbed5db1beb3a9f178166309def32db138e2e6546c2059"
+      },
+      {
+        "name": "duplicate",
+        "color": "cfd3d7",
+        "description_sha256": "092850c4484f11177dce84173d1a26030b145f573db994baa043648947130102"
+      },
+      {
+        "name": "enhancement",
+        "color": "a2eeef",
+        "description_sha256": "528e05403b406e202bb0bd23d3917d0688aaa7bf834fac8273682631bb42bbca"
+      },
+      {
+        "name": "good first issue",
+        "color": "7057ff",
+        "description_sha256": "e7b33d49b02e3a67c41178ae81e03df423dd08d3cd6695030623de3910789d96"
+      },
+      {
+        "name": "help wanted",
+        "color": "008672",
+        "description_sha256": "2a68d328096f7ecf792863fc4701db1a85072417d4dac3d606847541e0423a65"
+      },
+      {
+        "name": "invalid",
+        "color": "e4e669",
+        "description_sha256": "b0b7cab1d96254957703fa96a85a0400491637e8c110b6e79dff077194dd7bed"
+      },
+      {
+        "name": "question",
+        "color": "d876e3",
+        "description_sha256": "c758420437639eac26ad21aad1ff43032947a061a29e688a7cc442d7d936d2b5"
+      },
+      {
+        "name": "sdd-phase-1-Named-file-baseline",
+        "color": "5319e7",
+        "description_sha256": "e0a369f441c07545126d2cefd16ac3c2eac16163fd2175126dd73cf593972722"
+      },
+      {
+        "name": "sdd-phase-2-Output-and-input-extensions",
+        "color": "5319e7",
+        "description_sha256": "0b0a4c730982128e3a78485b27e1a0cec4d8436124117d115fbfa524ea7c21bf"
+      },
+      {
+        "name": "wontfix",
+        "color": "ffffff",
+        "description_sha256": "7005a3da62f74e32c046e5df2439b2911db569848f9e40c38024b20617530777"
+      }
+    ]
+  }
+]

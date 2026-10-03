@@ -1,0 +1,15 @@
+commit 917f3d9889a67bede8850d9f8cc8a98bef08516e
+Author:     Codex <codex@openai.com>
+AuthorDate: Sat Oct 3 17:23:49 2026 +0800
+Commit:     Codex <codex@openai.com>
+CommitDate: Sat Oct 3 17:23:49 2026 +0800
+
+    Support strict binary UTF-8 stdin through EOF (T-007)
+    
+    Preserve caller stream ownership and source-independent BOM/range semantics. Binary subprocess and controlled short-read/lifetime/failure checks pass; actual RED retained. Full unittest discovery: 46 tests passed. Closes #7.
+
+ docs/dev/TASKS.md             |   3 +-
+ tests/integration/test_cli.py | 156 ++++++++++++++++++++++++++++++++++++++++--
+ textstats/cli.py              |  33 ++++++---
+ textstats/counting.py         |   2 +-
+ 4 files changed, 177 insertions(+), 17 deletions(-)
