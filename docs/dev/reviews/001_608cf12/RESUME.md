@@ -1,3 +1,9 @@
+# Repository integration completed; controlled stop
+
+User-authorized repository maintenance integrated evaluation/008-runtime-acceptance into main by explicit verified merge `19654bf89d646e6cb841bb7a25afefd6d00b50b8`, with ordered product/evidence parents. The merge was pushed and exact remote equality verified; original evidence branch remains `9ec7a186983ba8804e3ea55c9b60204edb889bd0`. All64 combined tests passed, ten current tasks remain checked, product/pinned files and original assessment records unchanged. The ownership harness now excludes archived review snapshots, with an observed failing-then-passing regression. Root README links to the completed campaign. See [MAIN-INTEGRATION](MAIN-INTEGRATION.md) for exact scope/checks/limits. No pending merge, hosted writes, replayed setup or active consumer work; no automatic continuation. Installed-client coverage remains open. Earlier snapshots and tips below describe their historical checkpoints.
+
+## Historical checkpoints
+
 # Completed scoped campaign and controlled stop
 
 All27 cases Passed after independent A027 assessment, published at8bf3ab7d0497134b1fbc61645549be302ff49617. Fresh46 product tests,17 evidence self-tests,122 literal CLI cases and3 help/filename checks passed. Source explicit merge606da0d81eafb39a67aaeadbe0803b2bc84fb526 was verified prospectively and after commit, pushed and exact remote equality checked. Final source follow-up7e7f51009fda628edc94200b756d316886935213 is published on feature/architecture-revision; revision branch remains29060f7498834cd1508e69348317e96b0e208f0c. Product main05c35532ce836c1e9681f6dd6c21e1801293236f remains unchanged and complete. Source/evidence/live/A021 tracked work is clean, no pending merges. Consumers and assessor are stopped; no automatic continuation. Prior active/stop instructions below are historical and superseded.

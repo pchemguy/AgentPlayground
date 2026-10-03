@@ -1,0 +1,13 @@
+{
+  "merge": "19654bf89d646e6cb841bb7a25afefd6d00b50b8",
+  "parents": [
+    "05c35532ce836c1e9681f6dd6c21e1801293236f",
+    "9ec7a186983ba8804e3ea55c9b60204edb889bd0"
+  ],
+  "verified_tree": "aca2d9ac5d1f500e3ed805d4feb2dd33196864d7",
+  "committed_tree_identical": true,
+  "remote": "19654bf89d646e6cb841bb7a25afefd6d00b50b8",
+  "exact_remote_equal": true,
+  "evidence_is_ancestor": true,
+  "tracked_clean": true
+}
