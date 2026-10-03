@@ -106,3 +106,38 @@ class FileFailureTests(unittest.TestCase):
             with self.assertRaises(PermissionError):
                 count_file("denied.txt")
         self.assertTrue(handle.closed)
+
+
+class SelectedFileTests(unittest.TestCase):
+    """Exercise strict complete reads and cleanup before private selection."""
+
+    def test_real_selected_files_and_decode_failure_close_handles(self):
+        from textstats import files
+        handles = []
+        def observe_open(*args, **kwargs):
+            handle = builtins.open(*args, **kwargs)
+            handles.append(handle)
+            return handle
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "selected.txt"
+            for data, expected in [(b"a\r\nb c\rd\n", (2, 3)),
+                                   ("a\n\ufeff b".encode(), (1, 2))]:
+                path.write_bytes(data)
+                with patch("textstats.files.open", side_effect=observe_open, create=True):
+                    result = files._count_file_selected(path, (2, 99))
+                self.assertEqual((result.lines, result.words), expected)
+                self.assertEqual(path.read_bytes(), data)
+            path.write_bytes(b"valid\n\xff")
+            with patch("textstats.files.open", side_effect=observe_open, create=True):
+                with self.assertRaises(UnicodeDecodeError):
+                    files._count_file_selected(path, (1, 1))
+            self.assertTrue(handles)
+            self.assertTrue(all(handle.closed for handle in handles))
+        class DeniedReader(io.StringIO):
+            def read(self, *args, **kwargs):
+                raise PermissionError("controlled read denial")
+        handle = DeniedReader("partial")
+        with patch("textstats.files.open", return_value=handle, create=True):
+            with self.assertRaises(PermissionError):
+                files._count_file_selected("denied.txt", (1, 1))
+        self.assertTrue(handle.closed)

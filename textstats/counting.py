@@ -5,6 +5,7 @@ Unicode whitespace rules; one leading BOM may be removed before counting.
 """
 
 from dataclasses import dataclass
+import re
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,8 +38,27 @@ def count_text(text: str, *, strip_bom: bool = True) -> TextStats:
     This pure operation does not print, mutate input or acquire resources.
     Caller argument types outside the declared signature are not supported.
     """
+    return _count_selected(text, None, strip_bom=strip_bom)
+
+
+def _count_selected(
+    text: str, line_range: tuple[int, int] | None, *, strip_bom: bool = True
+) -> TextStats:
+    """Count a decoded source after global BOM handling and optional selection.
+
+    Endpoints are validated positive inclusive positions supplied by the CLI.
+    This private source-independent seam can also accept future decoded stdin.
+    Selected segments retain terminators; their exposed BOM is never stripped.
+    """
     if strip_bom and text.startswith("\ufeff"):
         text = text[1:]
+    if line_range is not None:
+        start, end = line_range
+        segments = re.finditer(r"[^\r\n]*(?:\r\n|\r|\n)|[^\r\n]+$", text)
+        text = "".join(
+            match.group() for position, match in enumerate(segments, 1)
+            if start <= position <= end
+        )
 
     # Subtract paired terminators so that CRLF counts once, not twice.
     lines = text.count("\r") + text.count("\n") - text.count("\r\n")

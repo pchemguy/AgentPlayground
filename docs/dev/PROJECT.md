@@ -4,11 +4,11 @@ TextStats helps Python users and shell users count lines and whitespace-separate
 
 ## Scope
 
-The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, and stdin selected by `-`. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
+The complete intended system includes named files, optional removal of a leading UTF-8 BOM, universal newline handling, baseline failures, optional JSON output, inclusive named-file line selection through `--lines START:END`, and stdin selected by `-` with the same selection semantics. Delivery is incremental; [PLAN](PLAN.md) defines the usable slices and [TASKS](TASKS.md) defines executable work.
 
 ## Constraints and non-goals
 
-Python 3.11 or newer, standard-library runtime and unittest, no external dependencies or services. Existing vendored tools and repository infrastructure are preserved. Future line selection, recursive traversal, multiple-input aggregation, alternate encodings, wheel publication, and performance guarantees for arbitrarily large inputs are outside scope. No product functionality is implemented by this preparation.
+Python 3.11 or newer, standard-library runtime and unittest, no external dependencies or services. Existing vendored tools and repository infrastructure are preserved. Recursive traversal, multiple-input aggregation, alternate encodings, wheel publication, and performance guarantees for arbitrarily large inputs are outside scope. Public Python APIs retain whole-input counting; range selection is a CLI option.
 
 ## Terms and navigation
 

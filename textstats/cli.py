@@ -6,10 +6,38 @@ and the counting core owns newline, word and BOM semantics.
 
 import argparse
 import json
+import re
 import sys
 from collections.abc import Sequence
 
-from .files import count_file
+from .files import count_file, _count_file_selected
+
+
+
+def _parse_range(value: str) -> tuple[int, int]:
+    """Validate positive ASCII-decimal endpoints without a digit-count limit."""
+    if re.fullmatch(r"[0-9]+:[0-9]+", value) is None:
+        raise argparse.ArgumentTypeError("expected positive inclusive START:END")
+    def decimal(digits: str) -> int:
+        # Small chunks avoid Python's string-to-integer digit safety limit.
+        number = 0
+        for offset in range(0, len(digits), 9):
+            chunk = digits[offset:offset + 9]
+            number = number * 10 ** len(chunk) + int(chunk)
+        return number
+    start, end = (decimal(part) for part in value.split(":"))
+    if start == 0 or end == 0 or start > end:
+        raise argparse.ArgumentTypeError("endpoints must satisfy 1 <= START <= END")
+    return start, end
+
+
+class _SingleRange(argparse.Action):
+    """Reject repeated range options before any source is acquired."""
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        if getattr(namespace, self.dest) is not None:
+            parser.error("--lines may be specified only once")
+        setattr(namespace, self.dest, values)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -18,7 +46,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     Args:
         argv: Command-line arguments without the program name. None selects
             process arguments. --keep-bom retains the leading decoded BOM;
-            --json selects one object with integer lines and words fields.
+            --json selects one object with integer lines and words fields;
+            --lines START:END selects existing one-based inclusive lines.
 
     Returns:
         Zero after writing one lines/words record to stdout; one for read or
@@ -37,10 +66,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument("--keep-bom", action="store_true", help="retain the leading UTF-8 BOM")
     parser.add_argument("--json", action="store_true", help="write counts as a JSON object")
+    parser.add_argument("--lines", type=_parse_range, action=_SingleRange,
+                        metavar="START:END",
+                        help="select one-based inclusive lines; count the available subset at EOF")
     parser.add_argument("input", metavar="INPUT", help="named UTF-8 file")
     arguments = parser.parse_args(argv)
     try:
-        result = count_file(arguments.input, strip_bom=not arguments.keep_bom)
+        if arguments.lines is None:
+            result = count_file(arguments.input, strip_bom=not arguments.keep_bom)
+        else:
+            result = _count_file_selected(
+                arguments.input, arguments.lines, strip_bom=not arguments.keep_bom
+            )
     except (OSError, UnicodeDecodeError) as error:
         print(f"textstats: {arguments.input}: {error}", file=sys.stderr)
         return 1
