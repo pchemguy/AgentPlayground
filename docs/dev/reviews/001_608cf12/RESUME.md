@@ -1,3 +1,19 @@
+# Controlled stop after A-009
+
+“Next one case - go” executed A-009 only. It is independently **Passed**, published through `7b85221cb02e7f2006e79b77fd54b9df6f2e20b2`. All consumers stopped. Counts: **20 Passed, 7 Pending; 0 Failed, Blocked, Suspended or Running**. Stop before A-010; no automatic continuation is scheduled. This section supersedes historical checkpoints below.
+
+## Next continuation
+
+1. Re-orient live `/workspace/scratch/AgentPlayground-sdd-008`, feature branch `feature/002_8a53078-line-ranges` at published `e6fe4c49c90b18cfb0f850ca38c6153a60845b34`. Main remains `29c27580db73cf128c42ddb9535e6d8f5c38ed39`; paused phase2 target remains `8a53078d0f734165075691dae0dbfa224a63446f`. Exact remote refs verified, tracked worktree/index clean. Preserve all unrelated bytecode and ignored credentials. No merge, reset, archive or task replay is needed.
+2. A-009 incorporated accepted range behavior into SPEC only, with full intended contracts/13 literal range cases and intended stdin preserved. Consumer31 baseline tests passed; independent checks preserved every other tracked blob/path,11 task owners,97 pinned hashes and12 bytecode hashes. Range/stdin code remains unimplemented; existing baseline tests do not prove those capabilities. Initial scratch document-checker wording error was retained and corrected without product edit.
+3. FEATURE-TASKS remains sole executable owner of unchecked T-009–T-011, main TASKS still owns unstarted T-007/T-008. Active FEATURE documents and reservation `docs/dev/features/002_8a53078/README.md` remain unchanged. Their preparation/proposed wording and assertion that SPEC excludes selection are now stale; the A-009 handoff explicitly reports these deferred impacts alongside PROJECT's non-goal, DECOMPOSITION, PLAN/phase exits and task/navigation reconciliation. Incorporated main SPEC is the intended behavioral authority. Do not replay SPEC-only work or restore superseded input. Named-file feature completion remains independent of future main stdin work (TST-002 clarification).
+4. **A-010 is next**, on a further continuation: fresh isolated consumer implements the complete accepted feature, incorporates required selected main owners and both task lists, preserves stable task IDs/evidence/hosted identity, verifies real range behavior and baseline regressions, and archives only eligible sources with links and historical task status. Exactly one executable owner per transferred task. Full verified explicit two-parent feature merge targets paused phase2, not main; feature completion does not complete phase2 or resume stdin. Keep evaluator/oracles out of consumer context and publish the independent case assessment before dependent advancement.
+5. Remaining cases: A-010–A-013, A-019, A-021 and A-027. Actual prerequisites and accepted source plan remain binding. Overall revision integration is incomplete on `revision/008_98a5562-runtime-acceptance` targeting `feature/architecture-revision`; no complete-campaign claim.
+
+See SUSPENSION-A009-20261003.json and runs/A-009 for exact evidence/limits and full deferred-impact handoff. Explicit pinned source loading, Python3.12.14; installed-client discovery, Python3.11 execution and complete native transcript export are not claimed. Named-destination publication and replacement-consumer authorization persist; former blockers below are resolved.
+
+## Historical checkpoints
+
 # Controlled stop after A-007 and A-008
 
 The latest request, “Next two cases - go”, was executed as A-007 and A-008. Both are independently Passed; case records are published through `ed3bc377fc7db9f546f7ac0cae27a3829db48dab`. All consumers stopped. Counts: **19 Passed, 8 Pending; 0 Failed, Blocked, Suspended or Running**. Stop before A-009; no automatic resumption is scheduled. Earlier stop maps below are historical.

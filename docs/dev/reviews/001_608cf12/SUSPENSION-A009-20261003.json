@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-03T04:34:32.213592+00:00",
+  "instruction": "Next one case - go; A-009 only, then stop before A-010",
+  "counts": {
+    "Passed": 20,
+    "Failed": 0,
+    "Blocked": 0,
+    "Suspended": 0,
+    "Running": 0,
+    "Pending": 7
+  },
+  "completed_this_continuation": [
+    "A-009"
+  ],
+  "next_positive_case": "A-010",
+  "live_main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+  "live_phase2": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "live_feature": "e6fe4c49c90b18cfb0f850ca38c6153a60845b34",
+  "feature_branch": "feature/002_8a53078-line-ranges",
+  "SPEC_only_incorporation": true,
+  "feature_unimplemented": true,
+  "active_sources_retained": true,
+  "task_ownership_unchanged": true,
+  "tracked_live_clean": true,
+  "bytecode_hashes_preserved": 12,
+  "pinned_files_verified": 97,
+  "case_evidence": "7b85221cb02e7f2006e79b77fd54b9df6f2e20b2",
+  "consumer_workers": "Current consumer completed and stopped; all prior consumers completed. No pending consumer tool."
+}
