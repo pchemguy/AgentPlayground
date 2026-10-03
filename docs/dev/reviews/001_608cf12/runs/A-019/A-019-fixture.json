@@ -1,0 +1,13 @@
+{
+  "repo": "/workspace/scratch/sdd008-A-019-boundary/repo",
+  "remote": "/workspace/scratch/sdd008-A-019-boundary/remote.git",
+  "verified_phase_tip": "964e72bd5b7cab1393def96cb7a192938ca586ab",
+  "target_baseline": "d769b55aa63f92d5ccbd8022cb9e87f07e541fae",
+  "working_before": "157298c74ccaf622e9b7652e40e33edea205898d",
+  "target_before": "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+  "readiness": "/workspace/scratch/sdd008-A-019-boundary/repo/.git/controlled-boundary-ready",
+  "readiness_present": false,
+  "fixture_only": true,
+  "live_hosted": false,
+  "injection": "Actual competing README edits and declared external prospective-check prerequisite. No agent actions or acceptance inferred."
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "branch": "phase/1-named-file-baseline",
+  "head": "157298c74ccaf622e9b7652e40e33edea205898d",
+  "parents": [
+    "964e72bd5b7cab1393def96cb7a192938ca586ab"
+  ],
+  "status": [],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "a6e0d7c6333d64d75552f02d575ea2832950d1c9",
+    "refs/heads/feature/002_8a53078-line-ranges": "799e5c703dbc9c99a3832f19ea2aad44949f5e51",
+    "refs/heads/main": "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+    "refs/heads/phase/1-named-file-baseline": "157298c74ccaf622e9b7652e40e33edea205898d",
+    "refs/heads/phase/2-output-and-input-extensions": "c8da841a53befcc420aeb9e97435ca93f9c7051e",
+    "refs/heads/revision/003_d0eeeff-remove-json": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  },
+  "changed_paths": [
+    "AGENTS.md",
+    "tools/controlled_boundary.py"
+  ],
+  "tracked_status": [],
+  "main": "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+  "log": [
+    "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06 d769b55aa63f92d5ccbd8022cb9e87f07e541fae Retain target-owned README integration note",
+    "157298c74ccaf622e9b7652e40e33edea205898d 964e72bd5b7cab1393def96cb7a192938ca586ab Declare isolated prospective merge prerequisite",
+    "c8da841a53befcc420aeb9e97435ca93f9c7051e 917f3d9889a67bede8850d9f8cc8a98bef08516e Verify stdin distribution, documentation and Phase 2 exits (T-008)",
+    "917f3d9889a67bede8850d9f8cc8a98bef08516e 1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6 Support strict binary UTF-8 stdin through EOF (T-007)",
+    "a6e0d7c6333d64d75552f02d575ea2832950d1c9 f087c9b261ff5db8aee9aad8260a804274320f33 Record A-012 consumer acceptance assessment",
+    "1d11ae343bfb3a1dcd6c12431ad401ecba77bfa6 d0eeeffc0432a45a603ef17cca457e9f04544876 6561e287e59c8b4e86c7a3cdeaaa48a60df82154 Merge verified plain-output amendment into paused Phase 2",
+    "6561e287e59c8b4e86c7a3cdeaaa48a60df82154 d0eeeffc0432a45a603ef17cca457e9f04544876 Remove CLI JSON at paused checkpoint (T-006, T-010, T-011)",
+    "f087c9b261ff5db8aee9aad8260a804274320f33 66820aca60d1b1e34c732f4061d5c23e200e977b Record A-011 consumer acceptance assessment",
+    "66820aca60d1b1e34c732f4061d5c23e200e977b de2845629e9b85728c097b7d07cf70cd07f090b1 Record A-010 consumer acceptance assessment",
+    "d0eeeffc0432a45a603ef17cca457e9f04544876 8a53078d0f734165075691dae0dbfa224a63446f 799e5c703dbc9c99a3832f19ea2aad44949f5e51 Merge verified named-file line ranges into paused Phase 2 (T-009\u2013T-011)",
+    "799e5c703dbc9c99a3832f19ea2aad44949f5e51 f391de5c9047726d55687a1d0f71b3dc1e08e20e Incorporate completed line-range feature owners and archive sources",
+    "f391de5c9047726d55687a1d0f71b3dc1e08e20e 26dd59c38e537d8dff64cddafcf8c25e7c21ceb8 Verify named-file range delivery and feature exits (T-011)"
+  ],
+  "product_hashes": {
+    "textstats/__init__.py": "b344c61963b78e90b5d3c6239c434469ae8109b697ff12b9d2c006000c2145ce",
+    "textstats/__main__.py": "620e8a2f5e4c657c8d82439d61f5e540efcbb9f4e2ccee55116e1fa472b8dd3c",
+    "textstats/cli.py": "304c88ef33e98424d2c2ca10bcb0e5a1387ad63e35959674248f600882f69833",
+    "textstats/counting.py": "78dcae43e8f6e1ff217c9b59a6a75be9467bfde75ed178be44af2d35324cebfb",
+    "textstats/files.py": "858a5740bf4a6fce5a5212f98d3f8b4ee383775632e53e8833e45235c48c1d2d"
+  },
+  "task_check": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "tests.workflows.task_ownership",
+      "/workspace/scratch/sdd008-A-019-boundary/repo/docs"
+    ],
+    "cwd": "/workspace/scratch/AgentPlayground-evidence-008",
+    "returncode": 0,
+    "stdout": "{\n  \"documents\": [\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/PROJECT.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/ARCHITECTURE.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/DECOMPOSITION.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/SPEC.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/PLAN.md\",\n    \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/layout.md\"\n  ],\n  \"owners\": {\n    \"T-001\": {\n      \"id\": \"T-001\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 13,\n      \"status\": \"Checked\"\n    },\n    \"T-002\": {\n      \"id\": \"T-002\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 19,\n      \"status\": \"Checked\"\n    },\n    \"T-003\": {\n      \"id\": \"T-003\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 23,\n      \"status\": \"Checked\"\n    },\n    \"T-004\": {\n      \"id\": \"T-004\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 29,\n      \"status\": \"Checked\"\n    },\n    \"T-005\": {\n      \"id\": \"T-005\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 33,\n      \"status\": \"Checked\"\n    },\n    \"T-006\": {\n      \"id\": \"T-006\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 42,\n      \"status\": \"Unchecked\"\n    },\n    \"T-007\": {\n      \"id\": \"T-007\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 46,\n      \"status\": \"Unchecked\"\n    },\n    \"T-008\": {\n      \"id\": \"T-008\",\n      \"document\": \"/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md\",\n      \"line\": 49,\n      \"status\": \"Unchecked\"\n    }\n  }\n}\n",
+    "stderr": ""
+  },
+  "suites": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/sdd008-A-019-boundary/repo",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_dash_prefixed_file_via_separator (integration.test_cli.CliFailureTests.test_dash_prefixed_file_via_separator) ... ok\ntest_directory_cannot_be_read_as_file (integration.test_cli.CliFailureTests.test_directory_cannot_be_read_as_file) ... ok\ntest_missing_and_invalid_utf8_inputs (integration.test_cli.CliFailureTests.test_missing_and_invalid_utf8_inputs) ... ok\ntest_permission_denial_translation_in_process (integration.test_cli.CliFailureTests.test_permission_denial_translation_in_process) ... ok\ntest_usage_and_help (integration.test_cli.CliFailureTests.test_usage_and_help) ... ok\ntest_bom_only_and_interior_bom (integration.test_cli.NamedFileCliTests.test_bom_only_and_interior_bom) ... ok\ntest_dash_is_a_named_file_before_stdin_delivery (integration.test_cli.NamedFileCliTests.test_dash_is_a_named_file_before_stdin_delivery) ... ok\ntest_keep_bom_composes_with_named_input (integration.test_cli.NamedFileCliTests.test_keep_bom_composes_with_named_input) ... ok\ntest_named_file_success_boundaries (integration.test_cli.NamedFileCliTests.test_named_file_success_boundaries) ... ok\ntest_named_input_with_spaces_is_not_modified (integration.test_cli.NamedFileCliTests.test_named_input_with_spaces_is_not_modified) ... ok\ntest_documented_archive_deploys_only_product_sources (integration.test_distribution.SourceDistributionTests.test_documented_archive_deploys_only_product_sources) ... ok\ntest_public_calls_return_independent_values_without_output (unit.test_api.PublicApiTests.test_public_calls_return_independent_values_without_output) ... ok\ntest_public_result_has_integer_counts (unit.test_api.PublicApiTests.test_public_result_has_integer_counts) ... ok\ntest_result_is_immutable (unit.test_api.PublicApiTests.test_result_is_immutable) ... ok\ntest_cr_lf_crlf_and_trailing_segments (unit.test_counting.CountingTests.test_cr_lf_crlf_and_trailing_segments) ... ok\ntest_default_removes_one_leading_bom (unit.test_counting.CountingTests.test_default_removes_one_leading_bom) ... ok\ntest_interior_bom_is_preserved_in_both_modes (unit.test_counting.CountingTests.test_interior_bom_is_preserved_in_both_modes) ... ok\ntest_keep_bom_treats_bom_as_non_whitespace (unit.test_counting.CountingTests.test_keep_bom_treats_bom_as_non_whitespace) ... ok\ntest_spec_counting_table (unit.test_counting.CountingTests.test_spec_counting_table) ... ok\ntest_unicode_whitespace_does_not_create_lines (unit.test_counting.CountingTests.test_unicode_whitespace_does_not_create_lines) ... ok\ntest_bom_modes_are_applied_to_decoded_file (unit.test_files.FileCountingTests.test_bom_modes_are_applied_to_decoded_file) ... ok\ntest_real_files_match_fixed_expected_counts (unit.test_files.FileCountingTests.test_real_files_match_fixed_expected_counts) ... ok\ntest_success_closes_real_owned_handle_without_output (unit.test_files.FileCountingTests.test_success_closes_real_owned_handle_without_output) ... ok\ntest_decode_failure_closes_real_handle_and_preserves_bytes (unit.test_files.FileFailureTests.test_decode_failure_closes_real_handle_and_preserves_bytes) ... ok\ntest_missing_file_preserves_oserror_without_output (unit.test_files.FileFailureTests.test_missing_file_preserves_oserror_without_output) ... ok\ntest_read_denial_closes_acquired_handle_and_preserves_exception (unit.test_files.FileFailureTests.test_read_denial_closes_acquired_handle_and_preserves_exception) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 0.910s\n\nOK\n"
+    }
+  ],
+  "oracles": {
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-success.json": [
+      {
+        "name": "empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "mixed",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/mixed.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=3 words=4\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unicode-separator",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/unicode-separator.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "trailing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/trailing.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=2 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "unterminated",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/unterminated.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=2\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-empty",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/bom-empty.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=0 words=0\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "bom-retained",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--keep-bom",
+          "/tmp/textstats-assessor-6amm5nz4/bom-retained.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      },
+      {
+        "name": "double-bom",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-6amm5nz4/double-bom.txt"
+        ],
+        "returncode": 0,
+        "stdout": "lines=1 words=1\n",
+        "stderr": "",
+        "mismatches": []
+      }
+    ],
+    "docs/dev/reviews/001_608cf12/acceptance/oracle/named-errors.json": [
+      {
+        "name": "missing",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-upgunbm_/missing.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-upgunbm_/missing.txt: [Errno 2] No such file or directory: '/tmp/textstats-assessor-upgunbm_/missing.txt'\n",
+        "mismatches": []
+      },
+      {
+        "name": "bad-utf8",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "/tmp/textstats-assessor-upgunbm_/bad-utf8.txt"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "textstats: /tmp/textstats-assessor-upgunbm_/bad-utf8.txt: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+        "mismatches": []
+      },
+      {
+        "name": "no-input",
+        "argv": [
+          "python",
+          "-m",
+          "textstats"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] INPUT\npython -m textstats: error: the following arguments are required: INPUT\n",
+        "mismatches": []
+      },
+      {
+        "name": "unknown-option",
+        "argv": [
+          "python",
+          "-m",
+          "textstats",
+          "--nonexistent",
+          "x"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: python -m textstats [-h] [--keep-bom] INPUT\npython -m textstats: error: unrecognized arguments: --nonexistent\n",
+        "mismatches": []
+      }
+    ]
+  },
+  "limits": "Read-only observation is not a consumer action or autonomous pass decision. Tests create ordinary bytecode; credentials/raw provider bodies are excluded."
+}

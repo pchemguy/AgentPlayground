@@ -1,0 +1,7 @@
+059bfb66f5f5bcb09e33a69acdbb6442d3b0ee3a
+100644 0beed0309d17436880401befc83639c37feb29fe 1	README.md
+100644 1ecc13082bd454a527efc01aec9679d3b1ee941f 2	README.md
+100644 f0b3be8f91fca9be7229bac3e07184d3ae81426a 3	README.md
+
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md

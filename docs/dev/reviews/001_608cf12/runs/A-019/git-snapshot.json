@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "branch": "main",
+  "head": "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+  "parents": [
+    "d769b55aa63f92d5ccbd8022cb9e87f07e541fae"
+  ],
+  "status": [
+    "M  AGENTS.md",
+    "M  README.md",
+    "M  docs/dev/TASKS.md",
+    "M  docs/dev/layout.md",
+    "A  tests/__init__.py",
+    "A  tests/integration/__init__.py",
+    "A  tests/integration/test_cli.py",
+    "A  tests/integration/test_distribution.py",
+    "A  tests/unit/__init__.py",
+    "A  tests/unit/test_api.py",
+    "A  tests/unit/test_counting.py",
+    "A  tests/unit/test_files.py",
+    "A  textstats/__init__.py",
+    "A  textstats/__main__.py",
+    "A  textstats/cli.py",
+    "A  textstats/counting.py",
+    "A  textstats/files.py",
+    "A  tools/controlled_boundary.py"
+  ],
+  "remote": "origin",
+  "remote_heads": {
+    "refs/heads/evaluation/008-runtime-acceptance": "a6e0d7c6333d64d75552f02d575ea2832950d1c9",
+    "refs/heads/feature/002_8a53078-line-ranges": "799e5c703dbc9c99a3832f19ea2aad44949f5e51",
+    "refs/heads/main": "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+    "refs/heads/phase/1-named-file-baseline": "157298c74ccaf622e9b7652e40e33edea205898d",
+    "refs/heads/phase/2-output-and-input-extensions": "c8da841a53befcc420aeb9e97435ca93f9c7051e",
+    "refs/heads/revision/003_d0eeeff-remove-json": "6561e287e59c8b4e86c7a3cdeaaa48a60df82154"
+  },
+  "changed_paths": [
+    "README.md"
+  ]
+}

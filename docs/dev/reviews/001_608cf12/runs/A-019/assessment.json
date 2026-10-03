@@ -1,0 +1,24 @@
+{
+  "id": "A-019",
+  "status": "Running",
+  "repo": "/workspace/scratch/sdd008-A-019-boundary/repo",
+  "assessment": "Actual isolated conflict retained by first consumer, resolved README/staged phase work retained by fresh second consumer; required prospective external check returned1 after26-test/README acceptance passed. Merge remains uncommitted/unpublished at original target and MERGE_HEAD; readiness untouched. Verified recovery export retained. Final owner restoration and fresh recovery consumer still pending; this is not a case pass or hosted failure claim.",
+  "artifacts": [
+    "/workspace/scratch/acceptance-out-008/A-019-boundaries.py",
+    "/workspace/scratch/acceptance-out-008/A-019-check-commands.log",
+    "/workspace/scratch/acceptance-out-008/A-019-check-final.md",
+    "/workspace/scratch/acceptance-out-008/A-019-check-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-019-check.md",
+    "/workspace/scratch/acceptance-out-008/A-019-conflict-commands.log",
+    "/workspace/scratch/acceptance-out-008/A-019-conflict-final.md",
+    "/workspace/scratch/acceptance-out-008/A-019-conflict-prompt.txt",
+    "/workspace/scratch/acceptance-out-008/A-019-conflict.md",
+    "/workspace/scratch/acceptance-out-008/A-019-conflicted",
+    "/workspace/scratch/acceptance-out-008/A-019-failed-check",
+    "/workspace/scratch/acceptance-out-008/A-019-fixture-independent.json",
+    "/workspace/scratch/acceptance-out-008/A-019-fixture-merge-preview.txt",
+    "/workspace/scratch/acceptance-out-008/A-019-fixture.json",
+    "/workspace/scratch/acceptance-out-008/A-019-observe.py",
+    "/workspace/scratch/acceptance-out-008/A-019-recovery-prompt.txt"
+  ]
+}
