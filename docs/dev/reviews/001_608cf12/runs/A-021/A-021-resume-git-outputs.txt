@@ -1,0 +1,286 @@
+$ git add docs/dev/PROJECT.md docs/dev/DECOMPOSITION.md docs/dev/PLAN.md docs/dev/TASKS.md docs/dev/FEATURE-SPEC.md docs/dev/FEATURE_DECOMPOSITION.md docs/dev/FEATURE-PLAN.md docs/dev/FEATURE-TASKS.md docs/dev/features/002_8a53078
+Exit: 0
+
+$ git diff --cached --check
+Exit: 0
+
+$ git diff --cached --stat
+ docs/dev/DECOMPOSITION.md                          | 12 ++++++---
+ docs/dev/PLAN.md                                   | 12 ++++++++-
+ docs/dev/PROJECT.md                                |  4 +--
+ docs/dev/TASKS.md                                  | 27 ++++++++++++++-----
+ .../dev/{ => features/002_8a53078}/FEATURE-PLAN.md |  8 +++---
+ .../dev/{ => features/002_8a53078}/FEATURE-SPEC.md |  6 ++---
+ .../{ => features/002_8a53078}/FEATURE-TASKS.md    | 12 ++++-----
+ .../002_8a53078}/FEATURE_DECOMPOSITION.md          |  4 +--
+ docs/dev/features/002_8a53078/README.md            | 31 +++++++++++++---------
+ 9 files changed, 75 insertions(+), 41 deletions(-)
+Exit: 0
+
+$ git diff --cached --name-status
+M	docs/dev/DECOMPOSITION.md
+M	docs/dev/PLAN.md
+M	docs/dev/PROJECT.md
+M	docs/dev/TASKS.md
+R066	docs/dev/FEATURE-PLAN.md	docs/dev/features/002_8a53078/FEATURE-PLAN.md
+R085	docs/dev/FEATURE-SPEC.md	docs/dev/features/002_8a53078/FEATURE-SPEC.md
+R065	docs/dev/FEATURE-TASKS.md	docs/dev/features/002_8a53078/FEATURE-TASKS.md
+R076	docs/dev/FEATURE_DECOMPOSITION.md	docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md
+M	docs/dev/features/002_8a53078/README.md
+Exit: 0
+
+$ git commit -m Incorporate and archive named-file range feature (T-009, T-010, T-011) -m Preserve interrupted T-009 ownership; transfer remaining checked entries and evidence once into main milestone 2.3. Resolve current authority and links before retaining four historical source basenames.
+
+Verified 13 selected documents, 58 local links, unique current ownership and 114 unchanged protected files. Python 3.12.14 full discovery passed 41 tests, including extracted-source and documented named-file examples; fresh range/BOM/usage/decode demonstrations passed. T-007/T-008 and Phase 2 remain incomplete. Hosting disabled.
+[feature/002_8a53078-line-ranges b74570a] Incorporate and archive named-file range feature (T-009, T-010, T-011)
+ 9 files changed, 75 insertions(+), 41 deletions(-)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-PLAN.md (66%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-SPEC.md (85%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE-TASKS.md (65%)
+ rename docs/dev/{ => features/002_8a53078}/FEATURE_DECOMPOSITION.md (76%)
+Exit: 0
+
+$ git show --format=fuller --stat HEAD
+commit b74570a206a696c863daa3d09f6a393743d0e69c
+Author:     Fixture <fixture@example.invalid>
+AuthorDate: Sat Oct 3 22:58:38 2026 +0900
+Commit:     Fixture <fixture@example.invalid>
+CommitDate: Sat Oct 3 22:58:38 2026 +0900
+
+    Incorporate and archive named-file range feature (T-009, T-010, T-011)
+    
+    Preserve interrupted T-009 ownership; transfer remaining checked entries and evidence once into main milestone 2.3. Resolve current authority and links before retaining four historical source basenames.
+    
+    Verified 13 selected documents, 58 local links, unique current ownership and 114 unchanged protected files. Python 3.12.14 full discovery passed 41 tests, including extracted-source and documented named-file examples; fresh range/BOM/usage/decode demonstrations passed. T-007/T-008 and Phase 2 remain incomplete. Hosting disabled.
+
+ docs/dev/DECOMPOSITION.md                          | 12 ++++++---
+ docs/dev/PLAN.md                                   | 12 ++++++++-
+ docs/dev/PROJECT.md                                |  4 +--
+ docs/dev/TASKS.md                                  | 27 ++++++++++++++-----
+ .../dev/{ => features/002_8a53078}/FEATURE-PLAN.md |  8 +++---
+ .../dev/{ => features/002_8a53078}/FEATURE-SPEC.md |  6 ++---
+ .../{ => features/002_8a53078}/FEATURE-TASKS.md    | 12 ++++-----
+ .../002_8a53078}/FEATURE_DECOMPOSITION.md          |  4 +--
+ docs/dev/features/002_8a53078/README.md            | 31 +++++++++++++---------
+ 9 files changed, 75 insertions(+), 41 deletions(-)
+Exit: 0
+
+$ git status --short
+Exit: 0
+
+$ git push origin HEAD:refs/heads/feature/002_8a53078-line-ranges
+To /workspace/scratch/sdd008-A-021-feature/remote.git
+   64cee9b..b74570a  HEAD -> feature/002_8a53078-line-ranges
+Exit: 0
+
+$ git ls-remote origin refs/heads/feature/002_8a53078-line-ranges refs/heads/phase/2-output-and-input-extensions refs/heads/main
+b74570a206a696c863daa3d09f6a393743d0e69c	refs/heads/feature/002_8a53078-line-ranges
+29c27580db73cf128c42ddb9535e6d8f5c38ed39	refs/heads/main
+8a53078d0f734165075691dae0dbfa224a63446f	refs/heads/phase/2-output-and-input-extensions
+Exit: 0
+
+$ git fetch origin refs/heads/phase/2-output-and-input-extensions:refs/remotes/origin/phase/2-output-and-input-extensions refs/heads/main:refs/remotes/origin/main
+Exit: 0
+
+$ git rev-parse HEAD origin/phase/2-output-and-input-extensions origin/main
+b74570a206a696c863daa3d09f6a393743d0e69c
+8a53078d0f734165075691dae0dbfa224a63446f
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+Exit: 0
+
+$ git diff --stat origin/phase/2-output-and-input-extensions...HEAD
+ AGENTS.md                                          |  4 +
+ README.md                                          | 26 +++++++
+ docs/dev/DECOMPOSITION.md                          | 12 ++-
+ docs/dev/PLAN.md                                   | 12 ++-
+ docs/dev/PROJECT.md                                |  4 +-
+ docs/dev/SPEC.md                                   | 58 ++++++++++++--
+ docs/dev/TASKS.md                                  | 27 +++++--
+ docs/dev/features/002_8a53078/FEATURE-PLAN.md      | 21 ++++++
+ docs/dev/features/002_8a53078/FEATURE-SPEC.md      | 47 ++++++++++++
+ docs/dev/features/002_8a53078/FEATURE-TASKS.md     | 22 ++++++
+ .../features/002_8a53078/FEATURE_DECOMPOSITION.md  | 17 +++++
+ docs/dev/features/002_8a53078/README.md            | 25 ++++++
+ tests/integration/test_cli.py                      | 88 ++++++++++++++++++++++
+ tests/integration/test_distribution.py             | 44 +++++++++++
+ tests/unit/test_counting.py                        | 34 +++++++++
+ tests/unit/test_files.py                           | 35 +++++++++
+ textstats/cli.py                                   | 43 ++++++++++-
+ textstats/counting.py                              | 20 +++++
+ textstats/files.py                                 | 16 +++-
+ 19 files changed, 531 insertions(+), 24 deletions(-)
+Exit: 0
+
+$ git log --oneline origin/phase/2-output-and-input-extensions..HEAD
+b74570a Incorporate and archive named-file range feature (T-009, T-010, T-011)
+64cee9b Declare isolated feature incorporation continuation scope
+f391de5 Verify named-file range delivery and feature exits (T-011)
+26dd59c Deliver named-file inclusive line ranges (T-010)
+dc25a83 Add source-independent selected counting (T-009)
+e6fe4c4 Incorporate accepted line-range behavior into SPEC
+62b5408 Remove residual stdin pause from named-file feature task
+e0e85b2 Clarify named-file line-range feature completion boundary
+37ff9bc Prepare line-range counting feature package
+Exit: 0
+
+$ git switch -c phase/2-output-and-input-extensions --track origin/phase/2-output-and-input-extensions
+branch 'phase/2-output-and-input-extensions' set up to track 'origin/phase/2-output-and-input-extensions'.
+Switched to a new branch 'phase/2-output-and-input-extensions'
+Exit: 0
+
+$ git merge --no-ff --no-commit b74570a206a696c863daa3d09f6a393743d0e69c
+Automatic merge went well; stopped before committing as requested
+Exit: 0
+
+$ git status --short
+M  AGENTS.md
+M  README.md
+M  docs/dev/DECOMPOSITION.md
+M  docs/dev/PLAN.md
+M  docs/dev/PROJECT.md
+M  docs/dev/SPEC.md
+M  docs/dev/TASKS.md
+A  docs/dev/features/002_8a53078/FEATURE-PLAN.md
+A  docs/dev/features/002_8a53078/FEATURE-SPEC.md
+A  docs/dev/features/002_8a53078/FEATURE-TASKS.md
+A  docs/dev/features/002_8a53078/FEATURE_DECOMPOSITION.md
+A  docs/dev/features/002_8a53078/README.md
+M  tests/integration/test_cli.py
+M  tests/integration/test_distribution.py
+M  tests/unit/test_counting.py
+M  tests/unit/test_files.py
+M  textstats/cli.py
+M  textstats/counting.py
+M  textstats/files.py
+Exit: 0
+
+$ git diff --cached --check
+Exit: 0
+
+$ git diff --cached --stat
+ AGENTS.md                                          |  4 +
+ README.md                                          | 26 +++++++
+ docs/dev/DECOMPOSITION.md                          | 12 ++-
+ docs/dev/PLAN.md                                   | 12 ++-
+ docs/dev/PROJECT.md                                |  4 +-
+ docs/dev/SPEC.md                                   | 58 ++++++++++++--
+ docs/dev/TASKS.md                                  | 27 +++++--
+ docs/dev/features/002_8a53078/FEATURE-PLAN.md      | 21 ++++++
+ docs/dev/features/002_8a53078/FEATURE-SPEC.md      | 47 ++++++++++++
+ docs/dev/features/002_8a53078/FEATURE-TASKS.md     | 22 ++++++
+ .../features/002_8a53078/FEATURE_DECOMPOSITION.md  | 17 +++++
+ docs/dev/features/002_8a53078/README.md            | 25 ++++++
+ tests/integration/test_cli.py                      | 88 ++++++++++++++++++++++
+ tests/integration/test_distribution.py             | 44 +++++++++++
+ tests/unit/test_counting.py                        | 34 +++++++++
+ tests/unit/test_files.py                           | 35 +++++++++
+ textstats/cli.py                                   | 43 ++++++++++-
+ textstats/counting.py                              | 20 +++++
+ textstats/files.py                                 | 16 +++-
+ 19 files changed, 531 insertions(+), 24 deletions(-)
+Exit: 0
+
+$ git rev-parse HEAD MERGE_HEAD
+8a53078d0f734165075691dae0dbfa224a63446f
+b74570a206a696c863daa3d09f6a393743d0e69c
+Exit: 0
+
+$ git write-tree
+f8534e358e1c1860d7985cab3ce4eb177bfc33e6
+Exit: 0
+
+$ git rev-parse b74570a206a696c863daa3d09f6a393743d0e69c^{tree}
+f8534e358e1c1860d7985cab3ce4eb177bfc33e6
+Exit: 0
+
+$ git commit -m Merge named-file line ranges into paused Phase 2 (T-009, T-010, T-011) -m Working branch: feature/002_8a53078-line-ranges.
+Target: paused phase/2-output-and-input-extensions; origin is local bare storage, hosting disabled.
+First parent: 8a53078d0f734165075691dae0dbfa224a63446f.
+Second parent: b74570a206a696c863daa3d09f6a393743d0e69c.
+
+Include completed named-file text/JSON line ranges T-009, T-010, T-011 and coherent accepted incorporation/archive. Preserve original task IDs and checked historical evidence, with sole current ownership in main TASKS. Four source basenames retained as historical snapshots. No conflicts or resolutions.
+
+Feature and prospective merged-state Python 3.12.14 full discovery each passed 41 tests. Selected document checks pass: 13 documents, 58 local links, heading spacing, unique ownership and 114 unchanged protected files. Fresh named-file range/BOM/usage/decode demonstrations pass; extracted-source examples and regressions pass in the suite. Prospective tree f8534e358e1c1860d7985cab3ce4eb177bfc33e6 equals the verified feature tree.
+
+T-007/T-008 and milestone 2.2/whole Phase 2 remain incomplete. Stdin remains unimplemented and unverified; main remains unchanged. Stop at the feature boundary after local-origin target publication.
+[phase/2-output-and-input-extensions 5f2be6b] Merge named-file line ranges into paused Phase 2 (T-009, T-010, T-011)
+Exit: 0
+
+$ git rev-parse HEAD HEAD^1 HEAD^2 HEAD^{tree}
+5f2be6b5b5fba6c167dba1dbe1281428680e6e69
+8a53078d0f734165075691dae0dbfa224a63446f
+b74570a206a696c863daa3d09f6a393743d0e69c
+f8534e358e1c1860d7985cab3ce4eb177bfc33e6
+Exit: 0
+
+$ git show --format=fuller --stat HEAD
+commit 5f2be6b5b5fba6c167dba1dbe1281428680e6e69
+Merge: 8a53078 b74570a
+Author:     Fixture <fixture@example.invalid>
+AuthorDate: Sat Oct 3 22:59:56 2026 +0900
+Commit:     Fixture <fixture@example.invalid>
+CommitDate: Sat Oct 3 22:59:56 2026 +0900
+
+    Merge named-file line ranges into paused Phase 2 (T-009, T-010, T-011)
+    
+    Working branch: feature/002_8a53078-line-ranges.
+    Target: paused phase/2-output-and-input-extensions; origin is local bare storage, hosting disabled.
+    First parent: 8a53078d0f734165075691dae0dbfa224a63446f.
+    Second parent: b74570a206a696c863daa3d09f6a393743d0e69c.
+    
+    Include completed named-file text/JSON line ranges T-009, T-010, T-011 and coherent accepted incorporation/archive. Preserve original task IDs and checked historical evidence, with sole current ownership in main TASKS. Four source basenames retained as historical snapshots. No conflicts or resolutions.
+    
+    Feature and prospective merged-state Python 3.12.14 full discovery each passed 41 tests. Selected document checks pass: 13 documents, 58 local links, heading spacing, unique ownership and 114 unchanged protected files. Fresh named-file range/BOM/usage/decode demonstrations pass; extracted-source examples and regressions pass in the suite. Prospective tree f8534e358e1c1860d7985cab3ce4eb177bfc33e6 equals the verified feature tree.
+    
+    T-007/T-008 and milestone 2.2/whole Phase 2 remain incomplete. Stdin remains unimplemented and unverified; main remains unchanged. Stop at the feature boundary after local-origin target publication.
+
+ AGENTS.md                                          |  4 +
+ README.md                                          | 26 +++++++
+ docs/dev/DECOMPOSITION.md                          | 12 ++-
+ docs/dev/PLAN.md                                   | 12 ++-
+ docs/dev/PROJECT.md                                |  4 +-
+ docs/dev/SPEC.md                                   | 58 ++++++++++++--
+ docs/dev/TASKS.md                                  | 27 +++++--
+ docs/dev/features/002_8a53078/FEATURE-PLAN.md      | 21 ++++++
+ docs/dev/features/002_8a53078/FEATURE-SPEC.md      | 47 ++++++++++++
+ docs/dev/features/002_8a53078/FEATURE-TASKS.md     | 22 ++++++
+ .../features/002_8a53078/FEATURE_DECOMPOSITION.md  | 17 +++++
+ docs/dev/features/002_8a53078/README.md            | 25 ++++++
+ tests/integration/test_cli.py                      | 88 ++++++++++++++++++++++
+ tests/integration/test_distribution.py             | 44 +++++++++++
+ tests/unit/test_counting.py                        | 34 +++++++++
+ tests/unit/test_files.py                           | 35 +++++++++
+ textstats/cli.py                                   | 43 ++++++++++-
+ textstats/counting.py                              | 20 +++++
+ textstats/files.py                                 | 16 +++-
+ 19 files changed, 531 insertions(+), 24 deletions(-)
+Exit: 0
+
+$ git diff --exit-code HEAD b74570a206a696c863daa3d09f6a393743d0e69c
+Exit: 0
+
+$ git status --short
+Exit: 0
+
+$ git push origin HEAD:refs/heads/phase/2-output-and-input-extensions
+To /workspace/scratch/sdd008-A-021-feature/remote.git
+   8a53078..5f2be6b  HEAD -> phase/2-output-and-input-extensions
+Exit: 0
+
+$ git ls-remote origin refs/heads/feature/002_8a53078-line-ranges refs/heads/phase/2-output-and-input-extensions refs/heads/main
+b74570a206a696c863daa3d09f6a393743d0e69c	refs/heads/feature/002_8a53078-line-ranges
+29c27580db73cf128c42ddb9535e6d8f5c38ed39	refs/heads/main
+5f2be6b5b5fba6c167dba1dbe1281428680e6e69	refs/heads/phase/2-output-and-input-extensions
+Exit: 0
+
+$ git status --porcelain=v1
+Exit: 0
+
+$ git rev-parse HEAD refs/heads/feature/002_8a53078-line-ranges refs/remotes/origin/phase/2-output-and-input-extensions refs/remotes/origin/feature/002_8a53078-line-ranges refs/remotes/origin/main
+5f2be6b5b5fba6c167dba1dbe1281428680e6e69
+b74570a206a696c863daa3d09f6a393743d0e69c
+5f2be6b5b5fba6c167dba1dbe1281428680e6e69
+b74570a206a696c863daa3d09f6a393743d0e69c
+29c27580db73cf128c42ddb9535e6d8f5c38ed39
+Exit: 0
+

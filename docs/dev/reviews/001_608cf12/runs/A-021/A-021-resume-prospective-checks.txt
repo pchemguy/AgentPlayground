@@ -1,0 +1,45 @@
+{
+  "boundary": "prospective",
+  "head": "8a53078d0f734165075691dae0dbfa224a63446f",
+  "protected_files_unchanged": 114,
+  "selected_documents_checked": 13,
+  "local_links_checked": 58,
+  "heading_spacing_checked": 55,
+  "unique_current_task_ids": [
+    "T-001",
+    "T-002",
+    "T-003",
+    "T-004",
+    "T-005",
+    "T-006",
+    "T-007",
+    "T-008",
+    "T-009",
+    "T-010",
+    "T-011"
+  ],
+  "preserved_exact_blocks": [
+    "T-001",
+    "T-002",
+    "T-003",
+    "T-004",
+    "T-005",
+    "T-006",
+    "T-009",
+    "T-010",
+    "T-011"
+  ],
+  "archives": [
+    "FEATURE-SPEC.md",
+    "FEATURE_DECOMPOSITION.md",
+    "FEATURE-PLAN.md",
+    "FEATURE-TASKS.md"
+  ],
+  "remaining_incomplete": [
+    "T-007",
+    "T-008",
+    "milestone 2.2",
+    "Phase 2"
+  ],
+  "findings": []
+}

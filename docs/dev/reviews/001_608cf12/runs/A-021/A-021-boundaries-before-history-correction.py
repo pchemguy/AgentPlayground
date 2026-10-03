@@ -25,11 +25,8 @@ else:
  archive=r/'docs/dev/features/002_8a53078';assert all((archive/name).exists() for name in b['initial_active_sources']);assert 'histor' in (archive/'README.md').read_text().lower()
  oldfeature=subprocess.check_output(['git','show',b['feature_completed_tip']+':docs/dev/FEATURE-TASKS.md'],cwd=r,text=True);main=(r/'docs/dev/TASKS.md').read_text();history=(archive/'FEATURE-TASKS.md').read_text()
  for line in oldfeature.splitlines():
-  if line.strip().startswith('Verified T-'):
-   assert line.strip() in main
-   if not line.strip().startswith('Verified T-009'):assert line.strip() in history
- assert 'T-009 was transferred at the interrupted checkpoint' in history and 'complete historical evidence are in main' in history
- assert {x['id'] for x in read_tasks(archive/'FEATURE-TASKS.md')}=={'T-010','T-011'}
+  if line.strip().startswith('Verified T-'):assert line.strip() in main and line.strip() in history
+ assert {x['id'] for x in read_tasks(archive/'FEATURE-TASKS.md')}=={'T-009','T-010','T-011'}
  partial=json.loads((o/'A-021-partial-state/state.json').read_text());assert partial['head']==b['working_before'];assert partial['owned_hashes']['docs/dev/TASKS.md']
  result={'mode':mode,'head':head,'parents':parents,'feature_tip':feature,'exact_remote_refs_verified':True,'same_campaign_baseline_and_paths':True,'all_feature_task_history_preserved':True,'sole_current_task_owner':'TASKS.md','archives_historical_sources_preserved':True,'main_and_stdin_whole_phase_incomplete':True,'no_product_test_vendor_changes':True}
 result.update(task_owners=owners,pinned_hashes_verified=len(prov['hashes']),live_hosted_or_credentials=False)

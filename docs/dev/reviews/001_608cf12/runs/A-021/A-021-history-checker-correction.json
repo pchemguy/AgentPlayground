@@ -1,0 +1,5 @@
+{
+  "failed_assumption": "Archive must duplicate already-retired T009 row and full paragraph.",
+  "actual_contract": "Exactly-once T009 transfer retains complete evidence in main; historical source explicitly points to main. T010/T011 source history remains archived.",
+  "product_changed": false
+}

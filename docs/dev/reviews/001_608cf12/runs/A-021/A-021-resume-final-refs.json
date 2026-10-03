@@ -1,0 +1,15 @@
+{
+  "merge": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69",
+  "parents": [
+    "8a53078d0f734165075691dae0dbfa224a63446f",
+    "b74570a206a696c863daa3d09f6a393743d0e69c"
+  ],
+  "exact_remote_refs": {
+    "refs/heads/feature/002_8a53078-line-ranges": "b74570a206a696c863daa3d09f6a393743d0e69c",
+    "refs/heads/main": "29c27580db73cf128c42ddb9535e6d8f5c38ed39",
+    "refs/heads/phase/2-output-and-input-extensions": "5f2be6b5b5fba6c167dba1dbe1281428680e6e69"
+  },
+  "committed_tree": "f8534e358e1c1860d7985cab3ce4eb177bfc33e6",
+  "clean": true,
+  "feature_contained_in_published_target": true
+}
