@@ -1,0 +1,66 @@
+{
+  "head": "996855a20e010be0c50b7f3c19c60ed48b0dba0e",
+  "parents": [
+    "1cb5737d83b7b0dad3f8473bac9803ef3b06bc06",
+    "157298c74ccaf622e9b7652e40e33edea205898d"
+  ],
+  "working_branch_preserved": "157298c74ccaf622e9b7652e40e33edea205898d",
+  "exact_remote_refs_verified": true,
+  "conflicted_and_failed_check_target_uncommitted_unpublished": true,
+  "resolved_staged_tree_and_README_preserved_exactly": true,
+  "tracked_clean_no_Phase2_work": true,
+  "task_owners": {
+    "T-001": {
+      "id": "T-001",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 13,
+      "status": "Checked"
+    },
+    "T-002": {
+      "id": "T-002",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 19,
+      "status": "Checked"
+    },
+    "T-003": {
+      "id": "T-003",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 23,
+      "status": "Checked"
+    },
+    "T-004": {
+      "id": "T-004",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 29,
+      "status": "Checked"
+    },
+    "T-005": {
+      "id": "T-005",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 33,
+      "status": "Checked"
+    },
+    "T-006": {
+      "id": "T-006",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 42,
+      "status": "Unchecked"
+    },
+    "T-007": {
+      "id": "T-007",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 46,
+      "status": "Unchecked"
+    },
+    "T-008": {
+      "id": "T-008",
+      "document": "/workspace/scratch/sdd008-A-019-boundary/repo/docs/dev/TASKS.md",
+      "line": 49,
+      "status": "Unchecked"
+    }
+  },
+  "pinned_hashes_verified": 97,
+  "fixture_policy_check_preserved": true,
+  "live_hosted_or_credentials": false,
+  "limits": "Controlled local origin and external prerequisite, not a real hosted outage; actual consumer attempts and subsequent checks separately retained."
+}

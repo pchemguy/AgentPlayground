@@ -1,0 +1,14 @@
+Merge phase 1 named-file baseline (T-001–T-005)
+
+Integrate retained phase/1-named-file-baseline into main without replacing
+accepted task commits or the existing prospective merge resolution.
+Target parent: 1cb5737d83b7b0dad3f8473bac9803ef3b06bc06.
+Working parent: 157298c74ccaf622e9b7652e40e33edea205898d.
+Preserve accepted TextStats README examples and target integration note.
+
+Prospective verification: Python 3.12.14 full unittest discovery passed
+26 tests; README quick-start, API, archive and extraction/help passed.
+Required python tools/controlled_boundary.py passed with prerequisite
+restored. Original index tree and pinned vendor hashes unchanged.
+Permission-denial evidence remains narrowly simulated under this runner.
+Hosted tracking disabled for this local experiment. Phase 2 unstarted.

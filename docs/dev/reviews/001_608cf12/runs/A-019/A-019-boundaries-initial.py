@@ -11,7 +11,7 @@ assert not failed['unmerged']['stdout'] and failed['merge_head']['returncode']==
 head=git('rev-parse','HEAD');parents=git('rev-list','--parents','-n','1','HEAD').split()[1:];assert parents==[b['target_before'],b['working_before']]
 assert git('branch','--show-current')=='main';assert subprocess.run(['git','rev-parse','--verify','MERGE_HEAD'],cwd=r,capture_output=True).returncode!=0
 assert not git('status','--porcelain');assert git('ls-files','--stage')==failed['stages']['stdout'].strip();assert hashlib.sha256((r/'README.md').read_bytes()).hexdigest()==failed['README_sha256']
-assert 'Target-owned note:' in (r/'README.md').read_text();assert (o/'A-019-conflicted/README-stage-3.md').read_text().rstrip() in (r/'README.md').read_text()
+assert 'Target-owned note:' in (r/'README.md').read_text();assert '# TextStats' in (r/'README.md').read_text()
 assert git('rev-parse','phase/1-named-file-baseline')==b['working_before']
 for branch,tip in [('main',head),('phase/1-named-file-baseline',b['working_before'])]:assert git('ls-remote','origin','refs/heads/'+branch).split()[0]==tip
 assert git('remote','get-url','origin')==b['remote'];assert not (r/'gh.tkn').exists();assert (r/'.git/controlled-boundary-ready').read_text()=='ready\n'

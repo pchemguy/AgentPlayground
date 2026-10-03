@@ -1,0 +1,7 @@
+{
+  "observed_failure": "AssertionError at an assessor-only hardcoded # TextStats heading assertion.",
+  "actual_accepted_heading": "# AgentPlayground \u2014 TextStats",
+  "correction": "Verify the complete actual accepted source README text remains intact, together with target-owned note; retain exact staged tree/hash preservation checks.",
+  "product_or_consumer_changes": false,
+  "original_checker": "A-019-boundaries-initial.py"
+}
