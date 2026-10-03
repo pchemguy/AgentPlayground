@@ -1,0 +1,6 @@
+{
+  "observed_failure": "Assessor assumed local main exists; this fixture clone has origin/main and only its feature local branch.",
+  "correction": "Verify actual origin/main plus exact bare-origin remote main ref; no project edits or branch creation.",
+  "original_checker": "A-021-boundaries-initial.py",
+  "prior_running_record": "Partial-state export and consumer114-file checks were present; assessor boundary command failed before its later invariants and is now rerun before dependent continuation."
+}

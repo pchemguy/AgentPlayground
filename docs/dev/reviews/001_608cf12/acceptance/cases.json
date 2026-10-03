@@ -683,7 +683,9 @@
     "evidence": [
       "runs/A-021/A-021-partial-diff.patch",
       "runs/A-021/assessment.json",
+      "runs/A-021/A-021-checker-correction.json",
       "runs/A-021/A-021-partial-prompt.txt",
+      "runs/A-021/A-021-partial-boundaries.json",
       "runs/A-021/A-021-links.py",
       "runs/A-021/A-021-partial-checks.json",
       "runs/A-021/A-021-observe.py",
@@ -692,14 +694,15 @@
       "runs/A-021/A-021-fixture.json",
       "runs/A-021/A-021-partial-preserved-sha256.json",
       "runs/A-021/A-021-boundaries.py",
+      "runs/A-021/A-021-boundaries-initial.py",
       "runs/A-021/git-snapshot.json",
       "runs/A-021/A-021-fixture-independent.json",
       "runs/A-021/A-021-resume-prompt.txt",
       "runs/A-021/A-021-partial.md"
     ],
     "native_transcript": null,
-    "assessment": "Actual fresh consumer partial incorporation: exactly T009 owning entry/evidence transferred into main TASKS and retired from source; T010/T011 remain FEATURE-owned, all4 needed sources active. Nine unstaged doc edits, original HEAD/remote refs unchanged; no commit/push/archive/merge. Independent partial ownership/product-test-pin/source-retention checks and verified recovery bundle retained. Fresh continuation/eligible archive/final integration still pending; setup41-test/83-CLI results are not a case pass.",
-    "assessed_at": "2026-10-03T13:51:33.143164+00:00"
+    "assessment": "Actual fresh consumer partial incorporation: exactly T009 owning entry/evidence transferred into main TASKS and retired from source; T010/T011 remain FEATURE-owned, all4 needed sources active. Nine unstaged doc edits, original HEAD/remote refs unchanged; no commit/push/archive/merge. Independent partial ownership/product-test-pin/source-retention checks and verified recovery bundle retained. Fresh continuation/eligible archive/final integration still pending; setup41-test/83-CLI results are not a case pass. Assessor local-main assumption failed and was corrected to actual origin/main; full partial boundary command then passed before dependent continuation, with corrected recovery bundle refs. Original checker and correction retained; no product changes.",
+    "assessed_at": "2026-10-03T13:52:44.917366+00:00"
   },
   {
     "id": "A-022",

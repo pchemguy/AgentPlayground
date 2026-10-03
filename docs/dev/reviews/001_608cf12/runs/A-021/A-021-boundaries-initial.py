@@ -7,7 +7,7 @@ def git(*a):return subprocess.check_output(['git',*a],cwd=r,text=True).strip()
 mode=sys.argv[1];owners=check_ownership(r/'docs/dev')['owners'];assert set(owners)=={f'T-{i:03}' for i in range(1,12)}
 for i in [1,2,3,4,5,6,9,10,11]:assert owners[f'T-{i:03}']['status']=='Checked'
 for i in [7,8]:assert owners[f'T-{i:03}']['status']=='Unchecked'
-assert git('rev-parse','origin/main')==b['main_before'];assert git('ls-remote','origin','refs/heads/main').split()[0]==b['main_before']
+assert git('rev-parse','main')==b['main_before'];assert git('ls-remote','origin','refs/heads/main').split()[0]==b['main_before']
 for path in git('ls-tree','-r','--name-only',b['working_before'],'textstats','tests','vendor').splitlines():assert (r/path).exists() and hashlib.sha256((r/path).read_bytes()).hexdigest()==hashlib.sha256(subprocess.check_output(['git','show',b['working_before']+':'+path],cwd=r)).hexdigest()
 assert git('rev-parse','HEAD:docs/dev/SPEC.md')==git('rev-parse',b['working_before']+':docs/dev/SPEC.md');assert (r/'docs/dev/SPEC.md').read_bytes()==subprocess.check_output(['git','show',b['working_before']+':docs/dev/SPEC.md'],cwd=r)
 prov=json.loads((r/'vendor/PROVENANCE.json').read_text())
